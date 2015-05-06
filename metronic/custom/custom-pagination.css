@@ -1,0 +1,42 @@
+.grid-view .pager {}
+.pager{}
+ul.yiiPager{float:right;}
+ul.yiiPager .first, ul.yiiPager .last {display: none;}
+.hidden {    display: none !important;    visibility: hidden !important;}
+ul.yiiPager li {display: inline-block;	float: left;}
+ul.yiiPager li.previous{border-left:1px solid #dddddd;display:inline-block !important; visibility:visible !important}
+ul.yiiPager li.previous a{border-left:0;}
+ul.yiiPager li.next{display:inline-block !important; visibility:visible !important};
+ul.yiiPager .page a {font-weight: normal;}
+ul.yiiPager a:link, ul.yiiPager a:visited {border: 1px solid #dddddd; float:left;   color: #0E509E;    font-size: 13px;  border-left: 0px;  padding: 10px 12px !important;    text-decoration: none;}
+ul.yiiPager .selected a {background: none repeat scroll 0 0 #eeeeee; color: #333333; font-weight: bold;}
+ul.yiiPager .hidden a { border: 1px solid #DEDEDE;    color: #888888;}
+.pager .next > a, .pager .next > span {float: right;}
+.pager li > a, .pager li > span {    background-color: #FFFFFF;    border: 1px solid #DDDDDD;    border-radius: 15px 15px 15px 15px;    display: inline-block;    padding: 5px 14px;}
+
+.grid-view table.table-striped tr th a{
+    display: block;
+	background: url("/metronic/assets/plugins/data-tables/images/sort_both.png") no-repeat scroll right center transparent;
+}
+
+.grid-view table tr th a{
+    color: #1F92FF;
+    cursor: pointer;
+    text-decoration: none;
+    text-shadow: 0 0 0 transparent;
+}
+
+.grid-view table tr th a.asc {
+    display: block;
+	background: url("/metronic/assets/plugins/data-tables/images/sort_asc.png") no-repeat scroll right center transparent;
+	
+}
+
+.grid-view table tr th a.desc {
+    display: block;
+	background: url("/metronic/assets/plugins/data-tables/images/sort_desc.png") no-repeat scroll right center transparent;
+}
+
+.grid-view .summary {
+text-align: left;
+}

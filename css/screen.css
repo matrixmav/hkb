@@ -1,0 +1,1342 @@
+body { background:#fff; font-size:13px; line-height:18px; font-family: "Verdana"; color:#666; margin:0; padding:0; border:0;}
+.wrapper { position:relative; width:100%; height:100%; min-width:1020px; z-index:0;}
+.container{ width:960px; margin:0 auto;}
+.container2{ width:1020px; margin:0 auto;}
+.container3{ width:980px; margin:0 auto;}
+.fullwidth{width:100% !important;}
+.mLeft10{margin-left: 10px;}
+.mRight10{margin-right: 10px;}
+.pLeft10{padding-left: 10px;}
+.pRight10{padding-right: 10px;}
+
+.header{ height:83px; padding-bottom:9px; margin-bottom:-9px; background:url(../images/header_bg.png) repeat-x; z-index:2;}
+.header .logo{ float:left; margin:12px 0 0; padding:0;}
+.header .language{ float:left; margin:46px 5px 0 24px;}
+.header .courency{ float:left; margin:46px 5px 0 0;}
+.language select, .courency select{ width:45px;}
+.header .phoneNo{ float:right; text-align:center; font-size:20px; line-height:28px; color:#000; font-family:"Trebuchet MS Bold"; font-weight:bold; padding:0 10px; margin:37px 0 0; border:1px solid #000; border-radius:18px;}
+.header .phoneNo img{ margin:0 9px -6px 0;}
+.header .headerSmallLink{ float:right; margin:45px 5px 0 0;}
+.header .headerSmallLink li{ float:left; list-style:none; position:relative; font-size:10px; line-height:17px;}
+.header .headerSmallLink li.devider{ margin:0 -3px 0;}
+.header .headerSmallLink li a{ padding:0 8px; font-size:10px; line-height:17px; color:#000; display:block; text-transform:uppercase;-webkit-font-smoothing: none;}
+.header .headerSmallLink li a.bold{ font-weight:bold;}
+.header .headerSmallLink li.help a{ color:#010101;}
+.header .headerSmallLink li.connection a{font-weight: bold;}
+.header .headerSmallLink li a:hover, .header .headerSmallLink li:hover > a{ background:#000; color:#fff; padding:0 9px; margin:0 -1px; position:relative; z-index:1;}
+.header .headerSmallLink li a.social{ margin-top:2px; display:block;}
+.header .headerSmallLink li a.social:hover{ background:#fff; margin:2px 0 0; padding:0 8px; opacity:0.6;}
+.header .headerSmallLink li ul.submenu{ position:absolute; left:0; top:17px; background:#fff; border-top:1px solid #000; width:120px; display:none;}
+.header .headerSmallLink li ul.submenu.helpList{padding-top: 3px;box-shadow: 0px 1px 8px #ddd;border-top:0;-webkit-box-shadow: 0px 1px 8px #ddd;-moz-box-shadow: 0px 1px 8px #ddd;}
+.header .headerSmallLink li ul.submenu.helpList li:nth-child(1){border-top: 1px solid #000;}
+.header .headerSmallLink li ul.submenu.accountsubmenu{width:170px;}
+.header .headerSmallLink li:hover ul.submenu{ display:block;}
+.header .headerSmallLink li.help ul.submenu{top:20px;}
+.header .headerSmallLink li ul.submenu li{ display:block; clear:both; width:100%;}
+.header .headerSmallLink li ul.submenu li a{ display:block; font-size:10px; line-height:18px; color:#999999; text-transform:uppercase;}
+.header .headerSmallLink li ul.submenu li a:hover{ color:#fff;}
+.header .headerSmallLink li ul.submenu li a.logout{font-size:11px;  color:red;}
+
+.header .ui-selectmenu-button{ border-radius:0 !important;}
+.header .ui-selectmenu-button.ui-state-hover, .header .ui-selectmenu-button.ui-state-focus{ background:none !important; border:1px solid #000 !important;}
+.header .ui-selectmenu-button span.ui-selectmenu-text{ padding:2px 2px 2px 6px !important; font-weight:normal; font-size:12px;}
+.header .ui-selectmenu-button span.ui-icon{ right:3px;}
+
+.ofh{ overflow:hidden;}
+.bannerWithBenifit{ z-index:1;}
+.bannerWithBenifit .ofh{width: 100%;}
+.bannerWithBenifit .bannerBottom{ position:absolute; left:48%; bottom:-4px; z-index:3;width: 79px; height: 39px;background: url(../images/bannerBottom.png) 0 0 no-repeat;}
+.bannerWithBenifit .bannerBottom.close{background: url(../images/bannerBottom.png) 0 -45px no-repeat;}
+.flexslider.homeBenefitsSlider .slides>li{width: 960px; height: 133px;overflow: hidden;}
+.bannerWithBenifit .breadCamp{ position:absolute; z-index:99; left:50%; top:10px; margin-left:-457px;}
+.bannerWithBenifit .breadCamp li{ list-style:none; color:#fff; font-size:10px; display:block; float:left; margin-right:6px; text-shadow:1px 1px 1px rgba(0, 0, 0, 0.4);}
+.bannerWithBenifit .breadCamp li a{ color:#fff;}
+.bannerWithBenifit .searchBoxWrap{width: 100%;text-align: center;bottom: 184px;position: absolute;height: 57px;display: block;}
+.bannerWithBenifit .searchBox{width: 960px;height: 57px;position: relative;z-index: 99;margin: auto;background: rgba(0,0,0,0.6);}
+.bannerWithBenifit .searchBox.scroll-to-fixed-fixed{left: auto;}
+.bannerWithBenifit .searchBox .mapIcon{ float:left; margin:12px 7px 0 11px; text-transform:uppercase;}
+.bannerWithBenifit .searchBox .textBox{ float:left; background:#fff; border:1px solid #e6e6e6; margin:12px 12px 0 0; width:240px; padding:6px 10px; height:18px; font-size:12px; line-height:18px; color:#000; text-transform:uppercase;}
+.bannerWithBenifit .searchBox #term-error{position: absolute;top: 48px;left: 43px;background: rgba(0,0,0,0.6);padding: 1px 14px;color: #ffffff;border-radius: 3px;}
+.bannerWithBenifit .searchBox #term-error:before {content: '';display: block;position: absolute;top: -5px;left: 8px;border-width: 0px 5px 5px 5px;border-style: solid;border-color: rgba(0,0,0,0.6) transparent;}
+.bannerWithBenifit .searchBox .dateBox{ float:left; background:#fff url(../images/date.png) right center no-repeat; border:1px solid #e6e6e6; margin:12px 12px 0 0; width:138px; padding:6px 10px; height:18px; font-size:12px; line-height:18px; color:#000; cursor:pointer;}
+.bannerWithBenifit .searchBox .arivaltime{ float:left; margin:12px 12px 0 0;}
+.bannerWithBenifit .searchBox .arivaltime select{ width:155px;}
+.bannerWithBenifit .searchBox .length{ float:left; margin:12px 12px 0 0;}
+.bannerWithBenifit .searchBox .length select{ width:100px;}
+.bannerWithBenifit .searchBox .searchBtn{ float:right; background:#ff5651 url(../images/search.png) 148px 6px no-repeat; border:1px solid #ff0000; display:block; border-radius:0; width:178px; margin:12px 12px 0 0; font-size:14px; color:#fff; font-weight:bold; text-align:left; padding:6px 7px; text-transform:uppercase;}
+.bannerWithBenifit .searchBox .searchBtn:hover{ background:#ff0000 url(../images/search.png) 148px 6px no-repeat;}
+.bannerWithBenifit .searchBox .ui-state-default .ui-icon{ background-image:url(../images/ui-icons_ccc_256x240.png);}
+.bannerWithBenifit .searchBox .homeTopdatepicker{position: relative;float: left;width: 172px;}
+.bannerWithBenifit .searchBox .homeTopdatepicker .datepicker{position: absolute;top: 44px;left: -83px;display: none;}
+.bannerWithBenifit .searchBox .homeTopdatepicker .dateRequired{color: #fff; position: absolute; top: 46px; left: 0; font-size: 11px; background: #000; padding: 0 10px; width: 139px; text-align: left;}
+.bannerWithBenifit .searchBox .ui-selectmenu-button{ border-radius:0 !important; border:1px solid #e6e6e6 !important;}
+.bannerWithBenifit .searchBox .ui-selectmenu-button.ui-state-hover, .bannerWithBenifit .searchBox .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #e6e6e6 !important;}
+.bannerWithBenifit .searchBox .ui-selectmenu-button span.ui-selectmenu-text{ padding:7px 2px 6px 9px !important; font-weight:normal; font-size:12px;}
+.bannerWithBenifit .searchBox .ui-selectmenu-button span.ui-icon{ right:3px;}
+.bannerWithBenifit .searchBox.fixed { left: 50%; margin-left: -480px; position: fixed; top: 0; width: 960px; z-index: 9999;}
+
+.topBanner .slides{ max-height:646px; overflow:hidden;}
+.topBanner .slides>li{ max-height:646px;text-align: center;}
+/*.topBanner .slides:before{content: '';background: rgba(0,0,0,0.5); position: absolute;left: 0;top:0; width: 100%; min-height: 100%;  z-index: 1;}
+.topBanner .slides>li h2 { display: none; }
+.topBanner .overflow{display:inline-block;width: 100%;height: 100%;font-family: "Avenir Medium";  position: absolute; z-index: 3; top: 0;top: 0;text-align: center;left: 0;}
+.topBanner .item-title { margin: 130px auto 0px; font-size: 46px; font-weight: bold; color: #fff; width: 50%; padding-left: 30px; text-align: center;} 
+.topBanner .block { margin: 20px auto 0; line-height: 1.2; font-size: 46px; padding: 20px 20px 40px 30px; letter-spacing: 3px; width: 50%; font-weight: bold; text-align: center; color: #fff;} 
+.topBanner .block span.first,.topBanner .block span.second  {display: none;  float: left;} 
+.topBanner .block span.second{margin-left: 20px;}
+.topBanner .block .blue {color: #00afef; } 
+.topBanner .block .orange {color: #ffbf00; } 
+*/
+
+.topBanner .container{ display: block;  bottom: 88px;  position:absolute;width: 100%;z-index: 3;}
+.midBannerCont .container{ top:0px;  bottom: auto;}
+.topBanner .slides p{ display:inline-block; border:2px solid #fff; margin:505px 0 0 52px; color:#fff; font-size:24px; line-height:49px; text-shadow:1px 1px 1px rgba(0,0,0,.75); font-family: "Avenir Heavy"; text-align:center; width:860px; text-transform:uppercase;}
+.topBanner .slides h1{ display:inline-block; border:2px solid #fff; margin:505px 0 0 0px; color:#fff; font-size:24px; line-height:49px; text-shadow:1px 1px 1px rgba(0,0,0,.75); font-family: "Avenir Heavy"; text-align:center; padding: 0 35px; text-transform:uppercase;}
+.topBanner .flex-control-nav {bottom: 10px;padding-right: 18px;box-sizing: border-box;text-align: right;}
+.topBanner .flex-control-nav>li>a{color: transparent;}
+.topBanner .flex-direction-nav{ display:none;}
+
+/*home page new slider*/
+/*#homeslidernw{position: relative;height: 646px;}
+.slider-container {position: absolute; height: 646px; display: block; width: 100%; z-index: 1; left: 0; top: 0; overflow: hidden; font-family: "Avenir Medium"; background-color: rgba(0,0,0,1); }
+.slider-container .slider-item {position: absolute; right: 0; background-size: cover; background-position: center; background-repeat: no-repeat; height: 646px; z-index: 1; width: 100%; display: none; }
+.slider-container .slider-item .container {display: block; bottom: 88px; position: absolute; width: 100%;text-align: center;}
+.slider-container .slider-item .container h1{  display: inline-block; border: 2px solid #fff; margin: 505px 0 0 0px; color: #fff; font-size: 24px; line-height: 49px; text-shadow: 1px 1px 1px rgba(0,0,0,.75); font-family: "Avenir Heavy"; text-align: center; padding: 0 35px; text-transform: uppercase;}
+.slider-container .slider-item .overflow {width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); display: inline-block; }
+.slider-container .item-title {margin: 220px auto 0px; font-size: 36pt; font-weight: bold; color: #fff; width: 50%; padding-left: 30px; text-align: center; }
+.slider-container h2 { display: none; }
+.slider-container .block {margin: 20px auto 0; line-height: 1.2; font-size: 40pt; padding: 20px 20px 40px 30px; letter-spacing: 3px; width: 50%; font-weight: bold; text-align: center; color: #fff; }
+.slider-container .block span {opacity: 0;}
+.slider-container .blue {color: #00afef;}
+.slider-container .orange {color: #ffbf00;}
+
+@media only screen and (max-width: 1366px) and (min-width: 1281px) {
+	.slider-container .item-title { width: 70%;}
+	.slider-container .block { width: 70%; }	
+}
+@media only screen and (max-width: 1280px) and (min-width: 1025px) {
+	.slider-container .item-title { width: 75%;}
+	.slider-container .block { width: 75%; }
+}
+@media only screen and (max-width: 1024px) and (min-width: 680px) {
+	.slider-container .item-title { width: 80%;}
+	.slider-container .block { width: 80%; }
+}
+
+@media only screen and (max-width: 679px) {
+	.slider-container .item-title { display: none; visibility: hidden;}
+	.slider-container .block { display: none; visibility: hidden;}
+}*/
+/*home page new slider*/
+
+.ADD{ padding:20px 0 17px; background:#f4eeee;}
+
+.benifits{ padding-top:30px;}
+.benifits .heading{ font-size:30px; font-weight: normal; line-height:35px; padding-bottom:21px; margin:0; text-align:center; text-transform:uppercase; background:url(../images/heading_bg.jpg) center bottom no-repeat; color:#000; font-family: "Avenir";}
+.benifits .threeBox{ padding:16px 0 39px;}
+.benifits .threeBox .box{ width:304px;}
+.benifits .threeBox .box .icon{ width:64px; height:64px; border:1px dashed #000; float:left; line-height:80px; text-align:center;}
+.benifits .threeBox .box .icon img{ display:inline-block;}
+.benifits .threeBox .box .text{ float:right; width:225px;}
+.benifits .threeBox .box .heading2{ font-size:15px; color:#000; line-height:20px; padding-bottom:5px; text-transform:uppercase; font-family: "Avenir Black";}
+.benifits .threeBox .box p{ font-size:14px; color:#707070; line-height:19px; font-family: "Avenir";}
+.homeBenefitsSlider{z-index: auto;}
+.homeBenefitsSlider .flex-control-nav{bottom: -28px;}
+.mr24{ margin-right:24px;}
+
+.benifits .wpBenefitsBox{}
+.benifits .wpBenefitsBox ul li{display: inline-block;width: 224px;padding-left:79px;position:relative;}
+.benifits .wpBenefitsBox  ul li strong{font-size: 15px;font-weight:normal; color: rgb(0, 0, 0);line-height: 20px;display: block;padding-bottom: 5px;text-transform: uppercase;font-family: "Avenir Black";}
+.benifits .wpBenefitsBox  ul li p{margin:0;padding:0;font-size: 14px;color: rgb(112, 112, 112);line-height: 19px;font-family: "Avenir";}
+.benifits .wpBenefitsBox  ul li{background:url('/images/icon1.png') no-repeat left 16px top 20px;float:left;margin-right:25px;margin-bottom: 2px;}
+.benifits .wpBenefitsBox  ul li+li{background:url('/images/icon2.png') no-repeat left 23px top 18px;}
+.benifits .wpBenefitsBox  ul li+li+li{background:url('/images/icon3.png') no-repeat left 19px top 20px;float:right;margin-right:1px;padding-left: 78px;}
+@-moz-document url-prefix() {
+	.benifits .wpBenefitsBox  ul li{background:url('/images/icon1.png') no-repeat left 16px top 21px;}
+	.benifits .wpBenefitsBox  ul li+li{background:url('/images/icon2.png') no-repeat left 23px top 19px;}
+	.benifits .wpBenefitsBox  ul li+li+li{background:url('/images/icon3.png') no-repeat left 19px top 21px;}
+}
+
+.benifits .wpBenefitsBox  ul li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left:0px;}
+.benifits .wpBenefitsBox  ul li+li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left: 0px;}
+.benifits .wpBenefitsBox  ul li+li+li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left: -1px;}
+.wpRegistrationBenefit .wpBenefitsBox ul li{float: none;display:block}
+.wpRegistrationBenefit .wpBenefitsBox ul li+li+li{float:none;}
+.benifits .wpBenefitsBox  ul li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left:0px;}
+.benifits .wpBenefitsBox  ul li+li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left: 0px;}
+.benifits .wpBenefitsBox  ul li+li+li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left: -1px;}
+
+.detailBenefits .wpBenefitsBox{display:inline-block;margin-top:2px;}
+.detailBenefits .wpBenefitsBox ul li{display: inline-block;width: 224px;padding-left:66px;position:relative;}
+.detailBenefits .wpBenefitsBox  ul li strong{font-size: 12px;font-weight:normal; color: rgb(0, 0, 0);line-height: 17px;display: block;text-transform: uppercase;font-family: "Avenir Black";}
+.detailBenefits .wpBenefitsBox  ul li p{margin:0;padding:0;font-size: 12px;color: rgb(112, 112, 112);line-height: 16px;font-family: "Avenir";}
+.detailBenefits .wpBenefitsBox  ul li{background:url('/images/icon1.png') no-repeat left 11px top 13px;float:left;margin-left:14px;margin-bottom: 27px;width: 180px;}
+.detailBenefits .wpBenefitsBox  ul li+li{background:url('/images/icon2.png') no-repeat left 18px top 11px;}
+.detailBenefits .wpBenefitsBox  ul li+li+li{background:url('/images/icon3.png') no-repeat left 15px top 13px;}
+
+.detailBenefits .wpBenefitsBox  ul li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left:0px;}
+.detailBenefits .wpBenefitsBox  ul li+li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left: 0px;}
+.detailBenefits .wpBenefitsBox  ul li+li+li:after{content:''; display:block; position:absolute;width:64px; height:64px;border:1px dashed #000;top: 0px;left: -1px;}
+.detailBenefits .wpBenefitsBox  ul li:after{content:''; display:block; position:absolute;width:54px; height:54px;border:1px dashed #000;top: -2px;left:0px;}
+.detailBenefits .wpBenefitsBox  ul li+li:after{content:''; display:block; position:absolute;width:54px; height:54px;border:1px dashed #000;top: -2px;left: 0px;}
+.detailBenefits .wpBenefitsBox  ul li+li+li:after{content:''; display:block; position:absolute;width:54px; height:54px;border:1px dashed #000;top: -2px;left: 0px;}
+
+
+.benifits.wpRegistrationBenefit{display:block;float: none;}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li{background: url('/images/icon1.png') no-repeat top 20px center;display:block;float: none;margin: 0 0 25px;text-align: center;padding: 80px 0 0 0;width: 100%;}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li+li{background: url('/images/icon2.png') no-repeat top 18px center;}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li+li+li{background: url('/images/icon3.png') no-repeat top 20px center;}
+@-moz-document url-prefix() {
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li{background: url('/images/icon1.png') no-repeat top 21px center;}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li+li{background: url('/images/icon2.png') no-repeat top 19px center;}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li+li+li{background: url('/images/icon3.png') no-repeat top 21px center;}
+	}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li strong{font-size:16px;margin-bottom: 0px;display: block;}
+.benifits.wpRegistrationBenefit, .benifits.wpRegistrationBenefit .threeBox{padding:0px;}
+.benifits.wpRegistrationBenefit .wpBenefitsBox ul li:after, .benifits.wpRegistrationBenefit .wpBenefitsBox ul li+li:after, .benifits.wpRegistrationBenefit .wpBenefitsBox ul li+li+li:after{content: '';display: block;position: absolute;width: 64px;height: 64px;border: 1px dashed #000;top: 0px;left: 50%;margin-left: -33px;}
+
+.ui-tabs { border: medium none !important; padding: 0; position: relative; background:none;}
+.ui-tabs .ui-tabs-nav{ border:none; border-top:1px solid #000; border-bottom:2px solid #000; border-radius:0; background:none; text-align:center; padding:0; height:41px;}
+.ui-tabs .ui-tabs-nav li{ display:block; border:none; float:none; display:inline-block; margin:0 13px 0 9px !important; padding:0 !important; background:none;}
+.ui-tabs .ui-tabs-nav li:after{ content:'/'; color:#b7b7b7; border:none; font-size:10px; position:absolute; top:13px; right:-17px;}
+.ui-tabs .ui-tabs-nav li:last-child:after{ display:none;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active, .ui-tabs .ui-tabs-nav li.ui-state-hover{ background:none;}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor{ font-size:13px; line-height:41px; font-family: "Avenir Heavy"; color:#878686; padding:0; text-transform:uppercase;}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-state-hover .ui-tabs-anchor{ color:#000;}
+.ui-tabs .ui-tabs-panel{ padding:0;}
+.ui-tabs.ui-widget-content .ui-state-focus{ background:none !important; color:#000 !important;}
+
+.ourSelection{ padding:40px 0 50px;}
+.mtb20{ margin:20px 0;}
+.ourSelection .heading{ font-size:30px; line-height:35px; padding-bottom:15px; margin:0; font-weight:bold; text-align:center; text-transform:uppercase; color:#000;}
+.ourSelection .selection{ padding-top:20px; font-family: "Verdana";}
+.ourSelection .selection .bigPart{ width:632px;}
+.ourSelection .selection .smallPart{ width:302px;}
+.ourSelection .selection .bigBox{ width:632px; padding-bottom:27px; position:relative;}
+.ourSelection .selection .bigBox .overlayWrap{position: absolute;width: 316px;height: 422px;left: 0;top: 0;right: 0;bottom: 0;margin: auto;line-height: 422px;display: block;vertical-align: middle;margin-top: 0;}
+.ourSelection .selection .bigBox .overlay{ position: relative;width:100%;height: auto;padding-bottom: 20px;background: rgba(255, 255, 255, 0.5);display: inline-table;vertical-align: middle;}
+.ourSelection .selection .bigBox .overlay.threelines{height: auto;padding-bottom: 20px;top: 87px;}
+.ourSelection .selection .bigBox .overlay .discountQuote{ background:url(../images/redquote.png) no-repeat; color: #ffffff;   font-size: 20px; font-weight: bold; height: 48px; margin: 10px 0 0 125px; padding: 22px 0 0 0px; width: 62px;text-align:center;}
+.ourSelection .selection .bigBox .overlay .discountQuote span{font-size: 13px;display: inline-block;vertical-align: top;}
+.ourSelection .selection .bigBox .overlay .bigtext{ font-family: "Avenir Heavy"; font-size:24px; line-height:30px; color:#000; text-align:center; text-transform:uppercase; margin:3px 0 8px;}
+.ourSelection .selection .bigBox .overlay .box{ width:270px; height:43px; border:2px solid #000; margin:0 0 0 20px;} 
+.ourSelection .selection .bigBox .overlay .box p{ font-size:12px; line-height:43px; color:#000; text-align:center;}
+.ourSelection .selection .bigBox .overlay .box p span.big{ font-size:25px; font-weight:bold;}
+.ourSelection .selection .bigBox .overlay .box p span.line{ text-decoration:line-through;}
+.ourSelection .selection .smallBox{ width:302px; padding-bottom:27px; position:relative;height: 197px;}
+.ourSelection .selection .smallBox .overlay{ position:absolute; width:222px; padding-bottom:9px; background:#fff; left:39px; top:69px;}
+.ourSelection .selection .smallBox .overlay .bigtext{ text-align:center; text-transform:uppercase; font-size:25px; line-height:25px; font-weight:bold; color:#000; padding:10px 0 3px; margin:0;}
+.ourSelection .selection .smallBox .overlay .smalltext{ text-align:center; text-transform:uppercase; font-size:12px; line-height:17px; color:#000; padding:0; margin:0;}
+.ourSelection .selection img{ display:block; width:100%;}
+.ourSelection .topCity .heading{ font-family: "Avenir Black"; font-size:18px; line-height:18px; color:#000; background:url(../images/blackDot.png) left center repeat-x; padding:0; margin-bottom:20px; text-transform:uppercase; text-align:center;}
+.ourSelection .topCity .heading span{ background:#fff; padding:0 20px;}
+.ourSelection .topCity ul{ display:block; width:100%; overflow:hidden;}
+.ourSelection .topCity ul li{ width:25%; float:left; display:block; text-align:center; font-family: "Avenir"; margin:5px 0 10px;}
+.ourSelection .topCity ul li .smallHeading{ text-align:center; font-size:18px; line-height:15px; color:#000; padding:0; margin:0; text-transform:uppercase; font-family: "Avenir Medium";}
+.ourSelection .topCity ul li p{text-align:center; font-size:12px; line-height:15px; color:#000; padding:0; margin:0;}
+.ourSelection .topCity a.blackBtn, .ourSelection .topCity a.blackBtn2{ background:#000; color:#fff; font-size:12px; line-height:31px; margin:10px auto 0; display:block; font-family: "Avenir Heavy"; text-transform:uppercase; text-align:center; width:302px;}
+.ourSelection .topCity a.blackBtn:hover, .ourSelection .topCity a.blackBtn2:hover{ background:#333;}
+.midBanner{ width:100%; overflow:hidden;}
+.midBanner .overlayWrap{position: absolute;width: 522px;height: 578px;left: 0;top: 0;right: 0;bottom: 0;margin: auto;line-height: 578px;display: block;vertical-align: middle;margin-top: 0;}
+.midBanner .overlay{position: relative;width: 100%;height: auto;padding-bottom: 20px;background: rgba(255, 255, 255, 0.5);display: inline-table;vertical-align: middle;}
+.midBanner .overlay .discountQuote{ background:url(../images/redquote2.png) no-repeat; color: #ffffff;font-size: 26px; font-weight: bold; height: 55px; margin: 10px 0 0 217px; padding: 27px 0 0 0px; width: 72px; position:relative;text-align: center;}
+.midBanner .overlay .discountQuote span{font-size: 13px;display: inline-block;vertical-align: top;}
+.midBanner .overlay .bigtext{ font-family: "Avenir Heavy"; font-size:30px; line-height:35px; color:#000; text-align:center; text-transform:uppercase; margin:10px 0 13px;}
+.midBanner .overlay .box{ width:474px; height:43px; border:2px solid #000; margin:0 0 0 20px;}
+.midBanner .overlay .box p{ font-size:18px; line-height:43px; color:#000; text-align:center; text-transform:uppercase;}
+.midBanner .overlay p.big{ font-size:60px; font-weight:bold; text-transform:uppercase; color:#000; text-align:center; line-height:60px; margin:10px 0 -10px;}
+.midBanner .overlay p.price{ font-size:17px; line-height:26px; color:#000; text-align:center; margin-top:10px;}
+.midBanner .overlay p.price span.line{ text-decoration:line-through;}
+
+.mostOf{ padding-top:30px;}
+.mostOf .heading{ font-size:30px;font-weight: normal; line-height:35px; padding-bottom:21px; margin:0; text-align:center; text-transform:uppercase; background:url(../images/heading_bg.jpg) center bottom no-repeat; color:#000; font-family: "Avenir";}
+.mostOf .threeBox{ padding:50px 0 55px;}
+.mostOf .threeBox .box{ width:303px; text-align:center; font-family: "Avenir";}
+.mostOf .threeBox .box .heading2{ font-size:18px; line-height:25px; padding:20px 0 5px; margin:0; text-align:center; color:#000; text-transform:uppercase; font-family: "Avenir Medium";}
+.mostOf .threeBox .box p{ font-size:13px; line-height:14px; color:#5f5f5f; padding:0; margin:0 0 10px;}
+.mostOf .threeBox .box a{ font-size:13px; line-height:13px; color:#ff564e; padding:0; margin:0; text-transform:uppercase; border-bottom:1px solid #ff564e; display:inline-block;}
+
+.wpMostof ul{padding: 50px 0 55px;}
+.wpMostof ul li{display:inline-block;vertical-align:top; width:300px; text-align:center;margin-right:16px;font-size: 13px;line-height: 14px;color: rgb(95, 95, 95);font-family:"Avenir"}
+.wpMostof ul li strong{font-size: 18px;display:block; line-height: 25px;padding: 20px 0 5px;margin: 0;text-align: center;color: rgb(0, 0, 0);text-transform: uppercase;font-family: "Avenir Medium";font-weight:normaL;}
+
+
+.blogSection{ padding:63px 0 100px;}
+.blogSection .threeBox{ padding:45px 0 0px;}
+.blogSection .threeBox .box{ width:304px; font-family: "Verdana";}
+.blogSection .threeBox .box .heading2{ font-weight:bold; color:#000; text-transform:uppercase; font-size:13px; line-height:20px; padding:0 0 5px; margin:0;}
+.blogSection .threeBox .box p{ font-size:12px; line-height:14px; color:#828282; text-align:justify;}
+.blogSection a.blackBtn{ background:#000; color:#fff; font-size:10px; line-height:29px; margin:19px auto 0; display:block; font-family: "Avenir Heavy"; text-transform:uppercase; text-align:center; width:143px;}
+.blogSection .wpBlogSection .box:nth-of-type(1){width:303px;float:left; margin-right:24px;vertical-align: top;}
+.blogSection .wpBlogSection .box:nth-of-type(2){width:303px;float:left; margin-right:24px}
+.blogSection .wpBlogSection .box:nth-of-type(3){width:303px;float:right;margin-right:0px;}
+
+.pressRelease{ padding:0 0 20px;}
+.pressRelease .heading{ font-size:30px; line-height:35px; padding-bottom:25px; margin:0; font-weight:bold; text-align:center; text-transform:uppercase; color:#000;}
+.pressRelease ul.press{ display:block; width:100%; overflow:hidden; padding-bottom:46px;}
+.pressRelease ul.press li{ display:block; list-style:none; float:left; margin-right:13px;}
+.pressRelease ul.press li.last, .pressRelease ul.press li:last-child{ margin:0;}
+.pressRelease ul.social{ display:block; width:100%; overflow:hidden; text-align:center;}
+.pressRelease ul.social li{ display:inline-block; list-style:none; margin:0 10px;}
+
+.footer{ background:#b7afaf; padding:23px 0 14px; border-bottom:1px solid #fff;}
+.footer .logoPart{ width:236px; float:left; margin-left:20px;}
+.footer .language{ float:left; margin:23px 5px 0 0px;}
+.footer .courency{ float:left; margin:23px 5px 0 0;}
+.footer .contact{ width:233px; float:left;}
+.footer .contact p{ color:#fff; font-size:10px; line-height:14px; text-transform:uppercase;}
+.footer .heading{ color:#fff; font-weight:bold; text-transform:uppercase; font-size:18px !important; line-height:18px !important; padding-bottom:5px; margin:0;}
+.footer .contact .heading2{color:#fff; font-weight:bold; text-transform:uppercase; font-size:16px; line-height:16px; padding:2px 0 0px; margin:0;}
+.footer .link{ float:left;}
+.footer .link ul{ float:left; display:block;}
+.footer .link ul li{ float:left; display:block; clear:both;}
+.footer .link ul li a{ display:block; color:#fff; font-size:11px; line-height:16px; text-transform:uppercase;}
+.footer .link ul li a:hover{ color:#000;}
+.footer .social{ float:right; margin-right:20px; width:215px;}
+.footer .social .heading{ padding-bottom:15px;}
+.footer .ui-selectmenu-button{ border-radius:0 !important; background:none !important; border:1px solid #fff !important;}
+.footer .ui-selectmenu-button.ui-state-hover, .footer .ui-selectmenu-button.ui-state-focus{ background:none !important; border:1px solid #fff !important;}
+.footer .ui-selectmenu-button span.ui-selectmenu-text{ padding:2px 2px 2px 6px !important; color:#fff; font-weight:normal; font-size:12px;}
+.footer .ui-selectmenu-button span.ui-icon{ right:3px;}
+.footer .ui-state-default .ui-icon {
+    background-image:url(images/ui-icons_fff_256x240.png);
+}
+.footer.stickFooter{position: fixed;bottom: 52px;width: 100%;}
+
+.location{ background:#b7afaf; padding:10px 0;}
+.location p, .location p a{ color:#fff; font-size:10px; line-height:16px; margin:0; padding:0; text-align:center; text-transform:uppercase;}
+.location.stickFooterLocation{position: fixed;bottom: 0px;width: 100%;}
+
+.ui-selectmenu-menu .ui-menu{ border-radius:0 !important; border:none; border-top:1px solid #000; box-shadow:0 0 3px #CCC;}
+.ui-selectmenu-menu .ui-widget-content .ui-state-focus{ background:#000 !important; color:#fff !important; font-weight:normal;}
+.ui-selectmenu-menu .ui-widget-content .ui-menu-item { padding: 0 0 0 4px; color:#999999; font-size:12px;}
+
+.container.resarch{ width:auto; margin:0 7px;}
+.container.resarch .language{float: right;margin: 43px 5px 0 0px;}
+.container.resarch .courency {float: right;margin: 43px 5px 0 0;}
+
+.header .resarch .headerSmallLink{ float:right; margin:45px 16px 0 0;}
+.header .resarch .searchBox{ width:291px; padding:8px 0 8px 36px; background:#fff url(../images/search2.png) 8px 6px no-repeat; font-size:11px; color:#000; float:left; margin:36px 0 0 20px; border:1px solid #dde2e2; border-radius:2px; text-transform:initial;}
+.header .resarch .srchGeoLocation{ float:left; margin:38px 0 0 8px; width:16px; height:26px; text-indent:-900px; overflow:hidden; background:url(../images/searchBtn.png) no-repeat; border:none;}
+
+
+.SearchOptionBox{ background:#f5efef; z-index:1;position: absolute;height: auto;}
+.searchReasult{ width:100%; position:relative; overflow:hidden;}
+.searchReasult .mapCont{ width:90%; position:absolute; left:0; top:0; height:100%; z-index:0; overflow:hidden;}
+.searchReasult .resultCont{ position:relative; z-index:2; float:right; width:695px;}
+.searchReasult .step1.resultCont.listview{width: 696px;}
+.searchReasult .resultCont.expand{ width:100% !important;}
+.searchReasult .resultCont .showHideBtn{ width:28px; background:rgba(255,255,255,0.65) url(../images/hideBtn.png) center center no-repeat; cursor:pointer; position:absolute; top:0; left:0; bottom:0;}
+.searchReasult .resultCont.expand .showHideBtn{ background:rgba(255,255,255,0.65) url(../images/showBtn.png) center center no-repeat;}
+.searchReasult .resultCont .result{ margin-left:28px; background:#fff; overflow:hidden;}
+.searchReasult .resultCont .result .topPart{ padding:89px 0 7px; margin:0 0 0px 14px; border-bottom:1px solid #eef0f0; overflow:hidden;}
+.searchReasult .resultCont .result .topPart p.selectresult{font-size:10px;line-height: 12px;}
+.searchReasult .resultCont .result .topPart p.selectresult i{font-style: italic;font-size:10px;}
+.searchReasult .resultCont .result .breadCamp{ overflow:hidden; margin-bottom:1px;}
+.searchReasult .resultCont .result .breadCamp li{ list-style:none; color:#414141; font-size:10px; display:block; float:left; margin-right:6px;}
+.searchReasult .resultCont .result .breadCamp li a{ color:#414141;}
+.searchReasult .resultCont .result .topPart .heading{ font-size:18px; line-height:24px; color:#414141; font-weight:bold; padding:0; margin:0;}
+.searchReasult .resultCont .resultPart{ position:relative; width:100%;}
+.searchReasult .resultCont .resultPart > ul{position:relative;}
+.searchReasult .resultCont .resultPart > ul > li{ float: left; width:310px; border:1px solid #cfcfcf;margin: 5px;vertical-align: top;position: relative;list-style: none;}
+.searchReasult .resultCont .step2.resultPart{padding-top: 19px;}
+
+.eachResult{}
+.eachResult .PicPart{ position:relative;}
+.eachResult .PicPart .fav{ position:absolute; left:14px; top:6px; z-index:2;}
+.eachResult .PicPart + .textPart .discountQuote{ background:url(../images/quote2.png) no-repeat; width:54px; height:62px; right:4px; top: 166px; position:absolute; z-index:2;}
+.eachResult .PicPart + .textPart .discountQuote .smallText{ position:absolute; left:14px; top:8px; color:#fff; font-size:9px; line-height:9px;}
+.eachResult .PicPart + .textPart .discountQuote .bigText{position: relative;left: 0;top: 17px;color: #fff;font-size: 20px;line-height: 20px;width: 56px;text-align: center;display: block;}
+.eachResult .PicPart + .textPart .discountQuote .persantage{position: relative;left: 0;top: auto;color: #fff;font-size: 11px;line-height: 11px;display: inline-block;vertical-align: top;}
+.eachResult .textPart{ padding:10px 12px;}
+.eachResult .textPart .hotelName{ font-family: "Avenir Black"; color:#6b6666; font-size:18px; line-height:19px; margin:0; padding:0; font-weight:normal;}
+.eachResult .textPart .hotelName > a {text-transform: uppercase;color: #6b6666;}
+.eachResult .textPart .hotelName .Star{ height:10px; background:url(../images/star.png) repeat-x; margin-bottom:8px; display:inline-block;}
+.eachResult .textPart .hotelName .Star.one{ width:9px;}
+.eachResult .textPart .hotelName .Star.two{ width:18px;}
+.eachResult .textPart .hotelName .Star.three{ width:27px;}
+.eachResult .textPart .hotelName .Star.four{ width:36px;}
+.eachResult .textPart .hotelName .Star.five{ width:45px;}
+.eachResult .textPart .hotelAddress{ font-family: "Avenir"; color:#6b6666; font-size:15px; line-height:18px; margin:0; padding:0; font-weight:normal;}
+.eachResult .textPart .hotelTime{ border-bottom:2px solid #000; margin:14px 0 11px;}
+.eachResult .textPart .hotelTime div{ border-top:1px solid #000; overflow:hidden; display:block; list-style:none;}
+.eachResult .textPart .hotelTime div .timeing{ float:left; color:#000; padding:1px 0 0 26px; line-height:31px; margin:0; font-size:12px; text-transform:uppercase;}
+.eachResult .textPart .hotelTime div .favroomm{float:left; color:#000;width: 160px; padding:10px 0 10px; line-height:18px; margin:0; font-size:12px; text-transform:uppercase;}
+.eachResult .textPart .hotelTime div .timeing.icon1{ background:url(../images/i1.png) 1px 6px no-repeat;}
+.eachResult .textPart .hotelTime div .timeing.icon2{ background:url(../images/i2.png) 1px 6px no-repeat;}
+.eachResult .textPart .hotelTime div .timeing.icon3{ background:url(../images/i3.png) 4px 6px no-repeat;}
+.eachResult .textPart .posi_global .time1{ position: absolute; right:0; top:-15px;}
+.eachResult .textPart .posi_global .time2{ position: absolute; right:25px; top:-15px;}
+.eachResult .textPart .posi_global .time3{ position: absolute; right:50px; top:-15px;}
+.eachResult .textPart .hotelTime div .from{ float:right; color:#000; margin:0; padding:0; font-size:11px; line-height:29px; text-transform:uppercase;}
+.eachResult .textPart .hotelTime div .from span{ font-weight:bold; font-size:16px;}
+.eachResult .textPart .hotelTime div .from2{ float:right; color:#000; margin:0; font-size:11px; line-height:18px; text-transform:uppercase; padding:10px 0 10px;}
+.eachResult .textPart .hotelTime div .from2 span{ font-weight:bold; font-size:16px; display:block; text-align:right;}
+.eachResult .textPart .book{font-family: "Avenir Heavy"; color:#000; border:1px solid #000; background:#fff; font-size:14px; line-height:29px; display:block; text-align:center; text-transform:uppercase;}
+.gridviewResult .resultPart .eachResult .flexslider .slides img{max-height: 206px;}
+
+.searchReasult .resultCont .resultPart ul li:hover{ border:1px solid #ff5954;}
+.searchReasult .resultCont .resultPart ul li:hover .eachResult .PicPart + .textPart .discountQuote{ background:url(../images/quote2_h.png) no-repeat;}
+.searchReasult .resultCont .resultPart ul li:hover .eachResult .textPart .book{ border:1px solid #ff5954; background:#ff5954; color:#fff;}
+.eachResult ul li{ border:none !important;}
+.eachResult .flex-direction-nav .flex-prev{ height: 206px; left: 0; margin: 0; opacity: 1; top: 0; background:url(../images/prev2.png) center center no-repeat; width:13px;}
+.eachResult .flex-direction-nav .flex-next{ height: 206px; right: 0; margin: 0; opacity: 1; top: 0; background:url(../images/next2.png) center center no-repeat; width:13px;}
+
+.SearchOptionBox .date{ width:99px; float:left; color:#000; font-weight:bold; margin:12px 8px 0 0; border:1px solid #cfcfcf; background:#fff; font-size:12px;text-transform: uppercase; border-radius:2px; padding:8px 0 9px 9px;}
+
+.SearchOptionBox .date::-webkit-input-placeholder {font-size: 11px;font-weight: normal;padding-top: 2px;}
+.SearchOptionBox .date:-moz-placeholder {/* Firefox 18- */   font-size: 11px;font-weight: normal;padding-top: 2px;}
+.SearchOptionBox .date::-moz-placeholder {/* Firefox 19+ */   font-size: 11px;font-weight: normal;padding-top: 2px;}
+.SearchOptionBox .date:-ms-input-placeholder {font-size: 11px;font-weight: normal;padding-top: 2px;}
+
+.SearchOptionBox .arivaltime, .SearchOptionBox .length, .SearchOptionBox .budget, .SearchOptionBox .starrating, .SearchOptionBox .amenities, .SearchOptionBox .area{ margin:12px 8px 0 0; float:left;}
+.SearchOptionBox .arivaltime select{ width:103px;}
+.SearchOptionBox .length select{ width:78px;}
+.SearchOptionBox .budget select{ width:106px;}
+.SearchOptionBox .starrating select{ width:106px;}
+.SearchOptionBox .amenities select{ width:106px;}
+.SearchOptionBox .area select{ width:106px;}
+.SearchOptionBox .devider{ float:left; margin:12px 12px 0 0;}
+.SearchOptionBox .searchBtn{ float:right; width:45px; text-align:center; color:#fff; font-weight:bold; font-size:14px; line-height:14px; padding:8px 0; background:#ff544c; border:1px solid #ff0000; margin:12px 0 0 0;}
+.SearchOptionBox .searchBtn:hover{ background:#ff0000;}
+.SearchOptionBox .inner_Search_datepicker{position: relative;float: left;width: 117px;}
+.SearchOptionBox .inner_Search_datepicker .datepicker{position: absolute;top: 46px;display: none;}
+.SearchOptionBox .inner_Search_datepicker .dateRequired{color: #fff; position: absolute; top: 46px; left: 0; font-size: 11px; background: #000; padding: 0 5px; width: 103px; text-align: left;}
+
+.SearchOptionBox .ui-selectmenu-button{ border-radius:2px !important; border:1px solid #cfcfcf !important; background:#fff !important;}
+.SearchOptionBox .ui-selectmenu-button.ui-state-hover, .SearchOptionBox .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #cfcfcf !important;}
+.SearchOptionBox .ui-selectmenu-button span.ui-selectmenu-text{padding:9px 2px 9px 6px !important; font-family: 'Arial'; font-weight:normal; font-size:11px; letter-spacing:0px; text-transform:uppercase;}
+.SearchOptionBox .ui-selectmenu-button span.ui-icon{ right:3px;}
+.SearchOptionBox .multiselect{ float:left; margin:12px 7px 0 0; width:106px;}
+.SearchOptionBox .multiselect li{ list-style:none; display:block; border:1px solid #cfcfcf; background:#fff; border-radius:2px; position:relative;}
+.SearchOptionBox .multiselect li a{ font-size:11px; letter-spacing:-1px; text-transform:uppercase; color:#000; padding:7px 2px 7px 6px; background:url(../images/arrow.png) 90px 15px no-repeat; display:block;}
+.SearchOptionBox .multiselect li ul{ position:absolute; left:14px; top:33px; width:203px;max-height: 200px;z-index: 99;overflow: auto; background:#fff; border-top:1px solid #000; padding:8px 0;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);
+-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);}
+.SearchOptionBox .multiselect li ul li{ border:none;}
+.SearchOptionBox .multiselect li ul li a{ font-size: 12px;font-family: 'Arial';letter-spacing: 0; line-height:23px; color:#999;margin: 0; padding:0 0 0 23px; background:url(../images/box.png) 6px center no-repeat;}
+.SearchOptionBox .multiselect li ul li a.active{ background:url(../images/boxSel.png) 6px center no-repeat;}
+.SearchOptionBox .chk_pref .chk_pref_item .checkboxItemCustom{margin-top:6px;margin-left:-28px;}
+.SearchOptionBox .chk_rating .chk_rating_item .checkboxItemCustom{margin-top:6px;margin-left:-28px;}
+.SearchOptionBox .chk_amen .chk_amen_item .checkboxItemCustom{margin-top:6px;margin-left:-28px;}
+.SearchOptionBox a.showHideBtn{ background:url(../images/searchBoxhide.png) no-repeat; width:30px; height:19px; position:absolute; left:50%; bottom:-19px; margin-left:-15px;}
+.SearchOptionBox.close a.showHideBtn{ background:url(../images/searchBoxShow.png) no-repeat;}
+.SearchOptionBox  .CustomCheckbox a>div{padding-left: 5px;}
+#arrival_time_select-menu, #amenities_select-menu, #stay_duration_select-menu, #budget_select-menu, #district_select-menu,
+#country_code-menu-menu{max-height: 150px;font-family: 'Arial';} 
+#country_code_signup-menu{max-height: 120px;font-family: 'Arial';}
+
+.header.type2 .headerSmallLink{ float:right; margin:45px 16px 0 0;}
+.header.type2 .searchBox{ width:291px; padding:8px 0 8px 36px; background:#fff url(../images/search2.png) 8px 6px no-repeat; font-size:11px; color:#000; float:left; margin:36px 0 0 20px; border:1px solid #dde2e2; border-radius:2px; text-transform:uppercase;}
+.header.type2 .srchGeoLocation{ float:left; margin:38px 0 0 8px; width:16px; height:26px; text-indent:-900px; overflow:hidden; background:url(../images/searchBtn.png) no-repeat; border:none;}
+
+.hotelTitle{ background:#f4f1f1;}
+.hotelTitle .breadCamp{ padding:9px 0 0 9px;}
+.hotelTitle .breadCamp li{ list-style:none; color:#a19d9d; font-size:11px; display:block; float:left; margin-right:6px;}
+.hotelTitle .breadCamp li a{ color:#a19d9d;}
+.hotelTitle .share{ float:right; margin:0 0 0 8px;}
+.hotelTitle .share:hover{ opacity:0.7;}
+.hotelTitle .textPart{ float:left; width:800px; margin-left:5px;}
+.hotelTitle .textPart .heading{ font-family: "Avenir Book"; color:#414141; font-size:29px; line-height:34px; margin:0; padding:0; text-transform:uppercase;}
+.hotelTitle .textPart .heading h1{display: inline-block;vertical-align: top;font-family: "Avenir Book";color: #414141;font-size: 29px;line-height: 34px;margin: 0;padding: 0;text-transform: uppercase;font-weight: normal;}
+.hotelTitle .textPart .heading .Star{ height:13px; background:url(../images/star2.png) repeat-x; margin-bottom:14px; display:inline-block;}
+.hotelTitle .textPart .heading .Star.one{ width:16px;}
+.hotelTitle .textPart .heading .Star.two{ width:32px;}
+.hotelTitle .textPart .heading .Star.three{ width:48px;}
+.hotelTitle .textPart .heading .Star.four{ width:64px;}
+.hotelTitle .textPart .heading .Star.five{ width:80px;}
+.hotelTitle .textPart .Subheading{ font-family: "Avenir Book"; color:#414141; font-size:18px; line-height:24px; margin:0; padding:0;}
+.hotelTitle .textPart p.phone{ font-family: "Avenir Book"; color:#414141; font-size:22px; line-height:26px; margin:0; padding:0;}
+
+.ADD2{ padding:20px 0 50px; background:#fff;}
+.detailPageBg{ background:#f6f2f2;}
+
+.hotelPicMap{ padding:21px 0; overflow:hidden;}
+.hotelPicMap .picCont{ float:left; width:723px;margin-right: 5px;}
+.hotelPicMap .route{ float:left; width:292px; height:470px; box-shadow:0 0 2px #ccc; margin:1px 0;}
+.hotelPicMap .route .mapCont{ height:287px; overflow:hidden;}
+.hotelPicMap .route .details{ height:184px;}
+.hotelPicMap .route .details .heading{ font-family: "Avenir Book"; color:#000; font-size:25px; line-height:30px; text-align:center; text-transform:uppercase; margin:0; padding:40px 0 10px;}
+.hotelPicMap .route .details .Subheading{ text-align:center; color:#000; font-weight:bold; font-size:14px; line-height:19px; margin:0; padding:0;}
+.hotelPicMap .route .details .text{ text-align:center; color:#000; font-size:14px; line-height:19px; margin:0; padding:0;}
+
+.filter{ background:#f4f1f1; display: inline-block; z-index:1;}
+.filter .heading{ max-width: 675px; font-family: "Avenir Book"; font-weight: normal; color: #000; font-size: 25px; line-height: 35px; margin: 15px 22px 12px 5px; float: left; text-transform: uppercase;} .filter .date{ width:132px; float:left; color:#000; font-weight:bold; margin:19px 13px 0 0; border:1px solid #cfcfcf; background:#fff; font-size:12px; height: 34px; box-sizing: border-box; border-radius:2px; padding:8px 0 8px 9px; background:#fff url(../images/date.png) right center no-repeat; cursor:pointer;}
+.filter .hotel_detail_datepicker {position: relative;float: left;width: 150px;}
+.filter .hotel_detail_datepicker .datepicker {position: absolute;top: 52px;display: none;z-index: 2;}
+
+.hotel_detail_datepicker .date::-webkit-input-placeholder {font-size: 12px;font-weight: normal;text-transform: uppercase;}
+.hotel_detail_datepicker .date:-moz-placeholder {/* Firefox 18- */   font-size: 12px;font-weight: normal;text-transform: uppercase;}
+.hotel_detail_datepicker .date::-moz-placeholder {/* Firefox 19+ */   font-size: 12px;font-weight: normal;text-transform: uppercase;}
+.hotel_detail_datepicker .date:-ms-input-placeholder {font-size: 12px;font-weight: normal;text-transform: uppercase;}
+
+.filter .arivaltime{ float:left; margin:19px 12px 0 0;}
+.filter .arivaltime select{ width:155px;}
+.filter .ui-state-default .ui-icon{ background-image:url(../images/ui-icons_ccc_256x240.png);}
+.filter .ui-selectmenu-button{ border-radius:0 !important; border:1px solid #cfcfcf !important;}
+.filter .ui-selectmenu-button.ui-state-hover, .filter .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #cfcfcf !important;}
+.filter .ui-selectmenu-button span.ui-selectmenu-text{ padding:8px 2px 8px 9px !important; font-weight:normal; font-size:12px; text-transform:uppercase;}
+.filter .ui-selectmenu-button span.ui-icon{ right:3px;}
+
+.roomavailable{ padding:15px 0 60px;}
+.roomavailable .rightPartCont{width: 278px;float: right;}
+.roomavailable .rightPart{ width:278px; height:293px; border:1px solid #e0e0e0;float: right; box-shadow:0 0 7px #ccc; border-radius:4px;}
+.roomavailable .rightPart .heading{ font-family: "Avenir"; color:#000; text-transform:uppercase; text-align:center; padding:20px 0 0px; margin:0; font-size:20px; line-height:20px;}
+.roomavailable .rightPart .redline{display: block;width: 85px;height: 4px;background: #ff564e;margin: auto;margin-bottom: 22px;}
+.roomavailable .rightPart .box{ overflow:hidden; padding:10px 14px;}
+.roomavailable .rightPart .box .icon { border: 1px dashed #000000; float: left; height: 54px; line-height: 70px; text-align: center; width: 54px; margin-right:10px;}
+.roomavailable .rightPart .box .icon img{ display:inline;}
+.roomavailable .rightPart .box .heading2{ font-size:12px; color:#000; line-height:17px; padding-top:2px; text-transform:uppercase; font-family: "Avenir Black";}
+.roomavailable .rightPart .box p{ font-size:12px; color:#707070; line-height:16px; font-family: "Avenir";}
+.roomavailable .detailAd{  width:278px; float:right; margin-top: 10px;overflow: hidden;}
+
+.roomavailable .leftPart{ width:728px; float:left;position: relative;}
+.roomavailable .leftPart .room{ height:91px; border:1px solid #e0e0e0; box-shadow:0 0 7px #ccc; border-radius:4px; margin-bottom:8px; position:relative;}
+.roomavailable .leftPart .room .timeIcon{ position:absolute; left:7px; top:8px;}
+.roomavailable .leftPart .room .information{ position:absolute; left:7px; top:64px;}
+.roomavailable .leftPart .room .information:hover .infopopup{display:block;}
+.infopopup{display:none;position: absolute;background: #fff;width: 236px;padding: 7px;height: auto;top: -2px;left: 28px;border: 1px solid #dedede;z-index: 2;border-radius: 4px;}
+.infopopup:after{content: '';position: absolute;top: 8px;left: -6px;display: block;border: solid;border-width: 4px 6px 4px 0;border-color: transparent #fff;}
+.infopopup:before{content: '';position: absolute;top: 6px;left: -8px;display: block;border: solid;border-width: 6px 8px 6px 0;border-color: transparent #dedede;}
+.infopopup ul{list-style-type: none;margin: 0; padding:0;}
+.infopopup ul>li{list-style-type: none;}
+.roomavailable .leftPart .room .discountQuote{ background:url(../images/quote3.png) no-repeat; width:62px; height:54px; position:relative; margin:18px 0 0 45px; float:left;}
+.roomavailable .leftPart .room .discountQuote .smallText{ position:absolute; left:14px; top:8px; color:#fff; font-size:9px; line-height:9px;}
+.roomavailable .leftPart .room .bigText{position: relative;left: 0;top: 17px;color: #fff;font-size: 20px;line-height: 20px;width: 56px;text-align: center;display: block;}
+.roomavailable .leftPart .room .persantage{position: relative;left: 0;top: auto;color: #fff;font-size: 11px;line-height: 11px;display: inline-block;vertical-align: top;}
+.roomavailable .leftPart .room .price{ width:115px; margin:22px 0 0 0; height:51px; float:left; border-right:1px solid #cdcdcd; text-align:center;}
+.roomavailable .leftPart .room .price .bigtext{ font-weight:bold; font-size:34px; line-height:34px; color:#000; text-align:center;}
+.roomavailable .leftPart .room .price .oldPrice{ font-size:12px; line-height:15px; color:#000; text-align:center; margin-top:-5px;}
+.roomavailable .leftPart .room .timing{ width:115px; margin:22px 0 0 0; height:51px; float:left; border-right:1px solid #cdcdcd; text-align:center;}
+.roomavailable .leftPart .room .timing p{ font-size:14px; color:#ff5b56; font-weight:bold; text-align:left; line-height:22px; text-transform:uppercase; padding:4px 0 0 13px;}
+.roomavailable .leftPart .room .details{ width:260px; margin:22px 0 0 20px; height:51px; float:left; text-align:left;}
+.roomavailable .leftPart .room .details p{ font-size:14px; color:#616161; text-align:left; line-height:22px; text-transform:uppercase; padding:4px 0;}
+.roomavailable .leftPart .room .book{ float:right; width:74px; padding:10px 5px; font-size:14px; text-transform:uppercase; line-height:16px; text-align:center; color:#fff; background:#ff564e; border:1px solid #ff0000; font-family: "Avenir Black"; margin:20px 12px 0 0; display:block;}
+.roomavailable .leftPart .room .book:hover{ background:#ff0000; color:#fff;}
+.roomavailable .leftPart .room .available{ position:absolute; font-size:10px; color:#ff564e; border:1px solid #ff564e; line-height:15px; font-family: "Avenir Medium"; width:114px; left:108px; top:-1px; text-align:center; text-transform:uppercase; padding-top:2px;}
+.roomavailable .leftPart .room.onRequest .book{ color:#ff5b56; background:#fff;}
+.roomavailable .leftPart .room.onRequest .book:hover{ background:#ff0000; color:#fff;}
+.roomavailable .leftPart .room.notAvailable .book{ color:#aaa; background:#fff; border:1px solid #7f7f7f; cursor:default;} 
+.roomavailable .leftPart .room.notAvailable .timing p{ color:#aaa;}
+.roomavailable .leftPart .room.notAvailable{ opacity:0.3; box-shadow:0 0 7px #666;}
+.roomavailable .description{ display: inline-block; margin:0 0 0 5px; padding-top:60px;width: 728px;}
+.roomavailable .description .heading{ font-size:24px;font-weight: normal; line-height:24px; color:#000; text-transform:uppercase; border-bottom:1px solid #000; font-family: "Avenir Book"; width:auto;display: inline-block;}
+.roomavailable .description .heading2{ color:#000; font-size:17px; line-height:24px; font-weight:bold; margin:0; padding:0; text-transform:uppercase;}
+.roomavailable .description .heading2 .Star{ height:10px; background:url(../images/star3.png) repeat-x; margin-bottom:8px; display:inline-block;}
+.roomavailable .description .heading2 .Star.one{ width:9px;}
+.roomavailable .description .heading2 .Star.two{ width:18px;}
+.roomavailable .description .heading2 .Star.three{ width:27px;}
+.roomavailable .description .heading2 .Star.four{ width:36px;}
+.roomavailable .description .heading2 .Star.five{ width:45px;}
+.roomavailable .description .Subheading{ color:#000; font-size:17px; line-height:22px; margin:0; padding:0;}
+.roomavailable .description p.phone{ color:#000; font-size:17px; line-height:22px; margin:0; padding:0;}
+.roomavailable .description p.normal{ color:#616161; font-size:17px; line-height:22px; margin:0; padding:0;}
+.roomavailable .description .amenities{ float:left; width:270px;}
+.roomavailable .description .amenities li{ list-style:none; display:block; font-size:17px; line-height:22px; color:#616161;}
+
+.ourSelection .selection .smallBox .overlayWrap2{background:rgba(0,0,0,.3);position: absolute;width: 302px;height: 197px;left: 0;top: 0;right: 0;bottom: 0;margin: auto;line-height: 195px;display: table;vertical-align: middle;margin-top: 0;}
+.ourSelection .selection .smallBox .overlay2{left: 0;top: 0;position: relative;width: 100%;height: auto;display: inline-table;vertical-align: middle;}
+.ourSelection .selection .smallBox .overlay2 .discountQuote{ background:url(../images/redquote3.png) no-repeat; color: #ffffff;   font-size: 15px; font-weight: bold; height: 35px; margin: auto; padding: 14px 0 0 0px; width: 43px;text-align: center;}
+.ourSelection .selection .smallBox .overlay2 .discountQuote span{font-size: 9px; margin-top: -2px;display: inline-block;vertical-align: top;}
+.ourSelection .selection .smallBox .overlay2 .bigtext{ font-family: "Avenir Heavy"; font-size:16px; line-height:20px; color:#fff; text-align:center; text-transform:uppercase; margin:2px 0 8px;}
+.ourSelection .selection .smallBox .overlay2 .box{ width:210px; height:35px; border:2px solid #fff; margin:0 0 0 45px;}
+.ourSelection .selection .smallBox .overlay2 .box p{ font-size:9px; line-height:35px; color:#fff; text-align:center;}
+.ourSelection .selection .smallBox .overlay2 .box p span.big{ font-size:20px; font-weight:bold;}
+.ourSelection .selection .smallBox .overlay2 .box p span.line{ text-decoration:line-through;}
+
+.detailPageBg.ourSelection .topCity .heading span{ background:#f6f2f2;}
+.detailPageBg.ourSelection .topCity a.blackBtn{ float:left; margin:10px 28px 0 0; width:301px;}
+.detailPageBg.ourSelection .topCity a.blackBtn.last{ margin:10px 0 0 0;}
+
+.searchBar{ background:#f4f1f1; height:71px;}
+.searchBar .searchBox .textBox{ float:left; background:#fff; border:1px solid #e6e6e6; margin:20px 12px 0 0; width:260px; padding:6px 10px; height:18px; font-size:12px; line-height:18px; color:#000; text-transform:uppercase;}
+.searchBar .searchBox .dateBox{ float:left; background:#fff url(../images/date.png) right center no-repeat; border:1px solid #e6e6e6; margin:20px 12px 0 0; width:138px; padding:6px 10px; height:18px; font-size:12px; line-height:18px; color:#000; cursor:pointer;}
+.searchBar .searchBox .arivaltime{ float:left; margin:20px 12px 0 0;}
+.searchBar .searchBox .arivaltime select{ width:155px;}
+.searchBar .searchBox .length{ float:left; margin:20px 12px 0 0;}
+.searchBar .searchBox .length select{ width:155px;}
+.searchBar .searchBox .searchBtn{ float:right; background:#ff5651 url(../images/search.png) 148px 6px no-repeat; border:1px solid #ff0000; display:block; border-radius:0; width:178px; margin:20px 0 0 0; font-size:14px; color:#fff; font-weight:bold; text-align:left; padding:6px 7px; text-transform:uppercase;}
+.searchBar .searchBox .searchBtn:hover{ background:#ff0000;}
+.searchBar .searchBox .ui-state-default .ui-icon{ background-image:url(../images/ui-icons_ccc_256x240.png);}
+
+.searchBar .searchBox .ui-selectmenu-button{ border-radius:0 !important; border:1px solid #e6e6e6 !important;}
+.searchBar .searchBox .ui-selectmenu-button.ui-state-hover, .searchBar .searchBox .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #e6e6e6 !important;}
+.searchBar .searchBox .ui-selectmenu-button span.ui-selectmenu-text{ padding:7px 2px 6px 9px !important; font-weight:normal; font-size:12px;}
+.searchBar .searchBox .ui-selectmenu-button span.ui-icon{ right:3px;}
+
+.contentPart{ padding:90px 0 100px;}
+.contentPart .contentCont{ padding:50px 180px 60px; border:12px solid #eeeeee}
+.contentPart .contentCont .heading{ font-family: "Avenir Book"; text-align:center; text-transform:uppercase; color:#000; font-size:24px; line-height:24px; margin:0 0 10px;}
+.contentPart .contentCont .withline{ font-family: "Avenir Medium"; font-size:16px; line-height:26px; background:url(../images/blackDot.png) left center repeat-x; color:#000; text-align:center;}
+.contentPart .contentCont .withline a{ display:inline-block; background:#fff; color:#000; border:1px solid #666; padding:0 30px; border-radius:12px;}
+.contentPart .contentCont .withline a:hover{ background:#f2f2f2;}
+.contentPart .contentCont .normal{ font-size:14px; line-height:23px; color:#000; margin:0 0 25px; font-family: "Avenir";}
+.contentPart .contentCont .Subheading{ font-size:16px; line-height:23px; color:#000; margin:0 0 0; font-family: "Avenir Heavy";}
+.contentPart .contentCont .Subheading2{ font-size:17px; line-height:23px; color:#000; margin:0 0 25px; font-family: "Avenir"; text-transform:uppercase;}
+.contentPart .contentCont .Subheading3{ font-size:18px; line-height:25px; color:#000; margin:0 0 25px; font-family: "Avenir Heavy"; text-transform:uppercase;}
+.contentPart .contentCont .Subheading22{ font-size:17px; line-height:23px; color:#000; margin:0 0 0px; font-family: "Avenir"; text-transform:uppercase;}
+.contentPart .contentCont .help{ padding:60px 0 17px;}
+.upperCase{ text-transform:uppercase;}
+
+.reservationStatus{ padding:34px 0 71px;}
+.reservationStatus .status{ width:433px; margin:0 auto;}
+.reservationStatus .status ul{ overflow:hidden; display:block; background:url(../images/status_line.jpg) center 29px no-repeat;}
+.reservationStatus .status ul li{ width:111px; display:inline-block; width:111px; padding-top:58px; background:url(../images/status_light.jpg) center top no-repeat; text-transform:uppercase; text-align:center; list-style:none; font-size:11px; color:#000; font-family: "Avenir Medium"; margin-right:40px;}
+.reservationStatus .status ul li.dark{ background:url(../images/status_dark.jpg) center top no-repeat;}
+.reservationStatus .status ul li.last{ margin-right:0;}
+
+.reservation{ padding:0 0 50px;}
+.reservation .formRightPart{ width:342px; padding:55px 0 40px; float:right; box-shadow:0 0 5px #ccc;}
+.reservation .formRightPart .heading{ font-size:24px; line-height:24px; padding-bottom:16px; margin:0 0 47px; text-align:center; text-transform:uppercase; background:url(../images/heading_bg.jpg) center bottom no-repeat; color:#000; font-family: "Avenir";}
+.reservation .formRightPart .box{ overflow:hidden; clear:both; margin:0 0 25px;}
+.reservation .formRightPart .box .icon{ width:64px; height:64px; border:1px dashed #000; margin: 0 auto 14px; line-height:80px; text-align:center;}
+.reservation .formRightPart .box .icon img{ display:inline-block;}
+.reservation .formRightPart .box .text{ text-align:center;}
+.reservation .formRightPart .box .heading2{ font-size:16px; color:#000; line-height:20px; padding-bottom:5px; text-transform:uppercase; font-family: "Avenir Black"; text-align:center;}
+.reservation .formRightPart .box p{ font-size:14px; color:#707070; line-height:19px; font-family: "Avenir"; text-align:center;}
+
+.reservation .formLeftPart{ width:619px; float:left;}
+.reservation .formLeftPart .heading{ font-family: "Avenir Book"; color:#000; text-transform:uppercase; font-size:24px; line-height:26px; margin:0 0 10px; padding:0;}
+.reservation .formLeftPart .headingLight{ font-family: "Avenir Light"; color:#000; text-transform:uppercase; font-size:20px; line-height:26px; margin:0 0 15px; padding:0;}
+.reservation .formLeftPart .hotelDetails{ padding-bottom:33px;}
+.reservation .formLeftPart .hotelDetails .selection{ font-family:"Times New Roman", Times, serif; font-style:italic; font-size:13px; color:#606060; margin:0 0 10px; line-height:13px; padding:0;}
+.reservation .formLeftPart .hotelDetails .heading2{ font-family: "Avenir Heavy"; color:#414141; font-size:17px; line-height:20px; margin:0; padding:0;}
+.reservation .formLeftPart .hotelDetails .heading2 .Star{ height:10px; background:url(../images/star3.png) repeat-x; margin-bottom:7px; display:inline-block;}
+.reservation .formLeftPart .hotelDetails .heading2 .Star.one{ width:9px;}
+.reservation .formLeftPart .hotelDetails .heading2 .Star.two{ width:18px;}
+.reservation .formLeftPart .hotelDetails .heading2 .Star.three{ width:27px;}
+.reservation .formLeftPart .hotelDetails .heading2 .Star.four{ width:36px;}
+.reservation .formLeftPart .hotelDetails .heading2 .Star.five{ width:45px;}
+.reservation .formLeftPart .hotelDetails .Subheading{ font-family: "Avenir"; color:#414141; font-size:17px; line-height:20px; margin:0; padding:0;}
+.reservation .formLeftPart .hotelDetails .date{ font-family: "Avenir"; color:#ff5b56; font-size:16px; line-height:20px; margin:20px 0 0; padding:0;}
+.reservation .formLeftPart .hotelDetails .rate{ font-family: "Avenir Heavy"; color:#ff5b56; font-size:16px; line-height:20px; margin:0; padding:0; width:295px;}
+.reservation .formLeftPart .hotelDetails .rate span{ float:right;}
+.reservation .formLeftPart .hotelDetails .time{ font-family: "Avenir"; color:#ff5b56; font-size:14px; line-height:20px; margin:0 0 23px; padding:0; font-style:italic;}
+.reservation .formLeftPart .hotelDetails .button{ float:right; padding-top:47px; min-width:44px; text-align:center; font-size:10px; color:#000; text-transform:uppercase; line-height:12px; font-family: "Avenir Medium";}
+.reservation .formLeftPart .hotelDetails .button.edit{ background:url(../images/modify.png) center top no-repeat;}
+.reservation .formLeftPart .hotelDetails .button.details{ background:url(../images/details.png) center top no-repeat;}
+.reservation .formLeftPart .hotelDetails .button:hover{ opacity:0.6;}
+.reservation .formLeftPart .border{ height:2px; background:#eee; border-top:1px solid #ccc; clear:both;}
+
+.reservation .formLeftPart .hotelDetails .brief{display: inline-block;width: 470px;vertical-align: top;}
+.reservation .formLeftPart .hotelDetails .controlButton{display: inline-block;text-align: right;width: 140px;padding-top:20px;}
+
+.reservation .formLeftPart .addService{ padding-bottom:38px;}
+.reservation .formLeftPart .addService ul{ display:block; padding:0px;}
+.reservation .formLeftPart .addService ul li{ display:block; list-style:none; font-family: "Avenir"; font-size:14px; line-height:23px; color:#000;}
+.reservation .formLeftPart .addService ul li span{ float:right;}
+.reservation .formLeftPart .addService ul li span.value{ width:48px; text-align:right;}
+.reservation .formLeftPart .addService ul li span.bank{ float:none; text-transform:uppercase; font-family: "Avenir Heavy"; padding-right:23px; background:url(../images/i.png) right center no-repeat;}
+.reservation .formLeftPart .addService ul li input{ float: left; margin: 3px 5px 0 0;}
+.reservation .formLeftPart .addService ul li.total{ border-top:1px solid #000; padding-top:11px; margin-top:4px; text-transform:uppercase; font-family: "Avenir Heavy";}
+
+.reservation .formLeftPart .client{ padding-bottom:38px;}
+.reservation .formLeftPart .client .redBox{ border:1px solid #ff5b56; margin:8px 0 5px; padding:9px;}
+.reservation .formLeftPart .client .redBox .heading2{ font-family: "Avenir Heavy"; color:#ff5b56; font-size:18px; line-height:23px;}
+.reservation .formLeftPart .client .redBox .box{ width:290px;}
+.reservation .formLeftPart .client .redBox label{ font-size:12px; line-height:22px; color:#ff5b56; font-family: "Avenir";}
+.reservation .formLeftPart .client .redBox .textBox{ font-family: "Avenir Heavy"; font-size:16px; line-height:22px; color:#000; border:1px solid #ffc5c3; width:277px; padding:4px 3px 4px 9px; border-radius:3px;}
+.reservation .formLeftPart .client .redBox .button{ clear:both; float:right; font-family: "Avenir"; font-size:14px; text-transform:uppercase; text-align:center; padding:5px 15px; color:#fff; background:#ff5b56; border:1px solid #ff0000; margin:10px 0 0;}
+.reservation .formLeftPart .client .redBox .button:hover{ background:#ff0000;}
+
+.reservation .formLeftPart .client .reservationBox .Subheading{ font-family: "Avenir Heavy"; color:#000; font-size:18px; line-height:22px; margin:10px 0 5px; padding:0;}
+.reservation .formLeftPart .client .reservationBox .Subheading2{ font-family: "Avenir Heavy"; color:#000; font-size:20px; line-height:22px; margin:10px 0 5px; padding:0;}
+.reservation .formLeftPart .client .reservationBox .box{ width:300px; position:relative; padding-bottom:16px;}
+.reservation .formLeftPart .client .reservationBox label{ font-size:12px; line-height:22px; color:#000; font-family: "Avenir";}
+.reservation .formLeftPart .client .reservationBox label input{ float:left; margin:4px 5px 0 0;}
+.reservation .formLeftPart .client .reservationBox .textBox{ font-family: "Avenir Heavy"; font-size:16px; line-height:22px; color:#000; border:1px solid #ccc; width:287px; padding:4px 3px 4px 9px; border-radius:3px;}
+.reservation .formLeftPart .client .reservationBox .textBox.cellPhone{ width:153px; float:right;}
+.reservation .formLeftPart .client .reservationBox label.error{ position:absolute; bottom:-5px; left:0; color:#ff5b56; font-family: "Avenir Heavy";}
+.reservation .formLeftPart .client .reservationBox span.error{ position:absolute; bottom:-1px; left:0; color:#ff5b56; font-family: "Avenir Heavy";}
+.reservation .formLeftPart .client .reservationBox .textArea{ font-size:12px; line-height:22px; color:#000; border:1px solid #ccc; width:606px; padding:4px 3px 4px 9px; border-radius:3px; resize:none; height:50px;}
+.reservation .formLeftPart .info .normal{font-family: "Avenir"; font-size:14px; line-height:17px; margin:0; padding:0;}
+.reservation .formLeftPart .info .button{ clear:both; display:block; font-family: "Avenir"; font-size:14px; text-transform:uppercase; text-align:center; padding:5px 15px; color:#fff; background:#ff5b56; border:1px solid #ff0000; margin:10px 0 0;}
+.reservation .formLeftPart .info .button:hover{ background:#ff0000;}
+.btnProcess{opacity:0.5;filter: alpha(opacity=50);}
+
+.reservation .formLeftPart .client .phoneNoPrefix{ width:123px;}
+.reservation .formLeftPart .client .arrivalTime, .reservation .formLeftPart .client .howDidYou{ width:167px;}
+.reservation  .ui-state-default .ui-icon{ background:url(../images/drop.jpg) 0 0 no-repeat;}
+.reservation .ui-selectmenu-button{ border-radius:3px !important; border:1px solid #ccc !important;}
+.reservation .ui-selectmenu-button.ui-state-hover, .reservation .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #ccc !important;}
+.reservation .ui-selectmenu-button span.ui-selectmenu-text{ padding:7px 2px 6px 9px !important; font-weight:normal; font-size:12px;}
+.reservation .ui-selectmenu-button span.ui-icon{ right:0px; top:54%;}
+.reservation .formLeftPart label.expiration, .reservation .formLeftPart label.date{ float:left; width:106px;}
+.reservation .formLeftPart label.security{ float:left;}
+.reservation .formLeftPart div.expiration, .reservation .formLeftPart div.date{ float:left; width:106px;}
+.reservation .formLeftPart div.expiration select, .reservation .formLeftPart div.date select{ width:84px;}
+.reservation .formLeftPart .client .reservationBox .textBox.security{ float:left; width:47px;}
+.reservation .formLeftPart .client .reservationBox a.ccSecurity{ float:right; margin-top:5px;}
+
+.ui-datepicker .ui-state-hover , .ui-datepicker .ui-state-focus{ background:#000; border:1px solid #000;color:#fff !important;}
+.ui-widget-content{ border:none; padding:0;}
+.ui-datepicker td { border: 1px solid #bbb; padding: 0;}
+.ui-datepicker .ui-state-default, .ui-datepicker .ui-widget-content .ui-state-default, .ui-datepicker .ui-widget-header .ui-state-default{ border:none; color:#666; font-size:12px; text-align:center;}
+.ui-datepicker .ui-priority-secondary, .ui-datepicker .ui-widget-content .ui-priority-secondary,.ui-datepicker .ui-widget-header .ui-priority-secondary{ color:#b4b3b3; font-weight:bold;}
+.ui-datepicker .ui-state-active, .ui-datepicker .ui-widget-content .ui-state-active, .ui-datepicker .ui-state-highlight{background: #000; color:#fff;}
+.ui-datepicker .ui-state-default.ui-state-highlight{background: #999;}
+.ui-datepicker  .ui-state-default.ui-state-highlight.ui-state-active{background: #000;}
+
+.ui-datepicker th { background: #f4f4f4; border: 0 none; color: #666666; font-size: 10px; font-weight: normal; padding: 3px 0; text-align: center;}
+.ui-datepicker .ui-widget-content .ui-state-active,.ui-datepicker .ui-widget-header .ui-state-active{ background:#fff;}
+
+.ui-datepicker table{margin:0;box-shadow: 0px 2px 3px #ccc;}
+.ui-datepicker th { background: #f4f4f4; border: 0 none; color: #666666; font-size: 8px; font-weight: normal; padding: 1px 0; text-align: center;}
+.ui-datepicker tbody tr:last-child td{border-bottom: 0px;}
+.ui-datepicker table tr td:first-child{border-left:none;}
+.ui-datepicker table tr td:last-child{border-right:none;}
+.ui-datepicker td span, .ui-datepicker td a{padding:5px;font-family: arial;color:#ccc;}
+
+
+
+.listArticle .contentCont{padding: 50px 80px 60px;}
+.listArticle .contentCont .help{text-align:center;	padding: 90px 0 17px;}
+.listArticle .contentCont .help .heading2{font-family:"Avenir Heavy";margin-bottom: 5px; font-size:18px; color:#000;display: block;}
+.listArticle .contentCont .help p{font-family:"Avenir";font-size:14px;margin-bottom:25px;}
+.reservation .formLeftPart .client .reservationBox .normal{ font-family: "Avenir"; font-size:14px; color:#000; line-height:20px;}
+.reservation .formLeftPart .client .reservationBox .normal span{ font-family: "Avenir Heavy"; font-size:16px;}
+.reservation .formLeftPart .client .reservationBox .normal span.big{ font-family: "Avenir"; font-size:16px; width:100%; display:block;}
+.reservation .formLeftPart .client .reservationBox .normal span.big span{ float:right;}
+.reservation .formLeftPart .client .reservationBox .normal em{ font-style:italic;}
+
+.reservation .formLeftPart .client .reservationBox .price{ font-family: "Avenir"; font-size:14px; color:#000; line-height:20px;}
+.reservation .formLeftPart .client .reservationBox .price span.nor{ font-family: "Avenir Heavy"; font-size:14px;}
+.reservation .formLeftPart .client .reservationBox .price span.big{ font-family: "Avenir Heavy"; font-size:16px;}
+.reservation .formLeftPart .client .reservationBox .price span.width{ width:100%; display:block;}
+.reservation .formLeftPart .client .reservationBox .price span.width span.amount{ float:right;}
+.reservation .formLeftPart .client .reservationBox label.message{ font-size:14px; line-height:22px; color:#000; font-family: "Avenir"; float:left;}
+.reservation .formLeftPart .client .reservationBox label.message.first{ margin-left:17px; width:108px;}
+.reservation a.validate{ display:inline-block; font-family: "Avenir"; font-size:15px; text-transform:uppercase; text-align:center; padding:5px 0; color:#fff; background:#ff5b56; border:1px solid #ff0000; margin:0 10px; width:138px;}
+.reservation a.validate:hover{ background:#ff0000;}
+.reservation a.modify{ display:inline-block; font-family: "Avenir"; font-size:15px; text-transform:uppercase; text-align:center; padding:5px 0; color:#000; background:#fff; border:1px solid #000; margin:0 10px; width:138px;}
+.reservation a.modify:hover{ background:#ccc;}
+.reservation .formLeftPart .client .reservationBox .heading{ font-family: "Avenir Heavy"; font-size:20px; margin-bottom:25px;}
+
+.accNotFound{ padding:102px 0 105px;}
+.accNotFound .grayBox{ background:#eeebe9; padding:47px 0 40px 143px;}
+.accNotFound .grayBox .whiteCircle{ width:250px; height:250px; border-radius:126px; background:#fff; margin-right:68px; float:left;}
+.accNotFound .grayBox .whiteCircle p{ font-family: "Avenir Medium"; font-size:48px; line-height:250px; color:#000; margin:0; padding:0; text-align:center; text-transform:uppercase;}
+.accNotFound .grayBox p.Subheading{ font-family: "Avenir Heavy"; font-size:18px; line-height:22px; color:#000; margin:88px 0 22px; padding:0;}
+.accNotFound .grayBox p.normal{font-family: "Avenir"; font-size:18px; line-height:22px; color:#000; margin:0; padding:0;}
+
+
+.forgotPass{ padding:108px 0 106px;}
+.forgotPass .grayBorderBox{ border:12px solid #eee; padding:65px 0 68px 43px;}
+.forgotPass .grayBorderBox .leftPart{ width:206px; padding:0 110px 0 0; border-right:1px solid #eee; height:235px; float:left;}
+.forgotPass .grayBorderBox .leftPart .heading{ font-family: "Avenir Heavy"; font-size:18px; line-height:22px; color:#000; margin:0 0 22px; padding:0;}
+.forgotPass .grayBorderBox .leftPart .normal{ font-family: "Avenir Book"; font-size:16px; line-height:22px; color:#000; margin:0 0 6px; padding:0;}
+
+.forgotPass .grayBorderBox .rightPart{ width:355px; float:left; margin-left:65px;position: relative;}
+.forgotPass .grayBorderBox .rightPart .heading{ font-family: "Avenir"; font-size:24px; line-height:22px; color:#000; text-transform:uppercase; margin:0 0 22px; padding:0;}
+.forgotPass .grayBorderBox .rightPart label{ font-size:14px; line-height:24px; color:#000; font-family: "Avenir"; float:left;}
+.forgotPass .grayBorderBox .rightPart .textBox{ font-size:14px; line-height:24px; color:#000; border:1px solid #ccc; width:206px; padding:0px 3px 0px 9px; border-radius:3px; float:right;}
+.forgotPass .grayBorderBox .rightPart .textBox.code{ width:180px;}
+.forgotPass .grayBorderBox .rightPart .submit{ display:inline-block; font-family: "Avenir"; font-size:15px; text-transform:uppercase; text-align:center; padding:5px 0; color:#fff; background:#ff5b56; border:1px solid #ff0000; margin:25px 0 0; width:138px; float:right; line-height:20px;}
+.forgotPass .grayBorderBox .rightPart .submit:hover{ background:#ff0000;}
+.forgotPass .grayBorderBox .rightPart .sendCode{ display:inline-block; font-family: "Avenir"; font-size:15px; line-height:20px; text-transform:uppercase; text-align:center; padding:1px 0; color:#000; background:#fff; border:1px solid #000; margin:3px 0 11px; width:138px; float:right;}
+.forgotPass .grayBorderBox .rightPart .sendCode:hover{ background:#ccc;}
+
+ul#arrival_time-menu{/*width:60px !important;margin-left: 95px;*/max-height: 225px;}
+//ul#time_length-menu{width:60px !important;margin-left: 40px;}
+#arrival_time-menu .ui-menu-item:first-child, #time_length-menu .ui-menu-item:first-child {display: none;};
+
+.reservationStatus .status.modify{ width:270px;}
+.reservationStatus .status.modify ul{ background:url(../images/status_line2.jpg) center 29px no-repeat;}
+
+.ui-tabs .ui-tabs-panel.canceled{ padding:119px 0 0; text-align:center;}
+.ui-tabs .ui-tabs-panel.canceled .Subheading{ font-family: "Avenir Heavy"; font-size:16px; line-height:19px; color:#000; margin:0 0 23px; padding:0; text-transform:uppercase; text-align:center;}
+.ui-tabs .ui-tabs-panel.canceled .normal{ font-family: "Avenir"; font-size:16px; line-height:19px; color:#000; margin:0 0 23px; padding:0; text-align:center;}
+.ui-tabs .ui-tabs-panel.canceled .newReservation{ font-family: "Avenir"; font-size:17px; line-height:35px; color:#000; margin:0; display:inline-block; text-transform:uppercase; border:1px solid #000; background:#fff; padding:0 20px;}
+.ui-tabs .ui-tabs-panel.canceled .newReservation:hover{ background:#ccc;}
+
+.accNotFound .grayBox .whiteCircle p.oups{ font-family: "Avenir"; font-size:30px; line-height:36px; color:#000; margin:72px 0 0; padding:0; text-align:center; text-transform:uppercase;}
+.accNotFound .grayBox .whiteCircle p.oups span{  font-family: "Avenir Medium"; font-size:45px;}
+.accNotFound .grayBox p.Subheading2{ font-family: "Avenir Heavy"; font-size:25px; line-height:26px; color:#000; margin:105px 0 0; padding:0;}
+.accNotFound .grayBox p.normal2{font-family: "Avenir"; font-size:22px; line-height:26px; color:#000; margin:0; padding:0;}
+
+.accNotFound .grayBox .whiteCircle p.cancellation{ font-family: "Avenir"; font-size:26px; line-height:30px; color:#000; margin:99px 0 0; padding:0; text-align:center; text-transform:uppercase;}
+.accNotFound .grayBox .whiteCircle p.cancellation span{  font-family: "Avenir Heavy"; font-size:28px;}
+.accNotFound .grayBox p.Subheading3{ font-family: "Avenir Heavy"; font-size:25px; line-height:26px; color:#000; margin:101px 0 0; padding:0;}
+.accNotFound .grayBox p.normal3{font-family: "Avenir"; font-size:19px; line-height:26px; color:#000; margin:0 0 20px; padding:0;}
+.accNotFound .grayBox .newReservation{ font-family: "Avenir"; font-size:17px; line-height:35px; color:#000; margin:12px 0 0; display:inline-block; text-transform:uppercase; border:1px solid #000; background:none; padding:0 20px;}
+.accNotFound .grayBox .newReservation:hover{ background:#fff;}
+.w500{ width:500px;}
+.accNotFound .grayBox p.Subheading4{ font-family: "Avenir Heavy"; font-size:25px; line-height:26px; color:#000; margin:53px 0 0; padding:0;}
+.accNotFound .grayBox label{ float:left; font-size:14px; line-height:25px; width:133px; font-family: "Avenir"; color:#000;}
+.accNotFound .grayBox .textBox{ float:left; font-size:14px; line-height:23px; width:133px; font-family: "Avenir"; color:#000; background:#fff; border:1px solid #b4aeae; width:203px; padding:0 7px;}
+.accNotFound .grayBox .submit{ float:left; font-family: "Avenir Medium"; text-transform:uppercase; font-size:14px; line-height:23px; border:none; background:#000; color:#fff; padding:0 20px; margin:0 0 0 9px;}
+.accNotFound .grayBox .submit:hover{ background:#666;}
+.accNotFound .grayBox p.note{font-family: "Avenir"; font-size:13px; line-height:26px; color:#000; margin:0 0 20px; padding:0;}
+
+.reservationLIst{ margin:65px -130px 0;}
+.reservationLIst ul li{ border:1px solid #cfcfcf; width:361px; padding:16px; display:inline-block; vertical-align: top; margin:15px;}
+.reservationLIst ul.tilesTab1, .reservationLIst ul.tilesTab2{position: relative;}
+.contentPart .contentCont .reservationLIst ul li .normal{ font-family: "Avenir"; font-size:14px; color:#000; line-height:20px;}
+.contentPart .contentCont .reservationLIst ul li .normal span{ font-family: "Avenir Heavy"; font-size:16px;}
+.contentPart .contentCont .reservationLIst ul li .normal span.big{ font-family: "Avenir"; font-size:16px; width:330px; display:block;}
+.contentPart .contentCont .reservationLIst ul li .normal span.big span{ float:right;}
+.contentPart .contentCont .reservationLIst ul li .normal em{ font-style:italic;}
+.contentPart .contentCont .reservationLIst ul li .price{ font-family: "Avenir"; font-size:14px; color:#000; line-height:20px;}
+.contentPart .contentCont .reservationLIst ul li .price span.nor{ font-family: "Avenir Heavy"; font-size:14px;}
+.contentPart .contentCont .reservationLIst ul li .price span.big{ font-family: "Avenir Heavy"; font-size:16px;}
+.contentPart .contentCont .reservationLIst ul li .price span.width{ width:360px; display:block;}
+.contentPart .contentCont .reservationLIst ul li .price span.width span.amount{ float:right;}
+.contentPart .contentCont .reservationLIst ul li .button{ float:left; margin:0 17px 0 0; padding-top:47px; min-width:44px; text-align:center; font-size:10px; color:#000; text-transform:uppercase; line-height:12px; font-family: "Avenir Medium";}
+.contentPart .contentCont .reservationLIst ul li .button.edit{ background:url(../images/modify.png) center top no-repeat;}
+.contentPart .contentCont .reservationLIst ul li .button.cancel{ background:url(../images/cancel.png) center top no-repeat;}
+.contentPart .contentCont .reservationLIst ul li .button:hover{ opacity:0.6;}
+
+.borderDiv{ border-top:1px solid #000; border-bottom:3px solid #000; height:5px; width:585px; margin:0 auto;}
+.contentCont .favHotel { position:relative; margin:34px -28px 0;}
+.contentCont .favHotel ul li{ display:block; width:310px; border:1px solid #cfcfcf; margin:5px; float:left;}
+.contentCont .favHotel ul li:hover{ border:1px solid #ff5954;}
+.contentCont .favHotel ul li:hover .eachResult .PicPart + .textPart .discountQuote{ background:url(../images/quote2_h.png) no-repeat;}
+.contentCont .favHotel ul li:hover .eachResult .textPart .book{ border:1px solid #ff5954; background:#ff5954; color:#fff;}
+
+.contentCont .myAccount{ margin:77px -15px 0;}
+.contentCont .myAccount .Subheading{ font-family: "Avenir Heavy"; color:#000; font-size:18px; line-height:22px; margin:10px 0 5px; padding:0;}
+.contentCont .myAccount .box { padding-bottom: 16px; position: relative; width: 300px;}
+.contentCont .myAccount label { color: #000000; font-family: "Avenir"; font-size: 12px; line-height: 22px;}
+.contentCont .myAccount .textBox { border: 1px solid #cccccc; border-radius: 3px; color: #000000; font-family: "Avenir Heavy";
+font-size: 16px; line-height: 22px; padding: 4px 3px 4px 9px; width: 287px;}
+.contentCont .myAccount .textBox.cellPhone { float: right; width: 153px;}
+.contentCont .myAccount .textBox.cellPhone + #errmsg{position: absolute; margin-top: -19px; right: 0;}
+.contentCont .myAccount .phoneNoPrefix { width: 123px;}
+.contentCont .myAccount .ui-state-default .ui-icon{ background:url(../images/drop.jpg) 0 0 no-repeat;}
+.contentCont .myAccount .ui-selectmenu-button{ border-radius:3px !important; border:1px solid #ccc !important;}
+.contentCont .myAccount .ui-selectmenu-button.ui-state-hover, .contentCont .myAccount .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #ccc !important;}
+.contentCont .myAccount .ui-selectmenu-button span.ui-selectmenu-text{ padding:7px 2px 6px 9px !important; font-weight:normal; font-size:12px;}
+.contentCont .myAccount .ui-selectmenu-button span.ui-icon{ right:0px; top:54%;}
+.contentCont .myAccount .button{ clear:both; display:block; font-family: "Avenir"; font-size:14px; text-transform:uppercase; text-align:center; padding:5px 15px; color:#fff; background:#ff5b56; border:1px solid #ff0000; margin:10px 0 0;}
+.contentCont .myAccount .button:hover{ background:#ff0000;}
+
+.shortBox{ font-size:12px; line-height:30px; color:#000; border:1px solid #e3e3e3; border-radius:3px; height:30px; padding:0 0 0 5px; margin-right:10px;}
+.shortBox .shortby select{ width:105px;}
+.shortBox .shortby .ui-selectmenu-button{ border-radius:0px !important; border:none !important; background:#fff !important;}
+.shortBox .shortby .ui-selectmenu-button.ui-state-hover, .shortBox .shortby .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:none !important;}
+.shortBox .shortby .ui-selectmenu-button span.ui-selectmenu-text{ padding:7px 5px 0px 10px !important; font-weight:normal; font-size:12px; text-transform:uppercase;}
+.shortBox .shortby .ui-selectmenu-button span.ui-icon{ right:3px; margin-top:-4px;}
+
+.searchReasult .resultCont.intermediate{ width:97% !important; margin:0 auto; float:none;padding-left: 2%;}
+.searchReasult .resultCont.intermediate .result .topPart{ margin:0;}
+.searchReasult .resultCont.intermediate .result{ margin:0;}
+.searchReasult .resultCont.intermediate .result .detailsCont{ width:340px; float:left; margin-top:20px;}
+.searchReasult .resultCont.intermediate .result .detailsCont .heading{ font-size:16px; line-height:18px; color:#ff4a3d; font-family: "Avenir Book";}
+.searchReasult .resultCont.intermediate .result .detailsCont .normal{ font-size:13px; line-height:18px; color:#868686; font-family: "Avenir"; margin:0 0 17px;}
+.searchReasult .resultCont.intermediate .result .detailsCont .normal a{color:#868686;}
+.searchReasult .resultCont.intermediate .result .resultPart{ float:right; margin-left: -15px;}
+.searchReasult .resultCont.intermediate .result .resultPart .eachResult .hotelName{ width: 240px;text-transform: uppercase;height: 41px;overflow: hidden;}
+.searchReasult .resultCont.intermediate .result .resultPart .eachResult .hotelTime{height: 95px;overflow: hidden;}
+
+
+/* POPUP STYLES START */
+.popUpconnexion{ width:705px; padding:40px 45px 30px; background:#fff;}
+.popUpconnexion .book{ font-family: "Avenir"; font-size:20px; line-height:49px; color:#fff; text-transform:uppercase; text-align:center; margin:0 auto; width:476px; display:block; padding:0; background:#ff5b56; border:1px solid #F00;}
+.popUpconnexion .book:hover{ background:#f00;}
+.popUpconnexion .border{ border-top:1px solid #000; border-bottom:3px solid #000; height:5px; margin-bottom:45px;}
+.popUpconnexion .login{ width:270px; height:270px; float:left; border-right:1px solid #cdcdcd;}
+.popUpconnexion .heading{font-family: "Avenir Heavy"; color:#000; font-size:18px; line-height:18px; margin:0 0 17px;}
+.popUpconnexion label{font-family: "Avenir"; font-size:12px; line-height:17px; color:#747373; display:block;}
+.popUpconnexion .textBox{ float:left; background:#fff; border:1px solid #cdcdcd; width:162px; padding:2px 10px; height:18px; font-size:12px; line-height:18px; color:#000; border-radius:3px;}
+.popUpconnexion .textBox.ph{ width:122px;}
+.popUpconnexion .login .forgotPass{ float:right;font-family: "Avenir"; font-size:10px; line-height:17px; color:#000; padding:0; margin:0 50px 0 0;}
+.popUpconnexion .login .textBox{ width:197px;}
+.popUpconnexion .login .forgotPass:hover{ color:#ccc;}
+.popUpconnexion label input[type="checkbox"]{ float:left; margin:0 8px 0 0;}
+.popUpconnexion .login .submit{ font-family: "Avenir"; font-size:15px; line-height:15px; color:#fff; text-transform:uppercase; text-align:center; margin:0 50px 0 0; width:134px; display:block; padding:8px 0 7px; background:#ff5b56; border:1px solid #F00; float:right;}
+.popUpconnexion .login .submit:hover{ background:#f00;}
+.popUpconnexion .login .phoneNo .ui-selectmenu-button{float: left;}
+.popUpconnexion .login .phoneNo .textBox{width: 112px;float: left;margin-left: 10px;}
+
+.popUpconnexion .singin{ width:385px; float:right;}
+.popUpconnexion .singin .box{ width:185px;}
+.popUpconnexion .singin .phoneNo{ width:98px; float:left;}
+.popUpconnexion .singin .phoneNo select{ width:88px;}
+.error_field{border:1px solid #f00 !important;}
+.popUpconnexion .singin .submit{ font-family: "Avenir"; font-size:15px; line-height:15px; color:#fff; text-transform:uppercase; text-align:center; margin:0; width:134px; display:block; padding:8px 0 7px; background:#ff5b56; border:1px solid #F00; float:right;}
+.popUpconnexion .singin .submit:hover{ background:#f00;}
+.popUpconnexion .ui-state-default .ui-icon{ background:url(../images/drop.jpg) 0 0 no-repeat;}
+.popUpconnexion .ui-selectmenu-button{ border-radius:3px !important; border:1px solid #cdcdcd !important;}
+.popUpconnexion .ui-selectmenu-button.ui-state-hover, .popUpconnexion .ui-selectmenu-button.ui-state-focus{ background:#fff !important; border:1px solid #cdcdcd !important;}
+.popUpconnexion .ui-selectmenu-button span.ui-selectmenu-text{ padding:3px 2px 3px 9px !important; font-weight:normal; font-size:12px;}
+.popUpconnexion .ui-selectmenu-button span.ui-icon{ right:0px; top:54%;}
+/*POPUP STYLES END */
+.popUpLocation{ width:450px; padding:20px 5px 20px 17px;}
+.popUpLocation .heading{ font-family: "Avenir Heavy"; color:#000; font-size:18px; line-height:18px; margin:0 0 17px; text-transform:uppercase;}
+.popUpLocation ul.icon{ float:left; border-bottom:1px solid #cdcdcd; margin-bottom:18px;}
+.popUpLocation ul.icon li{ float:left; list-style:none;}
+.popUpLocation ul.icon li img{ float:left;}
+.popUpLocation .textBox{ float:left; background:#fff; border:1px solid #cdcdcd; width:390px; padding:2px 10px; height:18px; font-size:14px; line-height:18px; color:#000; margin:0 0 9px;}
+.popUpLocation .submit{ border:1px solid #cdcdcd; font-family: "Avenir"; font-size:14px; line-height:14px; color:#000; background:#fff; width:94px; padding:5px 0; border-radius:15px;}
+.popUpLocation .submit:hover{ background:#cdcdcd;}
+.popUpLocation .swipe{ float:right; margin:14px 0 0 0;}
+
+/*Contract page step 1 styles goes here*/
+.no-margin{margin: 0 !important;}
+.no-paddingBtm{padding-bottom: 0 !important;}
+.contract .contentCont{ padding:50px 38px 60px; border:12px solid #eeeeee}
+.contract .smallnote{font-size: 15px !important;}
+.contract .smalllogo{display: block;text-align: center;margin-bottom: 10px;}
+.contract .mainheading{text-align: center;display: block;font-family: "Avenir Medium";font-size: 24px;color:#000;width: 586px;margin: auto;border-top: 1px solid #000;border-bottom: 2px solid #000;height: 41px;line-height: 42px;}
+.CustomCheckbox input[type="checkbox"]{position: absolute;opacity: 0;filter: alpha(opacity=0);width: 12px;height: 12px;margin: -10px 0 0 -10px;}
+.CustomCheckbox a {display: block;min-width: 20px;min-height: 16px;margin: 8px 5px 5px;background:url(../images/checkbox.png) 0 0 no-repeat;}
+.CustomCheckbox a>div{padding-left: 22px;cursor:pointer;}
+.CustomCheckbox a.active {background:url(../images/checkbox.png) 0 -43px no-repeat;}
+
+.UploadFile{text-align: center; }
+.UploadFile .fileInputButton{border: 1px solid #000;background: #fff;padding: 5px 40px;font-size: 12px;font-family: "Avenir"; margin-left: 10px;display: inline-block;
+vertical-align: top; }
+.UploadFile .fileInputButton:hover{background: #f2f2f2;}
+.UploadFile .inputField{width: 200px;border: 1px solid #c7c7c7;padding: 5px;font-size: 14px;box-sizing: border-box;color: #333; }
+.UploadFile #file{display: none; }
+
+.CustomRadioButton input[type="radio"]{position: absolute;opacity: 0;filter: alpha(opacity=0);width: 12px;height: 12px;margin: -10px 0 0 -10px;}
+.CustomRadioButton a {display: block;margin: 8px 5px 5px;background:url(../images/radiobutton.png)  0 2px no-repeat;;}
+.CustomRadioButton a>div{padding-left: 20px;cursor:pointer;}
+.CustomRadioButton a.active {background:url(../images/radiobutton.png) 0 -41px no-repeat;}
+
+.contract  .withlineWrapper{width: 590px;margin: auto;}
+.contract  .withlineWrapper .withline{font-size: 14px;}
+.bottomAddress{font-size: 11px; text-align: center;font-family: "Avenir"}
+.contract .contentCont .normal {font-size: 17px;line-height: 23px;color: #000;margin: 0 0 25px;font-family: "Avenir";text-align: justify;}
+
+.contractSteps{ padding:34px 0 71px;}
+.contractSteps .status{ width:433px; margin:0 auto;}
+.contractSteps .status ul{ overflow:hidden; display:block; background:url(../images/status_line.jpg) center 29px no-repeat;}
+.contractSteps .status ul li{ width:111px; display:inline-block; width:111px; padding-top:58px; background:url(../images/status_light.jpg) center top no-repeat; text-transform:uppercase; text-align:center; list-style:none; font-size:11px; color:#000; font-family: "Avenir Medium"; margin-right:40px;}
+.contractSteps .status ul li.dark{ background:url(../images/status_dark.jpg) center top no-repeat;}
+.contractSteps .status ul li.last{ margin-right:0;}
+.contract form{font-size: 17px;color:#000;font-family: "Avenir"}
+.contract form .contractform{margin-bottom:5px;}
+.contract  li.floating{display: table;margin: 8px 0;}
+.contract  li.floating .ui-selectmenu-button{width:100% !important;border: 1px solid #c7c7c7;padding: 0px;font-weight: normal; font-size: 14px;box-sizing: border-box;font-family: "Avenir";}
+.contract  li.floating .ui-selectmenu-button:hover{background: #fff;}
+.contract  li.floating #country_id + .ui-selectmenu-button{width:219px !important;}
+.contract  li.floating #state_id + .ui-selectmenu-button{width:219px !important;}
+.contract  li.floating #city_id + .ui-selectmenu-button{width:220px !important;}
+.contract  li.floating label{display: table-cell;white-space: nowrap;vertical-align: middle;}
+.contract  li.floating > span{display: table-cell;  width: 100%;padding:0 9px; box-sizing: border-box; }
+.contract  li.floating input[type="text"]{display: table-cell;float: left;  width: 100%;border:1px solid #c7c7c7; padding: 5px;font-size: 14px;box-sizing: border-box;font-family: "Avenir"}
+.contract  li.floating input.star{width: 50px;}
+.contract  li.floating input.city{width: 295px;}
+.contract  li.floating input.country{width: 185px;}
+.contract  li.floating input.cityarea{width: 335px;}
+.contract  li.floating input.fax{width: 375px;}
+.contract  li.floating input.tax{width: 350px;}
+.contract  li.floating > .addbutton{width: 61px;white-space: nowrap;}
+.contract  li.floating > .addbutton a{color: #000; font-size: 14px;font-family: Avenir Heavy;}
+.contract  li.floating > .addbutton span.icon{color: #fff;margin-right: 5px;background: #000;width: 19px;height: 19px;border-radius: 50%;display: inline-block;text-align: center;font-weight: bold;font-family: Avenir;line-height: 20px;text-indent: -1px;}
+.contract  li.floating > .removebutton{width: 20px;white-space: nowrap;vertical-align: middle;}
+.contract  li.floating > .removebutton a{color: #000; font-size: 14px;font-family: Avenir Heavy;}
+.contract  li.floating > .removebutton span.icon{color: #fff;margin-right: 5px;background: #000;width: 19px;height: 19px;border-radius: 50%;display: inline-block;text-align: center;font-weight: bold;font-family: Avenir;line-height: 20px;text-indent: -1px;}
+
+.contract  ul.contactInfo li.floating{margin: 4px 0;}
+.contract  ul.contactInfo li.floating.email > .addbutton{margin-top:5px;}
+.contract  ul.contactInfo li.floating > label{width: 175px;}
+.contract  ul.contactInfo li.floating > span.firstField{width: 248px;}
+.contract  ul.contactInfo li.floating > span.secondField{width: 183px;}
+.contract  ul.contactInfo li.floating > span.thirdField{width: 270px;}
+.contract  ul.contactInfo li.floating.email > span{width: 100%;vertical-align: middle;}
+.contract  ul.contactInfo li.floating{margin: 4px 0;}
+.contract  ul.contactInfo li.floating.headTitles{margin: -20px 0 -5px 0;}
+.contract  ul.contactInfo li.floating.headTitles label{font-size: 11px}
+.contract  ul.contactInfo li.floating.headTitles label.blank{width: 185px;}
+.contract  ul.contactInfo li.floating.headTitles label.labelName{width: 248px;}
+.contract  ul.contactInfo li.floating.headTitles label.labelPhone{width: 182px;}
+.contract  ul.contactInfo li.floating.headTitles label.labelAddress{width: 251px;}
+.contract  ul.rooms li.floating label{width: 175px;}
+.contract  ul.rooms li.floating{margin:4px 0;}
+.contract  ul.rooms li.floating > span{padding: 0 2px;}
+.contract  ul.rooms li.floating > span.firstField{width: 367px;}
+.contract  ul.rooms li.floating > span.secondField{width: 250px;}
+.contract  ul.rooms li.floating > span.secondField #availablefrombox-button{width: 120px !important;display: inline-block;float: left;margin-right: 5px;}
+.contract  ul.rooms li.floating > span.secondField #availabletillbox-button{width: 120px !important;display: inline-block;}
+
+.contract  ul.rooms li.floating > span.thirdField{width: 117px;}
+.contract  ul.rooms li.floating > span.fourthField{width: 117px;}
+.contract  ul.rooms li.floating.headTitles {margin: 0 0 -5px 0;}
+.contract  ul.rooms li.floating.headTitles label{font-size: 15px;}
+.contract  ul.rooms li.floating.headTitles label.blank{width: 32px;}
+.contract  ul.rooms li.floating.headTitles label.labelName{width: 367px;}
+.contract  ul.rooms li.floating.headTitles label.labelTime{width: 250px;}
+.contract  ul.rooms li.floating.headTitles label.labelRate{width: 117px;}
+.contract  ul.rooms li.floating.headTitles label.labelRack{width: 115px;} 
+.contract  ul.rooms li.floating .serialno{display: table-cell;vertical-align: middle;width: 30px;}
+.contract  ul.rooms li.floating .serialno>span{display: block;width: 19px;height: 19px;font-size: 13px;border: 1px solid #000;text-align: center;line-height: 21px;border-radius: 50%;}
+
+.contract  ul.extraServices .CustomCheckbox{display: table-cell;}
+.contract  ul.extraServices li.floating{margin: 4px 0;}
+.contract  ul.extraServices li.floating > span{padding: 0 2px;}
+.contract  ul.extraServices li.floating > span{vertical-align: middle;}
+.contract  ul.extraServices li.floating > label{width: 220px;padding-right: 2px;box-sizing: border-box;}
+.contract  ul.extraServices li.floating > span.firstField{width: 421px;vertical-align: top;}
+.contract  ul.extraServices li.floating > span.secondField{width: 390px;vertical-align: top;}
+.contract  ul.extraServices li.floating > span.thirdField{width: 68px;vertical-align: top;}
+.contract  ul.extraServices li.floating.headTitles {margin: -14px 0 -5px 0;}
+.contract  ul.extraServices li.floating.headTitles label{font-size: 15px;}
+.contract  ul.extraServices li.floating.headTitles label.blank{width: 421px;}
+.contract  ul.extraServices li.floating.headTitles label.labelName{width: 390px;}
+.contract  ul.extraServices li.floating.headTitles label.labelPrice{width: 68px;}
+
+.contract .commission li.detail{width: 41%;display: inline-block;vertical-align: top;}
+.contract .commission li.parameter{width: 58%;display: inline-block;vertical-align: top;line-height: 30px;}
+.contract .commission li.parameter input[type="text"]{width: 48px; margin-right:5px;display: inline-block;vertical-align: middle;}
+.contract .commission li.parameter .micronote{font-size: 12px;display: block; text-align: center;line-height: 5px;}
+
+.contract  .signature .leftPane{width: 600px;display: inline-block;}
+.contract  .signature .leftPane li > span.firstField{width: 340px;}
+.contract  .signature .leftPane li > span.secondField{width: 157px;}
+.contract  .signature .leftPane li > label{float: left;line-height: 30px;}
+.contract  .signature .leftPane li > label.w80{width: 80px;}
+.contract  .signature .leftPane li .signText{text-align: right;padding-right: 17px;position: relative;top: -26px;font-size: 15px;font-style: italic;}
+.contract  .signature .leftPane li textarea{width: 502px;resize: none; vertical-align: top; border:1px solid #c7c7c7;height: 115px;padding: 5px;box-sizing: border-box;font-family: "Avenir";font-size: 14px;}
+.contract  .signature .leftPane li > label.textareaLabel{position: relative;top: 13px;margin-top: -14px;}
+.contract  .signature .rightPane{width: 271px;display: inline-block;}
+.contract  .signature .rightPane li{width: 100%;}
+.contract  .signature .rightPane li span{padding: 0;}
+.contract  .signature .rightPane li textarea{width: 100%;resize: none; vertical-align: top; border:1px solid #c7c7c7;height: 115px;padding: 5px;box-sizing: border-box;font-family: "Avenir";font-size: 14px;}
+.contract  .signature .rightPane li .signText{text-align: right;padding-right: 17px;position: relative;top: -26px;font-size: 15px;font-style: italic;}
+.contract  ::-webkit-input-placeholder {color: #888;font-size: 14px;line-height: 22px;font-family: "Avenir"}
+.contract  :-moz-placeholder {/* Firefox 18- */   color: #888;font-size: 14px;line-height: 22px;font-family: "Avenir"}
+.contract  ::-moz-placeholder {/* Firefox 19+ */   color: #888;font-size: 14px;line-height: 22px;font-family: "Avenir"}
+.contract  :-ms-input-placeholder {color: #888;font-size: 14px;line-height: 22px;font-family: "Avenir"}
+.contract  .nextstepPane{position: relative;width: 980px;height: 100%;margin: auto;z-index: 0;text-align: right;margin-top: 55px;margin-bottom: -45px;}
+.contract  .nextstepPane .nextStep{padding: 7px 64px;border: 1px solid #000;color: #000;font-size: 14px;}
+.contract  .nextstepPane .nextStep:hover{background: #f2f2f2;}
+
+/*Contract page step 2 styles goes here*/
+.contract .featurelist{margin: 0; padding: 0 0 0 10px; }
+.contract .featurelist li{list-style-type: none;width: 275px; display: inline-table;height: 21px;vertical-align: top;}
+.contract .featurelist li a{font-family: "Avenir"; font-size: 15px;color:#000;}
+.contract .featurelist li .CustomCheckbox a{margin: 3px 5px 3px;}
+.contract .featurelist li.withinput{width: 585px;}
+.contract .featurelist li.withinput .CustomCheckbox {display: inline-block;}
+.contract .featurelist li.withinput .inputField{width: 501px;border:1px solid #c7c7c7; padding: 5px;font-size: 17px;box-sizing: border-box;margin-left: 7px;}
+.contract .featurelist li.withinput .inputField.w382{width: 382px;}
+
+.contract .detailForm li > label{width: 208px;float: left;line-height: 30px;font-family:"Avenir" }
+.contract .detailForm li > label b{font-family:"Avenir Heavy";display: block; }
+.contract .detailForm li > label .small{font-size: 14px; }
+.contract .detailForm li > span{vertical-align: top;}
+.contract .detailForm li textarea{width: 100%;resize: none; vertical-align: top; border:1px solid #c7c7c7; height: 207px;padding: 5px;box-sizing: border-box;}
+.contract .detailForm li.photos{margin-top: 40px;}
+.contract .detailForm li.photos > span{vertical-align: top;}
+.contract .detailForm li.photos input[type="text"]{width: 200px;}
+.contract .detailForm li input[type="button"].submitButton{border: 1px solid #000;background: #fff;padding: 7px 40px;font-size: 12px;font-family: "Avenir";margin-left: 10px;}
+.contract .detailForm li input[type="button"].submitButton:hover{background: #f2f2f2;}
+
+/*Contract page step 3 styles goes here*/
+.contract .thankPane{text-align: center;}
+.contract .thankPane .title{font-family: "Avenir Medium";font-size: 20px;color: #000; }
+.contract .thankPane .text{font-family: "Avenir Medium";font-size: 18px;color: #000;padding: 24px 0 20px 0; }
+.contract .thankPane .bottomtext{font-family: "Avenir";font-size: 14px;color: #000;padding: 0px 0 20px 0; }
+.contract .thankPane input[type="button"].print{border: 1px solid #000;background: #fff;padding: 6px 40px 3px 40px;font-size: 14px;font-family: "Avenir";margin-left: 10px;}
+
+.contract .thankPane .UploadFile{text-align: center; }
+.contract .thankPane .UploadFile .fileInputButton{border: 1px solid #000;background: #fff;padding: 5px 40px;font-size: 12px;font-family: "Avenir"; margin-left: 10px;display: inline-block;
+vertical-align: top; }
+.contract .thankPane input[type="button"].print:hover, .contract .thankPane .UploadFile .fileInputButton:hover{background: #f2f2f2;}
+.contract .thankPane .UploadFile .inputField{width: 200px;border: 1px solid #c7c7c7;padding: 5px;font-size: 14px;box-sizing: border-box;color: #333; }
+.contract .thankPane .UploadFile #file{display: none; }
+
+/*Multi Hotel Contract page step 3 styles goes here*/
+.contract.multihotel  ul.hoteldeals li.floating label{width: 175px;}
+.contract.multihotel  ul.hoteldeals li.floating{margin:4px 0;}
+.contract.multihotel  ul.hoteldeals li.floating > span{padding: 0 2px;}
+.contract.multihotel  ul.hoteldeals li.floating > span.firstField{width: 293px;}
+.contract.multihotel  ul.hoteldeals li.floating > span.secondField{width: 250px;}
+.contract.multihotel  ul.hoteldeals li.floating > span.thirdField{width: 116px;}
+.contract.multihotel  ul.hoteldeals li.floating > span.fourthField{width: 95px;}
+.contract.multihotel  ul.hoteldeals li.floating > span.fifthField{width: 93px;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles {margin: 0 0 -5px 0;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label{font-size: 15px;line-height: 14px;padding-bottom: 3px;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label.blank{width: 32px;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label.labelhotel{width: 293px;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label.labelroom{width: 250px;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label.labeltime{width: 116px;}
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label.labelrate{width: 95px;} 
+.contract.multihotel  ul.hoteldeals li.floating.headTitles label.labelallocation{width: 93px;white-space: normal;} 
+.contract.multihotel  ul.hoteldeals li.floating .serialno{display: table-cell;vertical-align: middle;width: 30px;}
+.contract.multihotel  ul.hoteldeals li.floating .serialno>span{display: block;width: 19px;height: 19px;font-size: 15px; font-weight: bold; text-align: center;line-height: 21px;font-family: "Avenir Heavy";}
+
+#printpage .contract li.floating > span{vertical-align: middle;}
+/* Fancybox theme styles Start */
+.fancybox-lock .fancybox-overlay{background: rgba(0,0,0,0.7);}
+.fancybox-opened .fancybox-skin{box-shadow: none;}
+.fancybox-skin{border-radius: 0px;}
+/* Fancybox theme styles End */
+
+.contactForm{width: 444px;margin: 2px;}
+.contactForm .formContent li{margin-bottom: 8px;}
+.contactForm .title{border-top:1px solid #000;border-bottom: 3px solid #000;height: 38px;line-height: 42px;font-size: 13px;font-family: "Avenir Heavy";text-align: center;}
+.contactForm label.lableTitle{font-family: verdana; font-size: 12px;color: #414141;width: 138px;display: inline-block;vertical-align: top;top:7px;position: relative;}
+.contactForm span.fieldWrapper{display: inline-block;}
+.contactForm span.fieldWrapper span.error{display: block;padding-left: 7px;}
+.contactForm input[type="text"]{border: 1px solid #cdcdcd;padding:2px 5px;font-size: 17px;box-sizing: border-box;margin-left: 7px;width: 298px;}
+.contactForm textarea{height: 100px; width: 298px;resize: none;border: 1px solid #cdcdcd;padding:2px 5px;font-size: 17px;box-sizing: border-box;margin-left: 7px;}
+.contactForm .captchaPane label{width: 190px;}
+.contactForm .captchaPane input[type="text"]{width: 141px;}
+.contactForm .captchaPane img{display: inline-block;vertical-align: middle;}
+.contactForm .submitButton{display: block;text-align: center;}
+.contactForm .submitButton input[type="button"]{color: #000;border: 1px solid #b2b2b2;padding: 3px 34px;border-radius: 12px;background: #fff;font-size: 14px;font-family: "Avenir Medium";}
+.contactForm .submitButton input[type="button"]:hover{background: #f2f2f2;}
+.contactForm .CustomRadioButton, .contactForm .CustomRadioButton span{display: inline-block;}
+.contactForm .CustomRadioButton a{color:#414141;}
+
+.careerform{margin: 0 auto;padding: 0;width: 435px;}
+.careerform .formContent li{margin-bottom: 8px;list-style-type: none;}
+.careerform .title{border-top:1px solid #000;border-bottom: 3px solid #000;height: 38px;line-height: 42px;font-size: 13px;font-family: "Avenir Heavy";text-align: center;}
+.careerform label{font-family: verdana; font-size: 12px;color: #414141;width: 136px;display: inline-block;vertical-align: top;top:7px;position: relative;}
+.careerform input[type="text"]{border: 1px solid #cdcdcd;padding:2px 5px;font-size: 17px;box-sizing: border-box;width: 298px;}
+.careerform textarea{height: 100px; width: 298px;resize: none;border: 1px solid #cdcdcd;padding:2px 5px;font-size: 17px;box-sizing: border-box;}
+.careerform .captchaPane label{width: 190px;}
+.careerform .captchaPane input[type="text"]{width: 135px;margin-left: 6px;}
+.careerform .captchaPane img{display: inline-block;vertical-align: middle;}
+.careerform .submitButton{display: block;text-align: center;}
+.careerform .submitButton input[type="button"]{color: #000;border: 1px solid #b2b2b2;padding: 3px 34px;border-radius: 12px;background: #fff;font-size: 14px;font-family: "Avenir Medium";}
+.careerform .submitButton input[type="button"]:hover{background: #f2f2f2;}
+.careerform .attachResume{font-family: verdana;font-size: 12px;}
+.careerform .attachResume .label{width: 136px;display: inline-block;}
+.careerform .attachResume .UploadFile{display: inline-block;}
+.careerform .attachResume .UploadFile .inputField{width: 160px;display: inline-block;}
+.careerform .attachResume .UploadFile .fileInputButton{padding: 4px 25px;}
+
+
+.mailLanding .contentPart{padding:45px 0 100px;}
+.mailLanding .contentCont{padding:35px 90px 35px;}
+.mailLanding .logo{text-align: center;display: block;}
+.mailLanding .logo{text-align: center;display: block;}
+.mailLanding .phoneNo {text-align: center;font-size: 20px;line-height: 28px;color: #000;font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;font-weight: bold;width: 188px;padding: 0;margin: 16px auto 10px;border: 1px solid #000;border-radius: 18px;}
+.mailLanding .phoneNo img{margin: 0 9px -6px 0;}
+.mailLanding .socialIcons ul{text-align: center;list-style-type: none;margin: 0;}
+.mailLanding .socialIcons ul li{list-style-type: none;display: inline-block;margin:0px 2px;}
+.mailLanding .contentPane .heading{text-align: left;font-size: 18px;font-family: "Avenir Heavy";text-transform: none;margin: 0;}
+.mailLanding .contentPane .heading{text-align: left;font-size: 18px;font-family: "Avenir Heavy";text-transform: none;margin: 0;}
+.mailLanding .contentPane p{padding: 0;margin: 0;}
+.mailLanding .contentPane p.headingBig{font-size: 18px;font-family: "Avenir Heavy";margin: 0px;color:#000;line-height: 30px;}
+.mailLanding .contentPane p.normal{margin: 0;}
+.mailLanding .contentPane p.normal strong{font-size: 14px;font-family: "Avenir Heavy";}
+.mailLanding .contentPane p.normal a{color:#000;}
+.mailLanding .contentPane p.normal .withUline{text-decoration: underline !important;}
+.mailLanding .contentPane p.subHeading{font-size: 14px;font-family: "Avenir Heavy";margin: 0px;color: #000;}
+.mailLanding .contentPane p.subHeading2{font-size: 14px;font-weight: bold; font-family: "Avenir Medium";margin: 0px;color: #000;}
+.mailLanding .contentPane p.subHeading2 a{color: #000;text-decoration: underline;}
+.mailLanding .bookingInfo{margin: 0;padding: 0;}
+.mailLanding .bookingInfo li{list-style-type: none;color: #000;font-family: "Avenir Roman";font-size: 14px;line-height: 23px;}
+.mailLanding .bookingInfo li strong{font-size: 14px;font-family: "Avenir Heavy";}
+.mailLanding .bookingInfo li em{font-family: "Avenir BookOblique";}
+.mailLanding .contentPane .moreInfo a{text-decoration: underline;color: #000;}
+.mailLanding .choiceList{color:#000;}
+.mailLanding .choiceList span.title{font-family: "Avenir HeavyOblique";font-size: 15px;font-weight: bold;}
+.mailLanding .choiceList li{list-style-type: none;font-size: 14px; font-family: "Avenir"}
+.mailLanding .choiceList li .bigtitle{font-size: 16px;}
+.mailLanding .choiceList li label{width: 330px;display: inline-block;}
+.mailLanding .choiceList li label em{font-family: "Avenir BookOblique";font-size: 14px;}
+.mailLanding .choiceList li .charges{display: inline-block;vertical-align: top;}
+.mailLanding .choiceList li .charges .currency{margin-right: 5px;}
+.mailLanding .choiceList .totalAmount{margin: 20px 0 0 0;}
+.mailLanding .choiceList .totalAmount label{font-family:"Avenir Black";}
+.mailLanding .choiceList .totalAmount label span{font-family:"Avenir"; font-size: 12px;}
+.mailLanding .choiceList .totalAmount .charges{font-family:"Avenir Black";}
+.mailLanding .choiceList .actionButton input[type="button"]{font-family:"Avenir Roman"; padding: 2px 15px; border:1px solid #000;background: #fff;display: inline-block;}
+.mailLanding .choiceList .actionButton input[type="button"]:hover{background: #ccc;}
+
+.contentPart .contentCont2{ padding:50px 40px 55px; border:12px solid #eeeeee; margin-bottom:-50px;}
+.contentPart .contentCont2 .heading{ font-family: "Avenir Book"; text-align:center; text-transform:uppercase; color:#000; font-size:24px; line-height:24px; margin:0 0 10px;}
+.contentPart .contentCont2 .withline{ font-family: "Avenir Medium"; font-size:16px; line-height:26px; background:url(../images/blackDot.png) left center repeat-x; color:#000; text-align:center; margin:0 140px;}
+.contentPart .contentCont2 .withline a{ display:inline-block; background:#fff; color:#000; border:1px solid #666; padding:0 30px; border-radius:12px;}
+.contentPart .contentCont2 .withline a:hover{ background:#f2f2f2;}
+.contentPart .contentCont2 .social{ margin:0 2px;}
+.contentPart .contentCont2 .social:hover{ opacity:.7;}
+.contentPart .contentCont2 .heading2{ font-family: "Avenir Heavy"; color:#000; font-size:18px; line-height:22px; margin:0 0 15px;}
+.contentPart .contentCont2 .list{ margin:0 -15px 0 0;}
+.contentPart .contentCont2 .list li{ display:block; float:left; margin:0 13px 20px 0; list-style:none; width:135px;}
+.contentPart .contentCont2 .list li td{ border:1px solid #d2d2d2; vertical-align: middle;}
+.contentPart .contentCont2 .list li td img{ display:inline;}
+.contentPart .contentCont2 .list li p{ font-family: "Avenir"; font-size:12px; line-height:18px; color:#808080; margin:8px 0 0;}
+
+.contentPart .contentCont2 .articleCont{ margin:110px 140px -25px;}
+.contentPart .contentCont2 .articleCont img{ margin:0 0 10px;}
+.contentPart .contentCont2 .articleCont img.leftPic{ float:left; margin:0 11px 40px 0;}
+.contentPart .contentCont2 .articleCont .bigHeading{ font-family: "Avenir Heavy"; color:#000; font-size:18px; line-height:23px; margin:0; padding:0;}
+.contentPart .contentCont2 .articleCont .normal{ font-family: "Avenir"; color:#000; font-size:14px; line-height:22px; margin:0 0 10px; padding:0;}
+.contentPart .contentCont2 .articleCont .smallHeading{ font-family: "Avenir Heavy"; color:#000; font-size:16px; line-height:23px; margin:0; padding:0;}
+.contentPart .contentCont2 .articleCont .seeMore{ font-family: "Avenir Heavy"; display:block; text-align:center; margin:60px auto 0; color:#fff; font-size:14px; line-height:31px; width:230px; background:#000; padding:0; text-transform:uppercase;}
+.contentPart .contentCont2 .articleCont .seeMore:hover{ background:#333;}
+
+
+
+.bannerWithBenifit .searchBox.articlePage{ width:100%; height:57px; position:absolute !important; z-index:99999; left: 0; margin-left: 0; top:0; background:rgba(255,255,255,.5);}
+.bannerWithBenifit .searchBox.fixed.articlePage { position: absolute;}
+.midBanner .heading{font-family: "Avenir Heavy"; font-weight: normal; color:#fff; font-size:38px; line-height:37px; text-transform:uppercase; text-align:center; margin:0; padding:0; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.3);}
+.midBanner .normal{font-family:"Times New Roman", Times, serif; font-weight:bold; font-style:italic; color:#fff; font-size:33px; line-height:37px; text-align:center; margin:0; padding:0; text-shadow:1px 1px 2px rgba(0, 0, 0, 0.3);}
+.midBanner.articlePage .container{}
+.midBanner.articlePage .bannerBottom{position: absolute;left: 48%;bottom: 32px;z-index: 3;width: 79px;height: 39px;background: url(../images/bannerBottom.png) 0 0 no-repeat;}
+.midBanner.articlePage .slides{ max-height:646px; overflow:hidden;}
+.midBanner.articlePage .slides>li{ max-height:646px;text-align: center;}
+
+.articleDetails{ padding:70px 0 40px;}
+.articleDetails .rightPartCont{ width:278px; float:right;}
+.articleDetails .rightPart{ height:293px; border:1px solid #e0e0e0; box-shadow:0 0 7px #ccc; border-radius:4px;}
+.articleDetails .rightPart .heading{ font-family: "Avenir"; color:#000; text-transform:uppercase; text-align:center; padding:20px 0 14px; margin:0; background:url(../images/heading_bg.jpg) center bottom no-repeat; font-size:20px; line-height:20px;}
+.articleDetails .rightPart .box{ overflow:hidden; padding:10px 14px;}
+.articleDetails .rightPart .box>ul>li{list-style: none;}
+.articleDetails .rightPart .box .icon { border: 1px dashed #000000; float: left; height: 54px; line-height: 70px; text-align: center; width: 54px; margin-right:10px;}
+.articleDetails .rightPart .box .icon img{ display:inline;}
+.articleDetails .rightPart .box .heading2{ font-size:12px; color:#000; line-height:17px; padding-top:2px; text-transform:uppercase; font-family: "Avenir Black";}
+.articleDetails .rightPart .box p{ font-size:12px; color:#707070; line-height:16px; font-family: "Avenir";}
+.articleDetails .rightPart2{ border:1px solid #e0e0e0; box-shadow:0 0 7px #ccc; border-radius:4px;}
+.articleDetails .rightPart2 .heading{ font-family: "Verdana"; padding:24px 0 0 17px; font-size:20px; line-height:30px; margin:0; color:#000; text-transform:uppercase;}
+.articleDetails .rightPart2 ul{ padding:0 0 50px 17px;}
+.articleDetails .rightPart2 ul li{ display:block; list-style:none;}
+.articleDetails .rightPart2 ul li a{font-family: "Verdana"; font-size:15px; line-height:30px; color:#484848; text-transform:uppercase;}
+.articleDetails .rightPart2 ul li a:hover{ color:#000;}
+.articleDetails .rightPart2 .morelink{ padding:0 0 35px 17px; font-family: "Verdana"; font-size:14px; line-height:30px; color:#484848; text-transform:uppercase; display:block;}
+.articleDetails .rightPart2 .morelink:hover{ color:#000;}
+.articleDetails .leftPart{ width:642px; float:left;}
+.articleDetails .leftPart .heading{font-family: "Verdana"; font-size:18px; line-height:22px; text-transform:uppercase; color:#000; margin:0; padding:0; font-weight:normal;}
+.articleDetails .leftPart .normal{font-family: "Verdana"; font-weight:normal; font-size:13px; line-height:22px; text-transform:uppercase; color:#494949; margin:0 0 40px; padding:0; text-align:justify;}
+.articleDetails .leftPart .normal span{ font-weight:bold;}
+.articleDetails .leftPart .normal a{ color:#494949; text-decoration:underline;}
+
+
+.loginBox{ padding:108px 0 106px;}
+.loginBox .grayBorderBox{ border:12px solid #eee; padding:65px 0 68px 43px;}
+.loginBox .grayBorderBox .leftPart{ width:439px; padding:35px 0 65px; border-right:1px solid #eee; float:left;}
+.loginBox .grayBorderBox .leftPart .heading{ font-family: "Avenir Book"; font-size:24px; line-height:24px; color:#000; margin:0 0 26px; padding:0;}
+.loginBox .grayBorderBox .leftPart .Subheading{ font-family: "Avenir Heavy"; font-size:18px; line-height:22px; color:#000; margin:0; padding:0;}
+.loginBox .grayBorderBox .leftPart .normal{ font-family: "Avenir"; font-size:14px; line-height:22px; color:#000; margin:0; padding:0;}
+.loginBox .grayBorderBox .leftPart .normal a{color:#000; text-decoration:underline;}
+.loginBox .grayBorderBox .rightPart{ width:219px; float:left; margin-left:40px;}
+.loginBox .grayBorderBox .rightPart .heading{ font-family: "Avenir Heavy"; font-size:18px; line-height:22px; color:#000; margin:20px 0 6px; padding:0;}
+.loginBox .grayBorderBox .rightPart .textBox{ font-size:14px; line-height:24px; color:#000; border:1px solid #ccc; width:206px; padding:0px 3px 0px 9px; border-radius:0px; float:right; margin-bottom:4px;}
+.loginBox .grayBorderBox .rightPart .forgotPass{ font-family: "Avenir"; font-size:10px; line-height:10px; color:#000; margin:0 0 10px; float:left; padding:0;}
+.loginBox .grayBorderBox .rightPart .submit{ display:inline-block; font-family: "Avenir"; font-size:15px; text-transform:uppercase; text-align:center; padding:5px 0; color:#fff; background:#ff5b56; border:1px solid #ff0000; margin:10px 0 0; width:138px; float:right; line-height:20px;}
+.loginBox .grayBorderBox .rightPart .submit:hover{ background:#ff0000;}
+.loginBox .grayBorderBox .rightPart .sendCode{ display:inline-block; font-family: "Avenir"; font-size:15px; line-height:20px; text-transform:uppercase; text-align:center; padding:1px 0; color:#000; background:#fff; border:1px solid #000; margin:3px 0 11px; width:138px; float:right;}
+.loginBox .grayBorderBox .rightPart .sendCode:hover{ background:#ccc;}
+
+.accNotFound .grayBox.error404 {padding: 47px 0 40px 87px;}
+.accNotFound .grayBox.error404 .whiteCircle p.oups{ font-family: "Avenir Light"; font-size:60px; line-height:57px; color:#000; margin:72px 0 0; padding:0; text-align:center; text-transform:uppercase;}
+.accNotFound .grayBox.error404 .whiteCircle p.oups span{  font-family: "Avenir Medium"; font-size:45px; display:block; line-height:40px;}
+.accNotFound .grayBox.error404 p.Subheading2{ font-family: "Avenir Heavy"; font-size:25px; line-height:26px; color:#000; margin:60px 50px 27px 0; padding:0;}
+.accNotFound .grayBox.error404 p.normal{font-family: "Avenir"; font-size:19px; line-height:26px; color:#000; margin:0 0 12px; padding:0;}
+.accNotFound .grayBox.error404 .squareBtn{ width:147px; height:27px; line-height:27px; border:1px solid #000; float:left; display:block; margin:0 4px 5px 0; font-family: "Avenir"; font-size:15px; color:#000; text-align:center;}
+.accNotFound .grayBox.error404 .squareBtn:hover{ background:#fff;}
+
+.searchReasult .resultCont .result .topPart .gridviewBtn, .searchReasult .resultCont .result .topPart .listviewBtn{ float:right; margin:9px 8px 0 0;}
+
+.searchReasult .resultCont .result .resultPart2{ padding:19px 11px 0 15px;}
+.searchReasult .resultCont .result .resultPart2 > ul{position: relative;}
+.searchReasult .resultCont .result .resultPart2 > ul > li{ margin-bottom:34px;padding: 5px; list-style:none;border:1px solid #fff;}
+.searchReasult .resultCont .result .resultPart2 > ul > li:hover{border:1px solid #ff5954;}
+.searchReasult .resultCont .result .resultPart2 .eachResult .PicPart{ width:180px; float:left;}
+.searchReasult .resultCont .result .resultPart2 .eachResult .textPart{ margin-left:192px; padding:0; position:relative;}
+.resultPart2 .eachResult .flex-direction-nav .flex-prev, .resultPart2 .eachResult .flex-direction-nav .flex-next{ height:120px;}
+.resultPart2 .eachResult .flexslider .slides img{max-height: 120px;}
+.eachResult ul li{ list-style:none;}
+.resultPart2 .eachResult .textPart .hotelName{ position:relative; top:-2px;}
+.resultPart2 .eachResult .textPart .hotelName a{color: #6b6666;text-transform: uppercase;}
+.resultPart2 .eachResult .textPart .hotelTime div{ border-top:1px solid #e8e8e8; margin:-1px 140px 1px 0;}
+.resultPart2 .eachResult .textPart .hotelTime div.oneItem{ padding:6px 0;}
+.resultPart2 .eachResult .textPart .hotelTime{ border-bottom:3px solid #e8e8e8; border-top:1px solid #e8e8e8;}
+.resultPart2 .eachResult .textPart .book{ position:absolute; top:0; right:0; width:142px;}
+.resultPart2 .eachResult .textPart .discountQuote{ background:url(../images/quote2.png) no-repeat; width:54px; height:62px; right:0px; top:56px; position:absolute; z-index:2;}
+.resultPart2 .eachResult .textPart .discountQuote .smallText{ position:absolute; left:14px; top:11px; color:#fff; font-size:9px; line-height:9px;}
+.resultPart2 .eachResult .textPart .discountQuote .bigText{position: relative;left: 0;top: 17px;color: #fff;font-size: 20px;line-height: 20px;width: 56px;text-align: center;display: block;}
+.resultPart2 .eachResult .textPart .discountQuote .persantage{position: relative;left: 0;top: auto;color: #fff;font-size: 11px;line-height: 11px;display: inline-block;vertical-align: top;}
+.searchReasult .step1.resultCont.listview .resultPart2 .eachResult .textPart .hotelName{ width: 273px;text-transform: uppercase;}
+.searchReasult .step1.resultCont.listview.fullsize .resultPart2 .eachResult .textPart .hotelName{ width: 100%;}
+.searchReasult .step1.resultCont.gridviewResult .resultPart .eachResult .textPart .hotelName{ width: 240px;text-transform: uppercase;height: 41px;overflow: hidden;}
+.searchReasult .step1.resultCont.gridviewResult .resultPart .eachResult .textPart .hotelTime{height: 95px;overflow: hidden;}
+
+.searchReasult .resultCont .resultPart2 ul li:hover .eachResult .textPart .hotelName{color: #000;}
+.searchReasult .resultCont .resultPart2 ul li:hover .eachResult .textPart .hotelAddress{color: #000;}
+.searchReasult .resultCont .resultPart2 ul li:hover .eachResult .textPart .hotelName .Star{background: url(../images/star3.png) repeat-x;}
+.searchReasult .resultCont .resultPart2 ul li:hover .eachResult .textPart .discountQuote{ background:url(../images/quote2_h.png) no-repeat;}
+.searchReasult .resultCont .resultPart2 ul li:hover .eachResult .textPart .book{ border:1px solid #ff5954; background:#ff5954; color:#fff;}
+.searchReasult .resultCont.listView{ min-width:697px !important;}
+
+.ui-autocomplete li{font-size:13px; color: #414141;border:none;padding: 2px 1em 2px .4em !important;box-sizing: border-box;}
+.ui-autocomplete li.ui-state-focus{background: #eee; font-weight: normal;border:none;margin:0px;}
+.ui-autocomplete-category {color: #ff5b56 !important;font-weight:bold;cursor:default;}
+.ui-autocomplete-category:hover{color: #ff5b56;background: transparent !important; cursor:default;font-weight:bold !important;}
+ 
+.searchReasult .searchPageMap .mapPopupPane{width: 238px !important;margin-left: 23px;margin-top:7px;}
+.searchReasult .searchPageMap .mapPopupPane>div>div{border:0px !important;}
+.searchReasult .searchPageMap .mapPopupPane>div>div>div{overflow: hidden !important;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(2) {width: 228px !important; padding: 5px;border-radius:0px !important; box-shadow: none !important;background: transparent !important;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(3){margin-left:-24px;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(3)>div {top:1px !important;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(3)>div >div{box-shadow:none !important;transform: skewX(30.6deg) translateZ(0px) !important;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(3)>div:nth-of-type(2)>div{box-shadow:none !important;transform: skewX(-30.6deg) translateZ(0px) !important;transform-origin: 0px 8px 0px !important;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(3)>div:nth-of-type(2)>div{top:-7px !important;}
+.searchReasult .searchPageMap .mapPopupPane>div:first-of-type > div:nth-of-type(4){border-radius:0px !important;width: 236px !important;}
+.searchReasult .searchPageMap .imageWrap img.hotelImage{width: 228px; height: 136px;}
+.searchReasult .searchPageMap .timingsIcons {position: absolute;top: 117px;right: 5px;}
+.searchReasult .searchPageMap .timingsIcons span{margin:0 2px;}
+.searchReasult .searchPageMap .timingsIcons span img{vertical-align: top;}
+.searchReasult .searchPageMap .gm-style-iw{left:5px !important;top:5px !important;width: 228px !important;}
+.searchReasult .searchPageMap .imageWrap{font-family: "Avenir Roman";color:#333333;display: inline-block;overflow: hidden;margin-bottom: -7px;}
+.searchReasult .searchPageMap .imageWrap .address{width: 60%;float: left;font-family: "Avenir";font-size: 10px;line-height: 11px;}
+.searchReasult .searchPageMap .imageWrap .address>a{color:#333;}
+.searchReasult .searchPageMap .imageWrap .address>a:hover{color:#333;text-decoration: none;}
+.searchReasult .searchPageMap .imageWrap strong{text-transform: uppercase;font-size: 12px;font-family: "Avenir Black";line-height: 14px;}
+.searchReasult .searchPageMap .imageWrap .ratingpart{width: 39%;float: right;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .discountQuote{ background:url(../images/quote2_h.png) no-repeat;background-size: 40px 46px;width:40px; height:47px; position:relative; float:right; z-index:2;font-family: Verdana;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .discountQuote .smallText{ position: absolute;left: 10px;top: 9px;color: #fff;font-size: 7px;line-height: 5px;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .discountQuote .bigText{position: relative;left: 0;top: 16px;color: #fff;font-size: 15px;line-height: 15px;width: 40px;text-align: center;display: block;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .discountQuote .persantage{position: relative;left: 0;top: auto;color: #fff;font-size: 8px;line-height: 11px;display: inline-block;vertical-align: top;font-weight: bold;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .from{float: right;margin-top: 6px;margin-right: 4px;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .from .text{display: block;text-align: right;text-transform: uppercase;font-size: 9px;font-family: Avenir Medium;line-height: 13px;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .from .currency{float: right;font-size: 17px;font-family: verdana;font-weight: bold;}
+.searchReasult .searchPageMap .imageWrap .ratingpart .from .price{float: right;font-size: 22px;font-family: avenir Black;}
+.searchReasult .searchPageMap .imageWrap .Star{height: 7px;background: url(../images/map-stars.png) repeat-x;display: inline-block;}
+.searchReasult .searchPageMap .imageWrap .Star.one {width: 6px;}
+.searchReasult .searchPageMap .imageWrap .Star.two {width: 12px;}
+.searchReasult .searchPageMap .imageWrap .Star.three{width: 18px;}
+.searchReasult .searchPageMap .imageWrap .Star.four {width: 24px;}
+.searchReasult .searchPageMap .imageWrap .Star.five {width: 30px;}
+
+.intermediateSearch{width: 100%;}
+.intermediateSearch .headerItems{margin:8px 0; padding:0;}
+.intermediateSearch .headerItems li{width: 32%; display: inline-block; font-weight:bold;text-decoration: underline;}
+.intermediateSearch .hotelList, .intermediateSearch .stateList, .intermediateSearch .cityList{width: 32%;display: inline-block;vertical-align: top;list-style-type: none;}
+.intermediateSearch .hotelList li, .intermediateSearch .stateList li, .intermediateSearch .cityList li{list-style-type: none;}
+.intermediateSearch .hotelList li a, .intermediateSearch .stateList li a, .intermediateSearch .cityList li a{color:#888;}
+.intermediateSearch .hotelList li a:hover, .intermediateSearch .stateList li a:hover, .intermediateSearch .cityList li a:hover{color:#333;}
+
+.fullpgloader {display: block;margin: auto;top: 0;left: 0;bottom: 0;right: 0;position: fixed !important;background: rgba(255,255,255,0.55);z-index: 9999;width: 100% !important;height: 100% !important;text-align: center;}
+.fullpgloader .spritespin-stage{width:82px !important; height:82px !important;margin:auto !important;overflow:hidden;}
+
+.contentloader, .contentloader1 {display: block;margin: auto;top: 0;left: 0;bottom: 0;right: 0;position: absolute !important;background: rgba(255,255,255,0.85);z-index: 9999;width: 100% !important;height: 100% !important;text-align: center;}
+.contentloader .spritespin-stage, .contentloader1 .spritespin-stage{width:52px !important; height:52px !important;margin:auto !important;overflow:hidden;}
+
+.resultPagination {display: block;text-align: right;}
+.resultPagination ul>li{display: inline-block;border: 1px solid #000;padding: 3px 9px;}
+.resultPagination ul>li:hover{background: #ccc;}      
+.resultPagination ul>li a{color:#333;}
+.resultPagination ul>li.disabled{background: #fff;border: 1px solid #ddd;}
+.resultPagination ul>li.disabled a{color:#ddd;}
+.resultPagination ul>li.active{background: #000;}
+.resultPagination ul>li.active a{color:#fff;}
+.resultPagination ul>li.previous{padding: 3px 15px;}
+.avenirRoman{font-family: "Avenir" !important;}
+.captcha_text{font-family: 'tom_violenceautospaced';font-size: 22px;position: relative;display: inline-block;vertical-align: middle;}
+.captcha_text:before {content: '';display: block;width: 85px;position: absolute;height: 25px;z-index: 1;top: -2px;}
+
+.cardsBlock{display: block;position: relative;margin-top: 30px;}
+.cardsBlock .radio{display: inline-block;vertical-align: middle;margin-right:5px;}
+.cardsBlock span.visa, .cardsBlock span.master, .cardsBlock span.diners{display: inline-block;width: 52px; height: 35px;opacity: 0.2;vertical-align: middle;}
+.cardsBlock span.visa{background: url(/images/visa-small.png) no-repeat;}
+.cardsBlock span.master{background: url(/images/master-small.png) no-repeat;}
+.cardsBlock span.diners{background: url(/images/dinersClub-small.png) no-repeat;}
+.cardsBlock span.visa.highlighted, .cardsBlock span.master.highlighted,.cardsBlock span.diners.highlighted{opacity: 1;}
+.cardsBlock span.antivirus{position: absolute;right: 0;top: -22px; background: url(/images/nortan-antivirus.png) no-repeat;width: 88px; height: 40px;}
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)  { 
+	.topBanner .slides p{ margin:43.5% 0 0 52px;}
+} 
+.ui-selectmenu-menu.ui-front{z-index:99999}
+.ui-selectmenu-menu .ui-menu{max-height: 180px;}
