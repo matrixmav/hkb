@@ -18,33 +18,22 @@ class UserIdentity extends CUserIdentity
 	 * @param string password
 	 * @return boolean whether the username and password are valid
 	 */
-	public function CustomerAuthenticate()
+	public function adminAuthenticate()
 	{
-		$record=Customer::model()->findByAttributes(array('telephone'=>$this->username));  // here I use Email as user name which comes from database
-		if($record===null)
-		{
-			$this->_id='user Null';
-			$this->errorCode=self::ERROR_TELEPHONE_INVALID;
-		}
-		else if(md5($this->password) != $record->password)            // here I compare db password with passwod field
-		{
-			$this->_id=$this->id;
-			$this->errorCode=self::ERROR_PASSWORD_INVALID;
-		}
-		else
-		{
-				Yii::app()->user->setState('id',$record->id);
-                $this->_id = $record->id;
-                Yii::app()->user->setState('user_id',$record->id);
-               	Yii::app()->user->setState('telephone', $record->telephone);
-				Yii::app()->user->setState('email_address', $record->email_address);
-                //last logedin 
-                //User::model()->updateByPk($record->id,array('last_logged_at'=>date('Y-m-d H:i:s')));
-        		
-                //wp Login
-               
-		}
-		return !$this->errorCode;		
+            $adminUserObject = User::model()->findByAttributes(array('name'=>$this->username));  // here I use Email as user name which comes from database
+            if($adminUserObject===null) {
+                    $this->_id='user Null';
+                    $this->errorCode=self::ERROR_TELEPHONE_INVALID;
+            } else if(md5($this->password) != $adminUserObject->password) {
+                    $this->_id=$this->id;
+                    $this->errorCode=self::ERROR_PASSWORD_INVALID;
+            } else {
+                Yii::app()->user->setState('id',$adminUserObject->id);
+                $this->_id = $adminUserObject->id;
+                Yii::app()->user->setState('email',$adminUserObject->email);
+                Yii::app()->user->setState('full_name', $adminUserObject->full_name);
+            }
+            return !$this->errorCode;		
 	}
         
 	public function getId()

@@ -558,7 +558,7 @@ class BaseClass extends Controller {
     }
     
     public static function getmenusections($emailadd)
-    {
+    { echo Yii::app()->user->getState('username');exit;
         $result['sections'] = array();
         $result['psections'] = array();
         $result['section_url']=array();

@@ -50,9 +50,9 @@ class DefaultController extends Controller
                     }
 		}else{
 			$model=new LoginForm('Admin');
-	
+                        
 			// if it is ajax validation request
-			if(isset($_POST['ajax']) && $_POST['ajax']==='LoginForm') {
+			if(isset($_POST['ajax']) && $_POST['ajax']==='LoginForm') { echo "cool";exit;
 				echo CActiveForm::validate($model);
 				Yii::app()->end();
 			}
@@ -76,7 +76,36 @@ class DefaultController extends Controller
 			$this->layout = 'login';
 			$this->render('index',array('model'=>$model));
 		}
-	}	
+	}
+        
+        public function actionDashboard(){
+            echo "dream";exit;  
+        }
+        
+        public function actionAdminLogin(){
+            if($_POST){
+                $model = new User;
+		$error = "";
+		$username = $_POST['LoginForm']['username'];
+		$password =  $_POST['LoginForm']['password'];
+
+		if((!empty($username)) && (!empty($password))) {
+                    $getUserObject = User::model()->findByAttributes(array('name'=>$username));
+                    //$getcustomerid = Customer::model()->findAll('content LIKE :telephone', array(':telephone'=>"%$telephone%"));
+                    if(!empty($getUserObject)){
+                        if(($getUserObject->password == md5($password))) {
+                            $identity = new UserIdentity($username,$password);
+                            if($identity->adminAuthenticate())
+                            Yii::app()->user->login($identity);
+                            Yii::app()->session['userid'] = $getUserObject->id;
+                            echo "1";
+                        } else {
+                            echo "0";
+                        }
+                    }
+		}
+            }
+        }
 
 	/*
 	 *  Manager Login form

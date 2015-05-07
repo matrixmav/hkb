@@ -7,6 +7,7 @@
  * @property integer $id
  * @property string $sponsor_id
  * @property string $name
+ * @property string $password
  * @property string $position
  * @property string $full_name
  * @property string $email
@@ -40,15 +41,15 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sponsor_id, name, position, full_name, email, country_id, country_code, phone, data_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'required'),
+			array('sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, data_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'required'),
 			array('country_id, phone, master_pin, status', 'numerical', 'integerOnly'=>true),
-			array('sponsor_id, email, skype_id, facebook_id, twitter_id', 'length', 'max'=>100),
+			array('sponsor_id, password, email, skype_id, facebook_id, twitter_id', 'length', 'max'=>100),
 			array('name, position', 'length', 'max'=>30),
 			array('full_name', 'length', 'max'=>50),
 			array('country_code', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sponsor_id, name, position, full_name, email, country_id, country_code, phone, data_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, data_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,6 +73,7 @@ class User extends CActiveRecord
 			'id' => 'ID',
 			'sponsor_id' => 'Sponsor',
 			'name' => 'Name',
+			'password' => 'Password',
 			'position' => 'Position',
 			'full_name' => 'Full Name',
 			'email' => 'Email',
@@ -110,6 +112,7 @@ class User extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('sponsor_id',$this->sponsor_id,true);
 		$criteria->compare('name',$this->name,true);
+		$criteria->compare('password',$this->password,true);
 		$criteria->compare('position',$this->position,true);
 		$criteria->compare('full_name',$this->full_name,true);
 		$criteria->compare('email',$this->email,true);

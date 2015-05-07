@@ -267,17 +267,16 @@ var Login = function () {
 
 function SubmitLoginForm() {
 	var dataString = 'LoginForm[username]='+ $('#username_id').val() + '&LoginForm[password]=' + $('#password').val() + '&LoginForm[rememberMe]=' + $('#on_off').val();
-	
 	$.ajax({  
 		  type: "POST",  
-		  url: "/admin/default/login",  
+		  url: "/admin/default/adminlogin",  
 		  data: dataString,  
 		  success: function(response) {  
 		  console.log(response);
 		  	if(response == 1){
 				showSucessMsg("Login Success", "Login");
 				showSucessMsg("Please wait a while... ", "Page Redirection");
-				setTimeout( "window.location.href='/admin'", 2000); 
+				setTimeout( "window.location.href='/admin/city'", 2000); 
 			}else{
 				showError("Incorrect Username or Password!");
 			}

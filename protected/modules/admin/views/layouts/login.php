@@ -13,7 +13,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <head>
    <meta name="robots" content="noindex, nofollow" />
    <meta charset="utf-8" />
-   <title>Dayuse Admin | Connexion</title>
+   <title>HK-Base | Admin</title>
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
    <meta content="" name="description" />
@@ -45,7 +45,8 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
 <body class="login">
    <!-- BEGIN LOGO -->
    <div class="logo">
-      <img src="/metronic/assets/img/logo.png" alt="" /> 
+       <!--HK-Base Admin-->
+      <!--<img src="/metronic/assets/img/logo.png" alt="" />--> 
    </div>
    <!-- END LOGO -->
    <!-- BEGIN LOGIN -->
@@ -53,7 +54,7 @@ Purchase: http://themeforest.net/item/metronic-responsive-admin-dashboard-templa
    <!-- END LOGIN -->
    <!-- BEGIN COPYRIGHT -->
    <div class="copyright">
-      <?php echo date('Y');?> &copy; Dayuse
+      <?php echo date('Y');?> &copy; HK-Base
    </div>
    <!-- END COPYRIGHT -->
    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
