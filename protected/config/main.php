@@ -7,7 +7,7 @@
 // CWebApplication properties can be configured here.
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
-	'name'=>'DAYSTAY',
+	'name'=>'HK-Base',
 
 	// preloading 'log' component
 	'preload'=>array('log'),
@@ -126,7 +126,7 @@ return array(
                  //Local
                 
 		 'db'=>array(
-				'connectionString' => 'mysql:host=localhost;dbname=dayuse_site',
+				'connectionString' => 'mysql:host=localhost;dbname=hkbase',
 				'emulatePrepare' => true,
 				'username' => 'root',
 				'password' => 'root',
@@ -134,18 +134,9 @@ return array(
                                 'tablePrefix' => 'tbl_',
 		),
                 /*
-                //dayuse.itvillage.fr
-                'db'=>array(
-				'connectionString' => 'mysql:host=localhost;dbname=dayuse',
-				'emulatePrepare' => true,
-				'username' => 'root',
-				'password' => 'iTVi!!@g3r&&#',
-				'charset' => 'utf8',
-                                'tablePrefix' => 'tbl_',
-		),*/
-                //beta.dayuse
+               
                 /*'db'=>array(
-				'connectionString' => 'mysql:host=localhost;dbname=demodayu_site',
+				'connectionString' => 'mysql:host=localhost;dbname=hkbase',
 				'emulatePrepare' => true,
 				'username' => 'demodayu_site',
 				'password' => 'VuT%=Bv^O-&V',

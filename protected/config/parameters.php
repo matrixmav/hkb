@@ -15,59 +15,22 @@ return array(
     	'state'=>'upload/state/',
     	'imageNotFound'=>'/images/image_not_found.jpg',
     ),
-    'contract_photo_type' => array('jpg','jpeg','gif','png'),
-    'hotel_contact_info'=>array(1=>'General Manager',2=>'Day to day contact',3=>'Reception contact',4=>'Accounting contact'),
-    'dayuseContactNumber' => '1 844 232 9782',
-    'dayuseFooterContactNumber' => '1 844 2 DAYSTAY',
-    'facebookPageUrl' => "https://www.facebook.com/pages/Daystay/1417949168503401",
-    'googlePageUrl' => "https://plus.google.com/u/0/108125519789379656945/posts?ppaa=true",
-    'twitterPageUrl' => "https://twitter.com/daystaycom",
-    'instagramPageUrl' => "https://instagram.com/day.stay/",
-    'linkedinPageUrl' => "https://www.linkedin.com/company/daystay?trk=top_nav_home",
+    'photo_type' => array('jpg','jpeg','gif','png'),
+    'contactNumber' => '123456789',
+    'facebookPageUrl' => "",
+    'googlePageUrl' => "",
+    'twitterPageUrl' => "",
+    'instagramPageUrl' => "",
+    'linkedinPageUrl' => "",
             
-    'hotel_star' => array(1,2,3,4,5),
-    'room_dayname' => array("Mon","Tue","Wed","Thu","Fri","Sat","Sun"),
-    'admin_user_icons'=> array("smiley-yellow.png","smiley-pink.png"),
-    'room_monthname' => array("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"),
-    'room_status'=>array('open'=>'Open','closed'=>'Closed','request'=>'On Request','free_sale'=>'Free Sale'),
-    'room_status_color'=>array('open'=>'lightgreen','closed'=>'lightred','request'=>'lightblue','free_sale'=>'lightyellow'),
     'blogUrl' => '/blog/',
     'thumbnails' => array(
-            'hotel' => array("1280_548"=>"1280_548","302_197"=>"302_197", "632_422"=>"632_422", "64_39"=>"64_39", "727_472"=>"727_472","310_206"=>"310_206","180_120"=>"180_120","227_136"=>"227_136","797_533"=>"797_533"),
-            'cropresolution' => array("1280_548"=>"Original Image","302_197"=>"Our Selection Feature Small", "632_422"=>"Home Page - Our Selection Feature Big", "64_39"=>"Hotel Detail - Slider Thumbnail", "727_472"=>"Hotel Detail - Slider","310_206"=>"Search Page - Grid View","180_120"=>"Search Page - List View","227_136"=>"Search Page - Map Tooltip","797_533"=>"Mobile"),
             'homepageSlider'=>array("1280_646"=>"1280_646"),
             'homepageAds'=>array("960_133"=>"960_133","277_700"=>"277_700"),
-            'homepageSlider'=>array("1280_646"=>"1280_646"), 
-            'dayuseBenifits' => array("797_332"=>"797_332"),
     ),
-    'arrivalTime' => array(
-    		'startTime' => "11:00",
-    		'endTime' => "18:00",
-    		'duration' => "60",
-    ),
-    'searcharrivalTime' => array(
-    		'startTime' => "1:00",
-    		'endTime' => "24:00",
-    		'duration' => "60",
-    ),
-    /*'searcharrivalTime' => array(
-    	'12:00' => "12 AM",
-        '13:00' => "1 PM",
-        '14:00' => "2 PM",
-        '15:00' => "3 PM",
-        '16:00' => "4 PM",
-        '17:00' => "5 PM",
-        '18:00' => "6 PM",
-        '19:00' => "7 PM",
-        '20:00' => "8 PM",
-        '21:00' => "9 PM",
-        '22:00' => "10 PM",
-        '23:00' => "11 PM",
-        '23:30' => "11:30 PM",
-    ),*/
-    'defaultPageSize' => 1000,
-    'clientInvoicePercentage'=>20,
-    'hotelPageSize' => 1000,
+
+    'defaultPageSize' => 10,
+    'clientInvoicePercentage'=>5,
     'pageSizeOptions'=>array(10=>10,20=>20,50=>50,100=>100),
     'timeZone' => array(
     		'America/Adak' => "America/Adak",
@@ -76,62 +39,32 @@ return array(
     		'America/Belize'=>'America/Belize',
     		'America/Blanc-Sablon'=>'America/Blanc-Sablon'    		
     ),
-    'hotelContentType' => array(
+    'commissionType' => array(
     		'description'=>'Description', 'offer'=>'Offer', 'guide'=>'Guide', 'nearby'=>'Nearby','transportation'=>'Transportation','howto'=>'How to get there?','parking'=>'Closed parking lot & Fee'
     ),
-    'manager_homeUrl' => '/'.$ADMINDIR.'/hotel',
-    'homeUrl' => '/'.$ADMINDIR.'/reservation',
+    'homeUrl' => '/'.$ADMINDIR.'/users',
     'logoutUrl'=>'/'.$ADMINDIR.'/default/login',
-    'managerlogoutUrl'=>'/'.$ADMINDIR.'/default/managerlogin',
     
-    'dayuseInfoEmail' =>'Iscliff@dayuse.com',
-    'dayuseContractReceiver' =>'Iscliff@dayuse.com',
-    //'dayuseInfoEmail' =>'sandeep.sen@itvillage.fr',
-    'search' => array(
-    	'min_hotel_required' => 5, 
-    	'per_page' => 10,
-    	'distanceMiles' => array( //In Meters. 1 mile = 1609.344 meters
-        	5*1609.344, 
-            10*1609.344,
-    		20*1609.344,
-    		50*1609.344,
-    		100*1609.344,
-    		2000*1609.344,
-    	),
-    ),
-    'dayuse_benifits_page_list' => array(
-            'home'          => 'Home',
-            'reservation'   => 'Reservation',
-            'hotelDetail'  => 'Hotel Detail',
-            'mobile'        => 'Mobile',
-    ),
-    'payment' => array(        
-            'target_url'      => 'http://pagesfr.itvillage.fr/cgi/modulev31.cgi',
-            'call_back_url'   => '/reservation/callback',
-            'PBX_MODE'        => 1,
-            'PBX_SITE'        => 1999888,
-            'PBX_RANG'        => 22,
-            'PBX_IDENTIFIANT' => 2,
-            'PBX_TOTAL'       => 1500,
-            'PBX_DEVISE'      => 978,
-            'PBX_CMD'         => 'CMD9542124-01A5G132312123123',
-            'PBX_PORTEUR'     => 'ramhemareddy@gmail.com',
-            'REFERENCE'       => 'CMD9542124-01A5G132312123123',
-            'PBX_RETOUR'      => 'ref:R;trans:T;error:E;sign:K'
+    'hkbAdminEmail' =>'ramhemareddy@gmail.com',
+
+    'paymentGateway' => array( 
+        'paypal' => array(
+            'target_url'      => '',
+            'call_back_url'   => '/controller name/callback',
+            )
     ),
     'default' => array(
     		'countryId'     => 2,
-    		'cityId'   		=> 13,
+    		'cityId' => 13,
     		'portalId'      => 1,
-                'currency_id'=>1,
                 'language_id'=>1,
                 'invoice_payment_duration'=>18
     ),
     'smsConfig' => array(
-        'api_key' => "240c835a",
-        'api_secret' => "721d5e73",
-        'from' => 'dayuse',
-        'apiUrl' => 'https://rest.nexmo.com/sms/json?api_key='
+        'api_key' => "",
+        'api_secret' => "",
+        'from' => '',
+        'apiUrl' => ''
     ),
     'sms_verification_text' => 'Dayuse Reservation Verification Code: ',
     'months' => array(
@@ -163,22 +96,5 @@ return array(
     ),
    'countrycode' => array("1"=>"US", "2"=>"can", "3"=>"in", "4"=>"FR"),
    'accountno'=>'4444',
-   'sitename'=>'Daystay',
-   'daystay_start_year'=>2014,
-    'hotelArrivalTimeArray' => array(
-        '11AM-12PM' => '11AM - 12PM',
-        '12PM-1PM' => '12PM - 1PM',
-        '1PM-2PM' => '1PM - 2PM',
-        '2PM-3PM'=>'2PM - 3PM',
-        '3PM-4PM' => '3PM - 4PM',
-        '4PM-5PM' => '4PM - 5PM',
-        '5PM-6PM' => '5PM - 6PM'),
-    'hotelArrivalTimeKeyValue' => array(
-        '11' => '11AM-12PM',
-        '12' => '12PM-1PM',
-        '13' => '1PM-2PM',
-        '14' =>'2PM-3PM',
-        '15' => '3PM-4PM',
-        '16' => '4PM-5PM',
-        '17' => '5PM-6PM'),
+   'sitename'=>'HK-Base',
 );
