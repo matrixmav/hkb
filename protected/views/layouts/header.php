@@ -66,6 +66,3 @@
     <div class="clear"></div>
   </div>
 </section>
-<?php 
-$model = new Customer;
-$this->renderpartial('//customer/login',array('model'=>$model));?>

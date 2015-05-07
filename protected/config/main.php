@@ -29,9 +29,10 @@ return array(
                 'mobile',
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
-			'password'=>'admin',
+			'password'=>false,
 			// If removed, Gii defaults to localhost only. Edit carefully to taste.
-			'ipFilters'=>array('127.0.0.1','::1'),
+//			'ipFilters'=>array('127.0.0.1','::1'),
+                    'ipFilters'=>false
 		),
 		
 	),
@@ -71,34 +72,13 @@ return array(
                     //eg.
                 //'options' => array(),
             ),
-        'curl' => array(
-        	'class' => 'application.extensions.curl.Curl',
-            //you can setup timeout,http_login,proxy,proxylogin,cookie, and setOPTIONS
-            //eg.
-            //'options' => array(),
-        ),
-        'ePdf' => array(
-                        'class' => 'ext.yii-pdf.EYiiPdf',
-			'params' => array(
-				'mpdf'=> array(
-					'librarySourcePath' => 'application.vendor.mpdf.*',
-					'constants'=> array(
-						'_MPDF_TEMP_PATH' => Yii::getPathOfAlias('application.runtime'),
-					),
-					'class'=>'mpdf',
-				),
-				'HTML2PDF' => array(
-					'librarySourcePath' => 'application.vendor.html2pdf.*',
-					'classFile'=> 'html2pdf.class.php', // For adding to Yii::$classMap
-				)
-			),
-		),
+
         // uncomment the following to enable URLs in path-format
 		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			'rules'=>array(
-				'admin'=>'/admin/default',
+                        'admin'=>'/admin/default',
         		'mobile'=>'/mobile/site',
 				'<module:\w+>/<controller:\w+>/<action:\w+>'=>'<module>/<controller>/<action>',
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
