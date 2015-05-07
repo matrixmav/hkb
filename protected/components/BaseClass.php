@@ -558,7 +558,7 @@ class BaseClass extends Controller {
     }
     
     public static function getmenusections($emailadd)
-    { echo Yii::app()->user->getState('username');exit;
+    { //echo Yii::app()->user->getState('username');exit;
         $result['sections'] = array();
         $result['psections'] = array();
         $result['section_url']=array();
@@ -568,7 +568,7 @@ class BaseClass extends Controller {
         
         if($emailadd== "")
         {
-            echo "You have been logged out. <a href='/admin'>Click here to login again.</a>";
+            echo "You have been logged out. <a href='/admin'>242424Click here to login again.</a>";
             $adURL = Yii::app()->params['AdminDir'];
             $this->redirect('/'.$adURL.'/default/logout');
             

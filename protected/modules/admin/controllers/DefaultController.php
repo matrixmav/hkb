@@ -21,33 +21,8 @@ class DefaultController extends Controller
 	 */
 	public function actionLogin() {
 
-		if(Yii::app()->user->getstate('user_id')){
-                    if(Yii::app()->user->getstate('access') == 'manager')
-                    {
-                        $url = BaseClass::manager_redirect(Yii::app()->user->getstate('user_id'));
-                        $this->redirect($url);
-                    }
-                    else
-                    {
-                        $menusections = BaseClass::getmenusections(Yii::app()->user->getState('username'));
-
-                        if(count($menusections['section_rurl']))
-                        {
-                            $aduser = AdminUser::model()->findByPk(Yii::app()->user->getstate('user_id'));
-                            $aduser->login_status = 1;
-                            $aduser->last_logged_in = date("Y-m-d H:i:s",strtotime("now"));
-                            $aduser->save(FALSE);
-
-                            $adURL = Yii::app()->params['AdminDir'];
-                            $this->redirect('/'.$adURL.'/'.$menusections['section_rurl'][0]);
-
-                        }
-                        else {
-                            $this->actionLogout();
-                            //$this->redirect(Yii::app()->params['homeUrl']);
-                        }                   
-                        //$this->redirect(Yii::app()->params['homeUrl']);
-                    }
+		if(Yii::app()->session['userid']){ 
+                    $this->redirect("/admin/dashboard");
 		}else{
 			$model=new LoginForm('Admin');
                         
@@ -82,7 +57,7 @@ class DefaultController extends Controller
             echo "dream";exit;  
         }
         
-        public function actionAdminLogin(){
+        public function actionAdminLogin(){ echo "testing";exit;
             if($_POST){
                 $model = new User;
 		$error = "";
