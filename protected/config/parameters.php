@@ -46,7 +46,7 @@ return array(
     'logoutUrl'=>'/'.$ADMINDIR.'/default/login',
     
     'hkbAdminEmail' =>'ramhemareddy@gmail.com',
-
+    'adminId' =>'1',
     'paymentGateway' => array( 
         'paypal' => array(
             'target_url'      => '',

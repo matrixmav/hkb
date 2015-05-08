@@ -220,19 +220,19 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="sidebar-toggler hidden-phone"></div> <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                         </li>
 
-                        <?php
+                        <?php  
                         if ($access != "manager") {
                             $hotel_pmenu = 6;
                             if ((in_array($hotel_pmenu, $menusections ['psections'])) || (in_array($hotel_pmenu, $menusections ['section_ids']))) {
                                 $hotel_subsection = array(
                                     "user/index" => "Member Management",
                                     "wallet/index" => "Wallet",
-                                    "#" => "Generate binary",
-                                    "#"=>"Transaction status",
+                                    "#1" => "Generate binary",
+                                    "#3"=>"Transaction status",
                                     "#"=>"Password recovery"
                                 );
                                 $activecls = 'active';
-                                if ($curControllerLower == "hotel" || $curControllerLower == "admin") {
+                                if ($curControllerLower == "user" || $curControllerLower == "admin") {
                                     $activecls = 'active';
                                 } else {
                                     $activecls = '';
@@ -282,8 +282,8 @@ License: You must have a valid license purchased only from themeforest(the above
                             $billing_pmenu = 7;
                             if ((in_array($billing_pmenu, $menusections ['psections'])) || (in_array($billing_pmenu, $menusections ['section_ids']))) {
                                 $billing_subsection = array(
+                                    "mail" => "Inbox",
                                     "mail/compose" => "Compose",
-                                    "mail/inbox" => "Inbox",
                                     "mail/sent" => "Sent",
                                 );
                                 ?>

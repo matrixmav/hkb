@@ -6,6 +6,7 @@ $this->breadcrumbs = array(
     'Users' => array('index'),
 );
 ?>
+
 <div class="expiration margin-topDefault">
     <!--<p>Client/ Hotel/ Bill : <?php //echo $clientObject->name; ?></p>-->
     <form id="user_filter_frm" name="user_filter_frm" method="post" action="/admin/user" />
@@ -54,6 +55,11 @@ $this->breadcrumbs = array(
                     'name' => 'sponsor_id',
                     'header' => '<span style="white-space: nowrap;">Sponser Id &nbsp; &nbsp; &nbsp;</span>',
                     'value' => '$data->sponsor_id',
+                ),
+                array(
+                    'name' => 'sponsor_id',
+                    'header' => '<span style="white-space: nowrap;">Address &nbsp; &nbsp; &nbsp;</span>',
+                    'value' => '$data->userprofile->address',
                 ),
                 array(
                     'name' => 'status',
