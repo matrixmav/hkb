@@ -6,7 +6,7 @@ class OrderController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='user';
+	public $layout='inner';
 
 	/**
 	 * @return array action filters
@@ -46,7 +46,7 @@ class OrderController extends Controller
 	}
         
         public function actionList(){
-            echo "list";exit;
+            $this->render('list');
         }
 
         /**
