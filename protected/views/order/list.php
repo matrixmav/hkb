@@ -33,7 +33,7 @@ $this->menu=array(
           <!-- END SIDEBAR -->
           <!-- BEGIN CONTENT -->
           <div class="col-md-9 col-sm-9">
-            <h1> Update Order list</h1>
+            <!--<h1> Update Order list</h1>-->
             <div class="content-form-page">
               <div class="row">
                 <div class="col-md-7 col-sm-7">
@@ -47,7 +47,7 @@ $this->menu=array(
                         
                         <div class="Heading">
                             <div class="Cell">
-                                <p>Order Name</p>
+                                <p>Package Taken</p>
                             </div>
                             <div class="Cell">
                                 <p>Order Id</p>
@@ -56,10 +56,13 @@ $this->menu=array(
                                 <p>Heading 3</p>
                             </div>
                         </div>
-                        <?php foreach($orderObject as $orderObj){?>
+                        <?php foreach($orderObject as $orderObj){
+                            $packageArr = $orderObj->package();
+                            var_dump($packageArr);
+                            ?>
                         <div class="Row">
                             <div class="Cell">
-                                <p><?php //echo $orderObj->;?></p>
+                                <p><?php echo $packageArr->name;?></p>
                             </div>
                             <div class="Cell">
                                 <p><?php //echo $orderObj->;?></p>
