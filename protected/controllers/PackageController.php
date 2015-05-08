@@ -6,7 +6,7 @@ class PackageController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='user';
 
 	/**
 	 * @return array action filters
@@ -28,7 +28,7 @@ class PackageController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','domainsearch','availabledomain','checkout'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -44,8 +44,57 @@ class PackageController extends Controller
 			),
 		);
 	}
+        
+         /**
+         * Display search domain page 
+         */
+        
+        public function actionDomainSearch()
+        {
+             
+         $this->render('domainsearch');
+        }
+        
+         /**
+         * Display search domain page 
+         * Search Domain wether it is available or not
+         */
+        public function actionAvailableDomain() {
+            Yii::app()->session['package_id'] = $_REQUEST['package_id'];
+            $domainTakenArray = array('nidhisati.com', 'ram.net', 'sumeet.com', 'suryaasati.com');
+            $AllDomainArray = array('com', 'net', 'co.in', 'co.uk', 'org');
+            $userEnteredDomain = $_REQUEST['domain'];
+            
+                $UserDomainPart = explode('.', $userEnteredDomain);
+                if (in_array($userEnteredDomain, $domainTakenArray)) {
+                $pos = array_search($UserDomainPart[1], $AllDomainArray);
+                unset($AllDomainArray[$pos]);
+                $SuggestedDomain = "<div>Oops!Domain you entered not available.Please choose some other.</div><br/>";
+                $SuggestedDomain .= "<h2>Suggested Domain</h2><br/>";
+                foreach ($AllDomainArray as $alldomain) {
+                    $SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
+                }
+                
+            } else {
+                $SuggestedDomain = "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." .$UserDomainPart[1]. "</a><br/>";
+                 foreach ($AllDomainArray as $alldomain) {
+                    $SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
+                 }
+            }
+            echo $SuggestedDomain;
+        }
+        
+        public function actionCheckOut(){
+            Yii::app()->session['domain_id'] = $_GET['domain_id'];
+            $packageObject = Package::model()->findByPK(Yii::app()->session['package_id']);
+           
+            $this->render('checkout',array(
+			'packageObject'=>$packageObject,
+		));
+            
+        }
 
-	/**
+    /**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
@@ -55,7 +104,8 @@ class PackageController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
+        
+        
 	/**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
