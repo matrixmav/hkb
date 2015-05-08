@@ -1,5 +1,6 @@
   <!-- Header END -->
   <!-- Promo block BEGIN -->
+  <?php Yii::app()->session['username'] = "nidhi";?>
   <div class="promo-block" id="promo-block">
     <div class="tp-banner-container">
       <div class="tp-banner" >
@@ -582,101 +583,31 @@
       <h2 class="margin-bottom-50"><strong>Pricing</strong> Tables</h2>
       <div class="row">
         <!-- Pricing item BEGIN -->
+        <?php foreach($packageObject as $package){?>
         <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="pricing-item">
+          <?php if(Yii::app()->session['username']!=''){?> <a href="<?php echo Yii::app()->baseUrl; ?>package/domainsearch?package_id=<?php echo $package['id']; ?>"><?php }else{?><a href="<?php echo Yii::app()->baseUrl; ?>user/registration"><?php }?><div class="pricing-item">
             <div class="pricing-head">
-              <h3>Basic</h3>
-              <p>Lorem ipsum dolor</p>
+              <h3><?php echo $package['name'];?></h3>
+              <p><?php //echo $package['description1'];?></p>
             </div>
             <div class="pricing-content">
               <div class="pi-price">
-                <strong>$<em>19</em></strong>
+                <strong>$<em><?php echo $package['amount'];?></em></strong>
                 <p>Per Month</p>
               </div>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-circle"></i>Basic Package 1</li>
-                <li><i class="fa fa-circle"></i> Basic Package 2</li>
-                <li><i class="fa fa-circle"></i> Basic Package 3</li>
-              </ul>
+             <?php echo $package['Description'];?>
             </div>
             <div class="pricing-footer">
               <a class="btn btn-default" href="javascript:void(0);">Sign Up</a>
             </div>
-          </div>
+                </div>
+                    </a>
+        
         </div>
+        <?php }?>
         <!-- Pricing item END -->
-        <!-- Pricing item BEGIN -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="pricing-item">
-            <div class="pricing-head">
-              <h3>Advance</h3>
-              <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="pricing-content">
-              <div class="pi-price">
-                <strong>$<em>25</em></strong>
-                <p>Per Month</p>
-              </div>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-circle"></i> Advance 1</li>
-                <li><i class="fa fa-circle"></i> Advance 2</li>
-                <li><i class="fa fa-circle"></i> Advance 3</li>
-              </ul>
-            </div>
-            <div class="pricing-footer">
-              <a class="btn btn-default" href="javascript:void(0);">Sign Up</a>
-            </div>
-          </div>
-        </div>
-        <!-- Pricing item END -->
-        <!-- Pricing item BEGIN -->
-        <div class="col-md-4 col-sm-6 col-xs-12">
-          <div class="pricing-item">
-            <div class="pricing-head">
-              <h3>Pro</h3>
-              <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="pricing-content">
-              <div class="pi-price">
-                <strong>$<em>59</em></strong>
-                <p>Per Month</p>
-              </div>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-circle"></i> Pro 1</li>
-                <li><i class="fa fa-circle"></i> Pro 2</li>
-                <li><i class="fa fa-circle"></i> Pro 3</li>
-              </ul>
-            </div>
-               <!--<div class="pricing-footer">
-              <a class="btn btn-default" href="javascript:void(0);">Sign Up</a>
-            </div>
-          </div>
-        </div>
-      Pricing item END -->
-        <!-- Pricing item BEGIN 
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="pricing-item">
-            <div class="pricing-head">
-              <h3>Hi-Tech</h3>
-              <p>Lorem ipsum dolor</p>
-            </div>
-            <div class="pricing-content">
-              <div class="pi-price">
-                <strong>$<em>98</em></strong>
-                <p>Per Month</p>
-              </div>
-              <ul class="list-unstyled">
-                <li><i class="fa fa-circle"></i> Lorem ipsum dolor</li>
-                <li><i class="fa fa-circle"></i> Lorem ipsum dolor</li>
-                <li><i class="fa fa-circle"></i> Lorem ipsum dolor</li>
-              </ul>
-            </div>-->
-            <div class="pricing-footer">
-              <a class="btn btn-default" href="javascript:void(0);">Sign Up</a>
-            </div>
-          </div>
-        </div>
-        <!-- Pricing item END -->
+        
+        
       </div>
     </div>
   </div>
