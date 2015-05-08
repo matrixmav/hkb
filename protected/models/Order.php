@@ -49,8 +49,11 @@ class Order extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+		return array( 
+                    'package' => array(self::HAS_MANY, 'Order', 'package_id'),
+//                    'transaction' => array(self::HAS_MANY, 'Transaction', 'id'),
+//		    'gateway' => array(self::HAS_MANY, 'Gateway', 'id'),
+                    );
 	}
 
 	/**

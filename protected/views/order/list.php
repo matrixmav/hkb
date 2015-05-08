@@ -33,69 +33,60 @@ $this->menu=array(
           <!-- END SIDEBAR -->
           <!-- BEGIN CONTENT -->
           <div class="col-md-9 col-sm-9">
-            <!--<h1> Update Order list</h1>-->
-            <div class="content-form-page">
-              <div class="row">
-                <div class="col-md-7 col-sm-7">
-                  
-                          <div class="form-group">
-                       
-                                <div class="col-lg-12">        
-                      
+       
+                      <?php $this->widget('zii.widgets.grid.CGridView', array(
+	'id'=>'city-grid',
+	'dataProvider'=>$dataProvider,
+	'enableSorting'=>'true',
+	'ajaxUpdate'=>true,
+	'summaryText'=>'Showing {start} to {end} of {count} entries',
+	'template'=>'{items} {summary} {pager}',
+	'itemsCssClass'=>'table table-striped table-bordered table-hover table-full-width',
+	'pager'=>array(
+		'header'=>false,
+		'firstPageLabel' => "<<",
+		'prevPageLabel' => "<",
+		'nextPageLabel' => ">",
+		'lastPageLabel' => ">>",
+	),	
+	'columns'=>array(
+		//'idJob',
+		array(
+                    'name'=>'slug',
+                    'header'=>'<span style="white-space: nowrap;">Name &nbsp; &nbsp; &nbsp;</span>',
+                    'value'=>'$data->id',
+		),
+		array(
+                    'name'=>Yii::t('translation', 'State'),
+                    'header'=>'<span style="white-space: nowrap;">State &nbsp; &nbsp; &nbsp;</span>',
+                    'value'=>'isset($data->package->id)?$data->package->id:""',
+		),
+		'latitude',
+		'longitude',
+		array(
+			'name'=>Yii::t('translation', 'Status'),
+			'value'=>'($data->status == 1) ? Yii::t(\'translation\', \'Active\') : Yii::t(\'translation\', \'Inactive\')',
+		),
+		array( 
+			'class'=>'CButtonColumn',
+			'template'=>'{Edit}{Delete}',
+			'htmlOptions'=>array('width'=>'23%'),
+			'buttons'=>array(
+				'Edit' => array(
+					'label'=>'Edit',
+					'options'=>array('class'=>'btn purple fa fa-edit margin-right15'),
+					'url'=>'Yii::app()->createUrl("admin/city/update", array("id"=>$data->id))',
+				),
+				'Delete' => array(
+					'label'=>Yii::t('translation', 'Change Status'),
+					'options'=>array('class'=>'fa fa-success btn default black delete'),
+					'url'=>'Yii::app()->createUrl("admin/city/delete", array("id"=>$data->id))',
+				),
+			),
+		),
+	),
+)); ?>
                     
-                    <div class="Table">
-                        
-                        <div class="Heading">
-                            <div class="Cell">
-                                <p>Package Taken</p>
-                            </div>
-                            <div class="Cell">
-                                <p>Order Id</p>
-                            </div>
-                            <div class="Cell">
-                                <p>Heading 3</p>
-                            </div>
-                        </div>
-                        <?php foreach($orderObject as $orderObj){
-                            $packageArr = $orderObj->package();
-                            var_dump($packageArr);
-                            ?>
-                        <div class="Row">
-                            <div class="Cell">
-                                <p><?php echo $packageArr->name;?></p>
-                            </div>
-                            <div class="Cell">
-                                <p><?php //echo $orderObj->;?></p>
-                            </div>
-                            <div class="Cell">
-                                <p><?php //echo $orderObj->;?></p>
-                            </div>
-                        </div>
-                        <?php }?>
-                      </div>
-                   
-                    </div></div>
-                    
-                      
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    <div class="row">
-                      
-                    </div>
-                  </form>
-                </div>
-              
-              </div>
-            </div>
-          </div>
-          <!-- END CONTENT -->
-        </div>
-        <!-- END SIDEBAR & CONTENT -->
+
       </div>
     </div>
