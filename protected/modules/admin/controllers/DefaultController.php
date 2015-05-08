@@ -57,7 +57,7 @@ class DefaultController extends Controller
             echo "dream";exit;  
         }
         
-        public function actionAdminLogin(){ echo "testing";exit;
+        public function actionAdminLogin(){ 
             if($_POST){
                 $model = new User;
 		$error = "";
