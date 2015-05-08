@@ -46,7 +46,8 @@ class OrderController extends Controller
 	}
         
         public function actionList(){
-            $this->render('list');
+             $orderObject = Order::model()->findAll();
+            $this->render('list',array('orderObject'=>$orderObject));
         }
 
         /**
