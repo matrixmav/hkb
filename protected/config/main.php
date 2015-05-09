@@ -109,7 +109,7 @@ return array(
 				'connectionString' => 'mysql:host=localhost;dbname=hkbase',
 				'emulatePrepare' => true,
 				'username' => 'root',
-				'password' => 'root',
+				'password' => '',
 				'charset' => 'utf8',
                                 'tablePrefix' => 'tbl_',
 		),
