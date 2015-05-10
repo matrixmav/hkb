@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','registration'),
+				'actions'=>array('index','view','registration','isuserexisted'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -48,11 +48,31 @@ class UserController extends Controller
         public function actionRegistration(){
             
             if($_POST){
-                echo "<pre>"; print_r($_POST); exit;
+
+                $model = new User;
+                $model->attributes = $_POST;
+                if(!$model->save(false)){
+                    echo "<pre>"; print_r($model->getErrors());exit;
+                }
             }
-            $this->render('registration');
+            $spnId = Yii::app()->params['adminSpnId'];
+            if($_GET){
+                $spnId = $_GET['spid'];
+            }
+            $countryObject = Country::model()->findAll();
+            $this->render('registration',array('countryObject'=>$countryObject,'spnId'=>$spnId));
         }
 
+        public function actionIsUserExisted(){
+            if($_POST){
+                $userObject = User::model()->findByAttributes(array('name' => $_POST['username']));
+                if(count($userObject) > 0){
+                    echo "1"; exit;
+                } else {
+                    echo "0"; exit;
+                }
+            }
+        }
         /**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed

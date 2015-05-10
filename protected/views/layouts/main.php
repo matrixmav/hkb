@@ -50,6 +50,8 @@ if(isset($this->pageTitle))
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/modernizr.js" type="text/javascript">
 </script>
 <script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
+
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js?ver=<?php echo strtotime("now");?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.11.1.min.js?ver=<?php echo strtotime("now");?>"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/customer.js?ver=<?php echo strtotime("now");?>"></script>
   <!-- Theme styles END -->

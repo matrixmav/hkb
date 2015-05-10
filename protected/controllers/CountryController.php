@@ -28,7 +28,7 @@ class CountryController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','getcountry'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -45,7 +45,16 @@ class CountryController extends Controller
 		);
 	}
 
-	/**
+        public function actionGetCountry(){
+            if($_POST){
+                $countryObject = Country::model()->findByPk($_POST['id']);
+                if(count($countryObject) > 0 ){
+                    echo $countryObject->phone_code;exit;
+                }
+            }
+        }
+
+        /**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */

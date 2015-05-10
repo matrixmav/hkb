@@ -121,8 +121,8 @@ class GenealogyController extends Controller
 	 * Lists all models.
 	 */
 	public function actionIndex(){  
-            
-            $currentUserId = 1001 ;           
+              
+            $currentUserId = 1000 ;           
             $genealogyListObject = BaseClass::getGenoalogyTree($currentUserId);          
             $this->render('view',array(
 			'genealogyListObject'=>$genealogyListObject,
