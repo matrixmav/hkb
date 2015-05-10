@@ -10,14 +10,25 @@
             $("#name").focus();            
             return false;
         }
+       
+        if ($("#name").val().length < 5) {
+            $("#name_error").html("Enter atleast 5 chars in the input box");
+            $("#name").focus();            
+            return false;
+        }
 
         $("#full_name_error").html("");
         if ($("#full_name").val() == "") {
             $("#full_name_error").html("Enter User Full Name");
             $("#full_name").focus();   
             return false;
-        }
+        }  
         
+        if ($("#full_name").val().length < 5) {
+            $("#full_name_error").html("Enter atleast 5 chars in the input box");
+            $("#full_name").focus();   
+            return false;
+        }
         
 
         /* email validation */
@@ -52,6 +63,7 @@
             $("#phone").focus();
             return false;
         }
+        
 
         var phone = document.getElementById('phone');
         var filter = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
@@ -68,9 +80,22 @@
             $("#password").focus();
             return false;
         }
+        
+         if ($("#password").val().length < 5) {
+            $("#password_error").html("Enter atleast 5 chars in the input box");
+            $("#password_name").focus();   
+            return false;
+        }
+        
 
         if ($("#confirm_password").val() == "") {
             $("#confirm_password_error").html("Enter Confirm Password");
+            $("#confirm_password").focus();
+            return false;
+        }
+        
+        if ($("#confirm_password").val().length < 5) {
+            $("#confirm_password_error").html("Enter atleast 5 chars in the input box");
             $("#confirm_password").focus();
             return false;
         }
