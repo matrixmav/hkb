@@ -48,6 +48,7 @@ class UserController extends Controller
         public function actionRegistration(){
             
             if($_POST){
+
                 $model = new User;
                 $model->attributes = $_POST;
                 if(!$model->save(false)){

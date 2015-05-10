@@ -220,16 +220,14 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="sidebar-toggler hidden-phone"></div> <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
                         </li>
 
-                        <?php  
+                        <?php
                         if ($access != "manager") {
                             $hotel_pmenu = 6;
                             if ((in_array($hotel_pmenu, $menusections ['psections'])) || (in_array($hotel_pmenu, $menusections ['section_ids']))) {
                                 $hotel_subsection = array(
                                     "user/index" => "Member Management",
-                                    "wallet/index" => "Wallet",
+                                    "user/wallet" => "Wallet",
                                     "#1" => "Generate binary",
-                                    "#3"=>"Transaction status",
-                                    "#"=>"Password recovery"
                                 );
                                 $activecls = 'active';
                                 if ($curControllerLower == "user" || $curControllerLower == "admin") {
@@ -282,29 +280,27 @@ License: You must have a valid license purchased only from themeforest(the above
                             $billing_pmenu = 7;
                             if ((in_array($billing_pmenu, $menusections ['psections'])) || (in_array($billing_pmenu, $menusections ['section_ids']))) {
                                 $billing_subsection = array(
-                                    "mail" => "Inbox",
-                                    "mail/compose" => "Compose",
-                                    "mail/sent" => "Sent",
+                                    "mail" => "All"
                                 );
                                 ?>
                                 <li
-                                    class="<?php echo ((($curControllerLower == 'invoice' && $curActionLower != 'bills')) || ($curActionLower == 'simplename') || ($curControllerLower == 'client') || ($curControllerLower == 'clientinvoice')) ? "active" : ''; ?>">
+                                    class="<?php echo ($curControllerLower == 'mail') ? "active" : ''; ?>">
                                     <a href="javascript:;"> <span class="leftmenu-hotel"></span> <span
                                             class="title">Mail</span>
                                         <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'invoice') ? "open" : ''; ?>">
+                                            class="arrow <?php echo ($curControllerLower == 'mail') ? "open" : ''; ?>">
                                         </span>
                                     </a>
                                     <?php
                                     echo '<ul class="sub-menu">';
                                     foreach ($billing_subsection as $ctName => $ctTitle) {
 //                                        if (in_array($ctTitle, $menusections ['sections'])) {
-                                            // if($ctName == "invoice")
-                                            // echo '<ul class="sub-menu">';
-                                            $class_billing_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
-                                            echo '<li ' . $class_billing_content . '>';
-                                            echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
-                                            echo '</li>';
+                                        // if($ctName == "invoice")
+                                        // echo '<ul class="sub-menu">';
+                                        $class_billing_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
+                                        echo '<li ' . $class_billing_content . '>';
+                                        echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
+                                        echo '</li>';
 //                                        }
                                     }
                                     echo '</ul>';
@@ -341,26 +337,25 @@ License: You must have a valid license purchased only from themeforest(the above
                                             class="arrow <?php echo ($curControllerLower == 'search') ? "open" : ''; ?>">
                                         </span>
                                     </a>
-                                    
+
                                     <?php
-                                    
                                     echo '<ul class="sub-menu">';
                                     foreach ($reservation_subsection as $ctName => $ctTitle) {
 //                                        if (in_array($ctTitle, $menusections ['sections'])) {
-                                            if ($ctName == "search/create") {
-                                                $ctName = "search/create/type/details";
-                                            }
-                                            if ($ctName == "reservation" && $curControllerLower == "reservation")
-                                                $class_content = 'class="active"';
-                                            else
-                                                $class_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
+                                        if ($ctName == "search/create") {
+                                            $ctName = "search/create/type/details";
+                                        }
+                                        if ($ctName == "reservation" && $curControllerLower == "reservation")
+                                            $class_content = 'class="active"';
+                                        else
+                                            $class_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
 
-                                            echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
-                                            echo '</li>';
-                                            if ($ctName == "search/create/type/details") {
-                                                $ctName = "search/create";
-                                            }
+                                        echo '<li ' . $class_content . '>';
+                                        echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
+                                        echo '</li>';
+                                        if ($ctName == "search/create/type/details") {
+                                            $ctName = "search/create";
+                                        }
 //                                        }
                                     }
                                     echo '</ul>';
@@ -389,22 +384,22 @@ License: You must have a valid license purchased only from themeforest(the above
                                     foreach ($customer_subsection as $cusName => $cusTitle) {
 
 //                                        if (in_array($cusTitle, $menusections ['sections'])) {
-                                            if ($cusName == 'customer/create') {
-                                                $cusName = "customer/create/type/details";
-                                            }
-                                            // if($cusName == "customer/index")
-                                            // echo '<ul class="sub-menu">';
+                                        if ($cusName == 'customer/create') {
+                                            $cusName = "customer/create/type/details";
+                                        }
+                                        // if($cusName == "customer/index")
+                                        // echo '<ul class="sub-menu">';
 
-                                            $class_content = ($curControllerLower . "/" . $curActionLower == $cusName) ? 'class="active"' : '';
+                                        $class_content = ($curControllerLower . "/" . $curActionLower == $cusName) ? 'class="active"' : '';
 
-                                            echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $cusName . '">' . Yii::t('translation', $cusTitle) . '</a>';
-                                            echo '</li>';
-                                            if ($cusName == 'customer/create/type/details') {
-                                                $cusName = "customer/create";
-                                            }
-                                            // if($cusName == "customer/create")
-                                            // echo '</ul>';
+                                        echo '<li ' . $class_content . '>';
+                                        echo '<a href="/admin/' . $cusName . '">' . Yii::t('translation', $cusTitle) . '</a>';
+                                        echo '</li>';
+                                        if ($cusName == 'customer/create/type/details') {
+                                            $cusName = "customer/create";
+                                        }
+                                        // if($cusName == "customer/create")
+                                        // echo '</ul>';
 //                                        }
                                     }
                                     echo '</ul>';
@@ -415,7 +410,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             }
 
                             $user_pmenu = 33;
-                            
+
 
                             $bases_pmenu = 4;
                             if ((in_array($bases_pmenu, $menusections ['psections'])) || (in_array($bases_pmenu, $menusections ['section_ids']))) {
@@ -452,20 +447,19 @@ License: You must have a valid license purchased only from themeforest(the above
                                     echo '<ul class="sub-menu">';
                                     foreach ($bases_subsection as $ctName => $ctTitle) {
 
-                                            $class_content = ($curController == $ctName) ? 'class="active"' : '';
+                                        $class_content = ($curController == $ctName) ? 'class="active"' : '';
 
-                                            echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
-                                            echo '</li>';
-
+                                        echo '<li ' . $class_content . '>';
+                                        echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
+                                        echo '</li>';
                                     }
                                     echo '</ul>';
                                     ?>						
                                 </li>
-                                <?php
-                            }
-                        } else {
-                            ?>
+                                    <?php
+                                }
+                            } else {
+                                ?>
                             <li
                                 class="<?php echo ($curControllerLower == 'hotel') ? "active" : ''; ?>">
                                 <a href="/admin/hotel/index"> <i class="fa fa-cogs"></i> <span
@@ -481,13 +475,13 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <span class="selected"></span> </span>
                                 </a>
                             </li>
-                            <?php
-                            $billing_subsection = array(
-                                "invoice/index" => "Invoice Reservation",
-                                "invoice/hotelbills" => "Invoices Listing",
-                                "invoice/regulationstatus" => "Payment History"
-                            );
-                            ?>
+    <?php
+    $billing_subsection = array(
+        "invoice/index" => "Invoice Reservation",
+        "invoice/hotelbills" => "Invoices Listing",
+        "invoice/regulationstatus" => "Payment History"
+    );
+    ?>
                             <li
                                 class="<?php echo ($curControllerLower == 'invoice') ? "active" : ''; ?>">
                                 <a href="javascript:;"> <i class="fa fa-cogs"></i> <span
@@ -495,28 +489,28 @@ License: You must have a valid license purchased only from themeforest(the above
                                         class="arrow <?php echo ($curControllerLower == 'invoice') ? "open" : ''; ?>">
                                     </span>
                                 </a>
-                                <?php
-                                foreach ($billing_subsection as $hotName => $hotTitle) {
-                                    if ($hotName == "invoice/index")
-                                        echo '<ul class="sub-menu">';
+    <?php
+    foreach ($billing_subsection as $hotName => $hotTitle) {
+        if ($hotName == "invoice/index")
+            echo '<ul class="sub-menu">';
 
-                                    $class_content = ($curControllerLower . "/" . $curActionLower == $hotName) ? 'class="active"' : '';
+        $class_content = ($curControllerLower . "/" . $curActionLower == $hotName) ? 'class="active"' : '';
 
-                                    echo '<li ' . $class_content . '>';
-                                    echo '<a href="/admin/' . $hotName . '">' . $hotTitle . '</a>';
-                                    echo '</li>';
+        echo '<li ' . $class_content . '>';
+        echo '<a href="/admin/' . $hotName . '">' . $hotTitle . '</a>';
+        echo '</li>';
 
-                                    if ($hotName == "invoice/regulationstatus")
-                                        echo '</ul>';
-                                }
-                                ?>						
+        if ($hotName == "invoice/regulationstatus")
+            echo '</ul>';
+    }
+    ?>						
                             </li>
-                            <?php
-                            $reservation_subsection = array(
-                                "reservation/onrequest" => "On Request",
-                                "reservation/viewconfirmed" => "Confirmed"
-                            );
-                            ?>
+                                <?php
+                                $reservation_subsection = array(
+                                    "reservation/onrequest" => "On Request",
+                                    "reservation/viewconfirmed" => "Confirmed"
+                                );
+                                ?>
                             <li
                                 class="<?php echo ($curControllerLower == 'reservation') ? "active" : ''; ?>">
                                 <a href="javascript:;"> <i class="fa fa-cogs"></i> <span
@@ -525,23 +519,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                         class="arrow <?php echo ($curControllerLower == 'reservation') ? "open" : ''; ?>">
                                     </span>
                                 </a>
-                                <?php
-                                foreach ($reservation_subsection as $hotName => $hotTitle) {
-                                    if ($hotName == "reservation/onrequest")
-                                        echo '<ul class="sub-menu">';
+    <?php
+    foreach ($reservation_subsection as $hotName => $hotTitle) {
+        if ($hotName == "reservation/onrequest")
+            echo '<ul class="sub-menu">';
 
-                                    $class_content = ($curControllerLower . "/" . $curActionLower == $hotName) ? 'class="active"' : '';
+        $class_content = ($curControllerLower . "/" . $curActionLower == $hotName) ? 'class="active"' : '';
 
-                                    echo '<li ' . $class_content . '>';
-                                    echo '<a href="/admin/' . $hotName . '">' . Yii::t('translation', $hotTitle) . '</a>';
-                                    echo '</li>';
+        echo '<li ' . $class_content . '>';
+        echo '<a href="/admin/' . $hotName . '">' . Yii::t('translation', $hotTitle) . '</a>';
+        echo '</li>';
 
-                                    if ($hotName == "admin")
-                                        echo '</ul>';
-                                }
-                                ?>						
+        if ($hotName == "admin")
+            echo '</ul>';
+    }
+    ?>						
                             </li>                                
-                        <?php } ?>				
+                            <?php } ?>				
                     </ul>
                     <!-- END SIDEBAR MENU -->
                 </div>
@@ -557,38 +551,38 @@ License: You must have a valid license purchased only from themeforest(the above
 
                     <!-- END STYLE CUSTOMIZER -->
                     <!-- BEGIN PAGE HEADER-->
-                    <?php
-                    $header_curController = @Yii::app()->controller->id;
-                    $header_curAction = @Yii::app()->getController()->getAction()->controller->action->id;
-                    $menu_cond = ($header_curController == "hotel" && $header_curAction == "index") ? false : true;
-                    if ($menu_cond) {
-                        ?>
+<?php
+$header_curController = @Yii::app()->controller->id;
+$header_curAction = @Yii::app()->getController()->getAction()->controller->action->id;
+$menu_cond = ($header_curController == "hotel" && $header_curAction == "index") ? false : true;
+if ($menu_cond) {
+    ?>
                         <div class="row">
                             <div class="col-md-12">
                                 <!-- BEGIN PAGE TITLE & BREADCRUMB-->
                                 <ul class="page-breadcrumb breadcrumb">
 
                                     <li>
-                                        <?php
-                                        $this->widget('zii.widgets.CBreadcrumbs', array(
-                                            'homeLink' => CHtml::link('Admin', array(
-                                                '/admin'
-                                            )),
-                                            'links' => $this->breadcrumbs
-                                        ));
-                                        ?>
+    <?php
+    $this->widget('zii.widgets.CBreadcrumbs', array(
+        'homeLink' => CHtml::link('Admin', array(
+            '/admin'
+        )),
+        'links' => $this->breadcrumbs
+    ));
+    ?>
                                     </li>
 
                                 </ul>
                                 <!-- END PAGE TITLE & BREADCRUMB-->
                             </div>
                         </div>
-                    <?php } ?>
+<?php } ?>
                     <!-- END PAGE HEADER-->
                     <!-- BEGIN PAGE CONTENT-->
                     <div class="row">
                         <div class="col-md-12">
-                            <?php echo $content; ?>
+<?php echo $content; ?>
                         </div>
                     </div>
                     <!-- END PAGE CONTENT-->
@@ -600,7 +594,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- BEGIN FOOTER -->
         <div class="footer">
             <div class="footer-inner">
-                <?php echo date("Y"); ?> &copy; HK-Base
+<?php echo date("Y"); ?> &copy; HK-Base
             </div>
             <div class="footer-tools">
                 <span class="go-top"> <i class="fa fa-angle-up"></i>

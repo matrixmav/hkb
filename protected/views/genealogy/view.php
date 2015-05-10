@@ -27,6 +27,7 @@ echo '<link rel="stylesheet" href="http://hkbase.dev/css/main.css">';
                                             echo '<ul>';
 
                                             foreach($rightGenealogyListObject as $rightGenealogyObject){ 
+
                                                 $rightUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $rightGenealogyObject->user_id)); 
                                                 if($rightGenealogyObject->position == 'left'){                                   
                                                     echo $rightGenealogyObject->user_id ? '<li><a href='.$rightUrl.'>'.$rightGenealogyObject->user_id."</a></li>" : ''; 
@@ -59,6 +60,7 @@ echo '<link rel="stylesheet" href="http://hkbase.dev/css/main.css">';
                                             echo  $chiId =  $genealogyObject->user_id ? '<a href="#">'. $genealogyObject->user_id."</a>" : '';
                                             echo '<ul>'; 
                                             foreach($rightGenealogyListObject as $rightGenealogyObject){ 
+
                                                 $rightUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $rightGenealogyObject->user_id)); 
                                                  if($rightGenealogyObject->position == 'left'){
                                                      

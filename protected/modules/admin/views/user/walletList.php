@@ -3,7 +3,7 @@
 /* @var $model User */
 
 $this->breadcrumbs = array(
-    'Users' => array('/admin/user')
+    'Wallet' => array('/admin/user/wallet'),
 );
 ?>
 
@@ -73,12 +73,12 @@ $this->breadcrumbs = array(
                         'Edit' => array(
                             'label' => 'Edit',
                             'options' => array('class' => 'btn purple fa fa-edit margin-right15'),
-                            'url' => 'Yii::app()->createUrl("admin/state/update", array("id"=>$data->id))',
+                            'url' => 'Yii::app()->createUrl("admin/user/creditwallet", array("id"=>$data->id))',
                         ),
                         'Delete' => array(
                             'label' => Yii::t('translation', 'Change Status'),
                             'options' => array('class' => 'fa fa-success btn default black delete'),
-                            'url' => 'Yii::app()->createUrl("admin/user/changestatus", array("id"=>$data->id))',
+                            'url' => 'Yii::app()->createUrl("admin/user/debitwallet", array("id"=>$data->id))',
                         ),
                     ),
                 ),

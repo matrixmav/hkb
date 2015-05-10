@@ -28,7 +28,7 @@ class MailController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','replay','compose'),
+				'actions'=>array('index','view','reply','compose','sent'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -45,64 +45,69 @@ class MailController extends Controller
 		);
 	}
 
-        public function actionCompose(){
+        /**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{  
+            $pageSize= 10;
+            $dataProvider = new CActiveDataProvider('Mail', array(
+                        'criteria'=>array('condition' => 'to_user_id = 1','order'=>'updated_at DESC'),
+                        'pagination' => array('pageSize' => $pageSize)));
+            $this->render('index',array(
+                'dataProvider'=>$dataProvider,
+            ));
+	}
+        /**
+	 * Lists all models.
+	 */
+	public function actionSent()
+	{  
+            $pageSize= 10;
+            $dataProvider = new CActiveDataProvider('Mail', array(
+                        'criteria'=>array('condition' => 'from_user_id = 1','order'=>'updated_at DESC'),
+                        'pagination' => array('pageSize' => $pageSize)));
+            $this->render('index',array(
+                'dataProvider'=>$dataProvider,
+            ));
+	}
+        public function actionCompose(){ 
             if($_POST){ 
                 $emailArray = explode(",", $_POST['to_email']);
-                foreach ($emailArray as $email){ echo $email;
+                foreach ($emailArray as $email){
                     $userObject = User::model()->findByAttributes(array('email'=>$email));
                     if(empty($userObject)){
                         continue;
                     }
-                    $customerName = $userObject->full_name;
-                    $emailId = $userObject->email;
-                    $emailBoday['to'] = 'ramanna.hemareddy@maverickinfosoft.com';//$emailId;
-                    $emailBoday['subject'] = 'Email Replay';
+                    $customerName = "testing";
+                    $emailId = $email;
+                    $emailBoday['to'] = $emailId;
+                    $emailBoday['subject'] = $_POST['email_subject'];
 
-                    $emailBoday['body'] = "Email boday";
+                    $emailBoday['body'] = $_POST['email_body'];
                     $emailBoday['from'] = Yii::app()->params['hkbAdminEmail'];
                     $result = CommonHelper::sendMail($emailBoday);
                     if($result){ 
                         $mailObject = new Mail();
                         $mailObject->to_user_id = $userObject->id;
                         $mailObject->from_user_id = Yii::app()->params['adminId'];
-//                        $mailObject->subject = $_POST['email_subject'];
+                        $mailObject->subject = $_POST['email_subject'];
                         $mailObject->message = $_POST['email_body'];
                         $mailObject->created_at = new CDbExpression('NOW()');
                         $mailObject->updated_at = new CDbExpression('NOW()');
                         $mailObject->save(false);
                     } else {
-                        echo "dream";exit;
+                        $this->render('compose',array('error'=>'Sent Failed. Please try Again!!!.'));
                     }
                 }
-//                echo "<pre>"; print_r($_POST['to_email']);exit;
-//                $mailObject = new Mail();
-                
+                $this->redirect('admin/mail');
             }
-            $this->render('admin/mail');
+            $this->render('compose',array('error'=>''));
         }
-        public function actionReplay(){ 
+        public function actionReply(){ 
             if($_GET){
-//                $mailObject = Mail::model()->findByPk($_REQUEST['id']);
-                $userObject = User::model()->findByPk($_REQUEST['id']);
-                if($userObject){
-                    $baseUrl = Yii::app()->getBaseUrl(true);
-                    $customerName = $userObject->full_name;
-                    $emailId = $userObject->email;
-                    $emailBoday['to'] = 'ramanna.hemareddy@maverickinfosoft.com';//$emailId;
-                    $emailBoday['subject'] = 'Email Replay';
-
-                    $emailBoday['body'] = "Email boday";
-                    $emailBoday['from'] = Yii::app()->params['hkbAdminEmail'];
-                    $result = CommonHelper::sendMail($emailBoday);
-                }
-                
-                if($mailObject->status == '1'){
-                    $mailObject->status == 0;
-                } else {
-                    $mailObject->status == 1;
-                }
-                $mailObject->save(false);
-               echo "<pre>"; print_r($mailObject);exit; 
+                $mailObject = Mail::model()->findByPk($_REQUEST['id']);
+                $this->render('compose',array('error'=>'','mailObject'=>$mailObject));
             }
         }
 	/**
@@ -110,10 +115,15 @@ class MailController extends Controller
 	 * @param integer $id the ID of the model to be displayed
 	 */
 	public function actionView($id)
-	{
+	{ 
+            if($id){ 
+                $mailObject = Mail::model()->findByPk($id);
+                $mailObject->status = 1;
+                $mailObject->save(false);
 		$this->render('view',array(
-			'model'=>$this->loadModel($id),
+			'mailObject'=>$mailObject,
 		));
+            }
 	}
 
 	/**
@@ -177,16 +187,7 @@ class MailController extends Controller
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}
 
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{  
-		$dataProvider=new CActiveDataProvider('Mail');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
+	
 
         /**
      * Get the reservation status
