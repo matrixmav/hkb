@@ -45,15 +45,16 @@
                                         <span id="email_error"></span>
                                     </div>
                                     <div class="form-group">
-                                        <label for="email" class="col-lg-4 control-label">Country <span class="require">*</span></label>
+                                        <label for="country" class="col-lg-4 control-label">Country <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                            <select name="country_id" onchange="getCountryCode(this.value)">
+                                            <select name="country_id" id="country_id" onchange="getCountryCode(this.value)">
                                                 <option value=""></option>
                                                 <?php foreach ( $countryObject as  $country) { ?>
                                                     <option value="<?php echo $country->id; ?>"><?php echo $country->name; ?></option>
                                                 <?php } ?>
                                             </select>
                                         </div>
+                                        <span id="country_id_error"></span>
                                     </div>
                                     <div class="form-group">
                                         <label for="email" class="col-lg-4 control-label">Country Code<span class="require">*</span></label>
@@ -84,13 +85,15 @@
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="email" class="col-lg-4 control-label">Position <span class="require">*</span></label>
+                                        <label for="position" class="col-lg-4 control-label">Position <span class="require">*</span></label>
                                         <div class="col-lg-8">        
-                                            <input type="radio" name="position" value="radio"/>
+                                            <input type="radio" name="position" id="position" value="right" checked/>
                                             <label class="gender">Right</label>
-                                            <input type="radio" name="position" value="radio"/>
+                                            <input type="radio" name="position" id="position" value="left"/>
                                             <label class="gender">Left</label>
-                                        </div></div>
+                                        </div>
+                                        <span id="position_error"></span>
+                                    </div>
 
                                 </fieldset>
                                 <div class="row">

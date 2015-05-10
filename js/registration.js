@@ -7,19 +7,24 @@
         $("#name_error").html("");
         if ($("#name").val() == "") {
             $("#name_error").html("Enter User Name");
+            $("#name").focus();            
             return false;
         }
 
         $("#full_name_error").html("");
         if ($("#full_name").val() == "") {
             $("#full_name_error").html("Enter User Full Name");
+            $("#full_name").focus();   
             return false;
         }
+        
+        
 
         /* email validation */
         $("#email_error").html("");
         if ($("#email").val() == "") {
             $("#email_error").html("Enter User Email");
+            $("#email").focus();
             return false;
         }
 
@@ -28,14 +33,23 @@
 
         if (!filter.test(email.value)) {
             $("#email_error").html("Enter valid email address ");
+            $("#email").focus();
             return false;
         }
         /* end here */
+
+        $("#country_id_error").html("");
+        if ($("#country_id").val() == "") {
+            $("#country_id_error").html("Please Select Country Name");
+            $("#country_id").focus();   
+            return false;
+        }   
 
         /* Phone Number Validation  */
         $("#phone_error").html("");
         if ($("#phone").val() == "") {
             $("#phone_error").html("Enter Mobile Number");
+            $("#phone").focus();
             return false;
         }
 
@@ -44,25 +58,35 @@
 
         if (!filter.test(phone.value)) {
             $("#phone_error").html("Enter valid phone number ");
+            $("#phone").focus();  
             return false;
         }
 
         $("#password_error").html("");
         if ($("#password").val() == "") {
             $("#password_error").html("Enter Password");
+            $("#password").focus();
             return false;
         }
 
         if ($("#confirm_password").val() == "") {
             $("#confirm_password_error").html("Enter Confirm Password");
+            $("#confirm_password").focus();
             return false;
         }
 
         if ($("#password").val() != $("#confirm_password").val()) {
             $("#confirm_password_error").html("Please check that you've entered and confirmed your password");
+            $("#confirm_password").focus();
             return false;
         }
 
+        $("#position_error").html("");
+        if ($("#position").val() == "") {
+            $("#position_error").html("Enter Select Positioin");
+            $("#position").focus();
+            return false;
+        }
 
         alert("Submit");
     }
