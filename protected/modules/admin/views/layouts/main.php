@@ -226,7 +226,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             if ((in_array($hotel_pmenu, $menusections ['psections'])) || (in_array($hotel_pmenu, $menusections ['section_ids']))) {
                                 $hotel_subsection = array(
                                     "user/index" => "Member Management",
-                                    "wallet/index" => "Wallet",
+                                    "user/wallet" => "Wallet",
                                     "#1" => "Generate binary",
                                 );
                                 $activecls = 'active';

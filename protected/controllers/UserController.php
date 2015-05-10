@@ -46,6 +46,10 @@ class UserController extends Controller
 	}
 
         public function actionRegistration(){
+            
+            if($_POST){
+                echo "<pre>"; print_r($_POST); exit;
+            }
             $this->render('registration');
         }
 

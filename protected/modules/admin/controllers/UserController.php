@@ -28,7 +28,8 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','changestatus'),
+				'actions'=>array('index','view','changestatus','wallet',
+                                    'creditwallet'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -149,7 +150,27 @@ class UserController extends Controller
             ));
 	}
 
-	/**
+        public function actionWallet() {
+            $model = new User();
+            $pageSize = 10;
+            $dataProvider=new CActiveDataProvider($model, array(
+                        'pagination' => array('pageSize' => $pageSize),
+            ));
+            if(!empty($_POST['search'])) { 
+                $dataProvider = CommonHelper::search(isset($_REQUEST['search'])?$_REQUEST['search']:"", $model, array('full_name','email','	phone','sponsor_id'), array(), isset($_REQUEST['selected'])?$_REQUEST['selected']:"");
+            }
+            $this->render('wallet',array(
+                    'dataProvider'=>$dataProvider,
+            ));
+        }
+        
+        public function actionCreditWallet(){
+            $this->render('wallet',array(
+			'walletObject'=>"",
+		));
+        }
+
+        /**
 	 * Manages all models.
 	 */
 	public function actionAdmin()
