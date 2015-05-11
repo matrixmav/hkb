@@ -40,6 +40,13 @@ if(isset($this->pageTitle))
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form/jquery.fancybox202.css" rel="stylesheet">
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form/uniform.default202.css" rel="stylesheet" type="text/css">
   <!-- Page level plugin styles END -->
+  
+    
+  <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/customcss/style.css">
+ <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/customcss/style1.css">
+ <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/customcss/style2.css">
+  
+  <link href="https://plus.google.com/+bigrock/" rel="publisher">
 
   <!-- Theme styles START -->
   <link rel="stylesheet" href="<?php echo Yii::app()->request->baseUrl; ?>/css/form/components202.css" rel="stylesheet">
