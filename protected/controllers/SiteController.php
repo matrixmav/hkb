@@ -68,10 +68,11 @@ class SiteController extends Controller
 //            
 //            $stateCondition = array("id" => $stateName);
 //            $stateObject = $stateModel = State::model()->getStateByName($stateCondition);
-           $this->render('index');
+           $packageObject = Package::model()->findAll(array('limit' => '3'));
+           $this->render('index',array('packageObject'=>$packageObject));
 	}
 	
-
+       
         /**
 	 *This is action label
 	 */

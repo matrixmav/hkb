@@ -28,7 +28,7 @@ class OrderController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','list'),
+				'actions'=>array('index','view','list','redirect'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -46,8 +46,26 @@ class OrderController extends Controller
 	}
         
         public function actionList(){
-             $orderObject = Order::model()->findAll();
-            $this->render('list',array('orderObject'=>$orderObject));
+             $dataProvider = new CActiveDataProvider('Order', array(
+	    				'pagination' => array('pageSize' => 10),
+				));
+            $this->render('list',array('dataProvider'=>$dataProvider));
+        }
+        
+        public function actionRedirect(){
+            $criteria = new CDbCriteria;
+//            $criteria->addCondition("status=1");
+//            $criteria->addCondition("country_id=".$country_id);
+//            $states=State::model()->findAll($criteria);
+                        $pageSize = 10;
+            $dataProvider = new CActiveDataProvider('Order', array(
+						'criteria'=>$criteria,
+	    				'pagination' => array('pageSize' => $pageSize),
+				));
+//            header('Location:http://hkbase.dev/builder/USERSADMIN');
+             //$orderObject = Order::model()->findAll();
+             //echo "<pre>"; print_r();exit;
+            $this->render('list',array('dataProvider'=>$dataProvider));
         }
 
         /**
