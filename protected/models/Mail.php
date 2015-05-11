@@ -35,7 +35,7 @@ class Mail extends CActiveRecord
 			array('to_user_id, from_user_id, type, status', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, to_user_id, from_user_id, message, type, status, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, to_user_id, from_user_id, subject,message,attachment, type, status, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -47,6 +47,8 @@ class Mail extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'touser' => array(self::BELONGS_TO, 'User', 'to_user_id'),
+                    'fromuser' => array(self::BELONGS_TO, 'User', 'from_user_id')
 		);
 	}
 
@@ -59,7 +61,9 @@ class Mail extends CActiveRecord
 			'id' => 'ID',
 			'to_user_id' => 'To User',
 			'from_user_id' => 'From User',
+                        'subject' => 'Subject',
 			'message' => 'Message',
+                        'attachment'=>'Attachment',
 			'type' => '1: Inbox, 2: compose,3: sent,4:trash',
 			'status' => 'Status',
 			'created_at' => 'Created At',
@@ -88,7 +92,9 @@ class Mail extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('to_user_id',$this->to_user_id);
 		$criteria->compare('from_user_id',$this->from_user_id);
+                $criteria->compare('subject',$this->subject);
 		$criteria->compare('message',$this->message,true);
+                $criteria->compare('attachment',$this->attachment,true);
 		$criteria->compare('type',$this->type);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('created_at',$this->created_at,true);
