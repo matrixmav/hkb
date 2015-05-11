@@ -28,7 +28,7 @@ class PackageController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','domainsearch','availabledomain','checkout'),
+				'actions'=>array('index','view','domainsearch','availabledomain','checkout','domainadd','productcart','couponapply','loaddomain'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -45,15 +45,188 @@ class PackageController extends Controller
 		);
 	}
         
+        function actionCouponApply()
+        {
+             $response ='';
+            $percentage = 10;
+            $packageObject = Package::model()->findByPK(Yii::app()->session['package_id']);
+           if($packageObject->coupon_code==$_REQUEST['coupon_code'])
+           {
+              $DiscountAmount = $packageObject->amount - $packageObject->amount * $percentage / 100 + Yii::app()->session['amount'];
+               $response .=  $DiscountAmount;
+           }else{
+               $response .= 0 ;
+           }
+           echo $response;
+           }    
+         
+        
+        public function actionDomainAdd()
+        {
+          
+          Yii::app()->session['domain'] = $_REQUEST['domain'];  
+          if($_REQUEST['amount'] >= 10)
+          {
+              Yii::app()->session['amount'] = $_REQUEST['amount'] - 10;
+          }else{
+              
+             Yii::app()->session['amount'] = ""; 
+          }
+          echo  Yii::app()->session['domain'].'_'.Yii::app()->session['amount'];         
+        
+        }
+        
          /**
          * Display search domain page 
          */
         
         public function actionDomainSearch()
         {
+         Yii::app()->session['package_id'] = $_REQUEST['package_id'];     
+        
+        $Package_id = Yii::app()->session['package_id'];
+        
+        $packageObject = Package::model()->findByPK($Package_id);
+        
+        $rightbar = '<div id="dca_cart" class="cart-wrapper">
+            <div class="cart-header"><span class="ico-cart"></span>My Shopping Cart</div>
+            <form method="post" act$rightbarion="./Domain Registration - Domain Availability Results_files/Domain Registration - Domain Availability Results.html">
+            <input type="hidden" name="action" value="add_domain_registration">
+            <input type="hidden" name="dom_action" value="register">
+            <input type="hidden" name="pp_price" value="299">
+            <input type="hidden" name="upsell" value="none">
+            <input type="hidden" name="upsell_modal_planid" value="none">
+            <input type="hidden" name="upsell_modal_product_type" value="none">
+            <input type="hidden" name="upsell_modal_domain_names" value="none">
+            <input type="hidden" name="other_domain" value="">
+            <input type="hidden" name="upsell_duration">
+            <input type="hidden" name="location">
+            <input type="hidden" name="server_location" value="us">
+            <ul id="domainList" class="cartList cart-list">';
+            if($Package_id=='')
+            {
+            $rightbar .= '<li class="empty">Your cart is empty :(</li>';
+            }else{    
+            $rightbar .= '<li class="cart-item">
+            <input type="hidden" name="ram.net" value="1_2546580">
+            <input type="hidden" name="ram.net_price" value="2546580">
+            <input type="hidden" name="domainnamearr[]" value="ram.net">
+            <span class="domaintxt">';
+            $rightbar .= $packageObject["name"];
+            /*if($add)
+            {
+            $rightbar .= '</span><br> Domain : ';
+            }*/
+            //$rightbar .= $_REQUEST['domain'];    
+            $rightbar .='<div id="domainTaken">';
+            if(Yii::app()->session['domain']!='')
+            {
+            $rightbar .=  Yii::app()->session['domain'];
+            }
+            $rightbar .='</div>
+            </li>';
+            }
+            
+            $rightbar .='</ul>
+             </form>';
+            if(Yii::app()->session['amount'] !='')
+            {
+            $rightbar .='<div class="amountWrapper">
+            Total Amount:<br>
+            <div class="cart-total">
+            <span id="total_curr">
+            <span id="total"><span class="WebRupee"></span>$<span id="tottal">';
+            $rightbar .= Yii::app()->session['amount'];
+            
+            $rightbar .='</span></span>&nbsp;
+            </span><br>
+            <span class="discounted_price">
+            <span id="discounted-total" class="hide"><span class="WebRupee">Rs.</span> 0</span>
+            </span>
+            </div>
+            </div>';
+           }
+            $rightbar .='<div class="cart-btn-wrapper">
+            <button id="checkout" class="btn-flat-green btn-orange" onclick="RedirectCart();">Checkout</button>
+            </div>
+            </div>';
+             $domainTakenArray = array('nidhisati.com', 'ram.net', 'sumeet.com', 'suryaasati.com');
+            $AllDomainArray = array('com', 'net', 'co.in', 'co.uk', 'org');
+            $userEnteredDomain = Yii::app()->session['domain'];
+                $UserDomainPart = explode('.', $userEnteredDomain);
+                
+                if (in_array($userEnteredDomain, $domainTakenArray)) {
+                $pos = array_search($UserDomainPart[1], $AllDomainArray);
+                unset($AllDomainArray[$pos]);
+                
+                //$SuggestedDomain = "<div>Oops!Domain you entered not available.Please choose some other.</div><br/>";
+                $SuggestedDomain =  '<div class="secondary-result">
+                            <div class="secondaryDomain resultDomain-wrapper">
+                                <div class="domain-wrapper ">
+                                    <div class="domainName">'.$UserDomainPart[0].'.com</div>
+                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
+                                 </div>
+                                 <span class="pricing-wrp">
+                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
+                                    <s class="slashprice"><span class="WebRupee">Rs.</span> 819</s>
+                                   </span>
+                                   <span class="select-domain btn-flat-green">N/A</span>
+                              </div>
+                        </div>';    
+                foreach ($AllDomainArray as $alldomain) {
+                    $domainName = "'".$UserDomainPart[0].".". $alldomain."'";
+                     
+                $SuggestedDomain .= '<div class="secondary-result">
+                            <div class="secondaryDomain resultDomain-wrapper">
+                                 <div class="domain-wrapper cart2">
+                                    <p class="domainName">'.$UserDomainPart[0] . "." . $alldomain .'</p>
+                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
+                                 </div>
+                                 <span class="pricing-wrp">
+                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
+                                    <div class="slashprice cart1"><span class="WebRupee">Rs.</span> 819</div>
+                                   </span>
+                                   <input type="hidden" name="domain" id="domain" value="'.$UserDomainPart[0] . "." . $alldomain .'">
+                                       <input type="hidden" name="amount" id="amount" value="5">
+                                    <button class="add-to-cart select-domain btn-flat-green" id="test"  onclick="DomainAdd('.$domainName.');"  type="button">Add</button>
+                              </div>
+                        </div>'; 
+
+
+              //$SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
+                }
+                
+            } else {
+                $domainNameF = "'".$UserDomainPart[0].".com'";
+                $SuggestedDomain = "";
+                  $SuggestedDomain .= '<div class="secondary-result cart2">
+                            <div class="secondaryDomain resultDomain-wrapper">
+                                <div class="domain-wrapper cart2">
+                                    <p class="domainName">'.$UserDomainPart[0] .'.com</p>
+                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
+                                 </div>
+                                 <span class="pricing-wrp">
+                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
+                                    <div class="slashprice cart1"><span class="WebRupee">Rs.</span> 819</div>
+                                   </span>
+                                   <input type="hidden" name="domain" id="domain1" value="'.$UserDomainPart[0].'.com">
+                                   <input type="hidden" name="amount" id="amount" value="15">
+                                   <button class="add-to-cart select-domain btn-flat-green" onclick="DomainAdd('.$domainNameF.');"  type="button">Add</button>
+                                    
+                              </div>
+                        </div> ';
+                          
+            }
              
-         $this->render('domainsearch');
+            
+         $this->render('domainsearch',array(
+			'rightbar'=>$rightbar,
+                        'suggestedDomain'=>$SuggestedDomain,
+		));
         }
+        
+        
+        
         
          /**
          * Display search domain page 
@@ -64,33 +237,92 @@ class PackageController extends Controller
             $domainTakenArray = array('nidhisati.com', 'ram.net', 'sumeet.com', 'suryaasati.com');
             $AllDomainArray = array('com', 'net', 'co.in', 'co.uk', 'org');
             $userEnteredDomain = $_REQUEST['domain'];
-            
                 $UserDomainPart = explode('.', $userEnteredDomain);
                 if (in_array($userEnteredDomain, $domainTakenArray)) {
                 $pos = array_search($UserDomainPart[1], $AllDomainArray);
                 unset($AllDomainArray[$pos]);
-                $SuggestedDomain = "<div>Oops!Domain you entered not available.Please choose some other.</div><br/>";
-                $SuggestedDomain .= "<h2>Suggested Domain</h2><br/>";
+                //$SuggestedDomain = "<div>Oops!Domain you entered not available.Please choose some other.</div><br/>";
+                $SuggestedDomain =  '<div class="secondary-result">
+                            <div class="secondaryDomain resultDomain-wrapper">
+                                <div class="domain-wrapper ">
+                                    <div class="domainName">'.$UserDomainPart[0].'.com</div>
+                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
+                                 </div>
+                                 <span class="pricing-wrp">
+                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
+                                    <s class="slashprice"><span class="WebRupee">Rs.</span> 819</s>
+                                   </span>
+                                   <span class="select-domain btn-flat-green">N/A</span>
+                              </div>
+                        </div>';    
                 foreach ($AllDomainArray as $alldomain) {
-                    $SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
+                    $domainName = "'".$UserDomainPart[0].".". $alldomain."'";
+                     
+                $SuggestedDomain .= '<div class="secondary-result">
+                            <div class="secondaryDomain resultDomain-wrapper">
+                                 <div class="domain-wrapper cart2">
+                                    <p class="domainName">'.$UserDomainPart[0] . "." . $alldomain .'</p>
+                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
+                                 </div>
+                                 <span class="pricing-wrp">
+                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
+                                    <div class="slashprice cart1"><span class="WebRupee">Rs.</span> 819</div>
+                                   </span>
+                                   <input type="hidden" name="domain" id="domain" value="'.$UserDomainPart[0] . "." . $alldomain .'">
+                                       <input type="hidden" name="amount" id="amount" value="5">
+                                    <button class="add-to-cart select-domain btn-flat-green" id="test"  onclick="DomainAdd('.$domainName.');"  type="button">Add</button>
+                              </div>
+                        </div>'; 
+
+
+              //$SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
                 }
                 
             } else {
-                $SuggestedDomain = "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." .$UserDomainPart[1]. "</a><br/>";
-                 foreach ($AllDomainArray as $alldomain) {
-                    $SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
+                $domainNameF = "'".$UserDomainPart[0].".com'";
+                  $SuggestedDomain = '<div class="secondary-result cart2">
+                            <div class="secondaryDomain resultDomain-wrapper">
+                                <div class="domain-wrapper cart2">
+                                    <p class="domainName">'.$UserDomainPart[0] .'.com</p>
+                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
+                                 </div>
+                                 <span class="pricing-wrp">
+                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
+                                    <div class="slashprice cart1"><span class="WebRupee">Rs.</span> 819</div>
+                                   </span>
+                                   <input type="hidden" name="domain" id="domain1" value="'.$UserDomainPart[0].'.com">
+                                   <input type="hidden" name="amount" id="amount" value="15">
+                                   <button class="add-to-cart select-domain btn-flat-green" onclick="DomainAdd('.$domainNameF.');"  type="button">Add</button>
+                                    
+                              </div>
+                        </div> ';
+                          foreach ($AllDomainArray as $alldomain) {
+                    //$SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
                  }
             }
             echo $SuggestedDomain;
+            
         }
         
-        public function actionCheckOut(){
+ 
+      public function actionCheckOut(){
             Yii::app()->session['domain_id'] = $_GET['domain_id'];
             $packageObject = Package::model()->findByPK(Yii::app()->session['package_id']);
            
             $this->render('checkout',array(
 			'packageObject'=>$packageObject,
 		));
+            
+        }
+        
+         public function actionProductCart()
+        {
+            $package_id = Yii::app()->session['package_id'];
+            $packageObject = Package::model()->findByPK($package_id);
+            $this->render('cart',array(
+			'packageObject'=>$packageObject,
+		));
+	  
             
         }
 
@@ -220,4 +452,5 @@ class PackageController extends Controller
 			Yii::app()->end();
 		}
 	}
+         
 }
