@@ -11,19 +11,13 @@ if(!empty($error)){
 }
 ?>
 
-<form class="form-horizontal" role="form" id="form_admin_reservation" enctype="multipart/form-data" action="/admin/mail/compose" method="post" onsubmit="return validateForm()">
+<form class="form-horizontal" role="form" id="form_admin_reservation" enctype="multipart/form-data" action="/admin/user/creditwallet" method="post" onsubmit="return validateForm()">
+<input type="hidden" name="userId" id="userId" value="<?php echo (!empty($userId))? $userId : ""; ?>"/>
 <div class="col-md-12 form-group">
-    <label class="col-md-2">Fund *</label>
+    <label class="col-md-2">Add Fund *</label>
     <div class="col-md-6">
         <input type="text" class="form-control dvalid" name="to_email" id="to_email" size="60" maxlength="75" value="<?php echo (!empty($walletObject)) ? $walletObject->touser->email : ""; ?>" />
         <span class="error" style="color:red"  id="first_name_error"></span>
-    </div>
-</div>
-<div class="col-md-12 form-group">
-    <label class="col-md-2">Subject *</label>
-    <div class="col-md-6">
-        <input type="text" class="form-control dvalid" name="email_subject" id="email_subject" size="60" maxlength="75" class="textBox" value="<?php echo (!empty($walletObject)) ? $walletObject->subject : ""; ?>" />
-        <span class="error" style="color:red" id="last_name_error"></span>
     </div>
 </div>
 <div class="col-md-12 form-group">

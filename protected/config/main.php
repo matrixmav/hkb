@@ -106,10 +106,10 @@ return array(
                  //Local
                 
 		 'db'=>array(
-				'connectionString' => 'mysql:host=localhost;dbname=hkbase',
+				'connectionString' => 'mysql:host=localhost;dbname=mglobal',
 				'emulatePrepare' => true,
 				'username' => 'root',
-				'password' => '',
+				'password' => 'root',
 				'charset' => 'utf8',
                                 'tablePrefix' => 'tbl_',
 		),
