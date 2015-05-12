@@ -72,33 +72,57 @@ class PackageController extends Controller
          */   
            function actionOrderAdd()
         {
+               
              $createdDate = date("Y-m-d");
              $transactionObject = new Transaction;
-             $transactionObject->user_id = 1;
-             $transactionObject->mode = 'paypal';
-             $transactionObject->actual_amount = $_REQUEST['totalAmount'];
-             $transactionObject->paid_amount = $_REQUEST['totalAmount'];
-             $transactionObject->total_rp = 0;
-             $transactionObject->used_rp = 0;
-             $transactionObject->status = 0;
-             $transactionObject->gateway_id = 1;
-             $transactionObject->save(false);
+              
+             $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>'1'));
+             if(count($transactionObject1) > 0)
+             { 
+                    $transactionObject1->mode = 'paypal';
+                    $transactionObject1->actual_amount = $_REQUEST['totalAmount'];
+                    $transactionObject1->paid_amount = $_REQUEST['totalAmount'];
+                    $transactionObject1->total_rp = 0;
+                    $transactionObject1->used_rp = 0;
+                    $transactionObject1->status = 0;
+                    $transactionObject1->gateway_id = 1;
+                    $transactionObject1->created_at = new CDbExpression('NOW()');
+                    $transactionObject1->update(); 
+             }else{
+                    $transactionObject->mode = 'paypal';
+                    $transactionObject->actual_amount = $_REQUEST['totalAmount'];
+                    $transactionObject->paid_amount = $_REQUEST['totalAmount'];
+                    $transactionObject->total_rp = 0;
+                    $transactionObject->used_rp = 0;
+                    $transactionObject->status = 0;
+                    $transactionObject->gateway_id = 1;
+                    $transactionObject->updated_at = new CDbExpression('NOW()');
+                    $transactionObject->save(false);
+             }       
              $transactionID = $transactionObject->id;
+             Yii::app()->session['transaction_id'] = $transactionID;
              //$transactionObject->used_rp = 0;
              $orderObject = new Order;
-             $orderObject->user_id = 1;
-             $orderObject->package_id = Yii::app()->session['package_id'];
-             $orderObject->domain = Yii::app()->session['domain'];
-             $orderObject->transaction_id = $transactionID;
-             //$orderObject->created_at = $createdDate;
-             $orderObject->save(false);
+             $orderObject1 = Order::model()->findByAttributes(array('user_id'=>'1'));
+             
+             if(count($orderObject1) > 0)
+             { 
+                    $orderObject1->user_id = 1;
+                    $orderObject1->package_id = Yii::app()->session['package_id'];
+                    $orderObject1->domain = Yii::app()->session['domain'];
+                    $orderObject1->transaction_id = 1;
+                    $orderObject1->updated_at = new CDbExpression('NOW()');
+                    $orderObject1->update(); 
+             }else{
+                    $orderObject->user_id = 1;
+                    $orderObject->package_id = Yii::app()->session['package_id'];
+                    $orderObject->domain = Yii::app()->session['domain'];
+                    $orderObject->transaction_id = $transactionID;
+                    $orderObject->created_at = new CDbExpression('NOW()');
+                    $orderObject->save(false);
+             }       
+             
              echo 1;
-            /*$packageObject = Package::model()->insert(array('attributes'=>array(
-						  'user_id' => Yii::app()->session['user_id'] ,
-						  'package_id' => Yii::app()->session['user_id'],
-                                                  'domain' => Yii::app()->session['domain'],
-						  'created_at' => $createdDate,
-						)));*/
             
           }
             
