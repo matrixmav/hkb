@@ -1,12 +1,12 @@
 <?php
 
-class OrderController extends Controller
+class WalletController extends Controller
 {
 	/**
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='inner';
+	public $layout='//layouts/column2';
 
 	/**
 	 * @return array action filters
@@ -28,7 +28,7 @@ class OrderController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','list','redirect'),
+				'actions'=>array('index','view'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -44,31 +44,8 @@ class OrderController extends Controller
 			),
 		);
 	}
-        
-        public function actionList(){
-             $dataProvider = new CActiveDataProvider('Order', array(
-	    				'pagination' => array('pageSize' => 10),
-				));
-            $this->render('list',array('dataProvider'=>$dataProvider));
-        }
-        
-        public function actionRedirect(){
-            $criteria = new CDbCriteria;
-//            $criteria->addCondition("status=1");
-//            $criteria->addCondition("country_id=".$country_id);
-//            $states=State::model()->findAll($criteria);
-                        $pageSize = 10;
-            $dataProvider = new CActiveDataProvider('Order', array(
-						'criteria'=>$criteria,
-	    				'pagination' => array('pageSize' => $pageSize),
-				));
-//            header('Location:http://hkbase.dev/builder/USERSADMIN');
-             //$orderObject = Order::model()->findAll();
-             //echo "<pre>"; print_r();exit;
-            $this->render('list',array('dataProvider'=>$dataProvider));
-        }
 
-        /**
+	/**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
@@ -85,14 +62,14 @@ class OrderController extends Controller
 	 */
 	public function actionCreate()
 	{
-		$model=new Order;
+		$model=new Wallet;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Order']))
+		if(isset($_POST['Wallet']))
 		{
-			$model->attributes=$_POST['Order'];
+			$model->attributes=$_POST['Wallet'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -114,9 +91,9 @@ class OrderController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
-		if(isset($_POST['Order']))
+		if(isset($_POST['Wallet']))
 		{
-			$model->attributes=$_POST['Order'];
+			$model->attributes=$_POST['Wallet'];
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->id));
 		}
@@ -145,7 +122,7 @@ class OrderController extends Controller
 	 */
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Order');
+		$dataProvider=new CActiveDataProvider('Wallet');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
@@ -156,10 +133,10 @@ class OrderController extends Controller
 	 */
 	public function actionAdmin()
 	{
-		$model=new Order('search');
+		$model=new Wallet('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Order']))
-			$model->attributes=$_GET['Order'];
+		if(isset($_GET['Wallet']))
+			$model->attributes=$_GET['Wallet'];
 
 		$this->render('admin',array(
 			'model'=>$model,
@@ -170,12 +147,12 @@ class OrderController extends Controller
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 * @param integer $id the ID of the model to be loaded
-	 * @return Order the loaded model
+	 * @return Wallet the loaded model
 	 * @throws CHttpException
 	 */
 	public function loadModel($id)
 	{
-		$model=Order::model()->findByPk($id);
+		$model=Wallet::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -183,15 +160,14 @@ class OrderController extends Controller
 
 	/**
 	 * Performs the AJAX validation.
-	 * @param Order $model the model to be validated
+	 * @param Wallet $model the model to be validated
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='order-form')
+		if(isset($_POST['ajax']) && $_POST['ajax']==='wallet-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
 		}
 	}
-      
 }
