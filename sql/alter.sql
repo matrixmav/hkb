@@ -19,3 +19,16 @@ ALTER TABLE `mail` ADD `attachment` VARCHAR( 255 ) NOT NULL AFTER `message` ;
 
 ALTER TABLE `user` CHANGE `data_of_birth` `data_of_birth` DATE NULL, CHANGE `skype_id` `skype_id` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL, CHANGE `facebook_id` `facebook_id` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL, CHANGE `twitter_id` `twitter_id` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NULL;
 
+# Date:12 May
+
+ALTER TABLE `user` ADD `parent` INT(11) NOT NULL AFTER `position`;
+
+ALTER TABLE `user` ADD `activation_key` VARCHAR(255) NOT NULL AFTER `status`;
+
+ALTER TABLE `user` CHANGE `password` `password` VARCHAR(100) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+ALTER TABLE `user` CHANGE `master_pin` `master_pin` VARCHAR(255) NOT NULL;
+
+ALTER TABLE `user` ADD `forget_key` VARCHAR(255) NOT NULL AFTER `activation_key`, ADD `forget_status` INT(11) NOT NULL AFTER `forget_key`;
+
+
