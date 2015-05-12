@@ -28,7 +28,7 @@ class UserController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','registration','isuserexisted'),
+				'actions'=>array('index','view','registration','isuserexisted','create'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -73,6 +73,9 @@ class UserController extends Controller
                 }
             }
         }
+        
+       
+        
         /**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
