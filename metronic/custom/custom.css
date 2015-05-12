@@ -105,4 +105,29 @@
 .multiselect li ul{ position:absolute; padding-left:10px; left:0px; top:33px; min-width:245px;max-height: 200px;z-index: 99;overflow: auto; background:#fff; padding:8px 0;-webkit-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);-moz-box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);box-shadow: 0px 3px 5px 0px rgba(0,0,0,0.25);}
 .multiselect li ul li{ border:none;}
 .multiselect li ul li .checkbox-list > label{font-size: 11px;}
+.error {
+    background: url("/getImage.php?src=ico-warning.gif") no-repeat scroll 5px 10px #ffe1e1;
+    border-bottom: 1px solid #ff8080;
+    border-top: 1px solid #ff8080;
+    color: #333;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2em !important;
+    margin: 10px 0;
+    padding: 10px 0 8px 28px;
+    text-align: left;
+}
+.success {
+    background: url("/getImage.php?src=ico-warning.gif") no-repeat scroll 5px 10px #339980;
+    border-bottom: 1px solid #339980;
+    border-top: 1px solid #339980;
+    color: #fff;
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.2em !important;
+    margin: 10px 0;
+    padding: 10px 0 8px 28px;
+    text-align: left;
+}
+
 

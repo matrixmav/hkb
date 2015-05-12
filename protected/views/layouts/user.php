@@ -67,7 +67,7 @@ if(isset($this->pageTitle))
 <?php $this->renderPartial('//layouts/footer');?>
     
   <a href="#promo-block" class="go2top scroll"><i class="fa fa-arrow-up"></i></a>
-  <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js?ver=<?php echo strtotime("now");?>"></script> 
+ 
   <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-migrate.min.js?ver=<?php echo strtotime("now");?>"></script> 
   <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js?ver=<?php echo strtotime("now");?>"></script> 
   

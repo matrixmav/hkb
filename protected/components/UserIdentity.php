@@ -36,6 +36,24 @@ class UserIdentity extends CUserIdentity
             return !$this->errorCode;		
 	}
         
+        public function userAuthenticate()
+	{
+            $userUserObject = User::model()->findByAttributes(array('name'=>$this->username));  // here I use Email as user name which comes from database
+            if($userUserObject===null) {
+                    $this->_id='user Null';
+                    $this->errorCode=self::ERROR_TELEPHONE_INVALID;
+            } else if(md5($this->password) != $userUserObject->password) {
+                    $this->_id=$this->id;
+                    $this->errorCode=self::ERROR_PASSWORD_INVALID;
+            } else {
+                Yii::app()->user->setState('id',$userUserObject->id);
+                $this->_id = $userUserObject->id;
+                Yii::app()->user->setState('email',$userUserObject->email);
+                Yii::app()->user->setState('full_name', $userUserObject->full_name);
+            }
+            return !$this->errorCode;		
+	}
+        
 	public function getId()
 	{
 		return $this->_id;
