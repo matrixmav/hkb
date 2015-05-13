@@ -48,7 +48,7 @@ class UserController extends Controller
 	}
         
         /* User Login Strat Here */
-        public function actionLogin() {
+        public function actionLogin(){
             $error = "";
 		if(Yii::app()->session['userid']){ 
                     $this->redirect("/admin/dashboard");
@@ -63,7 +63,7 @@ class UserController extends Controller
                         $masterkey =  $_POST['masterkey'];
 
                         if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
-                            $getUserObject = User::model()->findByAttributes(array('name'=>$username));
+                            $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
                             if(!empty($getUserObject)){
                                 $flagPassword ='';
                                 $flagMaster ='';
@@ -81,14 +81,14 @@ class UserController extends Controller
                                     Yii::app()->user->login($identity);
                                     Yii::app()->session['userid'] = $getUserObject->id;
                                     echo "1"; 
-                                    
+                                    $this->redirect("/admin/dashboard");
                                 }else {
                                    // echo "0"; 
                                     $error = "<h1>Invalid Information</h1>"; 
                                 }
                             }else{
                             $error = "<h1>Invalid User Name</h1>"; 
-                        }
+                            }
                         }
 
                     }
@@ -100,11 +100,12 @@ class UserController extends Controller
         public function actionRegistration(){
             
             if($_POST){
-                
+                $masterPin = mt_rand(100000,999999);
                 $model = new User;
                 $model->attributes = $_POST;
                 $model->password = BaseClass::md5Encryption($_POST['password']);  
-                
+                $model->master_pin = md5($masterPin);
+                $model->date_of_birth = $_POST['y']."-".$_POST['m']."-".$_POST['d'];
                 $userObject = User::model()->findByAttributes(array('sponsor_id' => $_POST['sponsor_id'] ,'position' => $_POST['position']));
                 echo count($userObject);
                 
@@ -113,24 +114,23 @@ class UserController extends Controller
                 }else{
                   $model->sponsor_id = $_POST['sponsor_id']; 
                 }
-                
-                var_dump($userObject); die;                
                              
                 $rand= rand (date('YmdHis'),5); // For the activation link
                 $model->activation_key = $rand ;
                 if(!$model->save(false)){
                     echo "<pre>"; print_r($model->getErrors());exit;
                 }
-                
+                var_dump($userObject); die;  
                 
                 
                 /*echo $config['to'] = $model->email; 
                 $config['subject'] = 'Registration Confirmation' ;
                 $config['body'] = 'Congratulations! You have been registered successfully on our site '.
+                        '<strong>Your Master Pin:</strong>'.$masterPin.'<br/><br/>'.
                         '<strong>Please click the link below to activate your account:</strong><br/><br/>'.
                         Yii::app()->request->baseUrl.'/user/confirmAction?activation_key='.$rand;
                 var_dump($config);
-                CommonHelper::sendMail($config);*/
+                CommonHelper::sendMail($config);*/ 
             }
             $spnId = Yii::app()->params['adminSpnId'];
             if($_GET){
@@ -145,19 +145,29 @@ class UserController extends Controller
             $msg = "";
             if(isset($_POST['email']) && $_POST['email'] !='' ){
                 $email = $_POST['email'];
-                $getUserObject = User::model()->findByAttributes(array('email'=>$email));
-                
+                $getUserObject = User::model()->findByAttributes(array('email'=>$email));                
                 if(count($getUserObject) == 1 ){
                     $userObject = new User;                    
                     $userObject = User::model()->findByPk($getUserObject->id);
-                    $userObject->forget_key = base64_encode($getUserObject->name."--".$getUserObject->data_of_birth); 
-                    $userObject->forget_status = 1; 
+                    $forgetKey = base64_encode($getUserObject->name."--".$getUserObject->data_of_birth);   
+                    $userObject->forget_key = $forgetKey ; 
+                    $userObject->forget_status = 1 ; 
                     $userObject->update();
                     $msg = "Please check your email to activate your account";                    
                     if(!$userObject->update(false)){
                         echo "<pre>"; print_r($model->getErrors());exit;
                     } 
                     
+                    /*echo $config['to'] =  $email; 
+                    $config['subject'] = 'Password reset On HKbase' ;
+                    $config['body'] = 'You're receiving this e-mail because you requested a password reset for your user account .  '.                            
+                            '<strong>Please go to the following page and choose a new password:</strong><br/><br/>'.
+                            Yii::app()->request->baseUrl.'/user/confirmAction?activation_key='.$forgetKey;
+                    var_dump($config);
+                    CommonHelper::sendMail($config);*/ 
+                    
+                }else{
+                    $msg = "Please Enter Your Valid Email Address.";
                 }                
             }    
             $this->render('forgetpassword',array('msg' => $msg));
