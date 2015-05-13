@@ -14,21 +14,21 @@ $this->breadcrumbs = array(
         <fieldset>
             <legend>Verification</legend>
             <div class="form-group">
-                <label class="col-lg-4 control-label" for="firstname">Upload ID Proof <span class="require">*</span><br>(Upload jpg ,png files only)</label>
+                <label class="col-lg-4 control-label" for="firstname">Upload / Update ID Proof <span class="require">*</span><br>(Upload jpg ,png files only)</label>
                 <div class="col-lg-8">
                     <input type="file" id="id_proof" class="form-control" name="id_proof">
-                    <?php /*if($profileObject->id_proof!=''){?>
-                    <a href=""><img src=""></a>
-                    <?php }*/?>
+                    <?php if($userObject->id_proof!=''){?>
+                    <span class="example"><a href="/uploads/verification-document/<?php echo $userObject->id_proof;?>"><img src="/uploads/verification-document/<?php echo $userObject->id_proof;?>" width="50" height="50"></a></span>
+                    <?php }?>
                 </div>
             </div>
             <div class="form-group">
-                <label class="col-lg-4 control-label" for="lastname">Upload Address Proof <span class="require">*</span><br>(Upload jpg ,png files only)</label>
+                <label class="col-lg-4 control-label" for="lastname">Upload / Update Address Proof <span class="require">*</span><br>(Upload jpg ,png files only)</label>
                 <div class="col-lg-8">
-                    <input type="file" id="address_proof" class="form-control" name="address_proff">
-                    <?php /*if($profileObject->id_proof!=''){?>
-                    <a href=""><img src=""></a>
-                    <?php }*/?>
+                    <input type="file" id="address_proof" class="form-control" name="address_proof">
+                    <?php if($userObject->address_proff!=''){?>
+                    <span class="example"><a href="/uploads/verification-document/<?php echo $userObject->address_proff;?>"><img src="/uploads/verification-document/<?php echo $userObject->address_proff;?>" width="50" height="50"></a></span>
+                    <?php }?>
                 </div>
             </div>
             

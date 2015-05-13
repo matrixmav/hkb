@@ -21,7 +21,7 @@ class ProfileController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','address','fetchstate','fetchcity','testimonial','updateprofile','documentverification'),
+				'actions'=>array('index','address','fetchstate','fetchcity','testimonial','updateprofile','documentverification','summery'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -148,30 +148,31 @@ class ProfileController extends Controller
          * 
          */
         
-        public function actionDocumentVerification() {
+         public function actionDocumentVerification() {
             $error = "";
             $success = "";
-          $model = UserProfile::model()->findByAttributes(array('user_id' => '1')); 
+          $userObject = UserProfile::model()->findByAttributes(array('user_id' => '1'));
+          
           if($_POST)
-          {
-            var_dump($_FILES); 
-          $model->id_proof = CUploadedFile::getInstance($model,'id_proof');
-          //$model->address_proff = CUploadedFile::getInstance($model,'address_proff');
-          $model->id_proof = time().$_FILES['id_proof']['name'];
-          //$model->address_proof = time().$_FILES['address_proof']['name'];
-          if($model->update())
-            {
-              $path = Yii::getPathOfAlias('webroot')."/images/uploads/";
-              $model->id_proof->saveAs($path . $model->id_proof);
-              
-              //$model->id_proof->saveAs(Yii::app()->basePath.'/../images/'.$model->id_proof);
-              //$model->address_proof->saveAs(Yii::app()->basePath.'/../images/'.$model->address_proof);
-              $this->redirect(array('profile/documentverification'));
+          { 
+           $userObject->id_proof = time().$_FILES['id_proof']['name'];
+           $userObject->address_proff = time().$_FILES['address_proof']['name']; 
+            
+            if($userObject->update())
+            {   
+	       $path = Yii::getPathOfAlias('webroot')."/uploads/verification-document/";
+                BaseClass::uploadFile($_FILES['id_proof']['tmp_name'],$path,time().$_FILES['id_proof']['name']);
+                BaseClass::uploadFile($_FILES['address_proof']['tmp_name'],$path,time().$_FILES['address_proof']['name']);
+               $success = "Documents Updated Successfully";
+            }
+            else{
+              $error = "Documents Updated Successfully";  
             }
           }
-           
-         $this->render('../user/verification', array('success' => $success,'error' => $error));
+              
+          $this->render('../user/verification', array('success' => $success,'error' => $error,'userObject'=>$userObject));
         }
+
 
     /*
          * To fetch state name according to country
@@ -201,6 +202,19 @@ class ProfileController extends Controller
           }
           echo $cityHTML;
         }
+        
+        /*
+         * 
+         */
+        public function actionSummery() {
+           $dataProvider = new CActiveDataProvider('Order', array(
+	    				'pagination' => array('pageSize' => 10),
+				));
+            $orderObject = Order::model()->findAll(array('condition'=>'user_id=1'));
+             
+            $this->render('list',array('dataProvider'=>$dataProvider,'orderObject'=>$orderObject));
+        }
+        
 
 	// Uncomment the following methods and override them if needed
 	/*

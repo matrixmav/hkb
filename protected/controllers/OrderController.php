@@ -72,6 +72,10 @@ class OrderController extends Controller
             //$this->render('list',array('dataProvider'=>$dataProvider));
         }
 
+        public function getLabel($data, $row){
+            echo "CButtonColumn1";
+        }
+
         /**
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
