@@ -42,7 +42,7 @@
             <li><a href="#prices">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="user/login">Login</a></li>
-            <li><a href="user/login">Registration</a></li>
+            <li><a href="user/registration">Registration</a></li>
           </ul>
         </div>
         <!-- Navigation END -->
