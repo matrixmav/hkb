@@ -58,6 +58,9 @@ class UserProfile extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'city' => array(self::BELONGS_TO, 'City', 'city_id'),
+                    'state' => array(self::BELONGS_TO, 'State', 'state_id'),
+		    'country' => array(self::BELONGS_TO, 'Country', 'country_id'),
 		);
 	}
 

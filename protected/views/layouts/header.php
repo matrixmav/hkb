@@ -41,6 +41,8 @@
             <li><a href="#benefits">Benefits</a></li>
             <li><a href="#prices">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
+            <li><a href="user/login">Login</a></li>
+            <li><a href="user/login">Registration</a></li>
           </ul>
         </div>
         <!-- Navigation END -->
