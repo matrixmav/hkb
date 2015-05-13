@@ -129,5 +129,8 @@
     padding: 10px 0 8px 28px;
     text-align: left;
 }
+.example{
+    float:right;color:#ccc;
+}
 
 

@@ -8,7 +8,7 @@
                 <h1>Create an account</h1>
                 <div class="content-form-page">
                     <div class="row">
-                        <div class="col-md-7 col-sm-7">
+                        <div class="col-md-8 col-sm-8">
                             <form class="form-horizontal" role="form" method="post" action=""  onsubmit="return validateFrm()">
                                 <fieldset> 
                                     <legend>Your personal details</legend>
@@ -44,11 +44,47 @@
                                         </div>
                                         <span id="email_error"></span>
                                     </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email" class="col-lg-4 control-label">Date Of Birth <span class="require">*</span></label>
+                                        <div class="col-lg-3">
+                                           
+                                            <select name="d" id="d" class="form-control">
+                                                 <option >Date</option>
+                                                <?php for($i=1;$i<=31;$i++): ?>
+                                                     <option value="<?=str_pad($i,2,'0',STR_PAD_LEFT)?>"><?=$i?></option>
+                                                <?php endfor ?>
+                                            </select>
+                                        
+                                        </div>
+                                        <div class="col-lg-3">
+                                            <select name="m" id="m" class="form-control">
+                                                <option value="">Month</option>
+                                                <?php for($i=1;$i<=12;$i++): ?>
+                                                     <option value="<?=str_pad($i,2,'0',STR_PAD_LEFT)?>"><?=$i?></option>
+                                                <?php endfor ?>
+                                            </select>                         
+
+                                        </div>
+                                        
+                                        <div class="col-lg-2">
+                                            <select name="y" id="y" class="form-control">
+                                                <option value="">Year</option>
+                                                <?php
+                                                for($i=1950; $i<=date("Y") - 18; $i++){ ?>                                                       
+                                                    <option value='<?=$i?>'><?=$i?></option>                                      
+                                                <?php } ?>
+                                            </select>                         
+                                        </div>                                        
+                                        
+                                        <span id="date_error"></span>
+                                    </div>
+                                    
                                     <div class="form-group">
                                         <label for="country" class="col-lg-4 control-label">Country <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                            <select name="country_id" id="country_id" onchange="getCountryCode(this.value)">
-                                                <option value=""></option>
+                                            <select name="country_id" id="country_id" onchange="getCountryCode(this.value)" class="form-control">
+                                                <option value="">Please Select Country</option>
                                                 <?php foreach ( $countryObject as  $country) { ?>
                                                     <option value="<?php echo $country->id; ?>"><?php echo $country->name; ?></option>
                                                 <?php } ?>

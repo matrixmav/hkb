@@ -25,7 +25,7 @@
                                     <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">     
                                         
                                         <button type="submit" class="btn btn-primary">Forget Password</button>
-                                        <button type="button" class="btn btn-default">Cancel</button>
+                                       <a hre="<?php echo Yii::app()->getBaseUrl(true); ?>/user/login" class="btn btn-default">Cancel</a>  
                                     </div>
                                 </div>
                             </form>

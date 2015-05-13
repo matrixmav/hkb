@@ -26,7 +26,7 @@ $this->breadcrumbs = array(
 
     <div class="row">
             <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
-                <input type="submit" name="submit" value="Update">
+                <input type="submit" name="submit" value="Update" class="btn">
                  
             </div>
         </div>

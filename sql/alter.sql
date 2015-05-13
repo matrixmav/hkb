@@ -31,4 +31,7 @@ ALTER TABLE `user` CHANGE `master_pin` `master_pin` VARCHAR(255) NOT NULL;
 
 ALTER TABLE `user` ADD `forget_key` VARCHAR(255) NOT NULL AFTER `activation_key`, ADD `forget_status` INT(11) NOT NULL AFTER `forget_key`;
 
+# Date : 13 May
+
+ALTER TABLE `user` CHANGE `data_of_birth` `date_of_birth` DATE NULL DEFAULT NULL;   
 

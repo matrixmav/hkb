@@ -21,7 +21,7 @@ class ProfileController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','address','fetchstate','fetchcity','testimonial','updateprofile','documentverification'),
+				'actions'=>array('index','address','fetchstate','fetchcity','testimonial','updateprofile','documentverification','summery'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -106,19 +106,40 @@ class ProfileController extends Controller
         public function actionUpdateProfile() {
             $error = "";
             $success = "";
-           $profileObject = UserProfile::model()->findByAttributes(array('user_id' => '1')); 
+           $userObject = User::model()->findByPK(array('id' => '1')); 
+           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '1'));
+           if($transactionObject->status=='1')
+           {
+               $edit = "no";
+           }  else {
+               $edit = "yes";
+           }
+           
           if (isset($_POST['UserProfile'])) {
-             if($_POST['UserProfile']['testimonials']=='')
+             if($_POST['UserProfile']=='')
              {  
                $error .= "Please fill required(*) marked fields.";  
              }else{
-           $profileObject->testimonials = $_POST['UserProfile']['testimonials'];
-            if ($profileObject->update()) {
-               $success .= "Testimonial Updated Successfully.";   
+                  
+                 
+             if(md5($_POST['UserProfile']['master_pin'])== $userObject->master_pin)
+             {
+            $userObject->full_name = $_POST['UserProfile']['full_name'];
+            $userObject->email = $_POST['UserProfile']['email'];
+            $userObject->phone = $_POST['UserProfile']['phone'];
+            $userObject->date_of_birth = $_POST['UserProfile']['date_of_birth'];
+            $userObject->skype_id = $_POST['UserProfile']['skype_id'];
+            $userObject->facebook_id = $_POST['UserProfile']['facebook_id'];
+            $userObject->twitter_id = $_POST['UserProfile']['twitter_id'];
+            if ($userObject->update()) {
+               $success .= "Profile Updated Successfully.";   
                 }
+             }else{
+                $error .= "Incorrect master pin.";  
+             }
             }
          }
-         $this->render('../user/updateprofile', array('profileObject' => $profileObject,'success' => $success,'error' => $error));
+         $this->render('../user/updateprofile', array('userObject' => $userObject,'success' => $success,'error' => $error,'edit' => $edit));
         }
         
         
@@ -127,30 +148,31 @@ class ProfileController extends Controller
          * 
          */
         
-        public function actionDocumentVerification() {
+         public function actionDocumentVerification() {
             $error = "";
             $success = "";
-          $model = UserProfile::model()->findByAttributes(array('user_id' => '1')); 
+          $userObject = UserProfile::model()->findByAttributes(array('user_id' => '1'));
+          
           if($_POST)
-          {
-            var_dump($_FILES); 
-          $model->id_proof = CUploadedFile::getInstance($model,'id_proof');
-          //$model->address_proff = CUploadedFile::getInstance($model,'address_proff');
-          $model->id_proof = time().$_FILES['id_proof']['name'];
-          //$model->address_proof = time().$_FILES['address_proof']['name'];
-          if($model->update())
-            {
-              $path = Yii::getPathOfAlias('webroot')."/images/uploads/";
-              $model->id_proof->saveAs($path . $model->id_proof);
-              
-              //$model->id_proof->saveAs(Yii::app()->basePath.'/../images/'.$model->id_proof);
-              //$model->address_proof->saveAs(Yii::app()->basePath.'/../images/'.$model->address_proof);
-              $this->redirect(array('profile/documentverification'));
+          { 
+           $userObject->id_proof = time().$_FILES['id_proof']['name'];
+           $userObject->address_proff = time().$_FILES['address_proof']['name']; 
+            
+            if($userObject->update())
+            {   
+	       $path = Yii::getPathOfAlias('webroot')."/uploads/verification-document/";
+                BaseClass::uploadFile($_FILES['id_proof']['tmp_name'],$path,time().$_FILES['id_proof']['name']);
+                BaseClass::uploadFile($_FILES['address_proof']['tmp_name'],$path,time().$_FILES['address_proof']['name']);
+               $success = "Documents Updated Successfully";
+            }
+            else{
+              $error = "Documents Updated Successfully";  
             }
           }
-           
-         $this->render('../user/verification', array('success' => $success,'error' => $error));
+              
+          $this->render('../user/verification', array('success' => $success,'error' => $error,'userObject'=>$userObject));
         }
+
 
     /*
          * To fetch state name according to country
@@ -180,6 +202,9 @@ class ProfileController extends Controller
           }
           echo $cityHTML;
         }
+        
+        
+        
 
 	// Uncomment the following methods and override them if needed
 	/*

@@ -1,17 +1,11 @@
 <?php
-/* @var $this OrderController */
-/* @var $dataProvider CActiveDataProvider */
-
-$this->breadcrumbs=array(
-	'Orders List',
+$this->breadcrumbs = array(
+    'Account' => array('profile/summery'),
+    'Summery',
 );
 
-$this->menu=array(
-	array('label'=>'Create Order', 'url'=>array('create')),
-	array('label'=>'Manage Order', 'url'=>array('admin')),
-);
 ?>
-    <?php //echo "<pre>"; print_r($orderObject);?>
+<?php //echo "<pre>"; print_r($orderObject);?>
        <div class="main">
       <div class="container">
 
@@ -42,7 +36,7 @@ $this->menu=array(
 		array(
                     'name'=>'package_id',
                     'header'=>'<span style="white-space: nowrap;">Package Name &nbsp; &nbsp; &nbsp;</span>',
-                    'value'=>'isset($data->package->name)?$data->package->name:""',
+                    'value'=>'isset($data->moneytransferObject->fund_type)?$data->moneytransferObject->fund_type:""',
 		),
                 array(
                     'name'=>'domain',

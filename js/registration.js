@@ -1,4 +1,7 @@
   function validateFrm() {
+      
+       
+        
         if ($("#sponser_id").val() == "") {
             $("#sponser_id_error").html("Invalid Sponser Id");
             return false;
@@ -48,6 +51,13 @@
             return false;
         }
         /* end here */
+
+        $("#date_error").html("");
+        if ($("#d").val() == "" || $("#m").val() == "" || $("#y").val() == "" ) {
+            $("#date_error").html("Enter Birth Date");
+            $("#d").focus();
+            return false;
+        }    
 
         $("#country_id_error").html("");
         if ($("#country_id").val() == "") {
@@ -112,6 +122,8 @@
             $("#position").focus();
             return false;
         }
+        
+        
 
         alert("Submit");
     }

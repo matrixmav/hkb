@@ -6,7 +6,7 @@ class SummaryController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='inner';
 
 	/**
 	 * @return array action filters
@@ -28,7 +28,7 @@ class SummaryController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','summery'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -78,6 +78,22 @@ class SummaryController extends Controller
 			'model'=>$model,
 		));
 	}
+        
+         /*
+         * To get summery of user transaction
+         */
+       
+            
+            public function actionSummery() {
+            
+            $dataProvider = new CActiveDataProvider('Summary', array(
+	    				'pagination' => array('pageSize' => 10),
+				));
+            $summeryObject = Summary::model()->findAll(array('condition'=>'user_id=3'));
+             
+            $this->render('../user/profilesummery',array('dataProvider'=>$dataProvider,'summeryObject'=>$summeryObject));
+            
+            }
 
 	/**
 	 * Updates a particular model.
