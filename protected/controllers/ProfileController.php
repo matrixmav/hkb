@@ -107,7 +107,7 @@ class ProfileController extends Controller
             $error = "";
             $success = "";
            $userObject = User::model()->findByPK(array('id' => '1')); 
-           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '3'));
+           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '1'));
            if($transactionObject->status=='1')
            {
                $edit = "no";
