@@ -49,23 +49,27 @@ class OrderController extends Controller
              $dataProvider = new CActiveDataProvider('Order', array(
 	    				'pagination' => array('pageSize' => 10),
 				));
-            $this->render('list',array('dataProvider'=>$dataProvider));
+            $orderObject = Order::model()->findAll(array('condition'=>'user_id=1'));
+             
+            $this->render('list',array('dataProvider'=>$dataProvider,'orderObject'=>$orderObject));
         }
         
         public function actionRedirect(){
-            $criteria = new CDbCriteria;
+            $userObject = User::model()->findByPK('1');
+             
+            //$criteria = new CDbCriteria;
 //            $criteria->addCondition("status=1");
 //            $criteria->addCondition("country_id=".$country_id);
 //            $states=State::model()->findAll($criteria);
-                        $pageSize = 10;
-            $dataProvider = new CActiveDataProvider('Order', array(
-						'criteria'=>$criteria,
-	    				'pagination' => array('pageSize' => $pageSize),
-				));
-//            header('Location:http://hkbase.dev/builder/USERSADMIN');
+                        //$pageSize = 10;
+            //$dataProvider = new CActiveDataProvider('Order', array(
+						//'criteria'=>$criteria,
+	    				//'pagination' => array('pageSize' => $pageSize),
+				//));
+          header('Location:/builder/USERSADMIN/index.php?category=home&user='.$userObject->name);
              //$orderObject = Order::model()->findAll();
              //echo "<pre>"; print_r();exit;
-            $this->render('list',array('dataProvider'=>$dataProvider));
+            //$this->render('list',array('dataProvider'=>$dataProvider));
         }
 
         /**
