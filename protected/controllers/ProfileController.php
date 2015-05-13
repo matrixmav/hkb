@@ -107,7 +107,7 @@ class ProfileController extends Controller
             $error = "";
             $success = "";
            $userObject = User::model()->findByPK(array('id' => '1')); 
-           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '1'));
+           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '3'));
            if($transactionObject->status=='1')
            {
                $edit = "no";
@@ -203,17 +203,7 @@ class ProfileController extends Controller
           echo $cityHTML;
         }
         
-        /*
-         * 
-         */
-        public function actionSummery() {
-           $dataProvider = new CActiveDataProvider('Order', array(
-	    				'pagination' => array('pageSize' => 10),
-				));
-            $orderObject = Order::model()->findAll(array('condition'=>'user_id=1'));
-             
-            $this->render('list',array('dataProvider'=>$dataProvider,'orderObject'=>$orderObject));
-        }
+        
         
 
 	// Uncomment the following methods and override them if needed
