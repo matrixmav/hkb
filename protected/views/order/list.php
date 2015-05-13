@@ -1,4 +1,4 @@
-            <?php
+<?php
 /* @var $this OrderController */
 /* @var $dataProvider CActiveDataProvider */
 
@@ -18,23 +18,11 @@ $this->menu=array(
         <!-- BEGIN SIDEBAR & CONTENT -->
         <div class="row margin-bottom-40">
          <!-- BEGIN SIDEBAR -->
-<!--          <div class="sidebar col-md-3 col-sm-3">
-            <ul class="list-group margin-bottom-25 sidebar-menu">
-              <li class="list-group-item clearfix"><a href="page-reg-page.html"><i class="fa fa-angle-right"></i> Login/Register</a></li>
-              <li class="list-group-item clearfix"><a href="profile.html"><i class="fa fa-angle-right"></i> Profile</a></li>
-              <li class="list-group-item clearfix"><a href="orderdetail.html"><i class="fa fa-angle-right"></i> Order List</a></li>
-              <li class="list-group-item clearfix"><a href="address.html"><i class="fa fa-angle-right"></i> Address</a></li>
-              <li class="list-group-item clearfix"><a href="varification.html"><i class="fa fa-angle-right"></i> Verification</a></li>
-              <li class="list-group-item clearfix"><a href="testimonials.html"><i class="fa fa-angle-right"></i> Testimonials</a></li>
-              <li class="list-group-item clearfix"><a href="invoice.html"><i class="fa fa-angle-right"></i> Invoice</a></li>
-              
-            </ul>
-          </div>-->
           <!-- END SIDEBAR -->
           <!-- BEGIN CONTENT -->
-          <div class="col-md-9 col-sm-9">
+          <div class="col-md-12 col-sm-9">
        
-                      <?php $this->widget('zii.widgets.grid.CGridView', array(
+        <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'city-grid',
 	'dataProvider'=>$dataProvider,
 	'enableSorting'=>'true',
@@ -52,35 +40,39 @@ $this->menu=array(
 	'columns'=>array(
 		//'idJob',
 		array(
-                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">Name &nbsp; &nbsp; &nbsp;</span>',
-                    'value'=>'$data->id',
+                    'name'=>'package_id',
+                    'header'=>'<span style="white-space: nowrap;">Package Name &nbsp; &nbsp; &nbsp;</span>',
+                    'value'=>'isset($data->package->name)?$data->package->name:""',
+		),
+                array(
+                    'name'=>'domain',
+                    'header'=>'<span style="white-space: nowrap;">Domain &nbsp; &nbsp; &nbsp;</span>',
+                    'value'=>'$data->domain',
+		),
+                array(
+                    'name'=>'start_date',
+                    'header'=>'<span style="white-space: nowrap;">Start Date &nbsp; &nbsp; &nbsp;</span>',
+                    'value'=>'$data->start_date',
+		),
+                array(
+                    'name'=>'end_date',
+                    'header'=>'<span style="white-space: nowrap;">End Date &nbsp; &nbsp; &nbsp;</span>',
+                    'value'=>'$data->end_date',
 		),
 		array(
-                    'name'=>Yii::t('translation', 'State'),
-                    'header'=>'<span style="white-space: nowrap;">State &nbsp; &nbsp; &nbsp;</span>',
-                    'value'=>'isset($data->package->id)?$data->package->id:""',
+			'name'=>'status',
+			'value'=>'($data->status == 1) ? Yii::t(\'translation\', \'Completed\') : Yii::t(\'translation\', \'Pending\')',
 		),
-		'latitude',
-		'longitude',
-		array(
-			'name'=>Yii::t('translation', 'Status'),
-			'value'=>'($data->status == 1) ? Yii::t(\'translation\', \'Active\') : Yii::t(\'translation\', \'Inactive\')',
-		),
+             
 		array( 
 			'class'=>'CButtonColumn',
-			'template'=>'{Edit}{Delete}',
+			'template'=>'{Builder}',
 			'htmlOptions'=>array('width'=>'23%'),
 			'buttons'=>array(
-				'Edit' => array(
-					'label'=>'Edit',
+				'Builder' => array(
+					'label'=>'Builder',
 					'options'=>array('class'=>'btn purple fa fa-edit margin-right15'),
-					'url'=>'Yii::app()->createUrl("admin/city/update", array("id"=>$data->id))',
-				),
-				'Delete' => array(
-					'label'=>Yii::t('translation', 'Change Status'),
-					'options'=>array('class'=>'fa fa-success btn default black delete'),
-					'url'=>'Yii::app()->createUrl("admin/city/delete", array("id"=>$data->id))',
+					'url'=>'($data->status == 1) ? Yii::app()->createUrl("/order/redirect/", array("id"=>$data->id)): ""',
 				),
 			),
 		),

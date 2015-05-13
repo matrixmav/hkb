@@ -159,14 +159,19 @@ class UserController extends Controller
             if(!empty($_POST['search'])) { 
                 $dataProvider = CommonHelper::search(isset($_REQUEST['search'])?$_REQUEST['search']:"", $model, array('full_name','email','	phone','sponsor_id'), array(), isset($_REQUEST['selected'])?$_REQUEST['selected']:"");
             }
-            $this->render('wallet',array(
+            $this->render('walletList',array(
                     'dataProvider'=>$dataProvider,
             ));
         }
         
         public function actionCreditWallet(){
+            if($_POST) {
+//                $walletObject = new 
+                echo "<pre>"; print_r($_POST);exit;
+            }
             $this->render('wallet',array(
 			'walletObject'=>"",
+                        'userId'=>$_REQUEST['id'],
 		));
         }
 

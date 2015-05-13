@@ -28,7 +28,7 @@ class PackageController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view','domainsearch','availabledomain','checkout','domainadd','productcart','couponapply','loaddomain'),
+				'actions'=>array('index','view','domainsearch','availabledomain','checkout','domainadd','productcart','couponapply','loaddomain','orderadd'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -45,6 +45,11 @@ class PackageController extends Controller
 		);
 	}
         
+         /*
+         * Coupon Code Apply
+         * Verify coupon code is valid or not
+         */ 
+        
         function actionCouponApply()
         {
              $response ='';
@@ -52,13 +57,78 @@ class PackageController extends Controller
             $packageObject = Package::model()->findByPK(Yii::app()->session['package_id']);
            if($packageObject->coupon_code==$_REQUEST['coupon_code'])
            {
+              Yii::app()->session['coupon_code'] =  $_REQUEST['coupon_code'];
               $DiscountAmount = $packageObject->amount - $packageObject->amount * $percentage / 100 + Yii::app()->session['amount'];
                $response .=  $DiscountAmount;
            }else{
                $response .= 0 ;
            }
            echo $response;
-           }    
+           }
+           
+        /*
+         * payement proceed
+         * Add order details to database
+         */   
+           function actionOrderAdd()
+        {
+               
+             $createdDate = date("Y-m-d");
+             $transactionObject = new Transaction;
+              
+             $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>'1'));
+             if(count($transactionObject1) > 0)
+             { 
+                    $transactionObject1->mode = 'paypal';
+                    $transactionObject1->actual_amount = $_REQUEST['totalAmount'];
+                    $transactionObject1->paid_amount = $_REQUEST['totalAmount'];
+                    $transactionObject1->total_rp = 0;
+                    $transactionObject1->used_rp = 0;
+                    $transactionObject1->status = 0;
+                    $transactionObject1->gateway_id = 1;
+                    $transactionObject1->created_at = new CDbExpression('NOW()');
+                    $transactionObject1->update(); 
+             }else{
+                    $transactionObject->mode = 'paypal';
+                    $transactionObject->actual_amount = $_REQUEST['totalAmount'];
+                    $transactionObject->paid_amount = $_REQUEST['totalAmount'];
+                    $transactionObject->total_rp = 0;
+                    $transactionObject->used_rp = 0;
+                    $transactionObject->status = 0;
+                    $transactionObject->gateway_id = 1;
+                    $transactionObject->updated_at = new CDbExpression('NOW()');
+                    $transactionObject->save(false);
+             }       
+             $transactionID = $transactionObject->id;
+             Yii::app()->session['transaction_id'] = $transactionID;
+             //$transactionObject->used_rp = 0;
+             $orderObject = new Order;
+             $orderObject1 = Order::model()->findByAttributes(array('user_id'=>'1'));
+             
+             if(count($orderObject1) > 0)
+             { 
+                    $orderObject1->user_id = 1;
+                    $orderObject1->package_id = Yii::app()->session['package_id'];
+                    $orderObject1->domain = Yii::app()->session['domain'];
+                    $orderObject1->transaction_id = 1;
+                    $orderObject1->status = 0;
+                    $orderObject1->updated_at = new CDbExpression('NOW()');
+                    $orderObject1->update(); 
+             }else{
+                    $orderObject->user_id = 1;
+                    $orderObject->package_id = Yii::app()->session['package_id'];
+                    $orderObject->domain = Yii::app()->session['domain'];
+                    $orderObject->transaction_id = $transactionID;
+                    $orderObject->status = 0;
+                    $orderObject->created_at = new CDbExpression('NOW()');
+                    $orderObject->save(false);
+             }       
+             
+             echo 1;
+            
+          }
+            
+        
          
         
         public function actionDomainAdd()
@@ -151,32 +221,21 @@ class PackageController extends Controller
             </div>
             </div>';
              $domainTakenArray = array('nidhisati.com', 'ram.net', 'sumeet.com', 'suryaasati.com');
-            $AllDomainArray = array('com', 'net', 'co.in', 'co.uk', 'org');
-            $userEnteredDomain = Yii::app()->session['domain'];
-                $UserDomainPart = explode('.', $userEnteredDomain);
+             $AllDomainArray = array('com', 'net', 'co.in', 'co.uk', 'org');
+             $userEnteredDomain = Yii::app()->session['domain'];
+            $UserDomainPart = explode('.', $userEnteredDomain);
                 
-                if (in_array($userEnteredDomain, $domainTakenArray)) {
-                $pos = array_search($UserDomainPart[1], $AllDomainArray);
-                unset($AllDomainArray[$pos]);
+                
+               // $pos = array_search($UserDomainPart[1], $AllDomainArray);
+                //unset($AllDomainArray[$pos]);
                 
                 //$SuggestedDomain = "<div>Oops!Domain you entered not available.Please choose some other.</div><br/>";
-                $SuggestedDomain =  '<div class="secondary-result">
-                            <div class="secondaryDomain resultDomain-wrapper">
-                                <div class="domain-wrapper ">
-                                    <div class="domainName">'.$UserDomainPart[0].'.com</div>
-                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
-                                 </div>
-                                 <span class="pricing-wrp">
-                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
-                                    <s class="slashprice"><span class="WebRupee">Rs.</span> 819</s>
-                                   </span>
-                                   <span class="select-domain btn-flat-green">N/A</span>
-                              </div>
-                        </div>';    
+                 $SuggestedDomain = "";  
                 foreach ($AllDomainArray as $alldomain) {
                     $domainName = "'".$UserDomainPart[0].".". $alldomain."'";
-                     
-                $SuggestedDomain .= '<div class="secondary-result">
+                    $domainNameF = $UserDomainPart[0].".". $alldomain;
+                  
+                   $SuggestedDomain .= '<div class="secondary-result">
                             <div class="secondaryDomain resultDomain-wrapper">
                                  <div class="domain-wrapper cart2">
                                     <p class="domainName">'.$UserDomainPart[0] . "." . $alldomain .'</p>
@@ -186,37 +245,23 @@ class PackageController extends Controller
                                    <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
                                     <div class="slashprice cart1"><span class="WebRupee">Rs.</span> 819</div>
                                    </span>
-                                   <input type="hidden" name="domain" id="domain" value="'.$UserDomainPart[0] . "." . $alldomain .'">
-                                       <input type="hidden" name="amount" id="amount" value="5">
-                                    <button class="add-to-cart select-domain btn-flat-green" id="test"  onclick="DomainAdd('.$domainName.');"  type="button">Add</button>
-                              </div>
-                        </div>'; 
+                                      <input type="hidden" name="domain" id="domain" value="'.$UserDomainPart[0] . "." . $alldomain .'">
+                                       <input type="hidden" name="amount" id="amount" value="5">';
+                  if (in_array($domainNameF, $domainTakenArray)){
+                    
+                                   $SuggestedDomain .= '<span class="select-domain btn-flat-green">N/A</span>';
+                   }else{
+                    
+                     
+                  $SuggestedDomain .= '<button class="add-to-cart select-domain btn-flat-green" id="test"  onclick="DomainAdd('.$domainName.');"  type="button">Add</button>';  
+                }                  
+                 $SuggestedDomain .= '</div></div>'; 
 
 
               //$SuggestedDomain .= "<a href='".Yii::app()->baseUrl."checkout?domain_id=1'>" . $UserDomainPart[0] . "." . $alldomain . "</a><br/>";
                 }
                 
-            } else {
-                $domainNameF = "'".$UserDomainPart[0].".com'";
-                $SuggestedDomain = "";
-                  $SuggestedDomain .= '<div class="secondary-result cart2">
-                            <div class="secondaryDomain resultDomain-wrapper">
-                                <div class="domain-wrapper cart2">
-                                    <p class="domainName">'.$UserDomainPart[0] .'.com</p>
-                                    <div class="website-promo orange">Get a free DIY for 6 months.<br>Use Coupon: WEBSITE199</div>
-                                 </div>
-                                 <span class="pricing-wrp">
-                                   <strong><span class="WebRupee">Rs.</span> 199</strong>/YR<br>
-                                    <div class="slashprice cart1"><span class="WebRupee">Rs.</span> 819</div>
-                                   </span>
-                                   <input type="hidden" name="domain" id="domain1" value="'.$UserDomainPart[0].'.com">
-                                   <input type="hidden" name="amount" id="amount" value="15">
-                                   <button class="add-to-cart select-domain btn-flat-green" onclick="DomainAdd('.$domainNameF.');"  type="button">Add</button>
-                                    
-                              </div>
-                        </div> ';
-                          
-            }
+             
              
             
          $this->render('domainsearch',array(

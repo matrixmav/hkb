@@ -46,7 +46,8 @@ class UserProfile extends CActiveRecord
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('id, user_id, address, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials, status, created_at, updated_at', 'safe', 'on'=>'search'),
-		);
+		        array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>false, 'on'=>'insert,update'),
+                    );
 	}
 
 	/**
@@ -54,6 +55,8 @@ class UserProfile extends CActiveRecord
 	 */
 	public function relations()
 	{
+		// NOTE: you may need to adjust the relation name and the related
+		// class name for the relations automatically generated below.
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(

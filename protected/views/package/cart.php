@@ -26,19 +26,19 @@
 <td class="pName">
 <div class="name itemblock topRow vCenter">
 <?php echo $packageObject->name;?>
-    <br/>Domain Taken : <p><?php echo Yii::app()->session['domain'];?></p>   
-<!--<br><a class="remove_item_class" name="buri-ram.com_domain" href="https://www.bigrock.in/checkout.php###">[x] Remove</a>-->
+   
+ 
 </div>
+     <br/>Domain : <?php echo Yii::app()->session['domain'];?>  
 </td>
 <td class="pDescription">
-<p class="description itemblock topRow vCenter"><?php echo substr($packageObject->Description,0,30);?></p>
+<p class="description itemblock topRow vCenter"><?php echo substr($packageObject->Description,0,100);?></p>
 </td>
 <td class="pDuration">
 <div class="itemblock topRow">
 <p class="selectWrp">
-<select class="update_item_class" name="buri-ram.com_domain">
-<option value="" selected="">1 Year at $ <?php echo $packageObject->amount;?>/yr</option>
- </select>
+ <b>1 Year at $<?php echo $packageObject->amount;?>/yr</b>
+ 
 </p>
  </div>
 </td>
@@ -111,7 +111,7 @@
 </div>
 </div>
 </div>
-
+<input type="hidden" id="totalAmount" value="<?php echo $packageObject->amount + Yii::app()->session['amount'];?>">
  
 <script type="text/javascript">
     
@@ -141,6 +141,7 @@ success: function(html){
  document.getElementById("coupon_success").style.display="block";
  document.getElementById("coupon_success").innerHTML = "Coupon code applied";
  document.getElementById("totalpayable").innerHTML = html;
+ document.getElementById("totalAmount").value=html;
  $("#coupon_success").fadeOut(5000);
  }  
  }
@@ -151,11 +152,25 @@ success: function(html){
 }
 function proceedPayment()
 {
+var totalAmount = $('#totalAmount').val(); 
+var dataString = 'datasave=yes&totalAmount='+totalAmount;    
+$.ajax({
+type: "GET",
+url: "orderadd",
+data: dataString,
+cache: false,
+success: function(html){
+ if(html==1)
+{
   $('#cartDiv').fadeOut();
   $('#editIcon').fadeIn();
   $('#paymentOption').fadeIN();  
   
 }
+}  
+});
+}
+  
 function OpenDiv()
 {
   $('#cartDiv').fadeIn();

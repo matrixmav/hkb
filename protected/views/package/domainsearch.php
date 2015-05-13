@@ -20,7 +20,7 @@
 <div class="title">
 </div>
             <div class="title">More domains to consider: </div>
-            <ul class="filterWrp">
+            <!--<ul class="filterWrp">
             <li class="title first">FILTER BY:</li>
             <li id="dca-price-filter" class="priceFilter filterContent second">
             <div class="title">PRICE</div>
@@ -42,7 +42,7 @@
             <p class="exactNote">Domain names that are unavailable will not be shown.</p>
             </div>
             </li>
-            </ul>
+            </ul>-->
             <div class="clear"></div>
  </div>
     <div class="clear"></div>

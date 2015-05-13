@@ -17,6 +17,7 @@ $access = Yii::app()->user->getState('access');
 $menusections = ''; //BaseClass::getmenusections ( Yii::app ()->user->getState ( 'username' ) );
 $adImg = ''; //BaseClass::getadminImg ( Yii::app ()->user->getState ( 'username' ) );
 $menusections ['psections'] = array(6, 7, 8, 9, 33, 4, 5);
+$baseURL = "http://localhost";
 ?>
 
 <!DOCTYPE html>
@@ -71,6 +72,7 @@ License: You must have a valid license purchased only from themeforest(the above
               type="text/css" />
         <link href="/metronic/custom/custom.css" rel="stylesheet"
               type="text/css" />
+        
 
         <link href="/metronic/custom/custom-pagination.css" rel="stylesheet"
               type="text/css" />
@@ -225,9 +227,12 @@ License: You must have a valid license purchased only from themeforest(the above
                             $hotel_pmenu = 6;
                             if ((in_array($hotel_pmenu, $menusections ['psections'])) || (in_array($hotel_pmenu, $menusections ['section_ids']))) {
                                 $hotel_subsection = array(
-                                    "user/index" => "Member Management",
-                                    "hotel/create/type/details" => "Add Hotel",
-                                    "admin" => "Hotel Management"
+                                    "order/list" => "My Order",
+                                    "profile/updateprofile" => "Profile",
+                                    "profile/address" => "Address",
+                                    "profile/documentverification" => "Verification",
+                                    "profile/testimonial" => "Testimonial",
+                                    "profile/summery" => "Summery",
                                 );
                                 $activecls = 'active';
                                 if ($curControllerLower == "hotel" || $curControllerLower == "admin") {
@@ -241,7 +246,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     $activecls = '';
                                 ?>
                                 <li class="<?php echo $activecls; ?>"><a href="javascript:;"> <span
-                                            class="leftmenu-hotel"></span> <span class="title">Operation</span>
+                                            class="leftmenu-hotel"></span> <span class="title">Account</span>
                                         <span class="selected"></span> <span
                                             class="arrow <?php echo ($curControllerLower == 'hotel') ? "open" : ''; ?>">
                                         </span>
@@ -252,14 +257,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                     foreach ($hotel_subsection as $hotName => $hotTitle) {
                                         if (in_array($hotTitle, $menusections ['sections'])) {
                                             if ($hotName == 'admin') {
-                                                $hotName = 'admin/index';
+                                                $hotName = '/index';
                                             }
                                             if ($curActionLower == 'create') {
                                                 $curActionLower = 'create/type/details';
                                             }
                                             $class_content = ($curControllerLower . "/" . $curActionLower == $hotName) ? 'class="active"' : '';
                                             echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $hotName . '">' . Yii::t('translation', $hotTitle) . '</a>';
+                                            echo '<a href="/' . $hotName . '">' . Yii::t('translation', $hotTitle) . '</a>';
                                             echo '</li>';
                                             if ($hotName == 'admin/index') {
                                                 $hotName = 'admin';
