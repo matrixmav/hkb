@@ -8,15 +8,24 @@
                 <div class="content-form-page">
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
-                            <form class="form-horizontal" role="form" method="post" action="" ">
+                            <form class="form-horizontal" role="form" method="post" action="" >
                                 <fieldset> 
                                     <legend>Select User</legend>
-                                    
+                                     <div class="form-group">
+                                        <label for="lastname" class="col-lg-4 control-label">Actual Amount <span class="require">*</span></label>
+                                        <div class="col-lg-8">
+                                           <?php 
+												echo $_GET['actualamount'];
+											?>
+                                        </div>
+                                       
+                                    </div>
                                     <div class="form-group">
                                         <label for="master_code" class="col-lg-4 control-label">Master Code<span class="require">*</span></label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="master_code" name="master_code">
-											<input type="hidden" class="form-control" value="" name="actual_amount">
+											<input type="hidden" class="form-control" 
+											value="<?php echo $_GET['transactioncode']; ?>" name="transactioncode">
 											
                                         </div>
                                         <span id="email_error"></span>
@@ -40,8 +49,3 @@
         <!-- END SIDEBAR & CONTENT -->
     </div>
 </div>
-<script type="text/javascript">
- function getSponId(){ 
-    $("#sponser_id").val("<?php echo Yii::app()->params['adminSpnId']; ?>");
-}
-</script>
