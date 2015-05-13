@@ -106,19 +106,40 @@ class ProfileController extends Controller
         public function actionUpdateProfile() {
             $error = "";
             $success = "";
-           $profileObject = UserProfile::model()->findByAttributes(array('user_id' => '1')); 
+           $userObject = User::model()->findByPK(array('id' => '1')); 
+           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '1'));
+           if($transactionObject->status=='1')
+           {
+               $edit = "no";
+           }  else {
+               $edit = "yes";
+           }
+           
           if (isset($_POST['UserProfile'])) {
-             if($_POST['UserProfile']['testimonials']=='')
+             if($_POST['UserProfile']=='')
              {  
                $error .= "Please fill required(*) marked fields.";  
              }else{
-           $profileObject->testimonials = $_POST['UserProfile']['testimonials'];
-            if ($profileObject->update()) {
-               $success .= "Testimonial Updated Successfully.";   
+                  
+                 
+             if(md5($_POST['UserProfile']['master_pin'])== $userObject->master_pin)
+             {
+            $userObject->full_name = $_POST['UserProfile']['full_name'];
+            $userObject->email = $_POST['UserProfile']['email'];
+            $userObject->phone = $_POST['UserProfile']['phone'];
+            $userObject->date_of_birth = $_POST['UserProfile']['date_of_birth'];
+            $userObject->skype_id = $_POST['UserProfile']['skype_id'];
+            $userObject->facebook_id = $_POST['UserProfile']['facebook_id'];
+            $userObject->twitter_id = $_POST['UserProfile']['twitter_id'];
+            if ($userObject->update()) {
+               $success .= "Profile Updated Successfully.";   
                 }
+             }else{
+                $error .= "Incorrect master pin.";  
+             }
             }
          }
-         $this->render('../user/updateprofile', array('profileObject' => $profileObject,'success' => $success,'error' => $error));
+         $this->render('../user/updateprofile', array('userObject' => $userObject,'success' => $success,'error' => $error,'edit' => $edit));
         }
         
         
