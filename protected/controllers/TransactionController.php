@@ -6,7 +6,7 @@ class TransactionController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout='inner';
 
 	/**
 	 * @return array action filters
@@ -28,7 +28,7 @@ class TransactionController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
+				'actions'=>array('index','view','list'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -128,6 +128,12 @@ class TransactionController extends Controller
 		));
 	}
 
+	public function actionList(){
+             $dataProvider = new CActiveDataProvider('Transaction', array(
+	    				'pagination' => array('pageSize' => 10),
+				));
+            $this->render('list',array('dataProvider'=>$dataProvider));
+        }
 	/**
 	 * Manages all models.
 	 */
