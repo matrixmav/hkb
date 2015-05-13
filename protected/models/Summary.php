@@ -46,8 +46,13 @@ class Summary extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		return array(
-		);
+            return array( 
+                    'user' => array(self::BELONGS_TO, 'User', 'user_id'),
+                    'transaction' => array(self::BELONGS_TO, 'Transaction', 'transaction_id'),
+                    'moneytransfer' => array(self::BELONGS_TO, 'MoneyTransfer', 'money_transfer_id'),
+                    'wallet' => array(self::BELONGS_TO, 'Wallet', 'wallet_id'),
+                    );
+		
 	}
 
 	/**
