@@ -90,12 +90,12 @@ $this->menu=array(
 				'Edit' => array(
 					'label'=>'Edit',
 					'options'=>array('class'=>'btn purple fa fa-edit margin-right15'),
-					'url'=>'Yii::app()->createUrl("admin/city/update", array("id"=>$data->id))',
+					'url'=>'Yii::app()->createUrl("moneytransfer/view", array("id"=>$data->id))',
 				),
 				'Delete' => array(
 					'label'=>Yii::t('translation', 'Change Status'),
 					'options'=>array('class'=>'fa fa-success btn default black delete'),
-					'url'=>'Yii::app()->createUrl("admin/city/delete", array("id"=>$data->id))',
+					'url'=>'Yii::app()->createUrl("moneytransfer/view", array("id"=>$data->id))',
 				),
 			),
 		),
