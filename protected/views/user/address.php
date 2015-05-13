@@ -32,7 +32,7 @@ $this->breadcrumbs = array(
             <div class="form-group">
                     <label for="country" class="col-lg-4 control-label">Country <span class="require">*</span></label>
                     <div class="col-lg-8">
-                        <select name="UserProfile[country_id]" id="country_id" onchange="getStateList(this.value)">
+                        <select name="UserProfile[country_id]" id="country_id" onchange="getStateList(this.value)" class="form-control">
                             <option value="">Select Country</option>
                             <?php foreach ( $countryObject as  $country) { ?>
                             <option value="<?php echo $country->id; ?>" <?php if( $country->id==$profileObject->country_id){?>selected="selected<?php }?>"><?php echo ucwords($country->name); ?></option>
@@ -46,7 +46,7 @@ $this->breadcrumbs = array(
                 <label class="col-lg-4 control-label" for="email">State <span class="require">*</span></label>
                 <div class="col-lg-8">
 
-                    <select id="stateId" name="UserProfile[state_id]" onchange="showCity(this.value);">
+                    <select id="stateId" name="UserProfile[state_id]" onchange="showCity(this.value);" class="form-control">
                        <option value="">Select State</option>
                        <?php if(count($stateObject)>0){?>
                        <?php foreach ( $stateObject as  $state) { ?>
@@ -60,7 +60,7 @@ $this->breadcrumbs = array(
                 <label class="col-lg-4 control-label" for="email">State <span class="require">*</span></label>
                 <div class="col-lg-8">
 
-                    <select id="cityId" name="UserProfile[city_id]">
+                    <select id="cityId" name="UserProfile[city_id] " class="form-control">
                        <option value="">Select State</option>
                        <?php if(count($cityObject)>0){?>
                        <?php foreach ( $cityObject as  $city) { ?>
@@ -81,7 +81,7 @@ $this->breadcrumbs = array(
 
     <div class="row">
             <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">                        
-                <input type="submit" name="submit" value="Update">
+                <input type="submit" name="submit" value="Update" class="btn">
                  
             </div>
         </div>
