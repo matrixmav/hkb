@@ -12,25 +12,24 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/autocomp
                 <div class="content-form-page">
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
-                            <form class="form-horizontal" role="form" method="post" action="" ">
+                            <form class="form-horizontal" role="form" method="post" action="" >
                                 <fieldset> 
                                     <legend>Select User</legend>
                                     <?php 
-									$rp_points =0;
-									$wallet_points =0;
+																	
 									 foreach ( $walletObject as  $wallet) {
 										 
 									  if($wallet['type']== 1)
 									  {										  
-										  $wallet_points = $wallet_points+$wallet['fund'];
+										  $wallet_points = $wallet['fund'];
 										  }
 									   if($wallet['type']== 2)
 									  {
-										  $rp_points = $rp_points+$wallet['fund'];
+										  $rp_points = $wallet['fund'];
 										  }
 									   if($wallet['type']== 3)
 									  {
-										$rp_points = $rp_points+$wallet['fund'];
+										$commission_points = $wallet['fund'];
 									  }
 								                                                    
                                      }
@@ -55,7 +54,15 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/autocomp
                                         </div>
                                        
                                     </div>
-									
+									<div class="form-group">
+                                        <label for="lastname" class="col-lg-4 control-label">Commission Points <span class="require">*</span></label>
+                                        <div class="col-lg-8">
+                                           <?php 
+										echo $commission_points;
+									?>
+                                        </div>
+                                       
+                                    </div>
 									
 									 
 									 <div class="form-group">
@@ -93,8 +100,3 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/autocomp
         <!-- END SIDEBAR & CONTENT -->
     </div>
 </div>
-<script type="text/javascript">
- function getSponId(){ 
-    $("#sponser_id").val("<?php echo Yii::app()->params['adminSpnId']; ?>");
-}
-</script>
