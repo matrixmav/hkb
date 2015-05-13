@@ -76,7 +76,7 @@ var FormValidation = function () {
 								if(currentUrl.indexOf("create") > -1){
 									// redirect to update Job page
 									showSucessMsg("Please wait while we redirecting you to edit City page. ", "Page redirection");
-									window.location.href = "/admin/city/";
+									window.location.href = "/admin/user/";
 									return;
 								}		
 							}else if(result.errorMessage){
