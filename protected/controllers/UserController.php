@@ -29,7 +29,7 @@ class UserController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 
-				'actions'=>array('index','view','registration','isuserexisted','forgetpassword','login','changepassword','404','success'),
+				'actions'=>array('index','view','registration','isuserexisted','forgetpassword','login','changepassword','404','success','loginregistration'),
  
 				'users'=>array('*'),
 			),
@@ -50,6 +50,7 @@ class UserController extends Controller
         /* User Login Strat Here */
         public function actionLogin(){ 
             $error = "";
+
             // collect user input data
             if(isset($_POST['name']) && isset($_POST['password'])){
 
@@ -218,7 +219,15 @@ class UserController extends Controller
             }
         }
         
-       
+       public function actionloginregistration()
+       {
+           $spnId = Yii::app()->params['adminSpnId'];
+           Yii::app()->session['package_id'] = (!empty($_GET)) ? $_GET['package_id'] : "";
+            
+            $countryObject = Country::model()->findAll();
+//            echo "<pre>";print_r($countryObject);exit;
+            $this->render('login-registration',array('countryObject'=>$countryObject,'spnId'=>$spnId));
+       }
         
         /**
 	 * Displays a particular model.

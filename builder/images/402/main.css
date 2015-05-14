@@ -1,0 +1,42 @@
+ 
+.fleft
+{
+	float:left;
+} 
+
+.fright
+{
+	float:right;
+} 
+
+.main_content
+{
+	background:#ffffff;text-align:center;width:1000px;margin:0 auto
+}
+
+.mback
+{
+	margin:0 auto;width:980px;height:38px;background-image:url('menu.png')
+}
+
+.top_bar
+{
+	height:50px;width:1000px;margin:0 auto;font-size:16px;text-align:left
+}
+body {background-repeat:repeat-x;text-align:middle;background:#f6f6f6;background-image:url(body.png);font-family:arial;font-size:12;cursor:default;color:#AAAAAA}
+.right_header_top{background:#c3170b;width:240px;height:24px;color:white;font-size:14px;font-weight:800;padding-left:6px;padding-top:4px}
+a{color:#c3170b;font-weight:800}
+.header{font-size:16px}
+.header_title{color:white}
+
+.prop {
+    height:50px;
+    float:right;
+    width:1px;
+  }
+
+  .clear {
+    clear:both;
+    height:1px;
+    overflow:hidden;
+  }

@@ -50,7 +50,7 @@ class ProfileController extends Controller
             if (isset($_POST['UserProfile'])) {
              if(count($_POST['UserProfile']) > 0)
              {
-                $profileObject = UserProfile::model()->findByAttributes(array('user_id' => '1'));
+                $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
                 $profileObject->address = $_POST['UserProfile']['address'];
                 $profileObject->street = $_POST['UserProfile']['street'];
                 $profileObject->city_id = $_POST['UserProfile']['city_id'];
@@ -70,7 +70,7 @@ class ProfileController extends Controller
             $countryObject = Country::model()->findAll();
             $cityObject = City::model()->findAll();
             $stateObject = State::model()->findAll();
-            $profileObject = UserProfile::model()->findByAttributes(array('user_id' => '1'));
+            $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
             $this->render('/user/address', array('countryObject' => $countryObject,
                 'cityObject' => $cityObject,'stateObject' => $stateObject,'profileObject' => $profileObject,'success' => $success,'error' => $error));
         }
@@ -83,7 +83,7 @@ class ProfileController extends Controller
         public function actionTestimonial() {
             $error = "";
             $success = "";
-           $profileObject = UserProfile::model()->findByAttributes(array('user_id' => '1')); 
+           $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid'])); 
           if (isset($_POST['UserProfile'])) {
              if($_POST['UserProfile']['testimonials']=='')
              {  
@@ -106,8 +106,8 @@ class ProfileController extends Controller
         public function actionUpdateProfile() {
             $error = "";
             $success = "";
-           $userObject = User::model()->findByPK(array('id' => '1')); 
-           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '1'));
+           $userObject = User::model()->findByPK(array('id' => Yii::app()->session['userid'])); 
+           $transactionObject = Transaction::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
            $edit = "yes";
            if(!empty($transactionObject) && $transactionObject->status=='1') {
                $edit = "no";
@@ -148,7 +148,7 @@ class ProfileController extends Controller
          public function actionDocumentVerification() {
             $error = "";
             $success = "";
-          $userObject = UserProfile::model()->findByAttributes(array('user_id' => '1'));
+          $userObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
           
           if($_POST)
           { 

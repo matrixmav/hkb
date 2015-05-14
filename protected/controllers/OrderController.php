@@ -55,7 +55,7 @@ class OrderController extends Controller
         }
         
         public function actionRedirect(){
-            $userObject = User::model()->findByPK('1');
+            $userObject = User::model()->findByPK(Yii::app()->session['userid']);
              
             //$criteria = new CDbCriteria;
 //            $criteria->addCondition("status=1");
