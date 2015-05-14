@@ -1,8 +1,7 @@
-
-<!--<div class="main">
+<div class="main">
   <div class="container">
     <!-- BEGIN SIDEBAR & CONTENT -->
-    <!--<div class="row margin-bottom-40">
+    <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
                 <div class="col-md-6 col-sm-6">
         <?php 
@@ -68,10 +67,10 @@
         </div>
       </div>
       <!-- END CONTENT -->
-    <!--</div>
+   </div>
     <!-- END SIDEBAR & CONTENT -->
-  <!--</div>
-</div>-->
+  </div>
+</div>
 <script>
  function validateFrm() {
     $("#name_error").html("");
