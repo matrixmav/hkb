@@ -1,3 +1,5 @@
+
+
 /* Font Definitions */
 @font-face {
     font-family: "Droid Sans";
@@ -13795,3 +13797,8 @@ ul.priceList li.first {
 .btm-content-wrapper ul.priceList li .in, .com {
     font-size: 14px;
 }
+
+.f-font{ font-size:16px; font-weight:bold; line-height:0px;}
+
+   
+.f-cnt{ line-height:25px; }
