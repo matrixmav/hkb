@@ -32,7 +32,7 @@ $this->menu=array(
           </div>-->
           <!-- END SIDEBAR -->
           <!-- BEGIN CONTENT -->
-          <div class="col-md-9 col-sm-9">
+          <div class="col-md-10 col-sm-9">
        
                       <?php $this->widget('zii.widgets.grid.CGridView', array(
 	'id'=>'city-grid',

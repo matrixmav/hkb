@@ -1,6 +1,9 @@
 <?php
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/jquery.min.js');
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/autocomplete.js');
+$this->breadcrumbs=array(
+	'Transfer',
+);  
 ?>
 <div class="main">
     <div class="container">
@@ -8,13 +11,12 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/autocomp
         <div class="row margin-bottom-40">
             <!-- BEGIN CONTENT -->
             <div class="col-md-9 col-sm-9">
-                <h1>Money Transfer</h1>
                 <div class="content-form-page">
                     <div class="row">
                         <div class="col-md-7 col-sm-7">
                             <form class="form-horizontal" role="form" method="post" action="" >
                                 <fieldset> 
-                                    <legend>Select User</legend>
+                                    <legend>Money Transfer</legend>
                                     <?php
                                     foreach ($walletObject as $wallet) {
 
