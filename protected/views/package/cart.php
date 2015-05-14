@@ -42,7 +42,7 @@
 </p>
  </div>
 </td>
-<td class="pPrice CartSubTotal">
+<td class="pPrice CartSubTotal tbl-pd">
 <div class="pos_hlp itemblock topRow">
 <p class="price ItemSubTotal">
 <span class="WebRupee">$</span> <span id=""><?php echo $packageObject->amount;?> <?php if(Yii::app()->session['amount']!=''){ ?> + $ <?php echo Yii::app()->session['amount'];?>(Domain Price Included)<?php }?></span>
@@ -76,7 +76,7 @@
 <span id="followBigRock"></span> <span class="txt">Share on Facebook to get 10% off*</span>
 </div>
 </div>
-<table class="cartTotalWrp rfloat" cellpadding="0" cellspacing="0" border="0">
+<table class="cartTotalWrp rfloat tbl-2" cellpadding="0" cellspacing="0" border="0">
 <tbody><tr class="ItemConvertedSubtotal">
 <td class="itemText">
 <p>Subtotal:</p>
@@ -88,6 +88,7 @@
  
  
 <tr class="ItemTotalAfterDiscount">
+   
 <td class="itemText">
 <p>Total Amount:</p>
 </td>

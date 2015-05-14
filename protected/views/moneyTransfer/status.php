@@ -15,7 +15,18 @@
                                       
                                         <div class="col-lg-8">
                                            <?php 
-										echo 'Your Transaction is '.$_GET['status'];
+										   if($_GET['status'] == 'S')
+										   {
+												echo 'Your Transaction is Success';
+										   }
+										   if($_GET['status'] == 'F')
+										   {
+												echo 'Your Transaction is Failure, As you entered wrong Master Code';
+										   }
+										    if($_GET['status'] == 'U')
+										   {
+												echo 'Your Transaction is Failure, As the User Name you chose is not Existing.';
+										   }
 									?>
                                         </div>
                                        
@@ -27,7 +38,7 @@
 								<br>
                                 <div class="row">
                                     <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">     
-									<a href="/moneytransfer/transfer"><button name="success" class="btn btn-primary">Try New Transaction</button></a>                   
+									<a href="/MoneyTransfer/transfer"><button name="success" class="btn btn-primary">Try New Transaction</button></a>                   
                                       
                                     </div>
                                 </div>

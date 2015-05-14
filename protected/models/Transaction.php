@@ -34,8 +34,8 @@ class Transaction extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, mode, gateway_id, actual_amount, paid_amount, total_rp, used_rp, status, created_at, updated_at', 'required'),
-			array('user_id, gateway_id, actual_amount, paid_amount, total_rp, used_rp, status', 'numerical', 'integerOnly'=>true),
+			array('user_id, mode, gateway_id, actual_amount, paid_amount, used_rp, status, created_at, updated_at', 'required'),
+			array('user_id, gateway_id, status', 'numerical', 'integerOnly'=>true),
 			array('mode', 'length', 'max'=>30),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

@@ -4,7 +4,7 @@ var MIN_LENGTH = 3;
 	$("#username").keyup(function() {
 		var username = $("#username").val();
 		if (username.length >= MIN_LENGTH) {
-			$.get( "/moneytransfer/autocomplete", { username: username } )
+			$.get( "/MoneyTransfer/autocomplete", { username: username } )
 			.done(function( data ) {
 				$('#results').html('');
 				var results = jQuery.parseJSON(data);

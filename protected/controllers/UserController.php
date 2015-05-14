@@ -29,7 +29,7 @@ class UserController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 
-				'actions'=>array('index','view','registration','isuserexisted','forgetpassword','login','changepassword','404','success'),
+				'actions'=>array('index','view','registration','isuserexisted','forgetpassword','login','changepassword','404','success','loginregistration'),
  
 				'users'=>array('*'),
 			),
@@ -50,6 +50,7 @@ class UserController extends Controller
         /* User Login Strat Here */
         public function actionLogin(){ 
             $error = "";
+
             // collect user input data
             if(isset($_POST['name']) && isset($_POST['password'])){
 
@@ -57,7 +58,7 @@ class UserController extends Controller
                 $error = "";
                 $username = $_POST['name'];
                 $password =  $_POST['password'];
-                $masterkey =  $_POST['masterkey'];
+                $masterkey =  12345;//$_POST['masterkey'];
 
                 if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
                     $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
@@ -78,7 +79,11 @@ class UserController extends Controller
                             Yii::app()->user->login($identity);
                             Yii::app()->session['userid'] = $getUserObject->id;
                             echo "1"; 
-                            $this->redirect("/order/list");
+                            if(Yii::app()->session['package_id']!='') {
+                                $this->redirect("/package/domainsearch");  
+                            } else {
+                                $this->redirect("/order/list");
+                            }
                         }else {
                            // echo "0"; 
                             $error = "<h1>Invalid Information</h1>"; 
@@ -242,7 +247,15 @@ class UserController extends Controller
             }
         }
         
-       
+       public function actionloginregistration()
+       {
+           $spnId = Yii::app()->params['adminSpnId'];
+           Yii::app()->session['package_id'] = (!empty($_GET)) ? $_GET['package_id'] : "";
+            
+            $countryObject = Country::model()->findAll();
+//            echo "<pre>";print_r($countryObject);exit;
+            $this->render('login-registration',array('countryObject'=>$countryObject,'spnId'=>$spnId));
+       }
         
         /**
 	 * Displays a particular model.

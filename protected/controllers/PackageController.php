@@ -6,7 +6,7 @@ class PackageController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='inner';
+	public $layout='user';
 
 	/**
 	 * @return array action filters
@@ -76,9 +76,11 @@ class PackageController extends Controller
              $createdDate = date("Y-m-d");
              $transactionObject = new Transaction;
               
-             $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>'1'));
+             $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>Yii::app()->session['userid']));
+              
              if(count($transactionObject1) > 0)
              { 
+                 
                     $transactionObject1->mode = 'paypal';
                     $transactionObject1->actual_amount = $_REQUEST['totalAmount'];
                     $transactionObject1->paid_amount = $_REQUEST['totalAmount'];
@@ -86,9 +88,10 @@ class PackageController extends Controller
                     $transactionObject1->used_rp = 0;
                     $transactionObject1->status = 0;
                     $transactionObject1->gateway_id = 1;
-                    $transactionObject1->created_at = new CDbExpression('NOW()');
+                    $transactionObject1->updated_at = new CDbExpression('NOW()');
                     $transactionObject1->update(); 
              }else{
+                    $transactionObject->user_id = Yii::app()->session['userid'];
                     $transactionObject->mode = 'paypal';
                     $transactionObject->actual_amount = $_REQUEST['totalAmount'];
                     $transactionObject->paid_amount = $_REQUEST['totalAmount'];
@@ -96,30 +99,41 @@ class PackageController extends Controller
                     $transactionObject->used_rp = 0;
                     $transactionObject->status = 0;
                     $transactionObject->gateway_id = 1;
-                    $transactionObject->updated_at = new CDbExpression('NOW()');
+                    $transactionObject->created_at = new CDbExpression('NOW()');
                     $transactionObject->save(false);
-             }       
-             $transactionID = $transactionObject->id;
-             Yii::app()->session['transaction_id'] = $transactionID;
+                    
+             }   
+              $transactionID = $transactionObject->id;
+             
+             if($transactionID !='')
+             {
+             Yii::app()->session['transaction_id'] = $transactionObject->id;
+             }else{
+             Yii::app()->session['transaction_id'] = $transactionObject1->id;    
+             }
              //$transactionObject->used_rp = 0;
              $orderObject = new Order;
-             $orderObject1 = Order::model()->findByAttributes(array('user_id'=>'1'));
+             $orderObject1 = Order::model()->findByAttributes(array('user_id'=>Yii::app()->session['userid']));
              
              if(count($orderObject1) > 0)
              { 
-                    $orderObject1->user_id = 1;
+                    $orderObject1->user_id = Yii::app()->session['userid'];
                     $orderObject1->package_id = Yii::app()->session['package_id'];
                     $orderObject1->domain = Yii::app()->session['domain'];
-                    $orderObject1->transaction_id = 1;
-                    $orderObject1->status = 0;
+                    $orderObject1->transaction_id = Yii::app()->session['transaction_id'];
+                    $orderObject1->status = 1;
+                    $orderObject1->start_date = new CDbExpression('NOW()');
+                    $orderObject1->end_date = new CDbExpression('NOW()');
                     $orderObject1->updated_at = new CDbExpression('NOW()');
                     $orderObject1->update(); 
              }else{
-                    $orderObject->user_id = 1;
+                    $orderObject->user_id = Yii::app()->session['userid'];
                     $orderObject->package_id = Yii::app()->session['package_id'];
                     $orderObject->domain = Yii::app()->session['domain'];
-                    $orderObject->transaction_id = $transactionID;
-                    $orderObject->status = 0;
+                    $orderObject->transaction_id = Yii::app()->session['transaction_id'];
+                    $orderObject->status = 1;
+                    $orderObject->start_date = new CDbExpression('NOW()');
+                    $orderObject->end_date = new CDbExpression('NOW()');
                     $orderObject->created_at = new CDbExpression('NOW()');
                     $orderObject->save(false);
              }       
@@ -152,35 +166,22 @@ class PackageController extends Controller
         
         public function actionDomainSearch()
         {
-         Yii::app()->session['package_id'] = $_REQUEST['package_id'];     
+         //Yii::app()->session['package_id'] = $_REQUEST['package_id'];     
         
         $Package_id = Yii::app()->session['package_id'];
-        
+        if($Package_id!='')
+        {
         $packageObject = Package::model()->findByPK($Package_id);
         
         $rightbar = '<div id="dca_cart" class="cart-wrapper">
             <div class="cart-header"><span class="ico-cart"></span>My Shopping Cart</div>
-            <form method="post" act$rightbarion="./Domain Registration - Domain Availability Results_files/Domain Registration - Domain Availability Results.html">
-            <input type="hidden" name="action" value="add_domain_registration">
-            <input type="hidden" name="dom_action" value="register">
-            <input type="hidden" name="pp_price" value="299">
-            <input type="hidden" name="upsell" value="none">
-            <input type="hidden" name="upsell_modal_planid" value="none">
-            <input type="hidden" name="upsell_modal_product_type" value="none">
-            <input type="hidden" name="upsell_modal_domain_names" value="none">
-            <input type="hidden" name="other_domain" value="">
-            <input type="hidden" name="upsell_duration">
-            <input type="hidden" name="location">
-            <input type="hidden" name="server_location" value="us">
             <ul id="domainList" class="cartList cart-list">';
             if($Package_id=='')
             {
             $rightbar .= '<li class="empty">Your cart is empty :(</li>';
             }else{    
             $rightbar .= '<li class="cart-item">
-            <input type="hidden" name="ram.net" value="1_2546580">
-            <input type="hidden" name="ram.net_price" value="2546580">
-            <input type="hidden" name="domainnamearr[]" value="ram.net">
+            
             <span class="domaintxt">';
             $rightbar .= $packageObject["name"];
             /*if($add)
@@ -268,6 +269,9 @@ class PackageController extends Controller
 			'rightbar'=>$rightbar,
                         'suggestedDomain'=>$SuggestedDomain,
 		));
+        }else{
+           $this->render('domainsearchError'); 
+        }
         }
         
         

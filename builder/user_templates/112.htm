@@ -1,0 +1,214 @@
+<link rel="stylesheet" href="images/112.css"/>
+
+<style type="text/css">
+
+body {
+margin:0 auto;
+padding:0;
+font-size:.70em;
+background: #ffffff url("images/gradient_cherven.jpg") repeat-x;
+text-align:center;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+p {
+margin:0;
+padding:0;
+}
+
+.layer1_wrap {
+margin:5px auto;
+padding:0;
+width:775px;
+}
+
+.canvas_top {
+float:left;
+margin:0 auto;
+padding:0;
+width:775px;
+height:28px;
+background: transparent url("images/frametop775whtb.gif") no-repeat;
+font-weight:normal;
+text-align:center;
+}
+
+
+.canvas_body {
+float:left;
+margin:0 auto;
+padding:0;
+width:775px;
+background: transparent url("images/framebody775whtb.gif") repeat-y ;
+text-align:center;
+}
+
+.header {
+margin:0 auto;
+padding:0;
+width:90%;
+border-bottom:1px ridge #eaeaea;
+height:50px;
+
+}
+
+.left_column {
+float:left;
+margin:0% 4%;
+padding:0;
+width:55%;
+text-align:left;
+color:#000000;
+}
+
+
+
+.right_column {
+float:right;
+margin:0 auto;
+margin-right:5%;
+padding:0%;
+width:24%;
+border-left: 1px solid #999999;
+font-weight:normal;
+text-align:left;
+color:#000000;
+font-weight:normal;
+}
+
+.right_column_title {
+display:block;
+margin:0 auto;
+padding:0;
+width:auto;
+color:#000000;
+font-weight:bold;
+text-align:center;
+}
+
+.right_column_content {
+display:block;
+margin:0 auto;
+padding:10px;
+width:auto;
+color:#000000;
+text-align:left;
+font-weight:normal;
+}
+
+.canvas_base {
+float:left;
+margin:0 auto;
+padding:0;
+width:775px;
+height:34px;
+background: transparent url("images/framebase775whtb.gif") no-repeat;
+font-weight:normal;
+text-align:center;
+}
+
+.styleh2 {
+display:block;
+margin:0 auto;
+padding:0;
+width:auto;
+font-size:1.50em;
+border-bottom:0px dashed #999999;
+color:#990000;
+font-weight:bold;
+text-align:center;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+.styleh3 {
+display:block;
+margin:0 auto;
+padding:0;
+width:auto;
+font-size:1.25em;
+border-bottom:0px dashed #cccccc;
+color:#425982;
+font-family: Verdana, Arial, Helvetica, sans-serif;
+font-weight:bold;
+text-align:center;
+}
+
+a:link, a:visited {
+border-bottom:1px solid #425982;
+font-weight:bold;
+color:#990000;
+text-decoration:none;
+}
+
+a:hover, a:active {
+background-color:#eaeaea;
+border-bottom:1px solid #990000;
+font-weight:bold;
+color:#425982;
+text-decoration:none;
+}
+
+/****  "topmenu" and "basemenu" HORIZONTALS****/
+.topmenu {display:block; margin:0 auto;	padding:0; width:100%; text-align:center;}
+ul.topmenu {display:block; margin: 0; padding: 0; padding-bottom:2px; list-style: disc inside;text-align: center;}
+ul.topmenu li { display:inline; width:25%;}
+
+.basemenu {display:block; margin:0 auto; padding:0; width:90%; text-align:center;}
+ul.basemenu {display:block; margin: 0; padding: 0; padding-bottom:2px; list-style: disc inside;text-align: center;}
+ul.basemenu li { display:inline; width:20%;}
+
+/***  sidemenu VERTICAL  ***/
+.sidemenu {display:block; margin:0 auto; padding:0; width:100%; text-align:center;}
+ul.sidemenu {display:block; width:auto; margin:0; padding:0; list-style: disc inside; text-align:left;}
+ul.sidemenu li {display: block; padding: 5px 0px 5px 0px;}
+</style>
+
+<div class="layer1_wrap">
+  <div class="canvas_top"> </div>
+  <div class="canvas_body">
+    <div class="header"><br />
+      <div class="styleh2">
+	<table summary="" border="0">
+ 	<tr>
+ 		
+ 		<td><wsa logo/></td>
+ 	</tr>
+ </table>
+	  </div>
+</div>
+    <div class="left_column">
+     <br><br>
+
+       <blog content/>
+
+    </div>
+    <div class="right_column"> 
+	
+      <div class="right_column_content">
+    
+   
+ <span class="right_column_title">{CATEGORIES}</span>
+<blog categories/>
+<br>
+ <span class="right_column_title">{LATEST_NOTES}</span>
+<h2 class="sidelink menuheader"></h2>
+
+<blog recent_notes/>
+<br>
+
+<SCRIPT SRC="images/calendar.js"></SCRIPT>
+<br>
+ <span class="right_column_title">{PHOTO_ALBUMS}</span>
+<h2 class="sidelink menuheader"></h2>
+
+<blog albums/>
+<br>
+
+
+      </div>
+    </div>
+  </div>
+  <div class="canvas_base">
+   
+  </div>
+</div>

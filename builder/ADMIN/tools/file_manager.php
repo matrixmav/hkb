@@ -1,0 +1,78 @@
+<?php
+if(!isset($iKEY)||$iKEY!="AZ8007"){
+	die("ACCESS DENIED");
+}
+?>
+<?php
+
+if(isset($Delete)){
+	
+	if(sizeof($CheckList)>0)
+	{
+	
+		SQLDelete("intranet_documents","id",$CheckList);
+	
+	}
+
+}
+
+?>
+	<br>
+				<table summary="" border="0" width=100%>
+				  	<tr>
+				  		
+				  		<td class=basictext><b>
+						
+						<?php echo $ADD_NEW_DOCUMENT;?>
+						
+						</b></td>
+				  	</tr>
+				  </table>
+	  <br>
+
+<?php
+AddNewForm(
+		array($M_TITLE.":",$DESCRIPTION.":",$FILE.":"),
+		array("title","description","file_id"),
+		array("textbox_54","textarea_40_5","file"),
+		$AJOUTER,
+		"intranet_documents",
+		$DOCUMENT_ADDED_SUCCESSFULY
+	);
+?>
+
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" width=100%>
+	<TR>
+		<td class=basicText>
+				<br><br>
+				
+				
+				<table summary="" border="0">
+				  	<tr>
+				  		
+				  		<td class=basictext><b>
+						
+						<?php echo $LIST_AVAILABLE_DOCUMENTS;?>
+						
+						</b></td>
+				  	</tr>
+				  </table>
+	  <br>
+				<center>
+				<?php
+					
+					$oCol=array("file_name","title","description","file_id");
+					$oNames=array($NOM,$M_TITLE,$DESCRIPTION,$FILE);
+					$ORDER_QUERY="";
+					RenderTable("intranet_documents,".$DBprefix."intranet_files",$oCol,$oNames,100%,"WHERE ".$DBprefix."intranet_documents.file_id=".$DBprefix."intranet_files.file_id ",$EFFACER,"id","index.php?action=$action&category=".$category);
+		
+				?>
+				</center>
+				<br>
+		</td>
+	</tr>
+	</table>
+
+
+
+

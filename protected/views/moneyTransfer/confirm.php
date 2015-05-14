@@ -11,26 +11,25 @@
                             <form class="form-horizontal" role="form" method="post" action="" >
                                 <fieldset> 
                                     <legend>Select User</legend>
-                                     <div class="form-group">
+                                    <div class="form-group">
                                         <label for="lastname" class="col-lg-4 control-label">Actual Amount <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                           <?php 
-												echo $_GET['actualamount'];
-											?>
+                                            <?php
+                                            echo $_GET['actualamount'];
+                                            ?>
                                         </div>
-                                       
+
                                     </div>
                                     <div class="form-group">
                                         <label for="master_code" class="col-lg-4 control-label">Master Code<span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                            <input type="text" class="form-control" id="master_code" name="master_code">
-											<input type="hidden" class="form-control" 
-											value="<?php echo $_GET['transactioncode']; ?>" name="transactioncode">
-											
+                                            <input type="password" class="form-control" id="master_code" name="master_code">
+                                            <input type="hidden" class="form-control" value="<?php echo $_GET['transactioncode']; ?>" name="transactioncode">
+
                                         </div>
                                         <span id="email_error"></span>
                                     </div>
-                                                                      
+
 
                                 </fieldset>
                                 <div class="row">

@@ -1,5 +1,6 @@
 a, a:focus, a:hover, a:active {
   color: #e6400c;
+    text-decoration: none;
 }
 a:hover {
   color: #e6400c;

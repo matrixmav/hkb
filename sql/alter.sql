@@ -1,3 +1,10 @@
+#14th May
+ALTER TABLE `money_transfer` ADD `tranaction_id` INT NOT NULL AFTER `from_user_id`, ADD INDEX (`tranaction_id`) ;
+
+ALTER TABLE `money_transfer` ADD FOREIGN KEY (`tranaction_id`) REFERENCES `transaction`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `transaction` CHANGE `actual_amount` `actual_amount` FLOAT NOT NULL, CHANGE `paid_amount` `paid_amount` FLOAT NOT NULL, CHANGE `total_rp` `total_rp` FLOAT NOT NULL, CHANGE `used_rp` `used_rp` FLOAT NOT NULL;
+
 # Date: 7th May
 ALTER TABLE `user` ADD `password` VARCHAR( 100 ) NOT NULL AFTER `name` ;
 
