@@ -57,7 +57,7 @@ class UserController extends Controller
                 $error = "";
                 $username = $_POST['name'];
                 $password =  $_POST['password'];
-                $masterkey =  $_POST['masterkey'];
+                $masterkey =  12345;//$_POST['masterkey'];
 
                 if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
                     $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
