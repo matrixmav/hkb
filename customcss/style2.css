@@ -5425,8 +5425,13 @@ table.dataTable td .input-width-b {
 }
 /* Row Fair */
 .row {
-	background-color: #fff
+	
 }
+.btn-h{  background: linear-gradient(to bottom, #105E96 0%,#3F8EDB 100%)!important;}
+.con-f{ font-size:15px; color:#ff6b00!important; padding-top:20px!important; }
+.img-mar{ margin-left:22px;}
+.bg-f2{ background-color: #272626!important;}
+.bg-f1{background-color: #313030!important;}
 .row-over {
 	/*background-color: #F7FCFF*/
 	background-color: #E8E8E8
@@ -11449,7 +11454,7 @@ div#sidebar.lfloat
 	margin: 0;
 }
 .dca-result-page .domains-input{
-	padding: 12px 0 9px 16px;
+	padding: 22px 0 22px 16px;
 	font: normal 16px arial, helvetica, sans-serif;
 	color: #c6c6c6;
 	width: 400px;

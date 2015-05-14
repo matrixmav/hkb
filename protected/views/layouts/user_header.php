@@ -2,21 +2,23 @@
 <div class="pre-header">
     <div class="container">
         <div class="row">
+          
+
+ 
             <!-- BEGIN TOP BAR LEFT PART -->
             <div class="col-md-6 col-sm-6 additional-shop-info">
                 <ul class="list-unstyled list-inline">
-                    <li><i class="fa fa-phone"></i><span>+1 456 6717</span></li>
-                    <li><i class="fa fa-envelope-o"></i><span>info@keenthemes.com</span></li>
+                    <li><i class="fa fa-phone"></i><span>+91 1234567890</span></li>
+                    <li><i class="fa fa-envelope-o"></i><span>info@gmail.com</span></li>
+                    <li><button id="checkout" class="btn-flat-green btn-orange btn-h" onclick="RedirectCart();">Click Here</button></li>
                 </ul>
             </div>
             <!-- END TOP BAR LEFT PART -->
             <!-- BEGIN TOP BAR MENU -->
             <div class="col-md-6 col-sm-6 additional-nav">
                 <ul class="list-unstyled list-inline pull-right">
-                          
-                   
-                    <li><a href="<?php echo Yii::app()->getBaseUrl(true); ?>/user/login">Log In</a></li>
-                    <li><a href="<?php echo Yii::app()->getBaseUrl(true); ?>/user/registration">Registration</a></li>
+                    <li><a href="page-login.html">Log In</a></li>
+                    <li><a href="page-reg-page.html">Registration</a></li>
                 </ul>
             </div>
             <!-- END TOP BAR MENU -->
@@ -27,7 +29,7 @@
 <!-- BEGIN HEADER -->
 <div class="header">
     <div class="container">
-        <a class="site-logo" href="index.html"><img src="img/logo-corp-red.png" alt="Metronic FrontEnd"></a>
+        <a class="site-logo" href="index.html"><h1>MaverickGlobal</h1></a>
 
         <a href="javascript:void(0);" class="mobi-toggler"><i class="fa fa-bars"></i></a>
 
@@ -36,79 +38,79 @@
             <ul>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Home 
+                       Home 
 
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <!---<ul class="dropdown-menu">
                         <li><a href="#">Dropdown 1</a></li>
                         <li><a href="#">Dropdown 2</a></li>
                         <li><a href="#">Dropdown 3</a></li>
-                    </ul>
+                    </ul>---->
                 </li>
                 <li class="dropdown dropdown-megamenu">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Mega Menu
+                        About
 
                     </a>
-                    <ul class="dropdown-menu">
+                    <!---<ul class="dropdown-menu">
                         <li><a href="#">Dropdown 1</a></li>
                         <li><a href="#">Dropdown 2</a></li>
                         <li><a href="#">Dropdown 3</a></li>
-                    </ul>
+                    </ul>---->
                 </li>
                 <li class="dropdown active">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Pages 
+                        Services 
 
                     </a>
 
-                    <ul class="dropdown-menu">
+                   <!--- <ul class="dropdown-menu">
                         <li><a href="#">Dropdown 1</a></li>
                         <li><a href="#">Dropdown 2</a></li>
                         <li><a href="#">Dropdown 3</a></li>
-                    </ul>
+                    </ul>----->
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Features 
+                        Media centre 
 
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <!---<ul class="dropdown-menu">
                         <li><a href="#">Dropdown 1</a></li>
                         <li><a href="#">Dropdown 2</a></li>
                         <li><a href="#">Dropdown 3</a></li>
-                    </ul>
+                    </ul>----->
 
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Portfolio 
+                         Templates 
 
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <!---<ul class="dropdown-menu">
                         <li><a href="portfolio-4.html">Portfolio 4</a></li>
                         <li><a href="portfolio-3.html">Portfolio 3</a></li>
                         <li><a href="portfolio-2.html">Portfolio 2</a></li>
                         <li><a href="portfolio-item.html">Portfolio Item</a></li>
-                    </ul>
+                    </ul>----->
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" data-target="#" href="javascript:;">
-                        Blog 
+                        Benefits 
 
                     </a>
 
-                    <ul class="dropdown-menu">
+                    <!---<ul class="dropdown-menu">
                         <li><a href="blog.html">Blog Page</a></li>
                         <li><a href="blog-item.html">Blog Item</a></li>
-                    </ul>
+                    </ul>------>
                 </li>
-                <li><a href="shop-index.html" target="_blank">E-Commerce</a></li>
-                <li><a href="onepage-index.html" target="_blank">One Page</a></li>
-                <li><a href="http://keenthemes.com/preview/metronic/theme/templates/admin" target="_blank">Admin theme</a></li>
+                <li><a href="#" target="_blank">Packages</a></li>
+                <li><a href="#" target="_blank">support centre</a></li>
+               
 
                 <!-- BEGIN TOP SEARCH -->
                 <li class="menu-search">

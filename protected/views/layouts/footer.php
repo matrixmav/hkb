@@ -1,53 +1,59 @@
 <!-- BEGIN PRE-FOOTER -->
   <div class="pre-footer" id="contact">
     <div class="container">
-      <div class="row">
+      <div class="row bg-f1">
         <!-- BEGIN BOTTOM ABOUT BLOCK -->
         <div class="col-md-2 col-sm-6 pre-footer-col">
-          <h2>About us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo consequat. </p>
-          <p>Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore.</p>
+          <p class="f-font">Legal</p>
+          <p class="f-cnt">legal@xyz.com<br/> 
+          91-8500425185</p>
+          <br/>
+          <p class="f-font">Billing</p>
+          <p class="f-cnt">Billing@xyz.com<br/> 
+          91-8500425185</p>
+          <br/>
+          <p class="f-font">Support</p>
+          <p class="f-cnt">support@xyz.com<br/> 
+          91-8500425185</p>
         </div>
         <!-- END BOTTOM ABOUT BLOCK -->
         <!-- BEGIN TWITTER BLOCK --> 
         <div class="col-md-2 col-sm-6 pre-footer-col">
-          <h2 class="margin-bottom-0">Latest Tweets</h2>
-           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo consequat. </p>
-          <p>Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore.</p>      
+          <p class="f-font">Member Enquiry</p>
+          <p class="f-cnt">memberenquiry@xyz.com<br/> 
+          91-8500425185</p>
+          <br/>
+          <p class="f-font">Sales</p>
+          <p class="f-cnt">sales@xyz.com<br/> 
+          91-8500425185</p>
+          <br/>
+          <p class="f-font">Info</p>
+          <p class="f-cnt">Info@xyz.com<br/> 
+         91-8500425185</p>   
         </div>
-         <div class="col-md-2 col-sm-6 pre-footer-col">
-          <h2>About us</h2>
+         <div class="col-md-4 col-sm-6 pre-footer-col">
+          <h2>News Update</h2>
            <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo consequat. </p>
           <p>Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore.</p>
         </div>
-        <div class="col-md-2 col-sm-6 pre-footer-col">
-          <h2 class="margin-bottom-0">Latest Tweets</h2>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam sit nonummy nibh euismod tincidunt ut laoreet dolore magna aliquarm erat sit volutpat. Nostrud exerci tation ullamcorper suscipit lobortis nisl aliquip  commodo consequat. </p>
-          <p>Duis autem vel eum iriure dolor vulputate velit esse molestie at dolore.</p>      
-        </div>
+       
         <!-- END TWITTER BLOCK -->
         <div class="col-md-4 col-sm-6 pre-footer-col">
           <!-- BEGIN BOTTOM CONTACTS -->
           <h2>Our Contacts</h2>
           <address class="margin-bottom-20">
-            35, Lorem Lis Street, Park Ave<br>
-            California, US<br>
-            Phone: 300 323 3456<br>
-            Fax: 300 323 1456<br>
+          MaverickGlobal InfoSoft Services Pvt Ltd,<br/>
+                Solus, 3rd Floor, # 2,1st Cross, JC Road<br/>
+                Opp.Jain University,<br/>
+                Bangalore 560 027, India<br/>
+            
             Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
             Skype: <a href="skype:metronic">metronic</a>
           </address>
           <!-- END BOTTOM CONTACTS -->
           <div class="pre-footer-subscribe-box">
-            <h2>Newsletter</h2>
-            <form action="javascript:void(0);">
-              <div class="input-group">
-                <input type="text" placeholder="youremail@mail.com" class="form-control">
-                <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit">Subscribe</button>
-                </span>
-              </div>
-            </form>
+            <img src="../../../images/whts.png" width="30" height="30" /><span class="con-f">+91 1234567890</span><br/><br/>
+              <img src="../../../images/skyp.png" width="100" height="50" class="img-mar" />
           </div>
         </div>
       </div>
@@ -57,9 +63,9 @@
   <!-- BEGIN FOOTER -->
   <div class="footer">
     <div class="container">
-      <div class="row">
+      <div class="row bg-f2">
         <!-- BEGIN COPYRIGHT -->
-        <div class="col-md-6 col-sm-6">
+        <div class="col-md-12 col-sm-12 ">
           <div class="copyright">2014 © Metronic One Page. ALL Rights Reserved.</div>
         </div>
         <!-- END COPYRIGHT -->
