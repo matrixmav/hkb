@@ -950,6 +950,7 @@ a:hover {
   border-top: 9px solid #e85425;
   border-right: 9px solid transparent;
   border-left: 9px solid transparent;
+  list-style: none;
 }
 .pi-price strong em {
   font-size: 71px;  

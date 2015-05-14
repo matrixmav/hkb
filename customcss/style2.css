@@ -1,4 +1,4 @@
-.tbl-2{  margin:22px 0px 0px 170px!important;}
+
 
 /* Font Definitions */
 @font-face {
@@ -12322,6 +12322,7 @@ div#sidebar.lfloat
 }
 .dca-result-page.revamped .domain-select-wrapper{
 	width: 548px;
+          height: 40px
 }
 .dca-result-page.revamped .domains-input{
 	width: 530px;
@@ -12334,7 +12335,7 @@ div#sidebar.lfloat
 	top: 0px;
 }
 .search-again-wrapper .btn-flat-green{
-	padding: 14px 10px;
+	padding: 8px 10px;
 }
 .dca-result-page.revamped .domainSearchResult.ajaxSpinner{
 	background-position: 50%;
