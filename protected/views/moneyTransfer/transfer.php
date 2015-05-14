@@ -15,73 +15,68 @@ Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl . '/js/autocomp
                             <form class="form-horizontal" role="form" method="post" action="" >
                                 <fieldset> 
                                     <legend>Select User</legend>
-                                    <?php 
-																	
-									 foreach ( $walletObject as  $wallet) {
-										 
-									  if($wallet['type']== 1)
-									  {										  
-										  $wallet_points = $wallet['fund'];
-										  }
-									   if($wallet['type']== 2)
-									  {
-										  $rp_points = $wallet['fund'];
-										  }
-									   if($wallet['type']== 3)
-									  {
-										$commission_points = $wallet['fund'];
-									  }
-								                                                    
-                                     }
-									 ?>
-                                    
+                                    <?php
+                                    foreach ($walletObject as $wallet) {
+
+                                        if ($wallet['type'] == 1) {
+                                            $walletPoints = $wallet['fund'];
+                                        }
+                                        if ($wallet['type'] == 2) {
+                                            $rpPoints = $wallet['fund'];
+                                        }
+                                        if ($wallet['type'] == 3) {
+                                            $commissionPoints = $wallet['fund'];
+                                        }
+                                    }
+                                    ?>
+
                                     <div class="form-group">
                                         <label for="lastname" class="col-lg-4 control-label">Cash Amount <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                           <?php 
-										echo $wallet_points;
-									?>
+                                    <?php
+                                    echo isset($walletPoints)?$walletPoints:"0";
+                                    ?>
                                         </div>
-                                       
+
                                     </div>
-													
-                                             
-                                    
+
+
+
                                     <div class="form-group">
                                         <label for="lastname" class="col-lg-4 control-label">RP Wallet <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                           <?php echo $rp_points; ?>
+<?php echo isset($walletPoints)?$walletPoints:"0"; ?>
                                         </div>
-                                       
+
                                     </div>
-									<div class="form-group">
+                                    <div class="form-group">
                                         <label for="lastname" class="col-lg-4 control-label">Commission Points <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                           <?php 
-										echo $commission_points;
-									?>
+<?php
+echo isset($commissionPoints)?$commissionPoints:"0";
+?>
                                         </div>
-                                       
+
                                     </div>
-									
-									 
-									 <div class="form-group">
-                                       <label for="lastname" class="col-lg-4 control-label">Select To User <span class="require">*</span></label>
+
+
+                                    <div class="form-group">
+                                        <label for="lastname" class="col-lg-4 control-label">Select To User <span class="require">*</span></label>
                                         <div class="col-lg-8">
-										 <input type="text" value="" placeholder="Search" id="username" name="username"><div id="results"></div>
-									         </div>
-                                        
+                                            <input type="text" value="" placeholder="Search" id="username" name="username"><div id="results"></div>
+                                        </div>
+
                                     </div>
                                     <div class="form-group">
                                         <label for="paid_amount" class="col-lg-4 control-label">Amount Value <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="paid_amount" name="paid_amount">
-											<input type="hidden" class="form-control" value="<?php echo $wallet_points; ?>" name="actual_amount">
-											<input type="hidden" class="form-control" value="<?php echo $rp_points; ?>" name="total_rp">
+                                            <input type="hidden" class="form-control" value="<?php echo isset($walletPoints)?$walletPoints:"0"; ?>" name="actual_amount">
+                                            <input type="hidden" class="form-control" value="<?php echo isset($rpPoints)?$rpPoints:""; ?>" name="total_rp">
                                         </div>
                                         <span id="email_error"></span>
                                     </div>
-                                                                      
+
 
                                 </fieldset>
                                 <div class="row">

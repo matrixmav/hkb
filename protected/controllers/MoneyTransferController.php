@@ -105,7 +105,7 @@ $userId = 3;
                     print_r($moneyTransfertoObj->getErrors());
                     exit;
                 }
-                $this->redirect(array('moneytransfer/confirm', 'transactioncode' => $transactionObjuser->id, 'actualamount' => $actualamount));
+                $this->redirect(array('MoneyTransfer/confirm', 'transactioncode' => $transactionObjuser->id, 'actualamount' => $actualamount));
             } 
 //            $moneyTransferadmObj = new MoneyTransfer;
 //            $moneyTransferadmObj->from_user_id = $userId;
@@ -131,7 +131,7 @@ $userId = 3;
         }
     }
 
-    public function actionAutocomplete() {
+    public function actionAutocomplete() { 
         if ($_GET['username']) {
             $userObject = User::model()->findAll(array(
                 'condition' => 't.name LIKE :name',
@@ -160,7 +160,7 @@ $userId = 3;
         // echo "<pre>"; print_r($_REQUEST);exit;
         if (isset($_POST['confirm'])) {
             $userObject = User::model()->findByAttributes(array('id' => 1));
-            if ($userObject->master_pin == $_POST['master_code']) {
+            if ($userObject->master_pin == md5($_POST['master_code'])) {
                 $transactionObj = Transaction::model()->findByAttributes(array('id' => $_POST['transactioncode']));
        
                 $moneyTransferadmObj = MoneyTransfer::model()->findAllByAttributes(array('tranaction_id' => $_POST['transactioncode']));
@@ -191,10 +191,10 @@ $userId = 3;
                 $walletRecvObj->fund = ($walletRecvObj->fund) - ($transactionObj->used_rp);
                 $walletRecvObj->update();
                 //exit();
-                $this->redirect(array('moneytransfer/status', 'status' => 'Success'));
+                $this->redirect(array('MoneyTransfer/status', 'status' => 'Success'));
             } else {
 
-                $this->redirect(array('moneytransfer/status', 'status' => 'Failure'));
+                $this->redirect(array('MoneyTransfer/status', 'status' => 'Failure'));
             }
         }
         $this->render('confirm');
