@@ -51,7 +51,7 @@ class UserController extends Controller
         public function actionLogin(){
             $error = "";
 		if(Yii::app()->session['userid']){ 
-                    $this->redirect("/admin/dashboard");
+                    $this->redirect("/order/list");
 		}else{                    	
                     // collect user input data
                     if(isset($_POST['name']) && isset($_POST['password'])){
@@ -81,7 +81,7 @@ class UserController extends Controller
                                     Yii::app()->user->login($identity);
                                     Yii::app()->session['userid'] = $getUserObject->id;
                                     echo "1"; 
-                                    $this->redirect("/admin/dashboard");
+                                    $this->redirect("/order/list");
                                 }else {
                                    // echo "0"; 
                                     $error = "<h1>Invalid Information</h1>"; 
@@ -120,8 +120,6 @@ class UserController extends Controller
                 if(!$model->save(false)){
                     echo "<pre>"; print_r($model->getErrors());exit;
                 }
-                var_dump($userObject); die;  
-                
                 
                 /*echo $config['to'] = $model->email; 
                 $config['subject'] = 'Registration Confirmation' ;
