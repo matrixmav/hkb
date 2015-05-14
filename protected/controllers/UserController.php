@@ -61,7 +61,7 @@ class UserController extends Controller
                         $username = $_POST['name'];
                         $password =  $_POST['password'];
                         $masterkey =  $_POST['masterkey'];
-
+                       
                         if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
                             $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
                             if(!empty($getUserObject)){
@@ -76,6 +76,7 @@ class UserController extends Controller
                                 }
                                 
                                 if($flagPassword == 'password' && $flagMaster == 'masterkey' ){
+                                      
                                     $identity = new UserIdentity($username,$password);                                                                               
                                     if($identity->userAuthenticate())
                                     Yii::app()->user->login($identity);
@@ -224,9 +225,7 @@ class UserController extends Controller
        {
            $spnId = Yii::app()->params['adminSpnId'];
            Yii::app()->session['package_id'] = (!empty($_GET)) ? $_GET['package_id'] : "";
-            if($_GET){
-                $spnId = $_GET['spid'];
-            }
+            
             $countryObject = Country::model()->findAll();
 //            echo "<pre>";print_r($countryObject);exit;
             $this->render('login-registration',array('countryObject'=>$countryObject,'spnId'=>$spnId));

@@ -6,7 +6,7 @@ class PackageController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='inner';
+	public $layout='user';
 
 	/**
 	 * @return array action filters
@@ -77,6 +77,7 @@ class PackageController extends Controller
              $transactionObject = new Transaction;
               
              $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>Yii::app()->session['userid']));
+              
              if(count($transactionObject1) > 0)
              { 
                  
@@ -87,9 +88,10 @@ class PackageController extends Controller
                     $transactionObject1->used_rp = 0;
                     $transactionObject1->status = 0;
                     $transactionObject1->gateway_id = 1;
-                    $transactionObject1->created_at = new CDbExpression('NOW()');
+                    $transactionObject1->updated_at = new CDbExpression('NOW()');
                     $transactionObject1->update(); 
              }else{
+                    $transactionObject->user_id = Yii::app()->session['userid'];
                     $transactionObject->mode = 'paypal';
                     $transactionObject->actual_amount = $_REQUEST['totalAmount'];
                     $transactionObject->paid_amount = $_REQUEST['totalAmount'];
@@ -97,11 +99,13 @@ class PackageController extends Controller
                     $transactionObject->used_rp = 0;
                     $transactionObject->status = 0;
                     $transactionObject->gateway_id = 1;
-                    $transactionObject->updated_at = new CDbExpression('NOW()');
+                    $transactionObject->created_at = new CDbExpression('NOW()');
                     $transactionObject->save(false);
-             }       
-              
-             if($transactionID!='')
+                    
+             }   
+              $transactionID = $transactionObject->id;
+             
+             if($transactionID !='')
              {
              Yii::app()->session['transaction_id'] = $transactionObject->id;
              }else{
@@ -113,7 +117,7 @@ class PackageController extends Controller
              
              if(count($orderObject1) > 0)
              { 
-                    $orderObject1->user_id = 1;
+                    $orderObject1->user_id = Yii::app()->session['userid'];
                     $orderObject1->package_id = Yii::app()->session['package_id'];
                     $orderObject1->domain = Yii::app()->session['domain'];
                     $orderObject1->transaction_id = Yii::app()->session['transaction_id'];
@@ -121,7 +125,7 @@ class PackageController extends Controller
                     $orderObject1->updated_at = new CDbExpression('NOW()');
                     $orderObject1->update(); 
              }else{
-                    $orderObject->user_id = 1;
+                    $orderObject->user_id = Yii::app()->session['userid'];
                     $orderObject->package_id = Yii::app()->session['package_id'];
                     $orderObject->domain = Yii::app()->session['domain'];
                     $orderObject->transaction_id = Yii::app()->session['transaction_id'];
@@ -158,10 +162,11 @@ class PackageController extends Controller
         
         public function actionDomainSearch()
         {
-         Yii::app()->session['package_id'] = $_REQUEST['package_id'];     
+         //Yii::app()->session['package_id'] = $_REQUEST['package_id'];     
         
         $Package_id = Yii::app()->session['package_id'];
-        
+        if($Package_id!='')
+        {
         $packageObject = Package::model()->findByPK($Package_id);
         
         $rightbar = '<div id="dca_cart" class="cart-wrapper">
@@ -274,6 +279,9 @@ class PackageController extends Controller
 			'rightbar'=>$rightbar,
                         'suggestedDomain'=>$SuggestedDomain,
 		));
+        }else{
+           $this->render('domainsearchError'); 
+        }
         }
         
         
