@@ -1,3 +1,5 @@
+
+
 /* Font Definitions */
 @font-face {
     font-family: "Droid Sans";
@@ -1425,11 +1427,12 @@ p.ItemDiscTotal{
 	color: #70A750 !important;
 }
 .ItemTotalAfterDiscount td{
-	margin-top:5px !important;
-	padding-top:5px;
-	padding-bottom:5px;
-	border-top:1px solid #c1c58c;
-	background-color: #feffd5;
+	  margin-top: 7px !important;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border: 1px solid #c1c58c;
+  background-color: #feffd5;
+  padding-right: 9px;
 }
 
 .ItemTotalAfterDiscount td p{
@@ -4751,7 +4754,7 @@ Main Content Area {wrapper for "Content Area + Side Bar"}
 */
 #maincontent {
 	text-align: center;
-	padding:0px;
+	  padding: 0px 0px 23px 0px;
 	margin:0 auto;
 }
 
@@ -5425,8 +5428,13 @@ table.dataTable td .input-width-b {
 }
 /* Row Fair */
 .row {
-	background-color: #fff
+	
 }
+.btn-h{  background: linear-gradient(to bottom, #105E96 0%,#3F8EDB 100%)!important;}
+.con-f{ font-size:15px; color:#ff6b00!important; padding-top:20px!important; }
+.img-mar{ margin-left:22px;}
+.bg-f2{ background-color: #272626!important;}
+.bg-f1{background-color: #313030!important;}
 .row-over {
 	/*background-color: #F7FCFF*/
 	background-color: #E8E8E8
@@ -11449,7 +11457,7 @@ div#sidebar.lfloat
 	margin: 0;
 }
 .dca-result-page .domains-input{
-	padding: 12px 0 9px 16px;
+	padding: 22px 0 22px 16px;
 	font: normal 16px arial, helvetica, sans-serif;
 	color: #c6c6c6;
 	width: 400px;
@@ -12314,6 +12322,7 @@ div#sidebar.lfloat
 }
 .dca-result-page.revamped .domain-select-wrapper{
 	width: 548px;
+          height: 40px
 }
 .dca-result-page.revamped .domains-input{
 	width: 530px;
@@ -12326,7 +12335,7 @@ div#sidebar.lfloat
 	top: 0px;
 }
 .search-again-wrapper .btn-flat-green{
-	padding: 14px 10px;
+	padding: 8px 10px;
 }
 .dca-result-page.revamped .domainSearchResult.ajaxSpinner{
 	background-position: 50%;
@@ -13790,3 +13799,8 @@ ul.priceList li.first {
 .btm-content-wrapper ul.priceList li .in, .com {
     font-size: 14px;
 }
+
+.f-font{ font-size:16px; font-weight:bold; line-height:0px;}
+
+   
+.f-cnt{ line-height:25px; }

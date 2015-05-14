@@ -323,15 +323,18 @@ License: You must have a valid license purchased only from themeforest(the above
                             $reservation_pmenu = 8;
                             if ((in_array($reservation_pmenu, $menusections ['psections'])) || (in_array($reservation_pmenu, $menusections ['section_ids']))) {
                                 $reservation_subsection = array(
-                                    "moneytransfer/" => "Transfer",
+                                    "transaction/list" => "Transaction List",
+//                                    "moneytransfer/list" => "Moneytransfer List",
+                                    "moneytransfer/transfer" => "Transfer",
+                                    
                                 );
                                 ?>
                                 <li
-                                    class="<?php echo (($curControllerLower == 'genealogy') || ($curControllerLower == 'genealogy')) ? "active" : ''; ?>">
+                                    class="<?php echo (($curControllerLower == 'transaction') || ($curControllerLower == 'moneytransfer')) ? "active" : ''; ?>">
                                     <a href="javascript:;"> <span class="leftmenu-reservations"></span>
                                         <span class="title">Fund </span>
                                         <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'genealogy') ? "open" : ''; ?>">
+                                            class="arrow <?php echo ($curControllerLower == 'transaction') ? "open" : ''; ?>">
                                         </span>
                                     </a>
                                     <?php
@@ -340,7 +343,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                             if ($ctName == "search/create") {
                                                 $ctName = "search/create/type/details";
                                             }
-                                            if ($ctName == "reservation" && $curControllerLower == "reservation")
+                                            if ($ctName == "transaction" && $curControllerLower == "moneytransfer")
                                                 $class_content = 'class="active"';
                                             else
                                                 $class_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
@@ -357,7 +360,44 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                                 <?php
                             }
+                            $reservation_pmenu = 8;
+                            if ((in_array($reservation_pmenu, $menusections ['psections'])) || (in_array($reservation_pmenu, $menusections ['section_ids']))) {
+                                $reservation_subsection = array(
+                                    "wallet/list" => "Wallet",
+                                    
+                                );
+                                ?>
+                                <li
+                                    class="<?php echo (($curControllerLower == 'wallet') || ($curControllerLower == 'moneytransfer')) ? "active" : ''; ?>">
+                                    <a href="javascript:;"> <span class="leftmenu-reservations"></span>
+                                        <span class="title">Wallet </span>
+                                        <span class="selected"></span> <span
+                                            class="arrow <?php echo ($curControllerLower == 'wallet') ? "open" : ''; ?>">
+                                        </span>
+                                    </a>
+                                    <?php
+                                    echo '<ul class="sub-menu">';
+                                    foreach ($reservation_subsection as $ctName => $ctTitle) {
+                                            if ($ctName == "search/create") {
+                                                $ctName = "search/create/type/details";
+                                            }
+                                            if ($ctName == "transaction" && $curControllerLower == "wallet")
+                                                $class_content = 'class="active"';
+                                            else
+                                                $class_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
 
+                                            echo '<li ' . $class_content . '>';
+                                            echo '<a href="/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
+                                            echo '</li>';
+                                            if ($ctName == "search/create/type/details") {
+                                                $ctName = "search/create";
+                                            }
+                                    }
+                                    echo '</ul>';
+                                    ?>			
+                                </li>
+                                <?php
+                            }
                             $bases_pmenu = 4;
                             if ((in_array($bases_pmenu, $menusections ['psections'])) || (in_array($bases_pmenu, $menusections ['section_ids']))) {
                                 $bases_subsection = array(

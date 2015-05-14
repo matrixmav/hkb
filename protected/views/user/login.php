@@ -16,24 +16,26 @@
                 <div class="form-group">
                   <label for="email" class="col-lg-4 control-label">User Name <span class="require">*</span></label>
                   <div class="col-lg-8">
-                      <input type="text" class="form-control" id="login-name" name="name">
-                  </div>.
-                  <span id="name_error"></span>
+
+                      <input type="text" class="form-control" id="name" name="name">
+                  
+                  <span id="name_error" class="clrred"></span></div>
                 </div>
                 <div class="form-group">
                   <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
                   <div class="col-lg-8">
-                      <input type="password" class="form-control" id="login-password" name="password">
-                  </div>
-                  <span id="password_error"></span>
+
+                      <input type="password" class="form-control" id="password" name="password">
+                  
+                  <span id="password_error" class="clrred"></span></div>
                 </div>
 
                  <div class="form-group">
                   <label for="masterkey" class="col-lg-4 control-label">Master Key <span class="require">*</span></label>
                   <div class="col-lg-8">
-                      <input type="text" class="form-control" id="masterkey" name="masterkey">
-                  </div>
-                  <span id="masterkey_error"></span>
+                      <input type="password" class="form-control" id="masterkey" name="masterkey">
+                  
+                  <span id="masterkey_error" class="clrred"></span></div>
                 </div>   
 
                 <div class="row">

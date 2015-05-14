@@ -15,7 +15,18 @@
                                       
                                         <div class="col-lg-8">
                                            <?php 
-										echo 'Your Transaction is '.$_GET['status'];
+										   if($_GET['status'] == 'S')
+										   {
+												echo 'Your Transaction is Success';
+										   }
+										   if($_GET['status'] == 'F')
+										   {
+												echo 'Your Transaction is Failure, As you entered wrong Master Code';
+										   }
+										    if($_GET['status'] == 'U')
+										   {
+												echo 'Your Transaction is Failure, As the User Name you chose is not Existing.';
+										   }
 									?>
                                         </div>
                                        
