@@ -167,14 +167,14 @@ class MoneyTransferController extends Controller
 					if($moneyobj->to_user_id == 1){
 						/* for admin wallet add */
 					$walletadmObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
-					$walletadmObj->fund =$walletadmObj->fund + ($transactionObj->used_rp - $transactionObj->paid_amount);
+					$walletadmObj->fund =($walletadmObj->fund) + (($transactionObj->used_rp) - ($transactionObj->paid_amount));
 					$walletadmObj->status = 1;
-					$walletadmObj->update();
+					$walletadmObj->save();
 					}
 					else{
 						/* for to user wallet add*/
 					$walletSenderObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
-					$walletSenderObj->fund =$walletSenderObj->fund + $transactionObj->paid_amount;
+					$walletSenderObj->fund =($walletSenderObj->fund) + ($transactionObj->paid_amount);
 					$walletSenderObj->status = 1;
 					$walletSenderObj->update();
 					}
@@ -184,7 +184,7 @@ class MoneyTransferController extends Controller
 					}
 					/* for from user wallet minus*/
 					$walletRecvObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->from_user_id,'type' => 2));
-					$walletRecvObj->fund =$walletRecvObj->fund - $transactionObj->used_rp;
+					$walletRecvObj->fund =($walletRecvObj->fund) - ($transactionObj->used_rp);
 					$walletRecvObj->update();
 					$this->redirect(array('moneytransfer/status', 'status'=>'Success'));
 				 }
