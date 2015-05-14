@@ -1,0 +1,196 @@
+<link rel="stylesheet" href="images/153.css"/>
+<style>
+
+body {
+	margin:0;
+	padding:0;
+	background:#6DA18B url(images/repeat.gif) repeat-y top center;
+	font-size:78%;
+	font-family:Helvetica, Arial, Sans-serif;
+}	
+
+a {
+	color:#4290B8;
+}
+
+a:hover {
+	color:#59806F;
+	text-decoration:none;
+}	
+
+h1, h2 {
+	margin:0;
+	padding:10px 0 0 40px;
+	font-family:Tahoma, Arial, Sans-serif;
+	font-weight:normal;
+	font-size:1.6em;
+	color:#333;
+}
+
+p {
+	text-indent:10px;
+	padding-left:10px;
+}
+
+th {
+	background:#e5e5e5;
+}	
+
+#container {
+	width:762px;
+	margin:0 auto;
+}
+
+#header {
+	background:url(images/clouds.jpg) no-repeat;
+	height:166px;
+	border-bottom:1px solid #ccc;
+	overflow:hidden; 
+}
+
+#header h1, #header h2 {
+	color:#fff;
+	padding:55px 0 0 75px;
+	font-size:3em;
+}	
+
+#header h2 {
+	font-size:1.2em;
+	padding:0 0 0 65px;
+	margin-top:-6px;
+}	
+
+#leftcol {
+	float:left;
+	width:490px;
+}
+
+#rightcol {
+	width:240px;
+	float:right;
+}
+
+#rightcol h1 {
+	font-size:1.3em;
+	padding-left:20px;
+	font-weight:bold;
+	font-family:helvetica, arial, sans-serif;
+}	
+
+img.portrait {  
+	background:#fff;
+	padding:4px;
+	border:1px solid #ccc;
+	display:block;
+	margin:10px auto 0 auto;
+}	
+
+#rightcol li {
+	line-height:1.5em;
+	list-style:none;
+}	
+
+#nav {
+	list-style:none;
+	padding-left:17px;
+	margin:0 auto;
+}
+
+#nav li {
+	background:#fff;
+	width:210px;
+	height:1.8em;
+	line-height:1.8em;
+	text-align:center;
+	font-size:1.2em;
+	margin:5px 0;
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+}	
+
+#nav li a {
+	color:#333;
+	text-decoration:none;
+	display:block;
+	width:210px;
+}	
+
+#nav li a:hover {
+	background:#4C83BA;
+	color:#fff;
+}	
+
+#footer {
+	text-align:center;
+	background:#fff;
+	clear:both;
+	margin:0;
+	border-top:1px solid #ccc;
+}	
+</style>
+
+</head>
+
+
+<div id="container">
+<div id="header" style="text-align:left">
+	
+	<div style="margin-top:40px;margin-left:30px">
+	
+	<table summary="" border="0">
+ 		<tr>
+ 			<td><blog author_image/></td>
+ 			<td><font color=white><blog author_description/></font></td>
+ 		</tr>
+ 	</table>
+ 
+
+	</div>
+</div>
+
+
+<div id="leftcol">
+
+<br>
+<blog content/>
+
+</div>
+<div id="rightcol">
+<br>
+
+
+								<table border=0 width="98%">
+								<tr>
+								<td>
+								<b>{CATEGORIES}</b>
+								<br>
+								<br>
+								<blog categories/>
+								<br>
+								 <b>{LATEST_NOTES}</b>
+								 </td>
+								 </tr>
+								 </table>
+								 
+								 <table border=0 width="98%">
+								<tr>
+								<td>
+								
+								<blog recent_notes/>
+								
+								
+								<br><br>
+				
+					
+  						
+  						<wsa bottom_menu/>
+						
+						
+								</td>
+								</tr>
+								</table>
+								
+				
+
+</div>
+</div>

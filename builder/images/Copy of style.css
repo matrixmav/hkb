@@ -1,0 +1,11 @@
+@charset "iso-8859-1";
+
+.text_field{color:#ffffff;background:#494e4f; border-style:solid;border-color:#000000;border-width:1px 1px 1px 1px}
+.button{color:white;font-weight:800;font-size:11px;border-style:solid;border-color:#31738c;border-width:1px 1px 1px 1px;background-image:url('bg-but.gif');height:22px}
+
+.home_table{width:100%;border-style:none;border-width:1px 1px 1px 1px;border-color:#006599}
+
+.home_table_first_TR{color:#d8d8d8;background: #1d1d1d;height:40px;padding-left:10px;border-style:solid;border-color:#393939;border-width:1px 1px 1px 1px}
+
+
+.home_table_first_TD{color:#2987ba;font-weight:800}

@@ -1,0 +1,57 @@
+RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com/online [NC]
+RewriteCond %{HTTP_HOST} !^www\.urwebby\.com/online
+RewriteRule ^([0-9]+)-.*$ site.php?user=%1&page_id=$1 [L]
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com/online [NC]
+RewriteCond %{HTTP_HOST} !^www\.urwebby\.com/online 
+RewriteRule ^n([0-9]+)-.*$ site.php?user=%1&note=$1 [L]
+
+RewriteCond %{HTTP_HOST} www\.urwebby.com/online [NC]
+RewriteRule ^news/([0-9]+)/.*$ index.php?news_id=$1 [L]
+
+RewriteRule ^(.+)/([0-9]+)-.*$ site.php?user=$1&page_id=$2 [L]
+RewriteRule ^(.+)/n([0-9]+)-.*$ site.php?user=$1&news=$2 [L]
+RewriteRule ^(.+)/note/([0-9]+).*$ site.php?user=$1&note=$2 [L]
+RewriteRule ^(.+)/category/([0-9]+).*$ site.php?user=$1&category=$2 [L]
+RewriteRule ^(.+)/photo_id/([0-9]+).*$ site.php?user=$1&photo_id=$2 [L]
+RewriteRule ^(.+)/contact$ site.php?user=$1&contact=1 [L]
+RewriteRule ^trackback/([0-9]+)$ trackback.php?note=$1 [L]
+RewriteRule ^cat/([0-9\.]+)/parent/([0-9]+).*$ index.php?mod=websites&cat=$1&parent_cat=$2 [L]
+RewriteRule ^cat/([0-9]+).*$ index.php?mod=websites&cat=$1 [L]
+RewriteRule ^forgotten_password.html$ index.php?mod=forgotten_password [L]
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com [NC]
+RewriteCond %{REQUEST_URI} !image [NC]
+RewriteCond %{REQUEST_URI} !thumbnail [NC]
+RewriteCond %{REQUEST_URI} !blog_file [NC]
+RewriteCond %{HTTP_HOST} !^www\.urwebby\.com 
+RewriteRule ^$ site.php?user=%1 [L]
+
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com [NC]
+RewriteRule ^category/([0-9]+).*$ /site.php?user=%1&category=$1 [L]
+
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com [NC]
+RewriteRule ^photo_id/([0-9]+).*$ /site.php?user=%1&photo_id=$1 [L]
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com [NC]
+RewriteRule ^file/([0-9]+)$ /site.php?user=%1&file=$1 [L]
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com [NC]
+RewriteRule ^contact$ /site.php?user=%1&contact=1 [L]
+
+RewriteCond %{HTTP_HOST} ([^.]+)\.urwebby.com [NC]
+RewriteRule ^list/([0-9]+)/type/([0-9]+)$ /site.php?user=%1&list=$1&type=$2 [L]
+
+RewriteCond %{HTTP_HOST} www\.urwebby.com [NC]
+RewriteCond %{REQUEST_URI} !image [NC]
+RewriteCond %{REQUEST_URI} !thumbnail [NC]
+RewriteCond %{REQUEST_URI} !index [NC]
+RewriteCond %{REQUEST_URI} !\. [NC]
+RewriteRule ^(.+)$ site.php?user=$1 [L]
+
+RewriteRule ^forgotten_password.html$ index.php?mod=forgotten_password [L]
+RewriteRule ^([^/\.]+).html$ index.php?page=$1 [L]
