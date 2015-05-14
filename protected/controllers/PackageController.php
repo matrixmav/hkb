@@ -121,7 +121,9 @@ class PackageController extends Controller
                     $orderObject1->package_id = Yii::app()->session['package_id'];
                     $orderObject1->domain = Yii::app()->session['domain'];
                     $orderObject1->transaction_id = Yii::app()->session['transaction_id'];
-                    $orderObject1->status = 0;
+                    $orderObject1->status = 1;
+                    $orderObject1->start_date = new CDbExpression('NOW()');
+                    $orderObject1->end_date = new CDbExpression('NOW()');
                     $orderObject1->updated_at = new CDbExpression('NOW()');
                     $orderObject1->update(); 
              }else{
@@ -129,7 +131,9 @@ class PackageController extends Controller
                     $orderObject->package_id = Yii::app()->session['package_id'];
                     $orderObject->domain = Yii::app()->session['domain'];
                     $orderObject->transaction_id = Yii::app()->session['transaction_id'];
-                    $orderObject->status = 0;
+                    $orderObject->status = 1;
+                    $orderObject->start_date = new CDbExpression('NOW()');
+                    $orderObject->end_date = new CDbExpression('NOW()');
                     $orderObject->created_at = new CDbExpression('NOW()');
                     $orderObject->save(false);
              }       
