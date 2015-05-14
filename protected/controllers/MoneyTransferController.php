@@ -161,24 +161,34 @@ class MoneyTransferController extends Controller
 				$walletRecvObj->fund =$walletFromObj->fund + $transactionObj->paid_amount;
 				$walletRecvObj->save(); */
 				 $moneyTransferadmObj = MoneyTransfer::model()->findAllByAttributes(array('tranaction_id' => $_POST['transactioncode']));
+				// echo '<pre>';print_r($moneyTransferadmObj);exit;
 				 foreach ( $moneyTransferadmObj as  $moneyobj) {
-					$walletSenderObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
+					
 					if($moneyobj->to_user_id == 1){
 						/* for admin wallet add */
-					$walletSenderObj->fund =$walletSenderObj->fund + ($transactionObj->used_rp - $transactionObj->paid_amount);
+					$walletadmObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
+					$walletadmObj->fund =($walletadmObj->fund) + (($transactionObj->used_rp) - ($transactionObj->paid_amount));
+					$walletadmObj->status = 1;
+                                        $walletadmObj->save();
 					}
 					else{
 						/* for to user wallet add*/
-					$walletSenderObj->fund =$walletSenderObj->fund + $transactionObj->paid_amount;
+					$walletSenderObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
+					$walletSenderObj->fund =($walletSenderObj->fund) + ($transactionObj->paid_amount);
+					$walletSenderObj->status = 1;
+                                        
+					$walletSenderObj->update();
 					}
-					$walletSenderObj->save();
-					$moneyobj->status = 1;
-					$moneyobj->save();
+					$moneyinside = MoneyTransfer::model()->findByAttributes(array('id' => $moneyobj->id));
+					$moneyinside->status = 1;
+                                        
+					$moneyinside->update();
 					}
 					/* for from user wallet minus*/
 					$walletRecvObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->from_user_id,'type' => 2));
-					$walletRecvObj->fund =$walletRecvObj->fund - $transactionObj->used_rp;
-					$walletRecvObj->save();
+					$walletRecvObj->fund =($walletRecvObj->fund) - ($transactionObj->used_rp);
+                                        $walletRecvObj->update();
+                                        //exit();
 					$this->redirect(array('moneytransfer/status', 'status'=>'Success'));
 				 }
 				 else{

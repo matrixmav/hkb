@@ -48,51 +48,47 @@ class UserController extends Controller
 	}
         
         /* User Login Strat Here */
-        public function actionLogin(){
+        public function actionLogin(){ 
             $error = "";
-		if(Yii::app()->session['userid']){ 
-                    $this->redirect("/order/list");
-		}else{                    	
-                    // collect user input data
-                    if(isset($_POST['name']) && isset($_POST['password'])){
-                       
-                        $model = new User;
-                        $error = "";
-                        $username = $_POST['name'];
-                        $password =  $_POST['password'];
-                        $masterkey =  $_POST['masterkey'];
+            // collect user input data
+            if(isset($_POST['name']) && isset($_POST['password'])){
 
-                        if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
-                            $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
-                            if(!empty($getUserObject)){
-                                $flagPassword ='';
-                                $flagMaster ='';
-                                
-                                if($getUserObject->password == md5($password)) { // Check Password
-                                    $flagPassword = 'password';                                    
-                                }
-                                if($getUserObject->master_pin == md5($masterkey)){ // Check master key
-                                    $flagMaster = 'masterkey';
-                                }
-                                
-                                if($flagPassword == 'password' && $flagMaster == 'masterkey' ){
-                                    $identity = new UserIdentity($username,$password);                                                                               
-                                    if($identity->userAuthenticate())
-                                    Yii::app()->user->login($identity);
-                                    Yii::app()->session['userid'] = $getUserObject->id;
-                                    echo "1"; 
-                                    $this->redirect("/order/list");
-                                }else {
-                                   // echo "0"; 
-                                    $error = "<h1>Invalid Information</h1>"; 
-                                }
-                            }else{
-                            $error = "<h1>Invalid User Name</h1>"; 
-                            }
+                $model = new User;
+                $error = "";
+                $username = $_POST['name'];
+                $password =  $_POST['password'];
+                $masterkey =  $_POST['masterkey'];
+
+                if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
+                    $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
+                    if(!empty($getUserObject)){
+                        $flagPassword ='';
+                        $flagMaster ='';
+
+                        if($getUserObject->password == md5($password)) { // Check Password
+                            $flagPassword = 'password';                                    
+                        }
+                        if($getUserObject->master_pin == md5($masterkey)){ // Check master key
+                            $flagMaster = 'masterkey';
                         }
 
+                        if($flagPassword == 'password' && $flagMaster == 'masterkey' ){
+                            $identity = new UserIdentity($username,$password);                                                                               
+                            if($identity->userAuthenticate())
+                            Yii::app()->user->login($identity);
+                            Yii::app()->session['userid'] = $getUserObject->id;
+                            echo "1"; 
+                            $this->redirect("/order/list");
+                        }else {
+                           // echo "0"; 
+                            $error = "<h1>Invalid Information</h1>"; 
+                        }
+                    }else{
+                    $error = "<h1>Invalid User Name</h1>"; 
                     }
                 }
+
+            }
                 $this->render("login",array("msg"=>$error));
 	}
         
@@ -121,16 +117,17 @@ class UserController extends Controller
                     echo "<pre>"; print_r($model->getErrors());exit;
                 }
                 
-                /*echo $config['to'] = $model->email; 
-                $config['subject'] = 'Registration Confirmation' ;
-                $config['body'] = 'Congratulations! You have been registered successfully on our site '.
-                        '<strong>Your Master Pin:</strong>'.$masterPin.'<br/><br/>'.
-                        '<strong>Please click the link below to activate your account:</strong><br/><br/>'.
-                        Yii::app()->request->baseUrl.'/user/confirmAction?activation_key='.$rand;
-                var_dump($config);
-                CommonHelper::sendMail($config);*/ 
+//                $config['to'] = $model->email; 
+//                $config['subject'] = 'Registration Confirmation' ;
+//                $config['body'] = 'Congratulations! You have been registered successfully on our site '.
+//                        '<strong>Your Master Pin:</strong>'.$masterPin.'<br/><br/>'.
+//                        '<strong>Please click the link below to activate your account:</strong><br/><br/>'.
+//                        Yii::app()->request->baseUrl.'/user/confirmAction?activation_key='.$rand;
+//                var_dump($config);
+//                CommonHelper::sendMail($config);
+                $this->redirect('login');
             }
-            $spnId = Yii::app()->params['adminSpnId'];
+            $spnId = "";
             if($_GET){
                 $spnId = $_GET['spid'];
             }
@@ -147,25 +144,27 @@ class UserController extends Controller
                 if(count($getUserObject) == 1 ){
                     $userObject = new User;                    
                     $userObject = User::model()->findByPk($getUserObject->id);
-                    $forgetKey = base64_encode($getUserObject->name."--".$getUserObject->data_of_birth);   
+                    $forgetKey = base64_encode($getUserObject->name."--".$getUserObject->date_of_birth);   
                     $userObject->forget_key = $forgetKey ; 
                     $userObject->forget_status = 1 ; 
                     $userObject->update();
-                    $msg = "Please check your email to activate your account";                    
+                    $msg = "<p class='success'>Please check your email to activate your account</p>";                    
                     if(!$userObject->update(false)){
                         echo "<pre>"; print_r($model->getErrors());exit;
                     } 
                     
-                    /*echo $config['to'] =  $email; 
-                    $config['subject'] = 'Password reset On HKbase' ;
-                    $config['body'] = 'You're receiving this e-mail because you requested a password reset for your user account .  '.                            
-                            '<strong>Please go to the following page and choose a new password:</strong><br/><br/>'.
-                            Yii::app()->request->baseUrl.'/user/confirmAction?activation_key='.$forgetKey;
-                    var_dump($config);
-                    CommonHelper::sendMail($config);*/ 
+//                    $config['to'] =  $email; 
+//                    $config['subject'] = 'Password reset On HKbase' ;
+//                    $config['body'] = 'Youre receiving this e-mail because you requested a password reset for your user account .  '.                            
+//                            '<strong>Please go to the following page and choose a new password:</strong><br/><br/>'.
+//                            Yii::app()->request->baseUrl.'/user/confirmAction?activation_key='.$forgetKey;
+//                    var_dump($config);
+//                    $test = mail($config['to'],$config['subject'],$config['body']);
+//                    echo "<pre>"; print_r($test);exit;
+//                    CommonHelper::sendMail($config);
                     
                 }else{
-                    $msg = "Please Enter Your Valid Email Address.";
+                    $msg = "<p class='error'>Please Enter Your Valid Email Address.</p>";
                 }                
             }    
             $this->render('forgetpassword',array('msg' => $msg));
@@ -184,7 +183,7 @@ class UserController extends Controller
                     $userObject->forget_status =  0 ;
                     $userObject->password = md5($_POST['password']);
                     $userObject->update();
-                    $msg = 'Your password has been changed successfully';
+                    $msg = "<p class='success'>Your password has been changed successfully</p>";
                     $this->render('success',array('msg' => $msg)); 
                 }
             }            
@@ -194,7 +193,7 @@ class UserController extends Controller
                 $getUserObject = new User;
                 $getUserObject = User::model()->findByAttributes(array('forget_key'=>$decodeId ));                                
                 
-                if(count($getUserObject) == 1 ){
+                if(count($getUserObject) > 1 ){
                    $this->render('changepassword',array('userId' => $_GET['id'])); 
                 }else{                   
                     $this->render('404'); 

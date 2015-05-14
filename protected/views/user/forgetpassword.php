@@ -5,7 +5,7 @@
         <div class="row margin-bottom-40">
             <!-- BEGIN CONTENT -->
             <div class="col-md-9 col-sm-9">
-                <?php print_r($msg); ?>
+                <?php if(!empty($msg)){ echo $msg;} ?>
                 <h1>Forget Password</h1>
                 <div class="content-form-page">
                     <div class="row">
@@ -16,8 +16,7 @@
                                         <label for="email" class="col-lg-4 control-label">Email <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="email" name="email">
-                                        </div>
-                                        <span id="email_error"></span>
+                                        <span id="email_error" class="clrred"></span> </div>
                                     </div>
 
                                 </fieldset>
@@ -25,7 +24,7 @@
                                     <div class="col-lg-8 col-md-offset-4 padding-left-0 padding-top-20">     
                                         
                                         <button type="submit" class="btn btn-primary">Forget Password</button>
-                                       <a hre="<?php echo Yii::app()->getBaseUrl(true); ?>/user/login" class="btn btn-default">Cancel</a>  
+                                       <a href="/user/login" class="btn btn-default">Cancel</a>  
                                     </div>
                                 </div>
                             </form>
