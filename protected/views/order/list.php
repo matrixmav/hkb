@@ -10,6 +10,7 @@ $this->menu=array(
 	array('label'=>'Create Order', 'url'=>array('create')),
 	array('label'=>'Manage Order', 'url'=>array('admin')),
 );
+ 
 ?>
     <?php //echo "<pre>"; print_r($orderObject);?>
        <div class="main">
@@ -52,12 +53,12 @@ $this->menu=array(
                 array(
                     'name'=>'start_date',
                     'header'=>'<span style="white-space: nowrap;">Start Date &nbsp; &nbsp; &nbsp;</span>',
-                    'value'=>'$data->start_date',
+                    'value'=>'($data->status == 1) ? $data->start_date : "N/A"',
 		),
                 array(
                     'name'=>'end_date',
                     'header'=>'<span style="white-space: nowrap;">End Date &nbsp; &nbsp; &nbsp;</span>',
-                    'value'=>'$data->end_date',
+                    'value'=>'($data->status == 1) ? $data->end_date : "N/A"',
 		),
 		array(
 			'name'=>'status',
