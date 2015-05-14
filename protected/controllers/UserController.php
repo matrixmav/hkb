@@ -29,7 +29,7 @@ class UserController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 
-				'actions'=>array('index','view','registration','isuserexisted','forgetpassword','login','changepassword','404','success'),
+				'actions'=>array('index','view','registration','isuserexisted','forgetpassword','login','changepassword','404','success','loginregistration'),
  
 				'users'=>array('*'),
 			),
@@ -215,7 +215,16 @@ class UserController extends Controller
             }
         }
         
-       
+       public function actionloginregistration()
+       {
+           $spnId = Yii::app()->params['adminSpnId'];
+            if($_GET){
+                $spnId = $_GET['spid'];
+            }
+            $countryObject = Country::model()->findAll();
+//            echo "<pre>";print_r($countryObject);exit;
+            $this->render('login-registration',array('countryObject'=>$countryObject,'spnId'=>$spnId));
+       }
         
         /**
 	 * Displays a particular model.
