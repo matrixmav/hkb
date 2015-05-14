@@ -2383,7 +2383,7 @@ a.ui-button-3:active {color:#333;}
 	padding: 5px 0 5px 25px;
 }
 .lfloat { float:left; }
-.rfloat { float:right; }
+.rfloat { margin-right: 50px; margin-top: 20px; }
 .acenter { text-align:center; }
 .aright { text-align:right; }
 .relative { position:relative; }
@@ -9402,7 +9402,7 @@ ul#payment_options_online li:last-child {
 .sectionWrp{
     border: 1px solid #d7d7d7;
     border-radius: 5px;
-    margin: 10px 0px;
+     margin: 17px 0px 0px 0px;
 }
 .sectionWrp .title {
     background: white;
@@ -9516,7 +9516,7 @@ ul#payment_options_online li:last-child {
     font-weight: bold;
     text-align: left;
     border-bottom: 1px solid #D7D7D7;
-    padding: 16px 5px 16px 22px;
+    padding: 16px 94px 19px 121px;
 }
 .cartItemsWrp tr td{
     font-size: 14px;
@@ -9537,7 +9537,7 @@ ul#payment_options_online li:last-child {
     padding-bottom: 15px;
 }
 .cartItemsWrp tr td p{
-    padding: 0px;
+      padding: 14px 0px 0px 81px;
     margin: 0px;
 }
 .cartItemsWrp tr td:last-child{
@@ -9624,7 +9624,7 @@ ul#payment_options_online li:last-child {
     right: 4px;
 }
 .cartItemsWrp tr .pDescription .description, .cartItemsWrp tr .pPrice .price, .cartItemsWrp tr .pName .name{
-    padding: 8px 0px;
+     padding: 8px 0px 0px 47px;
 }
 .cartItemsWrp tr .pPrice .price.strikethrough-text{
     font-size: 14px;
@@ -9656,14 +9656,14 @@ ul#payment_options_online li:last-child {
     overflow: hidden;
 }
 .cartfooter .couponWrp{
-    width: 285px;
+     width: 311px;
     min-height: 100px;
     padding: 16px 10px 15px 22px;
     border-right: 1px solid #d7d7d7;
 }
 .cartfooter .socialBtnWrp{
     width: 300px;
-    margin: 0px 18px;
+     margin: 0px 37px;
 }
 
 .couponWrp .btn-flat-green.ui-btn-blue.remove{
@@ -9714,7 +9714,7 @@ ul#payment_options_online li:last-child {
 .abtest .sectionWrp .btnWrp{
 	padding: 15px 22px 15px 22px;
 	text-align: center;
-	height: 60px;
+	height: 80px;
 	line-height: 60px;
 }
 
