@@ -169,23 +169,26 @@ class MoneyTransferController extends Controller
 					$walletadmObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
 					$walletadmObj->fund =($walletadmObj->fund) + (($transactionObj->used_rp) - ($transactionObj->paid_amount));
 					$walletadmObj->status = 1;
-					$walletadmObj->save();
+                                        $walletadmObj->save();
 					}
 					else{
 						/* for to user wallet add*/
 					$walletSenderObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->to_user_id,'type' => 2));
 					$walletSenderObj->fund =($walletSenderObj->fund) + ($transactionObj->paid_amount);
 					$walletSenderObj->status = 1;
+                                        
 					$walletSenderObj->update();
 					}
 					$moneyinside = MoneyTransfer::model()->findByAttributes(array('id' => $moneyobj->id));
 					$moneyinside->status = 1;
+                                        
 					$moneyinside->update();
 					}
 					/* for from user wallet minus*/
 					$walletRecvObj = Wallet::model()->findByAttributes(array('user_id' => $moneyobj->from_user_id,'type' => 2));
 					$walletRecvObj->fund =($walletRecvObj->fund) - ($transactionObj->used_rp);
-					$walletRecvObj->update();
+                                        $walletRecvObj->update();
+                                        //exit();
 					$this->redirect(array('moneytransfer/status', 'status'=>'Success'));
 				 }
 				 else{
