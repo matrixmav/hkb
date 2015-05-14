@@ -35,3 +35,15 @@ ALTER TABLE `user` ADD `forget_key` VARCHAR(255) NOT NULL AFTER `activation_key`
 
 ALTER TABLE `user` CHANGE `data_of_birth` `date_of_birth` DATE NULL DEFAULT NULL;   
 
+# Date : 14 May  Suraj
+
+ALTER TABLE `genealogy` CHANGE `placement` `parent` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+# Date : 14 May  Suraj
+
+ALTER TABLE `user` CHANGE `parent` `user_sponsor_id` INT(11) NOT NULL;
+
+
+
+
+

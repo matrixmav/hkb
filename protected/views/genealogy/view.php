@@ -31,20 +31,20 @@ echo '<link rel="stylesheet" href="'.Yii::app()->getBaseUrl(true).'/css/main.css
                                              $leftCurrnetIdCount = BaseClass::getGenoalogyTree($chiId);  
                                             /* Check for the link */ 
                                             $rightIdCount = count($leftCurrnetIdCount) >= 1 ? $treeVar.'?id='.$genealogyObject->user_id : $regVar ;                                                                                       
-                                            echo  $chiId =  $genealogyObject->user_id ? '<a href="'.$rightIdCount.'">'. $genealogyObject->user_id."</a>" : '';                                                                                       
+                                            echo  $chiId =  $genealogyObject->user_id ? '<a href="'.$rightIdCount.'">'. $genealogyObject->user->name."</a>" : '';                                                                                       
                                             echo '<ul>';
 
                                             foreach($leftGenealogyListObject as $leftGenealogyObject){ 
                                                 $leftCurrnetIdCount = BaseClass::getGenoalogyTree($leftGenealogyObject->user_id);      
                                                 /* Check for the link */ 
-                                                $leftUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $leftGenealogyObject->user_id)); 
-                                                $rightIdCount = count($leftCurrnetIdCount) >= 1 ? $treeVar.'?id='.$leftGenealogyObject->user_id : $leftUrl ;                                                                                               
+                                                $leftUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $leftGenealogyObject->user->sponsor_id)); 
+                                                $rightIdCount = count($leftCurrnetIdCount) >= 1 ? $treeVar.'?id='.$leftGenealogyObject->user->name : $leftUrl ;                                                                                               
                                                                                               
                                                 if($leftGenealogyObject->position == 'left'){                                   
-                                                    echo $leftGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'.$leftGenealogyObject->user_id."</a></li>" : ''; 
+                                                    echo $leftGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'.$leftGenealogyObject->user->name."</a></li>" : ''; 
                                                 }
                                                 if($leftGenealogyObject->position == 'right'){              
-                                                    echo $leftGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'.$leftGenealogyObject->user_id."</a></li>" : '';
+                                                    echo $leftGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'.$leftGenealogyObject->user->name."</a></li>" : '';
                                                  }                                
                                             }
                                         echo'</ul>
@@ -56,8 +56,8 @@ echo '<link rel="stylesheet" href="'.Yii::app()->getBaseUrl(true).'/css/main.css
 
                                         }else{
                                             echo  '<li>';
-                                            $leftUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $genealogyObject->user_id));
-                                            echo  $chiId = $genealogyObject->user_id ? '<a href="'.$leftUrl.'">'. $genealogyObject->user_id."</a>" : '';
+                                            $leftUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $genealogyObject->user->sponsor_id));
+                                            echo  $chiId = $genealogyObject->user_id ? '<a href="'.$leftUrl.'">'. $genealogyObject->user->name."</a>" : '';
                                             echo '<ul>'; 
                                         echo '
                                         </ul>
@@ -73,26 +73,26 @@ echo '<link rel="stylesheet" href="'.Yii::app()->getBaseUrl(true).'/css/main.css
                                             /* Check for the link */ 
                                             $rightIdCount = count($rightCurrnetIdCount) >= 1 ? $treeVar.'?id='.$genealogyObject->user_id : $regVar ;
                                                                                        
-                                            echo  $chiId =  $genealogyObject->user_id ? '<a href="'.$rightIdCount.'">'. $genealogyObject->user_id."</a>" : '';
+                                            echo  $chiId =  $genealogyObject->user_id ? '<a href="'.$rightIdCount.'">'. $genealogyObject->user->name."</a>" : '';
                                             echo '<ul>'; 
                                             foreach($rightGenealogyListObject as $rightGenealogyObject){ 
                                                 $rightCurrnetIdCount = BaseClass::getGenoalogyTree($rightGenealogyObject->user_id);      
                                                 /* Check for the link */ 
                                                 
-                                                $rightUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $rightGenealogyObject->user_id)); 
+                                                $rightUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $rightGenealogyObject->user->sponsor_id)); 
                                                 $rightIdCount = count($rightCurrnetIdCount) >= 1 ? $treeVar.'?id='.$rightGenealogyObject->user_id : $rightUrl ;                                                                                               
                                                 
                                                 if($rightGenealogyObject->position == 'left'){                                                     
-                                                    echo $rightGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'. $rightGenealogyObject->user_id."</a></li>" : '';
+                                                    echo $rightGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'. $rightGenealogyObject->user->name."</a></li>" : '';
                                                 }
                                                 if($rightGenealogyObject->position == 'right'){                                    
-                                                    echo $rightGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'. $rightGenealogyObject->user_id."</a></li>" : '';
+                                                    echo $rightGenealogyObject->user_id ? '<li><a href='.$rightIdCount.'>'. $rightGenealogyObject->user->name."</a></li>" : '';
                                                 }                                
                                              }                            
                                          }else{
                                             echo  '<li>';
-                                            $rightUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $genealogyObject->user_id));
-                                            echo  $chiId =  $genealogyObject->user_id ? '<a href="'.$rightUrl.'">'. $genealogyObject->user_id."</a>" : '';
+                                            $rightUrl =  Yii::app()->createUrl('/user/registration', array('spid' => $genealogyObject->user->sponsor_id));
+                                            echo  $chiId =  $genealogyObject->user_id ? '<a href="'.$rightUrl.'">'. $genealogyObject->user->name."</a>" : '';
                                             echo '<ul>'; 
                                          }  
                                       echo '
