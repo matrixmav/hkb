@@ -5,7 +5,10 @@
     <div class="row margin-bottom-40">
       <!-- BEGIN CONTENT -->
       <div class="col-md-9 col-sm-9">
-        <?php print_r($msg);  ?>
+        <?php 
+        if(!empty($msg)){
+            echo $msg; 
+        } ?>
         <h1>Login</h1>
         <div class="content-form-page">
           <div class="row">

@@ -182,7 +182,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <i class="fa fa-user"></i> My Profile
                             </a>
                     </li> -->
-                            <li><a href="/admin/admin/changepassword"> Change Password </a></li>
                             <li>
                                 <?php if ($access == "manager") { ?>
                                     <a href="/admin/default/managerlogout"> <i class="fa fa-key"></i>
@@ -197,11 +196,11 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- END USER LOGIN DROPDOWN -->
                 </ul>
 
-                <div class="pull-right inlineBlock"
+<!--                <div class="pull-right inlineBlock"
                      style="text-align: center; color: #ff0; margin-top: 2px; margin-left: 6px;">
                     <img
                         src="<?php echo Yii::app()->request->baseUrl . "/images/admin/"; ?>"><br />Admin
-                </div>
+                </div>-->
 
                 <!-- END TOP NAVIGATION MENU -->
             </div>
@@ -232,15 +231,15 @@ License: You must have a valid license purchased only from themeforest(the above
                                     "profile/address" => "Address",
                                     "profile/documentverification" => "Verification",
                                     "profile/testimonial" => "Testimonial",
-                                    "profile/summery" => "Summery",
+//                                    "profile/summery" => "Summery",
                                 );
                                 $activecls = 'active';
-                                if ($curControllerLower == "hotel" || $curControllerLower == "admin") {
+                                if ($curControllerLower == "profile" || $curControllerLower == "order") {
                                     $activecls = 'active';
                                 } else {
                                     $activecls = '';
                                 }
-                                if ($curControllerLower == 'invoice' && $curActionLower == 'bills')
+                                if ($curControllerLower == 'profile' && $curActionLower == 'order')
                                     $activecls = 'active';
                                 if ($curActionLower == 'simplename')
                                     $activecls = '';
@@ -248,7 +247,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <li class="<?php echo $activecls; ?>"><a href="javascript:;"> <span
                                             class="leftmenu-hotel"></span> <span class="title">Account</span>
                                         <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'hotel') ? "open" : ''; ?>">
+                                            class="arrow <?php echo ($curControllerLower == 'order') ? "open" : ''; ?>">
                                         </span>
                                     </a>
                                     <?php
@@ -282,61 +281,24 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <?php
                             }
 
-                            $billing_pmenu = 7;
-                            if ((in_array($billing_pmenu, $menusections ['psections'])) || (in_array($billing_pmenu, $menusections ['section_ids']))) {
-                                $billing_subsection = array(
-                                    "invoice/index" => "Invoice Reservation",
-                                    "invoice/hotelbills" => "Invoices Listing",
-                                    "invoice/reminder" => "Invoices Reminder",
-                                    'invoice/regulationstatus' => 'Payment History',
-                                    'hotel/simplename' => 'Account',
-                                    'client/index' => 'Client'
-                                );
-                                ?>
-                                <li
-                                    class="<?php echo ((($curControllerLower == 'invoice' && $curActionLower != 'bills')) || ($curActionLower == 'simplename') || ($curControllerLower == 'client') || ($curControllerLower == 'clientinvoice')) ? "active" : ''; ?>">
-                                    <a href="javascript:;"> <span class="leftmenu-hotel"></span> <span
-                                            class="title">Orders</span>
-                                        <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'invoice') ? "open" : ''; ?>">
-                                        </span>
-                                    </a>
-                                    <?php
-                                    echo '<ul class="sub-menu">';
-                                    foreach ($billing_subsection as $ctName => $ctTitle) {
-                                        if (in_array($ctTitle, $menusections ['sections'])) {
-                                            // if($ctName == "invoice")
-                                            // echo '<ul class="sub-menu">';
-                                            $class_billing_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
-                                            echo '<li ' . $class_billing_content . '>';
-                                            echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
-                                            echo '</li>';
-                                        }
-                                    }
-                                    echo '</ul>';
-                                    ?>						
-                                </li>	
-                                <?php
-                            }
+                            
                             $reservation_pmenu = 8;
                             if ((in_array($reservation_pmenu, $menusections ['psections'])) || (in_array($reservation_pmenu, $menusections ['section_ids']))) {
                                 $reservation_subsection = array(
-                                    "reservation" => "Reservation List",
-                                    "search/create" => "Add Reservation"
+                                    "genealogy/" => "Genealogy",
                                 );
                                 ?>
                                 <li
-                                    class="<?php echo (($curControllerLower == 'search') || ($curControllerLower == 'reservation')) ? "active" : ''; ?>">
+                                    class="<?php echo (($curControllerLower == 'genealogy') || ($curControllerLower == 'genealogy')) ? "active" : ''; ?>">
                                     <a href="javascript:;"> <span class="leftmenu-reservations"></span>
-                                        <span class="title">Transactions</span>
+                                        <span class="title">Genealogy</span>
                                         <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'search') ? "open" : ''; ?>">
+                                            class="arrow <?php echo ($curControllerLower == 'genealogy') ? "open" : ''; ?>">
                                         </span>
                                     </a>
                                     <?php
                                     echo '<ul class="sub-menu">';
                                     foreach ($reservation_subsection as $ctName => $ctTitle) {
-                                        if (in_array($ctTitle, $menusections ['sections'])) {
                                             if ($ctName == "search/create") {
                                                 $ctName = "search/create/type/details";
                                             }
@@ -346,102 +308,53 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 $class_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
 
                                             echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
+                                            echo '<a href="/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
                                             echo '</li>';
                                             if ($ctName == "search/create/type/details") {
                                                 $ctName = "search/create";
                                             }
-                                        }
                                     }
                                     echo '</ul>';
                                     ?>			
                                 </li>
                                 <?php
                             }
-                            $customer_pmenu = 9;
-                            if ((in_array($customer_pmenu, $menusections ['psections'])) || (in_array($customer_pmenu, $menusections ['section_ids']))) {
-                                $customer_subsection = array(
-                                    "customer/index" => "Customer List",
-                                    "customer/blacklist" => "Black List",
-                                    "customer/create" => "Add Customer"
+                           
+                            $reservation_pmenu = 8;
+                            if ((in_array($reservation_pmenu, $menusections ['psections'])) || (in_array($reservation_pmenu, $menusections ['section_ids']))) {
+                                $reservation_subsection = array(
+                                    "moneytransfer/" => "Transfer",
                                 );
                                 ?>
                                 <li
-                                    class="<?php echo ($curControllerLower == 'customer') ? "active" : ''; ?>">
-                                    <a href="javascript:;"> <span class="leftmenu-customer"></span> <span
-                                            class="title">Mail</span>
+                                    class="<?php echo (($curControllerLower == 'genealogy') || ($curControllerLower == 'genealogy')) ? "active" : ''; ?>">
+                                    <a href="javascript:;"> <span class="leftmenu-reservations"></span>
+                                        <span class="title">Fund </span>
                                         <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'customer') ? "open" : ''; ?>">
+                                            class="arrow <?php echo ($curControllerLower == 'genealogy') ? "open" : ''; ?>">
                                         </span>
                                     </a>
                                     <?php
                                     echo '<ul class="sub-menu">';
-                                    foreach ($customer_subsection as $cusName => $cusTitle) {
-
-                                        if (in_array($cusTitle, $menusections ['sections'])) {
-                                            if ($cusName == 'customer/create') {
-                                                $cusName = "customer/create/type/details";
+                                    foreach ($reservation_subsection as $ctName => $ctTitle) {
+                                            if ($ctName == "search/create") {
+                                                $ctName = "search/create/type/details";
                                             }
-                                            // if($cusName == "customer/index")
-                                            // echo '<ul class="sub-menu">';
-
-                                            $class_content = ($curControllerLower . "/" . $curActionLower == $cusName) ? 'class="active"' : '';
+                                            if ($ctName == "reservation" && $curControllerLower == "reservation")
+                                                $class_content = 'class="active"';
+                                            else
+                                                $class_content = ($curControllerLower . "/" . $curActionLower == $ctName) ? 'class="active"' : '';
 
                                             echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $cusName . '">' . Yii::t('translation', $cusTitle) . '</a>';
+                                            echo '<a href="/' . $ctName . '">' . Yii::t('translation', $ctTitle) . '</a>';
                                             echo '</li>';
-                                            if ($cusName == 'customer/create/type/details') {
-                                                $cusName = "customer/create";
+                                            if ($ctName == "search/create/type/details") {
+                                                $ctName = "search/create";
                                             }
-                                            // if($cusName == "customer/create")
-                                            // echo '</ul>';
-                                        }
                                     }
                                     echo '</ul>';
-                                    ?>						
-                                </li>	
-
-                                <?php
-                            }
-
-                            $user_pmenu = 33;
-                            if ((in_array($user_pmenu, $menusections ['psections'])) || (in_array($user_pmenu, $menusections ['section_ids']))) {
-
-                                $user_subsection = array(
-                                    "accessCategory/index" => "Category",
-                                    "accessCategory/list" => "List"
-                                );
-                                ?>
-                                <li
-                                    class="<?php echo ($curControllerLower == 'accesscategory') ? "active" : ''; ?>">
-                                    <a href="javascript:;"> <span class="leftmenu-customer"></span> <span
-                                            class="title">Ads</span>
-                                        <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'accesscategory') ? "open" : ''; ?>">
-                                        </span>
-                                    </a>
-                                    <?php
-                                    echo '<ul class="sub-menu">';
-                                    foreach ($user_subsection as $cusName => $cusTitle) {
-
-                                        if (in_array($cusTitle, $menusections ['sections'])) {
-                                            // if($cusName == "accessCategory/index")
-                                            // echo '<ul class="sub-menu">';
-
-                                            $class_content = ($curControllerLower . "/" . $curActionLower == strtolower($cusName)) ? 'class="active"' : '';
-
-                                            echo '<li ' . $class_content . '>';
-                                            echo '<a href="/admin/' . $cusName . '">' . Yii::t('translation', $cusTitle) . '</a>';
-                                            echo '</li>';
-
-                                            // if($cusName == "accessCategory/list")
-                                            // echo '</ul>';
-                                        }
-                                    }
-                                    echo '</ul>';
-                                    ?>						
+                                    ?>			
                                 </li>
-
                                 <?php
                             }
 

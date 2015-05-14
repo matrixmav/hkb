@@ -893,7 +893,7 @@ class BaseClass extends Controller {
     }
     
     public static function getGenoalogyTree($userId){
-        $genealogyListObject = DummyData::model()->findAll(array('condition'=>'parent_id = '.$userId));
+        $genealogyListObject = Genealogy::model()->findAll(array('condition'=>'sponsor_user_id = '.$userId));
         return $genealogyListObject;
     }
 }

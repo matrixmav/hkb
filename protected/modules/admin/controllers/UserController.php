@@ -165,14 +165,22 @@ class UserController extends Controller
         }
         
         public function actionCreditWallet(){
-            if($_POST) {
-//                $walletObject = new 
-                echo "<pre>"; print_r($_POST);exit;
+            if($_POST) { 
+                $walletObject = new Wallet;
+                $walletObject->user_id = Yii::app()->session['userid'];
+                $walletObject->fund = $_POST['fund'];
+                $walletObject->type = 3;//fund added by admin
+                $walletObject->status = 1;//success
+                $walletObject->created_at = new CDbExpression('NOW()');
+                $walletObject->updated_at = new CDbExpression('NOW()');
+                if(!$walletObject->save()){
+                    echo "<pre>"; print_r($walletObject->getErrors());exit;
+                }
+                $this->redirect('/user/wallet');
             }
-            $this->render('wallet',array(
-			'walletObject'=>"",
-                        'userId'=>$_REQUEST['id'],
-		));
+            $userId = $_GET['id'];
+            $userObject = User::model()->findByPk($userId);
+            $this->render('wallet',array('userObject'=>$userObject));
         }
 
         /**

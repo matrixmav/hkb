@@ -130,7 +130,7 @@ class GenealogyController extends Controller
                             'currentUserId'=>$currentUserId
                 ));
             }else{                
-                $currentUserId = 1000 ;        
+                $currentUserId = 1 ;        
                 $genealogyListObject = BaseClass::getGenoalogyTree($currentUserId);          
                 $this->render('view',array(
                             'genealogyListObject'=>$genealogyListObject,

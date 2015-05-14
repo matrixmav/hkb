@@ -311,30 +311,30 @@ License: You must have a valid license purchased only from themeforest(the above
                             $reservation_pmenu = 8;
                             if ((in_array($reservation_pmenu, $menusections ['psections'])) || (in_array($reservation_pmenu, $menusections ['section_ids']))) {
                                 $reservation_subsection = array(
-                                    "mail/inbox" => "Registration",
-                                    "mail/inbox1" => "Member Address",
-                                    "mail/inbox2" => "Admin Sponsor",
-                                    "mail/inbox3" => "Package",
-                                    "mail/inbox4" => "Binary",
-                                    "mail/inbox5" => "Deposit",
-                                    "mail/inbox6" => "Check Investments",
-                                    "mail/inbox7" => "Member  Verification",
-                                    "mail/inbox8" => "Invite referrals",
-                                    "mail/inbox9" => "Social profile",
-                                    "mail/inbox10" => "Contact",
-                                    "mail/inbox11" => "Bug",
-                                    "mail/inbox12" => "Call back",
-                                    "mail/inbox13" => "feed back",
-                                    "mail/inbox14" => "Recharge Wallet",
-                                    "mail/inbox15" => "Deduct Wallet"
+                                    "report/" => "Registration",
+                                    "report/address" => "Member Address",
+                                    "report/adminsponsor" => "Admin Sponsor",
+                                    "report/inbox3" => "Package",
+                                    "report/inbox4" => "Binary",
+                                    "report/inbox5" => "Deposit",
+                                    "report/inbox6" => "Check Investments",
+                                    "report/inbox7" => "Member  Verification",
+                                    "report/inbox8" => "Invite referrals",
+                                    "report/inbox9" => "Social profile",
+                                    "report/inbox10" => "Contact",
+                                    "report/inbox11" => "Bug",
+                                    "report/inbox12" => "Call back",
+                                    "report/inbox13" => "feed back",
+                                    "report/inbox14" => "Recharge Wallet",
+                                    "report/inbox15" => "Deduct Wallet"
                                 );
                                 ?>
                                 <li
-                                    class="<?php echo (($curControllerLower == 'search') || ($curControllerLower == 'reservation')) ? "active" : ''; ?>">
+                                    class="<?php echo (($curControllerLower == 'report') || ($curControllerLower == 'reservation')) ? "active" : ''; ?>">
                                     <a href="javascript:;"> <span class="leftmenu-reservations"></span>
                                         <span class="title">Reports</span>
                                         <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'search') ? "open" : ''; ?>">
+                                            class="arrow <?php echo ($curControllerLower == 'report') ? "open" : ''; ?>">
                                         </span>
                                     </a>
 
@@ -363,54 +363,6 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </li>
                                 <?php
                             }
-                            $customer_pmenu = 9;
-                            if ((in_array($customer_pmenu, $menusections ['psections'])) || (in_array($customer_pmenu, $menusections ['section_ids']))) {
-                                $customer_subsection = array(
-                                    "customer/index" => "Customer List",
-                                    "customer/blacklist" => "Black List",
-                                    "customer/create" => "Add Customer"
-                                );
-                                ?>
-                                <li
-                                    class="<?php echo ($curControllerLower == 'customer') ? "active" : ''; ?>">
-                                    <a href="javascript:;"> <span class="leftmenu-customer"></span> <span
-                                            class="title">Mail</span>
-                                        <span class="selected"></span> <span
-                                            class="arrow <?php echo ($curControllerLower == 'customer') ? "open" : ''; ?>">
-                                        </span>
-                                    </a>
-                                    <?php
-                                    echo '<ul class="sub-menu">';
-                                    foreach ($customer_subsection as $cusName => $cusTitle) {
-
-//                                        if (in_array($cusTitle, $menusections ['sections'])) {
-                                        if ($cusName == 'customer/create') {
-                                            $cusName = "customer/create/type/details";
-                                        }
-                                        // if($cusName == "customer/index")
-                                        // echo '<ul class="sub-menu">';
-
-                                        $class_content = ($curControllerLower . "/" . $curActionLower == $cusName) ? 'class="active"' : '';
-
-                                        echo '<li ' . $class_content . '>';
-                                        echo '<a href="/admin/' . $cusName . '">' . Yii::t('translation', $cusTitle) . '</a>';
-                                        echo '</li>';
-                                        if ($cusName == 'customer/create/type/details') {
-                                            $cusName = "customer/create";
-                                        }
-                                        // if($cusName == "customer/create")
-                                        // echo '</ul>';
-//                                        }
-                                    }
-                                    echo '</ul>';
-                                    ?>						
-                                </li>	
-
-                                <?php
-                            }
-
-                            $user_pmenu = 33;
-
 
                             $bases_pmenu = 4;
                             if ((in_array($bases_pmenu, $menusections ['psections'])) || (in_array($bases_pmenu, $menusections ['section_ids']))) {
