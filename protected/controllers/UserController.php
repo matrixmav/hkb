@@ -78,7 +78,11 @@ class UserController extends Controller
                             Yii::app()->user->login($identity);
                             Yii::app()->session['userid'] = $getUserObject->id;
                             echo "1"; 
-                            $this->redirect("/order/list");
+                            if(Yii::app()->session['package_id']!='') {
+                                $this->redirect("/package/domainsearch");  
+                            } else {
+                                $this->redirect("/order/list");
+                            }
                         }else {
                            // echo "0"; 
                             $error = "<h1>Invalid Information</h1>"; 
