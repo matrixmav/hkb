@@ -106,7 +106,7 @@ class ProfileController extends Controller
         public function actionUpdateProfile() {
             $error = "";
             $success = "";
-           $userObject = User::model()->findByPK(array('id' => '1')); 
+           $userObject = User::model()->findByPK(array('id' => Yii::app()->session['userid'])); 
            $transactionObject = Transaction::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
            $edit = "yes";
            if(!empty($transactionObject) && $transactionObject->status=='1') {
