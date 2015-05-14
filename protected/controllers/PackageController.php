@@ -171,27 +171,13 @@ class PackageController extends Controller
         
         $rightbar = '<div id="dca_cart" class="cart-wrapper">
             <div class="cart-header"><span class="ico-cart"></span>My Shopping Cart</div>
-            <form method="post" act$rightbarion="./Domain Registration - Domain Availability Results_files/Domain Registration - Domain Availability Results.html">
-            <input type="hidden" name="action" value="add_domain_registration">
-            <input type="hidden" name="dom_action" value="register">
-            <input type="hidden" name="pp_price" value="299">
-            <input type="hidden" name="upsell" value="none">
-            <input type="hidden" name="upsell_modal_planid" value="none">
-            <input type="hidden" name="upsell_modal_product_type" value="none">
-            <input type="hidden" name="upsell_modal_domain_names" value="none">
-            <input type="hidden" name="other_domain" value="">
-            <input type="hidden" name="upsell_duration">
-            <input type="hidden" name="location">
-            <input type="hidden" name="server_location" value="us">
             <ul id="domainList" class="cartList cart-list">';
             if($Package_id=='')
             {
             $rightbar .= '<li class="empty">Your cart is empty :(</li>';
             }else{    
             $rightbar .= '<li class="cart-item">
-            <input type="hidden" name="ram.net" value="1_2546580">
-            <input type="hidden" name="ram.net_price" value="2546580">
-            <input type="hidden" name="domainnamearr[]" value="ram.net">
+            
             <span class="domaintxt">';
             $rightbar .= $packageObject["name"];
             /*if($add)
