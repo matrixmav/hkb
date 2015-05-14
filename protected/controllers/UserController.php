@@ -80,8 +80,13 @@ class UserController extends Controller
                                     if($identity->userAuthenticate())
                                     Yii::app()->user->login($identity);
                                     Yii::app()->session['userid'] = $getUserObject->id;
-                                    echo "1"; 
+                                    echo "1";
+                                    if(Yii::app()->session['package_id']!='')
+                                    {
+                                    $this->redirect("/package/domainsearch");    
+                                    }else{
                                     $this->redirect("/order/list");
+                                    }
                                 }else {
                                    // echo "0"; 
                                     $error = "<h1>Invalid Information</h1>"; 
@@ -218,6 +223,7 @@ class UserController extends Controller
        public function actionloginregistration()
        {
            $spnId = Yii::app()->params['adminSpnId'];
+           Yii::app()->session['package_id'] = (!empty($_GET)) ? $_GET['package_id'] : "";
             if($_GET){
                 $spnId = $_GET['spid'];
             }
