@@ -10,7 +10,7 @@
                 <div class="content-form-page">
                     <div class="row">
                        <div class="col-md-12 col-sm-12">
-                            <form class="form-horizontal" role="form" method="post" action=""  onsubmit="return validateFrm()">
+                            <form class="form-horizontal" role="form" method="post" action="/user/registration"  onsubmit="return validateFrm()">
                                 <fieldset> 
                                     <legend>Your personal details</legend>
                                     <div class="form-group">

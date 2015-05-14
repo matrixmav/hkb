@@ -27,7 +27,7 @@ $this->breadcrumbs = array(
                 <label class="col-lg-4 control-label" for="lastname">Upload / Update Address Proof <span class="require">*</span><br>(Upload jpg ,png files only)</label>
                 <div class="col-lg-8">
                     <input type="file" id="address_proof" class="form-control" name="address_proof">
-                    <?php if(!empty($userObject) && $userObject->address_proof!=''){?>
+                    <?php if(!empty($userObject) && $userObject->address_proff!=''){?>
                     <span class="example"><a href="/uploads/verification-document/<?php echo $userObject->address_proff;?>"><img src="/uploads/verification-document/<?php echo $userObject->address_proff;?>" width="50" height="50"></a></span>
                     <?php }?>
                 </div>
