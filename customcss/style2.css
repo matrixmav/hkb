@@ -1,4 +1,4 @@
-
+.tbl-2{  margin:22px 0px 0px 170px!important;}
 
 /* Font Definitions */
 @font-face {
@@ -1427,11 +1427,12 @@ p.ItemDiscTotal{
 	color: #70A750 !important;
 }
 .ItemTotalAfterDiscount td{
-	margin-top:5px !important;
-	padding-top:5px;
-	padding-bottom:5px;
-	border-top:1px solid #c1c58c;
-	background-color: #feffd5;
+	  margin-top: 7px !important;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  border: 1px solid #c1c58c;
+  background-color: #feffd5;
+  padding-right: 9px;
 }
 
 .ItemTotalAfterDiscount td p{
@@ -4753,7 +4754,7 @@ Main Content Area {wrapper for "Content Area + Side Bar"}
 */
 #maincontent {
 	text-align: center;
-	padding:0px;
+	  padding: 0px 0px 23px 0px;
 	margin:0 auto;
 }
 
