@@ -76,7 +76,7 @@ class PackageController extends Controller
              $createdDate = date("Y-m-d");
              $transactionObject = new Transaction;
               
-             $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>'1'));
+             $transactionObject1 = Transaction::model()->findByAttributes(array('user_id'=>Yii::app()->session['userid']));
              if(count($transactionObject1) > 0)
              { 
                  
@@ -109,7 +109,7 @@ class PackageController extends Controller
              }
              //$transactionObject->used_rp = 0;
              $orderObject = new Order;
-             $orderObject1 = Order::model()->findByAttributes(array('user_id'=>'1'));
+             $orderObject1 = Order::model()->findByAttributes(array('user_id'=>Yii::app()->session['userid']));
              
              if(count($orderObject1) > 0)
              { 
