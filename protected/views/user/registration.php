@@ -47,7 +47,7 @@
                                     
                                     <div class="form-group">
                                         <label for="email" class="col-lg-4 control-label">Date Of Birth <span class="require">*</span></label>
-                                        <div class="col-lg-3">
+                                        <div class="col-lg-2 wdt2" >
                                            
                                             <select name="d" id="d" class="form-control">
                                                  <option >Date</option>
@@ -57,7 +57,7 @@
                                             </select>
                                         
                                         </div>
-                                        <div class="col-lg-3">
+                                        <div class="col-sm-3 wdt">
                                             <select name="m" id="m" class="form-control">
                                                 <option value="">Month</option>
                                                 <?php for($i=1;$i<=12;$i++): ?>
@@ -67,7 +67,7 @@
 
                                         </div>
                                         
-                                        <div class="col-lg-2">
+                                        <div class="col-sm-3 wdt">
                                             <select name="y" id="y" class="form-control">
                                                 <option value="">Year</option>
                                                 <?php
