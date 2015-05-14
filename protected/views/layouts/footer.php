@@ -67,7 +67,7 @@
       <div class="row bg-f2">
         <!-- BEGIN COPYRIGHT -->
         <div class="col-md-12 col-sm-12 ">
-          <div class="copyright">2014 © Metronic One Page. ALL Rights Reserved.</div>
+          <div class="copyright">@ COPYRIGHT 2015, ALL RIGHTS RESERVED.</div>
         </div>
         <!-- END COPYRIGHT -->
         <!-- BEGIN SOCIAL ICONS -->
