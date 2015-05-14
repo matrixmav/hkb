@@ -70,6 +70,10 @@ class MoneyTransferController extends Controller
 				 $actualamount = ($_POST['paid_amount'] + $percentage);
 				 $createdtime = new CDbExpression('NOW()');
 				 $userObject = User::model()->findByAttributes(array('name' => $_POST['username']));
+				if(empty($userObject))
+				{
+					$this->redirect(array('moneytransfer/status', 'status'=>'U'));
+				}	
 				$transactionObjuser = new Transaction;
 				$transactionObjuser->user_id = $userObject->id;
 				$transactionObjuser->mode =1;
@@ -189,11 +193,11 @@ class MoneyTransferController extends Controller
 					$walletRecvObj->fund =($walletRecvObj->fund) - ($transactionObj->used_rp);
                                         $walletRecvObj->update();
                                         //exit();
-					$this->redirect(array('moneytransfer/status', 'status'=>'Success'));
+					$this->redirect(array('moneytransfer/status', 'status'=>'S'));
 				 }
 				 else{
 					 
-					 $this->redirect(array('moneytransfer/status', 'status'=>'Failure'));
+					 $this->redirect(array('moneytransfer/status', 'status'=>'F'));
 					 
 				}
 			 }
