@@ -71,7 +71,7 @@ class ProfileController extends Controller
             $cityObject = City::model()->findAll();
             $stateObject = State::model()->findAll();
             $profileObject = UserProfile::model()->findByAttributes(array('user_id' => '1'));
-            $this->render('../user/address', array('countryObject' => $countryObject,
+            $this->render('/user/address', array('countryObject' => $countryObject,
                 'cityObject' => $cityObject,'stateObject' => $stateObject,'profileObject' => $profileObject,'success' => $success,'error' => $error));
         }
         
@@ -95,7 +95,7 @@ class ProfileController extends Controller
                 }
             }
          }
-         $this->render('../user/testimonial', array('profileObject' => $profileObject,'success' => $success,'error' => $error));
+         $this->render('/user/testimonial', array('profileObject' => $profileObject,'success' => $success,'error' => $error));
         }
         
          /*
@@ -108,13 +108,10 @@ class ProfileController extends Controller
             $success = "";
            $userObject = User::model()->findByPK(array('id' => '1')); 
            $transactionObject = Transaction::model()->findByAttributes(array('user_id' => '1'));
-           if($transactionObject->status=='1')
-           {
+           $edit = "yes";
+           if(!empty($transactionObject) && $transactionObject->status=='1') {
                $edit = "no";
-           }  else {
-               $edit = "yes";
-           }
-           
+           } 
           if (isset($_POST['UserProfile'])) {
              if($_POST['UserProfile']=='')
              {  
@@ -139,7 +136,7 @@ class ProfileController extends Controller
              }
             }
          }
-         $this->render('../user/updateprofile', array('userObject' => $userObject,'success' => $success,'error' => $error,'edit' => $edit));
+         $this->render('/user/updateprofile', array('userObject' => $userObject,'success' => $success,'error' => $error,'edit' => $edit));
         }
         
         
@@ -170,7 +167,7 @@ class ProfileController extends Controller
             }
           }
               
-          $this->render('../user/verification', array('success' => $success,'error' => $error,'userObject'=>$userObject));
+          $this->render('/user/verification', array('success' => $success,'error' => $error,'userObject'=>$userObject));
         }
 
 

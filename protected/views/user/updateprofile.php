@@ -28,14 +28,14 @@ $this->breadcrumbs = array(
            <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Position</label>
                 <div class="col-lg-8">
-                    <input type="text" id="position" class="form-control" name="UserProfile[position]" value="<?php echo $userObject->position;?>" readonly="readonly">
+                    <input type="text" id="position" class="form-control" name="UserProfile[position]" value="<?php echo (!empty($userObject))?$userObject->position:"";?>" readonly="readonly">
                 </div>
             </div>
             
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Full Name<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="full_name" class="form-control" name="UserProfile[full_name]" value="<?php echo $userObject->full_name;?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
+                    <input type="text" id="full_name" class="form-control" name="UserProfile[full_name]" value="<?php echo (!empty($userObject))?$userObject->full_name:"";?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
                 </div>
             </div>
             
@@ -49,40 +49,40 @@ $this->breadcrumbs = array(
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Phone<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="phone" class="form-control" name="UserProfile[phone]" value="<?php echo $userObject->phone;?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
+                    <input type="text" id="phone" class="form-control" name="UserProfile[phone]" value="<?php echo (!empty($userObject))?$userObject->phone:"";?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
                 </div>
             </div>
              <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Date of Birth<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="date_of_birth" class="form-control" name="UserProfile[date_of_birth]" value="<?php echo $userObject->date_of_birth;?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
+                    <input type="text" id="date_of_birth" class="form-control" name="UserProfile[date_of_birth]" value="<?php echo (!empty($userObject))?$userObject->date_of_birth:"";?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
                 </div>
             </div>
              <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Skype ID</label>
                 <div class="col-lg-8">
-                    <input type="text" id="skype_id" class="form-control" name="UserProfile[skype_id]" value="<?php echo $userObject->skype_id;?>">
+                    <input type="text" id="skype_id" class="form-control" name="UserProfile[skype_id]" value="<?php echo (!empty($userObject))?$userObject->skype_id:"";?>">
                     <span class="example">Ex: example12</span>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Facebook ID</label>
                 <div class="col-lg-8">
-                    <input type="text" id="facebook_id" class="form-control" name="UserProfile[facebook_id]" value="<?php echo $userObject->facebook_id;?>">
+                    <input type="text" id="facebook_id" class="form-control" name="UserProfile[facebook_id]" value="<?php echo (!empty($userObject))?$userObject->facebook_id:"";?>">
                     <span class="example">Ex: http://facebook.com</span>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Twitter ID</label>
                 <div class="col-lg-8">
-                    <input type="text" id="twitter_id" class="form-control" name="UserProfile[twitter_id]" value="<?php echo $userObject->twitter_id;?>">
+                    <input type="text" id="twitter_id" class="form-control" name="UserProfile[twitter_id]" value="<?php echo (!empty($userObject))?$userObject->twitter_id:"";?>">
                     <span class="example">Ex: http://twitter.com</span>
                 </div>
             </div>
              <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Master Pin<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="master_pin" class="form-control" name="UserProfile[master_pin]">
+                    <input type="password" id="master_pin" class="form-control" name="UserProfile[master_pin]">
                 </div>
             </div>
             

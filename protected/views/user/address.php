@@ -50,21 +50,21 @@ $this->breadcrumbs = array(
                        <option value="">Select State</option>
                        <?php if(count($stateObject)>0){?>
                        <?php foreach ( $stateObject as  $state) { ?>
-                            <option value="<?php echo $state->id; ?>" <?php if( $state->id==$profileObject->state_id){?>selected="selected<?php }?>><?php echo ucwords($state->name); ?></option>
+                            <option value="<?php echo $state->id; ?>" <?php if( $state->id==$profileObject->state_id){?>selected="selected"<?php }?>><?php echo ucwords($state->name); ?></option>
                             <?php } ?>
                        <?php }?>
                     </select>
                 </div></div>
             
             <div class="form-group" id="cityList" style="display: <?php if(count($cityObject) > 0){ echo "block";}else{ echo "none";}?>"">
-                <label class="col-lg-4 control-label" for="email">State <span class="require">*</span></label>
+                <label class="col-lg-4 control-label" for="email">City <span class="require">*</span></label>
                 <div class="col-lg-8">
 
                     <select id="cityId" name="UserProfile[city_id] " class="form-control">
                        <option value="">Select State</option>
                        <?php if(count($cityObject)>0){?>
                        <?php foreach ( $cityObject as  $city) { ?>
-                            <option value="<?php echo $city->id; ?>" <?php if( $city->id==$profileObject->city_id){?>selected="selected<?php }?>><?php echo ucwords($city->name); ?></option>
+                            <option value="<?php echo $city->id; ?>" <?php if( $city->id==$profileObject->city_id){?>selected="selected"<?php }?>><?php echo ucwords($city->name); ?></option>
                             <?php } ?>
                        <?php }?>
                     </select>
