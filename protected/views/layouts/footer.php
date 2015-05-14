@@ -7,11 +7,11 @@
           <p class="f-font">Legal</p>
           <p class="f-cnt">legal@xyz.com<br/> 
           91-8500425185</p>
-          <br/>
+          
           <p class="f-font">Billing</p>
           <p class="f-cnt">Billing@xyz.com<br/> 
           91-8500425185</p>
-          <br/>
+          
           <p class="f-font">Support</p>
           <p class="f-cnt">support@xyz.com<br/> 
           91-8500425185</p>
@@ -19,14 +19,15 @@
         <!-- END BOTTOM ABOUT BLOCK -->
         <!-- BEGIN TWITTER BLOCK --> 
         <div class="col-md-2 col-sm-6 pre-footer-col">
+       
           <p class="f-font">Member Enquiry</p>
           <p class="f-cnt">memberenquiry@xyz.com<br/> 
           91-8500425185</p>
-          <br/>
+          
           <p class="f-font">Sales</p>
           <p class="f-cnt">sales@xyz.com<br/> 
           91-8500425185</p>
-          <br/>
+          
           <p class="f-font">Info</p>
           <p class="f-cnt">Info@xyz.com<br/> 
          91-8500425185</p>   
@@ -47,12 +48,12 @@
                 Opp.Jain University,<br/>
                 Bangalore 560 027, India<br/>
             
-            Email: <a href="mailto:info@metronic.com">info@metronic.com</a><br>
-            Skype: <a href="skype:metronic">metronic</a>
+            Email: <a href="mailto:info@metronic.com">maverickinfosoft@gmail.com</a><br>
+            
           </address>
           <!-- END BOTTOM CONTACTS -->
           <div class="pre-footer-subscribe-box">
-            <img src="../../../images/whts.png" width="30" height="30" /><span class="con-f">+91 1234567890</span><br/><br/>
+            <img src="../../../images/whts.png" width="30" height="30" /><span class="con-f"> &nbsp;+91 1234567890</span><br/><br/>
               <img src="../../../images/skyp.png" width="100" height="50" class="img-mar" />
           </div>
         </div>
