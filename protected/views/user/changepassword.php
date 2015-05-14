@@ -16,16 +16,15 @@
                     <label for="password" class="col-lg-4 control-label">Password <span class="require">*</span></label>
                     <div class="col-lg-8">
                         <input type="password" id="password" name="password" placeholder="Password" class="form-control"> <br>
-                    </div>
-                    <span id="password_error"></span>
+                    
+                    <span id="password_error" class="clrred"></span></div>
                 </div>
 
                 <div class="form-group">
                     <label for="confirm_password" class="col-lg-4 control-label">Confirm Password<span class="require">*</span></label>
                     <div class="col-lg-8">
                         <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm Password" class="form-control"> <br>
-                    </div>
-                    <span id="confirm_password_error"></span>
+                    <span id="confirm_password_error" class="clrred"></span></div>
                 </div> 
 
                

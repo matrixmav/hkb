@@ -41,7 +41,7 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, data_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'required'),
+			array('sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, date_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'required'),
 			array('country_id, phone, master_pin, status', 'numerical', 'integerOnly'=>true),
 			array('sponsor_id, password, email, skype_id, facebook_id, twitter_id', 'length', 'max'=>100),
 			array('name, position', 'length', 'max'=>30),
@@ -49,7 +49,7 @@ class User extends CActiveRecord
 			array('country_code', 'length', 'max'=>5),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, data_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, date_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -81,7 +81,7 @@ class User extends CActiveRecord
 			'country_id' => 'Country',
 			'country_code' => 'Country Code',
 			'phone' => 'Phone',
-			'data_of_birth' => 'Data Of Birth',
+			'date_of_birth' => 'Data Of Birth',
 			'skype_id' => 'Skype',
 			'facebook_id' => 'Facebook',
 			'twitter_id' => 'Twitter',
