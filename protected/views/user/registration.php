@@ -1,6 +1,10 @@
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/registration.js?ver=<?php echo strtotime("now");?>"></script>
 
-            <!-- BEGIN CONTENT -->
+    <div class="main">
+  <div class="container">
+    <!-- BEGIN SIDEBAR & CONTENT -->
+    <div class="row margin-bottom-40">        
+        <!-- BEGIN CONTENT -->
             <div class="col-md-6 col-sm-6">
                 <h1>Create an account</h1>
                 <div class="content-form-page">
@@ -141,7 +145,10 @@
                 </div>
             </div>
             <!-- END CONTENT -->
-      
+         </div>
+    <!-- END SIDEBAR & CONTENT -->
+  </div>
+</div>
 <script type="text/javascript">
  function getSponId(){ 
     $("#sponser_id").val("<?php echo Yii::app()->params['adminSpnId']; ?>");
