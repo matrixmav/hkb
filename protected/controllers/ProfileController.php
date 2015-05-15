@@ -101,8 +101,15 @@ class ProfileController extends Controller
             { 
                 
             $profileObject->testimonials = $_POST['UserProfile']['testimonials'];
+            $profileObject->testimonial_status = '0';
+            
             if ($profileObject->update()) {
-               $success .= "Testimonial Updated Successfully.";   
+                   /*$config['to'] = $userObject->email; 
+                   $config['subject'] = 'New testimonial added.';
+                    $config['body'] = 'Dear Admin , <br/> New testimonial added in mglobal site.Please approve.';
+                    $test = mail($config['to'],$config['subject'],$config['body']);
+                    CommonHelper::sendMail($config);*/
+                    $success .= "Testimonial Updated Successfully.";   
               }
             }else{
              $error .= "Incorrect master pin.";     
