@@ -627,7 +627,7 @@
             <blockquote>
               <p><?php echo $testimonial->testimonials;?></p>
             </blockquote>
-            <span class="testimonials-name">Linda Adams</span>
+            <span class="testimonials-name"><?php //echo $user->full_name;?></span>
           </div>
           <?php $i++;}?>
         </div>
