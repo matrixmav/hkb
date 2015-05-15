@@ -1,6 +1,8 @@
- <div class="main">
+ 
+<div class="main">
       <div class="container">
       <div class="row margin-bottom-40">
+ 
           <!-- BEGIN SIDEBAR -->
      <?php  
       $this->renderPartial('registration',array('countryObject'=>$countryObject,'spnId'=>$spnId));
