@@ -32,7 +32,7 @@ class SiteController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','testimonial'),
+				'actions'=>array('index'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -94,8 +94,8 @@ class SiteController extends Controller
 //            $stateCondition = array("id" => $stateName);
 //            $stateObject = $stateModel = State::model()->getStateByName($stateCondition);
            $packageObject = Package::model()->findAll(array('limit' => '3'));
-           $userprofileObject = UserProfile::model()->findAll(array('testimonial_status' => '1'));
-           $this->render('index',array('packageObject'=>$packageObject,'profileObject'=>$userprofileObject));
+           $profileObject = UserProfile::model()->findAll(array('condition'=>'testimonial_status=1'));
+           $this->render('index',array('packageObject'=>$packageObject,'profileObject'=>$profileObject));
 	}
         
                     
