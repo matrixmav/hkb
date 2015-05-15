@@ -5,37 +5,31 @@ $this->breadcrumbs=array(
 	'Funds Transfer',
 );
 ?>
-<div class="main">
-    <div class="container">
-        <!-- BEGIN SIDEBAR & CONTENT -->
-        <div class="row margin-bottom-40">
-            <!-- BEGIN CONTENT -->
-            <div class="col-md-9 col-sm-9">
-                      <div class="content-form-page">
-                    <div class="row">
+
                         <div class="col-md-7 col-sm-7">
+						<div class="error" id="error_msg" style="display: none;"></div>
                             <form class="form-horizontal" role="form" method="post" action="">
                                 <fieldset> 
                                     <legend>Select User</legend>
                                     <?php 
 									if(!empty($walletObject))
 									{	
-									$wallet_points=0;
-									$rp_points=0;
-									$commission_points=0;
+									$walletPoints=0;
+									$rpPoints=0;
+									$commissionPoints=0;
 									 foreach ( $walletObject as  $wallet) {
 										 
 									  if($wallet['type']== 1)
 									  {										  
-										  $wallet_points = $wallet['fund'];
+										  $walletPoints = $wallet['fund'];
 										  }
 									   if($wallet['type']== 2)
 									  {
-										  $rp_points = $wallet['fund'];
+										  $rpPoints = $wallet['fund'];
 										  }
 									   if($wallet['type']== 3)
 									  {
-										$commission_points = $wallet['fund'];
+										$commissionPoints = $wallet['fund'];
 									  }
 								                                                    
                                      }
@@ -44,6 +38,7 @@ $this->breadcrumbs=array(
                                         <label for="transactiontype" class="col-lg-4 control-label">Choose Type of Transaction<span class="require">*</span></label>
                                         <div class="col-lg-8">
                                            <select id="transactiontype" name="transactiontype">
+										    <option value="">Select Option</option>
 										   <option value="1">Cash</option>
 										   <option value="2">RP Wallet</option>										   
 										   </select>
@@ -52,10 +47,10 @@ $this->breadcrumbs=array(
                                     </div>
                                     <div class="form-group">
                                         <label for="totalcash" class="col-lg-4 control-label">Total Cash <span class="require">*</span></label>
-										<input type="hidden" value="<?php echo $wallet_points; ?>" name="wallet_points" id="wallet_points">
+										<input type="hidden" value="<?php echo $walletPoints; ?>" name="wallet_points" id="wallet_points">
                                         <div class="col-lg-8">
                                            <?php 
-										echo $wallet_points;
+										echo $walletPoints;
 									?>
                                         </div>
                                        
@@ -66,7 +61,7 @@ $this->breadcrumbs=array(
                                     <div class="form-group">
                                         <label for="lastname" class="col-lg-4 control-label">RP Wallet <span class="require">*</span></label>
                                         <div class="col-lg-8">
-                                           <?php echo $rp_points; ?>
+                                           <?php echo $rpPoints; ?>
                                         </div>
                                        
                                     </div>
@@ -74,7 +69,7 @@ $this->breadcrumbs=array(
                                         <label for="lastname" class="col-lg-4 control-label">Commission Points <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                            <?php 
-										echo $commission_points;
+										echo $commissionPoints;
 									?>
                                         </div>
                                        
@@ -84,16 +79,18 @@ $this->breadcrumbs=array(
 									 <div class="form-group">
                                        <label for="lastname" class="col-lg-4 control-label">Select To User <span class="require">*</span></label>
                                         <div class="col-lg-8">
-										 <input type="text" value="" placeholder="Search" id="username" name="username"><div id="results" required></div>
-									         </div>
-                                        
+										 <input type="text" value="" placeholder="Search" id="username" name="username" required >
+										 <div id="results" >
+										
+										 </div>
+									         </div>                                        
                                     </div>
                                     <div class="form-group">
                                         <label for="paid_amount" class="col-lg-4 control-label">Amount Value <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="paid_amount" name="paid_amount"  required >
-											<input type="hidden" value="<?php echo $rp_points; ?>" name="total_rp" id="total_rp">
-											<input type="hidden" value="<?php echo $commission_points; ?>" name="commission_points" id="commission_points">
+											<input type="hidden" value="<?php echo $rpPoints; ?>" name="total_rp" id="total_rp">
+											<input type="hidden" value="<?php echo $commissionPoints; ?>" name="commission_points" id="commission_points">
                                         </div>
                                         <span id="email_error"></span>
                                     </div>
@@ -125,11 +122,4 @@ $this->breadcrumbs=array(
 								?>
                             </form>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!-- END CONTENT -->
-        </div>
-        <!-- END SIDEBAR & CONTENT -->
-    </div>
-</div>
+                 
