@@ -621,35 +621,22 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <!-- Carousel items -->
-          <?php foreach($testimonialObject as $testimonial){ ?>
-          <div class="active item">
+           <?php $i=1;foreach($profileObject as $testimonial){ ?>
+          <!-- Carousel items -->
+          <div class="item <?php if($i=='1'){ echo "active"; }else{ echo "";}?>">
             <blockquote>
               <p><?php echo $testimonial->testimonials;?></p>
             </blockquote>
-            <span class="testimonials-name"><?php echo $testimonial->name; ?></span>
-          </div>
-          <?php }?>
-          <!-- Carousel items -->
-          <!--<div class="item">
-            <blockquote>
-              <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
-            </blockquote>
-            <span class="testimonials-name">Joe Smith</span>
-          </div>
-          <!-- Carousel items -->
-          <!--<div class="item">
-            <blockquote>
-              <p>Williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
-            </blockquote>
             <span class="testimonials-name">Linda Adams</span>
           </div>
+          <?php $i++;}?>
         </div>
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <!--<ol class="carousel-indicators">
           <li data-target="#testimonials-block" data-slide-to="0" class="active"></li>
           <li data-target="#testimonials-block" data-slide-to="1"></li>
           <li data-target="#testimonials-block" data-slide-to="2"></li>
-        </ol>
+        </ol>-->
       </div>
     </div>
   </div>
