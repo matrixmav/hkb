@@ -8,14 +8,15 @@
  * @property integer $user_id
  * @property string $address
  * @property string $street
- * @property integer $city_id
- * @property integer $state_id
+ * @property string $city_id
+ * @property string $state_id
  * @property integer $country_id
  * @property string $zip_code
  * @property string $id_proof
  * @property string $address_proff
  * @property integer $referral_banner_id
  * @property string $testimonials
+ * @property integer $testimonial_status
  * @property integer $status
  * @property string $created_at
  * @property string $updated_at
@@ -38,16 +39,15 @@ class UserProfile extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials,testimonial_status, status, created_at, updated_at', 'required'),
-			array('user_id, city_id, state_id, country_id, referral_banner_id, status', 'numerical', 'integerOnly'=>true),
+			array('user_id, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials, testimonial_status, status, created_at, updated_at', 'required'),
+			array('user_id, country_id, referral_banner_id, testimonial_status, status', 'numerical', 'integerOnly'=>true),
 			array('address', 'length', 'max'=>255),
-			array('street, id_proof, address_proff', 'length', 'max'=>100),
+			array('street, city_id, state_id, id_proof, address_proff', 'length', 'max'=>100),
 			array('zip_code', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, address, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials,testimonial_status, status, created_at, updated_at', 'safe', 'on'=>'search'),
-		        array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>false, 'on'=>'insert,update'),
-                    );
+			array('id, user_id, address, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials, testimonial_status, status, created_at, updated_at', 'safe', 'on'=>'search'),
+		);
 	}
 
 	/**
@@ -57,12 +57,11 @@ class UserProfile extends CActiveRecord
 	{
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
-		// NOTE: you may need to adjust the relation name and the related
-		// class name for the relations automatically generated below.
 		return array(
-                    'city' => array(self::BELONGS_TO, 'City', 'city_id'),
-                    'state' => array(self::BELONGS_TO, 'State', 'state_id'),
-		    'country' => array(self::BELONGS_TO, 'Country', 'country_id'),
+                    'user' => array(self::BELONGS_TO, 'user', 'id'),
+                     
+                    //'state' => array(self::BELONGS_TO, 'State', 'state_id'),
+		    //'country' => array(self::BELONGS_TO, 'Country', 'country_id'),
 		);
 	}
 
@@ -84,7 +83,7 @@ class UserProfile extends CActiveRecord
 			'address_proff' => 'Address Proff',
 			'referral_banner_id' => 'Referral Banner',
 			'testimonials' => 'Testimonials',
-                        'testimonial_status'=>'Testimonial Status',
+			'testimonial_status' => 'Testimonial Status',
 			'status' => 'Status',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
@@ -113,15 +112,15 @@ class UserProfile extends CActiveRecord
 		$criteria->compare('user_id',$this->user_id);
 		$criteria->compare('address',$this->address,true);
 		$criteria->compare('street',$this->street,true);
-		$criteria->compare('city_id',$this->city_id);
-		$criteria->compare('state_id',$this->state_id);
+		$criteria->compare('city_id',$this->city_id,true);
+		$criteria->compare('state_id',$this->state_id,true);
 		$criteria->compare('country_id',$this->country_id);
 		$criteria->compare('zip_code',$this->zip_code,true);
 		$criteria->compare('id_proof',$this->id_proof,true);
 		$criteria->compare('address_proff',$this->address_proff,true);
 		$criteria->compare('referral_banner_id',$this->referral_banner_id);
 		$criteria->compare('testimonials',$this->testimonials,true);
-                $criteria->compare('testimonial_status',$this->testimonial_status,true);
+		$criteria->compare('testimonial_status',$this->testimonial_status);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
