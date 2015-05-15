@@ -77,6 +77,13 @@ $this->breadcrumbs = array(
                 </div>
             </div>
             
+            <div class="form-group">
+                <label class="col-lg-4 control-label" for="lastname">Master Pin<span class="require">*</span></label>
+                <div class="col-lg-8">
+                    <input type="password" id="master_pin" class="form-control" name="UserProfile[master_pin]">
+                </div>
+            </div>
+            
         </fieldset>
 
     <div class="row">
@@ -139,43 +146,14 @@ $this->breadcrumbs = array(
             document.getElementById("zip_code").focus();
             return false;
         }
+         if(document.getElementById("master_pin").value=='')
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter master pin.";
+            document.getElementById("master_pin").focus();
+            return false;
+        }
         
     }
-    function getStateList(country_id)
-    {
-        var country_id = country_id;
-        
-        var dataString = 'country_id='+country_id;
-        $.ajax({
-            type: "GET",
-            url: "/profile/fetchstate",
-            data: dataString,
-            cache: false,
-            success: function (html) {  
-                if (html != '') {
-                    document.getElementById("stateList").style.display = "block";
-                    $('#stateId').html(html);
-                }
-            }
-        });
-    }
-    function showCity(state_id)
-    {
-        var state_id = state_id;
-        var dataString = 'state_id='+state_id;
-        $.ajax({
-            type: "GET",
-            url: "/profile/fetchcity",
-            data: dataString,
-            cache: false,
-            success: function (html) {
-                if (html != '')
-                {
-                    document.getElementById("cityList").style.display = "block";
-                    document.getElementById("cityId").innerHTML = html;
-
-                }
-            }
-        });
-    }
+     
 </script>    

@@ -38,7 +38,12 @@ $this->breadcrumbs = array(
                 </div>
             </div>
             
-            
+            <div class="form-group">
+                <label class="col-lg-4 control-label" for="lastname">Master Pin<span class="require">*</span></label>
+                <div class="col-lg-8">
+                    <input type="password" id="master_pin" class="form-control" name="UserProfile[master_pin]">
+                </div>
+            </div>
             
         </fieldset>
 
@@ -65,6 +70,13 @@ $this->breadcrumbs = array(
             document.getElementById("error_msg").style.display="block";
             document.getElementById("error_msg").innerHTML = "Please choose address proof from your computer.";
             document.getElementById("address_proof").focus();
+            return false;
+        }
+        if(document.getElementById("master_pin").value=='')
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter master pin.";
+            document.getElementById("master_pin").focus();
             return false;
         }
     }
