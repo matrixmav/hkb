@@ -54,32 +54,32 @@ $this->menu=array(
 		
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">from_user_id &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Sender &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->fromuser->full_name',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">to_user_id &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Receiver &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->touser->full_name',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">tranaction_id &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Transaction ID &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->tranaction_id',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">fund_type &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Fund Type &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->fund_type',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">comment &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Comment &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->comment',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">status &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Status &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->status',
 		),
 		array( 
