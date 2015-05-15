@@ -30,4 +30,31 @@ var MIN_LENGTH = 3;
     	    $("#results").show();
     	});
 
+	
+	$("#transfer").click(function() {
+			var transactiontype = $("#transactiontype").val();
+			var paid_amount = $("#paid_amount").val();
+			var wallet_points = $("#wallet_points").val();
+			var commission_points = $("#commission_points").val();	
+			var total_rp = $("#total_rp").val();
+			var paid_amount_percentage = (parseFloat(paid_amount)/100)+parseFloat(paid_amount);
+			total_rp = parseFloat(total_rp) + parseFloat(commission_points);
+			if(transactiontype == 2)
+			{
+				if(parseFloat(paid_amount_percentage) >= parseFloat(total_rp))
+				{				
+						alert("Insufficient Funds");
+						return false; 
+				}
+			}else
+			{			
+				if(parseFloat(paid_amount_percentage) >= parseFloat(wallet_points))
+				{				
+						alert("Insufficient Funds");
+						return false; 
+				}	
+			}
+	}); 
+
+
 });
