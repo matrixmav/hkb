@@ -138,8 +138,9 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="header navbar navbar-fixed-top">
             <!-- BEGIN TOP NAVIGATION BAR -->
             <div class="header-inner">
+                <span class="home-link"><a href="<?php echo Yii::app()->getBaseUrl(true); ?>" target="_blank">Home</a></span>
                 <!-- BEGIN LOGO -->
-                <a class="navbar-brand" href="/admin/">
+                <?php /*?><a class="navbar-brand" href="/admin/">
                     <?php
                     $access = Yii::app()->user->getState('access');
                     if ($access == "manager") {
@@ -150,7 +151,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <img src="#" alt="logo"
                              class="img-responsive" />
                          <?php } ?>
-                </a>
+                </a>*/?>
                 <!-- END LOGO -->
                 <!-- BEGIN RESPONSIVE MENU TOGGLER -->
                 <a href="javascript:;" class="navbar-toggle" data-toggle="collapse"
