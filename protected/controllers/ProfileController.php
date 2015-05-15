@@ -22,7 +22,7 @@ class ProfileController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','address','fetchstate','fetchcity','testimonial','updateprofile','documentverification','summery'),
+				'actions'=>array('index','address','fetchstate','fetchcity','testimonial','updateprofile','documentverification','summery','dashboard'),
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -221,7 +221,17 @@ class ProfileController extends Controller
           echo $cityHTML;
         }
         
-        
+                /*
+         * This will load user dashboard
+         */
+        public  function actionDashboard()
+        { 
+            $model = "";
+            $this->render('../user/dashboard',array(
+			'model'=>$model,
+		));
+        }
+         
         
 
 	// Uncomment the following methods and override them if needed
