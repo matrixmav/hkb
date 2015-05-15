@@ -32,6 +32,18 @@ var MIN_LENGTH = 3;
 
 	
 	$("#transfer").click(function() {
+		var username = $("#username").val();
+			$.ajax( {
+                  url:'/moneytransfer/userexists?u='+username,
+                  success:function(data) {
+					  if(data=='notexists'){
+			document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Username does not Exist.";
+            document.getElementById("username").focus();
+            return false;
+					  }
+                  }
+               });
 			var transactiontype = $("#transactiontype").val();
 			var paid_amount = $("#paid_amount").val();
 			var wallet_points = $("#wallet_points").val();
@@ -43,17 +55,97 @@ var MIN_LENGTH = 3;
 			{
 				if(parseFloat(paid_amount_percentage) >= parseFloat(total_rp))
 				{				
-						alert("Insufficient Funds");
-						return false; 
+			document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Insufficient Funds.";
+            document.getElementById("paid_amount").focus();
+            return false;
+					
 				}
 			}else
 			{			
 				if(parseFloat(paid_amount_percentage) >= parseFloat(wallet_points))
 				{				
-						alert("Insufficient Funds");
-						return false; 
+			document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Insufficient Funds.";
+            document.getElementById("paid_amount").focus();
+            return false;
+						
 				}	
 			}
+			
+		if(document.getElementById("transactiontype").value=='')
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter Transaction Type.";
+            document.getElementById("transactiontype").focus();
+            return false;
+        }
+	if(document.getElementById("username").value=='')
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter Username.";
+            document.getElementById("username").focus();
+            return false;
+        }
+	var paid_amount = document.getElementById('paid_amount');
+        var filter = /^(?!0\d)\d*(\.\d+)?$/mg;
+
+        if (!filter.test(paid_amount.value)) {
+            $("#error_msg").html("Please enter valid Amount");
+            $("#paid_amount").focus();  
+            return false;
+        }
+		if(document.getElementById("paid_amount").value==0)
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter valid Amount.";
+            document.getElementById("username").focus();
+            return false;
+        }
+	}); 
+	$("#addfund").click(function() {
+		var username = $("#username").val();
+			$.ajax( {
+                  url:'/moneytransfer/userexists?u='+username,
+                  success:function(data) {
+					  if(data=='notexists'){
+			document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Username does not Exist.";
+            document.getElementById("username").focus();
+            return false;
+					  }
+                  }
+               });
+						
+		if(document.getElementById("transactiontype").value=='')
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter Transaction Type.";
+            document.getElementById("transactiontype").focus();
+            return false;
+        }
+	if(document.getElementById("username").value=='')
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter Username.";
+            document.getElementById("username").focus();
+            return false;
+        }
+	var paid_amount = document.getElementById('paid_amount');
+        var filter = /^(?!0\d)\d*(\.\d+)?$/mg;
+
+        if (!filter.test(paid_amount.value)) {
+            $("#error_msg").html("Please enter valid Amount");
+            $("#paid_amount").focus();  
+            return false;
+        }
+		if(document.getElementById("paid_amount").value==0)
+        {
+            document.getElementById("error_msg").style.display="block";
+            document.getElementById("error_msg").innerHTML = "Please enter valid Amount.";
+            document.getElementById("username").focus();
+            return false;
+        }
 	}); 
 
 
