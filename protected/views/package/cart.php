@@ -1,22 +1,12 @@
 <div class="container">
+<div class="col-lg-12">    
 <div id="maincontent" class="pageWrp checkout abtest">
 <div class="sectionWrp summary open">
     <p class="title"><span class="check">1.</span> <span class="txt">Your Order Summary</span><a onclick="OpenDiv();" id="editIcon" style="display:none;">Edit</a></p>
 <div class="contentBlock CartSection" id="cartDiv">
-<form name="purchase" method="POST" action="./Your Shopping Cart_files/Your Shopping Cart.html" class="form">
-<input type="hidden" name="action" value="complete_order">
-<input type="hidden" name="payment_type" value="">
-<input type="hidden" name="gateway_id" value="">
-<input type="hidden" name="card_cvv" value="">
-<input type="hidden" name="country" value="">
-<input type="hidden" name="ccavenue_option" value="">
-<input type="hidden" name="gateway_params" value="">
-<input type="hidden" name="selected_bank" value="">
-<input type="hidden" name="show_signup" value="false">
-<input type="hidden" id="pp_price" name="pp_price" value="299">
-<table class="cartItemsWrp" cellspacing="0" cellpadding="0">
+ <table class="cartItemsWrp" cellspacing="0" cellpadding="0">
 <tbody><tr class="cartItemHeader">
-<th>Product</th>
+<th>Package</th>
 <th>Description</th>
 <th>Duration</th>
 <th>Price</th>
@@ -29,7 +19,7 @@
    
  
 </div>
-     <br/>Domain : <?php echo Yii::app()->session['domain'];?>  
+     
 </td>
 <td class="pDescription">
 <p class="description itemblock topRow vCenter"><?php echo substr($packageObject->Description,0,100);?></p>
@@ -37,7 +27,7 @@
 <td class="pDuration">
 <div class="itemblock topRow">
 <p class="selectWrp">
- <b>1 Year at $<?php echo $packageObject->amount;?>/yr</b>
+ <b>1 Year</b>
  
 </p>
  </div>
@@ -45,12 +35,38 @@
 <td class="pPrice CartSubTotal tbl-pd">
 <div class="pos_hlp itemblock topRow">
 <p class="price ItemSubTotal">
-<span class="WebRupee">$</span> <span id=""><?php echo $packageObject->amount;?> <?php if(Yii::app()->session['amount']!=''){ ?> + $ <?php echo Yii::app()->session['amount'];?>(Domain Price Included)<?php }?></span>
+<span class="WebRupee">$</span> <span id=""><?php echo $packageObject->amount;?> </span>
 </p>
 </div>
  </td>
 </tr>
+
+<tr class="productBlock CartItemRow domain" id="" name="product_items[]">
+<td class="pName">
+<div class="name itemblock topRow vCenter">
+Domain
+</div>
+</td>
+<td class="pDescription">
+<p class="description itemblock topRow vCenter"><?php echo Yii::app()->session['domain'];?></p>
+</td>
+<td class="pDuration">
+<div class="itemblock topRow">
+<p class="selectWrp">
+ <b>1 Year</b>
  
+</p>
+ </div>
+</td>
+<td class="pPrice CartSubTotal tbl-pd">
+<div class="pos_hlp itemblock topRow">
+<p class="price ItemSubTotal">
+<span class="WebRupee"></span> <span id=""><?php if(Yii::app()->session['amount']!=''){ ?> $<?php echo Yii::app()->session['amount'];?><?php }else{?> N/A<?php }?></span>
+</p>
+</div>
+ </td>
+</tr>
+
 
 </tbody></table>
 </form>
@@ -77,7 +93,8 @@
 </div>
 </div>
 <table class="cartTotalWrp rfloat tbl-2" cellpadding="0" cellspacing="0" border="0">
-<tbody><tr class="ItemConvertedSubtotal">
+<tbody>
+<tr class="ItemConvertedSubtotal">
 <td class="itemText">
 <p>Subtotal:</p>
 </td>
@@ -86,7 +103,14 @@
 </td>
 </tr>
  
- 
+<tr class="ItemConvertedSubtotal" id="coupon_discount" style="display:none;">
+<td class="itemText">
+<p>Coupon Discount:</p>
+</td>
+<td class="itemAmount">
+<p id="CartTotal"><span class="WebRupee">$</span> <span id="total-discount"><?php echo $packageObject->amount + Yii::app()->session['amount'];?></span></p>
+</td>
+</tr> 
 <tr class="ItemTotalAfterDiscount">
    
 <td class="itemText">
@@ -107,6 +131,7 @@
 <p class="title"><span class="check">2.</span> <span class="txt">Payment Options</span> <span class="edit">edit</span></p>
 <div id="paymentOption">
     
+</div>
 </div>
 </div>
 </div>
