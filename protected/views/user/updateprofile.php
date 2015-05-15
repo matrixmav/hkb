@@ -15,13 +15,13 @@ $this->breadcrumbs = array(
              <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Sponsor ID</label>
                 <div class="col-lg-8">
-                    <input type="text" id="name" class="form-control" name="UserProfile[sponsor_id]" value="<?php echo $userObject->sponsor_id;?>" readonly="readonly">
+                    <input type="text" id="name" class="form-control" name="UserProfile[sponsor_id]" value="<?php echo (!empty($userObject))? $userObject->sponsor_id:"";?>" readonly="readonly">
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Name</label>
                 <div class="col-lg-8">
-                    <input type="text" id="name" class="form-control" name="UserProfile[name]" value="<?php echo $userObject->name;?>" readonly="readonly">
+                    <input type="text" id="name" class="form-control" name="UserProfile[name]" value="<?php echo (!empty($userObject))? $userObject->name : "";?>" readonly="readonly">
                 </div>
             </div>
             
@@ -42,7 +42,7 @@ $this->breadcrumbs = array(
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Email<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="email" class="form-control" name="UserProfile[email]" value="<?php echo $userObject->email;?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
+                    <input type="text" id="email" class="form-control" name="UserProfile[email]" value="<?php echo (!empty($userObject))? $userObject->email:"";?>" <?php if($edit=='no'){ ?>readonly="readonly" <?php }?>>
                 </div>
             </div>
             
