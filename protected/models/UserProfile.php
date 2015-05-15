@@ -38,14 +38,14 @@ class UserProfile extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('user_id, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials, status, created_at, updated_at', 'required'),
+			array('user_id, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials,testimonial_status, status, created_at, updated_at', 'required'),
 			array('user_id, city_id, state_id, country_id, referral_banner_id, status', 'numerical', 'integerOnly'=>true),
 			array('address', 'length', 'max'=>255),
 			array('street, id_proof, address_proff', 'length', 'max'=>100),
 			array('zip_code', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, user_id, address, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials, status, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, user_id, address, street, city_id, state_id, country_id, zip_code, id_proof, address_proff, referral_banner_id, testimonials,testimonial_status, status, created_at, updated_at', 'safe', 'on'=>'search'),
 		        array('image', 'file','types'=>'jpg, gif, png', 'allowEmpty'=>false, 'on'=>'insert,update'),
                     );
 	}
@@ -84,6 +84,7 @@ class UserProfile extends CActiveRecord
 			'address_proff' => 'Address Proff',
 			'referral_banner_id' => 'Referral Banner',
 			'testimonials' => 'Testimonials',
+                        'testimonial_status'=>'Testimonial Status',
 			'status' => 'Status',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
@@ -120,6 +121,7 @@ class UserProfile extends CActiveRecord
 		$criteria->compare('address_proff',$this->address_proff,true);
 		$criteria->compare('referral_banner_id',$this->referral_banner_id);
 		$criteria->compare('testimonials',$this->testimonials,true);
+                $criteria->compare('testimonial_status',$this->testimonial_status,true);
 		$criteria->compare('status',$this->status);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
