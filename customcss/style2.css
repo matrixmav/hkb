@@ -13806,4 +13806,4 @@ ul.priceList li.first {
 .f-cnt{ line-height:25px; }
 
 .edit-icon{color:#fff;float:right;font-size:15px;}
-.edit-icon a:hover{color:#fff;float:right;font-size:15px;}
+.edit-icon a :hover{color:#fff;float:right;font-size:15px;}
