@@ -621,21 +621,23 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
           <!-- Carousel items -->
+          <?php foreach($testimonialObject as $testimonial){ ?>
           <div class="active item">
             <blockquote>
-              <p>This is the most awesome, full featured, easy, costomizeble theme. It’s extremely responsive and very helpful to all suggestions.</p>
+              <p><?php echo $testimonial->testimonials;?></p>
             </blockquote>
-            <span class="testimonials-name">Mark Doe</span>
+            <span class="testimonials-name"><?php echo $testimonial->name; ?></span>
           </div>
+          <?php }?>
           <!-- Carousel items -->
-          <div class="item">
+          <!--<div class="item">
             <blockquote>
               <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
             </blockquote>
             <span class="testimonials-name">Joe Smith</span>
           </div>
           <!-- Carousel items -->
-          <div class="item">
+          <!--<div class="item">
             <blockquote>
               <p>Williamsburg carles vegan helvetica. Cosby sweater eu banh mi, qui irure terry richardson ex squid Aliquip placeat salvia cillum iphone.</p>
             </blockquote>
