@@ -6,6 +6,7 @@ class ProfileController extends Controller
       
 	public function actionIndex()
 	{
+               
 		$dataProvider=new CActiveDataProvider('User');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
@@ -47,10 +48,13 @@ class ProfileController extends Controller
             $model = new UserProfile;
             $error = "";
             $success = "";
+            $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
+            $userObject = User::model()->findByPK(array('id' => Yii::app()->session['userid'])); 
             if (isset($_POST['UserProfile'])) {
              if(count($_POST['UserProfile']) > 0)
              {
-                $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
+                if(md5($_POST['UserProfile']['master_pin'])== $userObject->master_pin)
+               {
                 $profileObject->address = $_POST['UserProfile']['address'];
                 $profileObject->street = $_POST['UserProfile']['street'];
                 $profileObject->city_id = $_POST['UserProfile']['city_id'];
@@ -61,12 +65,15 @@ class ProfileController extends Controller
                 $profileObject->updated_at = new CDbExpression('NOW()');
                 $profileObject->update();
                 $success .= "Address Updated Successfully";
-                }
-             else{
+               }else{
+                $error .= "Incorrect master pin.";  
+               }
+             }else{
                  $error .= "Please fill required(*) marked fields.";
                  
              }
-            }
+             }
+         
             $countryObject = Country::model()->findAll();
             $cityObject = City::model()->findAll();
             $stateObject = State::model()->findAll();
@@ -83,18 +90,26 @@ class ProfileController extends Controller
         public function actionTestimonial() {
             $error = "";
             $success = "";
-           $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid'])); 
+            $userObject = User::model()->findByPK(array('id' => Yii::app()->session['userid']));
+            $profileObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid'])); 
           if (isset($_POST['UserProfile'])) {
              if($_POST['UserProfile']['testimonials']=='')
              {  
                $error .= "Please fill required(*) marked fields.";  
              }else{
-           $profileObject->testimonials = $_POST['UserProfile']['testimonials'];
+            if(md5($_POST['UserProfile']['master_pin'])== $userObject->master_pin)
+            { 
+                
+            $profileObject->testimonials = $_POST['UserProfile']['testimonials'];
             if ($profileObject->update()) {
                $success .= "Testimonial Updated Successfully.";   
-                }
+              }
+            }else{
+             $error .= "Incorrect master pin.";     
             }
-         }
+            }
+            }
+         
          $this->render('/user/testimonial', array('profileObject' => $profileObject,'success' => $success,'error' => $error));
         }
         
@@ -148,13 +163,16 @@ class ProfileController extends Controller
          public function actionDocumentVerification() {
             $error = "";
             $success = "";
-          $userObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
-          
+                $userObject = UserProfile::model()->findByAttributes(array('user_id' => Yii::app()->session['userid']));
+                $profileObject = User::model()->findByPK(array('id' => Yii::app()->session['userid']));
           if($_POST)
           { 
            $userObject->id_proof = time().$_FILES['id_proof']['name'];
            $userObject->address_proff = time().$_FILES['address_proof']['name']; 
-            
+            if($_FILES)
+            {
+             if(md5($_POST['UserProfile']['master_pin'])== $profileObject->master_pin)
+             {   
             if($userObject->update())
             {   
 	       $path = Yii::getPathOfAlias('webroot')."/uploads/verification-document/";
@@ -162,8 +180,11 @@ class ProfileController extends Controller
                 BaseClass::uploadFile($_FILES['address_proof']['tmp_name'],$path,time().$_FILES['address_proof']['name']);
                $success = "Documents Updated Successfully";
             }
-            else{
-              $error = "Documents Updated Successfully";  
+             }else{
+               $error .= "Incorrect master pin.";  
+             }
+            }else{
+              $error = "Please fill required(*) marked fields."; 
             }
           }
               
