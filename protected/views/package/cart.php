@@ -2,7 +2,7 @@
 <div class="col-lg-12">    
 <div id="maincontent" class="pageWrp checkout abtest">
 <div class="sectionWrp summary open">
-    <p class="title"><span class="check">1.</span> <span class="txt">Your Order Summary</span><a onclick="OpenDiv();" id="editIcon" style="display:none;">Edit</a></p>
+    <p class="title"><span class="check">1.</span> <span class="txt">Your Order Summary</span><a onclick="OpenDiv();" id="editIcon" style="display:none;" class="edit-icon">Edit</a></p>
 <div class="contentBlock CartSection" id="cartDiv">
  <table class="cartItemsWrp" cellspacing="0" cellpadding="0">
 <tbody><tr class="cartItemHeader">
@@ -163,11 +163,14 @@ success: function(html){
  document.getElementById("coupon_error").innerHTML = "Incorrect coupon code";
  $("#coupon_error").fadeOut(5000);
  }else{
+ htmlTag = html.split("_");   
  $('#coupon_code').val('');
  document.getElementById("coupon_success").style.display="block";
  document.getElementById("coupon_success").innerHTML = "Coupon code applied";
- document.getElementById("totalpayable").innerHTML = html;
- document.getElementById("totalAmount").value=html;
+ document.getElementById("totalpayable").innerHTML = htmlTag[0];
+ document.getElementById("coupon_discount").style.display="block";
+ document.getElementById("total-discount").innerHTML = htmlTag[1];
+ document.getElementById("totalAmount").value=htmlTag[0];
  $("#coupon_success").fadeOut(5000);
  }  
  }
