@@ -54,22 +54,22 @@ $this->menu=array(
 		
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">from_user_id &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">User Name &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->usertable->full_name',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">fund &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Total Fund &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->fund',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">type &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Type &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->type',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">status &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Status &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->status',
 		),
 		
