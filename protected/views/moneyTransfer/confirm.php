@@ -15,7 +15,7 @@
                                         <label for="lastname" class="col-lg-4 control-label">Actual Amount <span class="require">*</span></label>
                                         <div class="col-lg-8">
                                            <?php 
-												echo $_GET['actualamount'];
+												echo base64_decode($_GET['a']);
 											?>
                                         </div>
                                        
@@ -25,7 +25,7 @@
                                         <div class="col-lg-8">
                                             <input type="text" class="form-control" id="master_code" name="master_code">
 											<input type="hidden" class="form-control" 
-											value="<?php echo $_GET['transactioncode']; ?>" name="transactioncode">
+											value="<?php echo base64_decode($_GET['t']); ?>" name="transactioncode">
 											
                                         </div>
                                         <span id="email_error"></span>
