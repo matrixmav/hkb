@@ -326,7 +326,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 $reservation_subsection = array(
                                     "transaction/list" => "Transaction List",
 //                                    "moneytransfer/list" => "Moneytransfer List",
-                                    "moneytransfer/transfer" => "Transfer",
+                                    "MoneyTransfer/transfer" => "Transfer",
                                     
                                 );
                                 ?>

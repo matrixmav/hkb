@@ -1,9 +1,9 @@
-            <?php
+ <?php
 /* @var $this MoneyTransferController */
 /* @var $dataProvider CActiveDataProvider */
 
 $this->breadcrumbs=array(
-	'Money Transfer List',
+	'Transactions List',
 );
 
 $this->menu=array(
@@ -54,32 +54,28 @@ $this->menu=array(
 		
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">from_user_id &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Receiver &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->usertable->full_name',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">actual_amount &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Actual Amount &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->actual_amount',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">paid_amount &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Paid Amount &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->paid_amount',
 		),
+		
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">total_rp &nbsp; &nbsp; &nbsp;</span>',
-                    'value'=>'$data->total_rp',
-		),
-		array(
-                   'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">used_rp &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Used RP &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->used_rp',
 		),
 		array(
                    'name'=>'slug',
-                    'header'=>'<span style="white-space: nowrap;">status &nbsp; &nbsp; &nbsp;</span>',
+                    'header'=>'<span style="white-space: nowrap;">Status &nbsp; &nbsp; &nbsp;</span>',
                     'value'=>'$data->status',
 		),
 		array( 

@@ -54,6 +54,7 @@ class MailController extends Controller
             $dataProvider = new CActiveDataProvider('Mail', array(
                         'criteria'=>array('condition' => 'to_user_id = 1','order'=>'updated_at DESC'),
                         'pagination' => array('pageSize' => $pageSize)));
+            
             $this->render('index',array(
                 'dataProvider'=>$dataProvider,
             ));
@@ -72,21 +73,21 @@ class MailController extends Controller
             ));
 	}
         public function actionCompose(){ 
-            if($_POST){ 
-                $emailArray = explode(",", $_POST['to_email']);
+            if($_POST){  
+                $emailArray = $_POST['to_email'];
                 foreach ($emailArray as $email){
                     $userObject = User::model()->findByAttributes(array('email'=>$email));
                     if(empty($userObject)){
-                        continue;
+                        $this->render('compose',array('error'=>'User Does Not Exist'));
                     }
-                    $customerName = "testing";
-                    $emailId = $email;
-                    $emailBoday['to'] = $emailId;
-                    $emailBoday['subject'] = $_POST['email_subject'];
-
-                    $emailBoday['body'] = $_POST['email_body'];
-                    $emailBoday['from'] = Yii::app()->params['hkbAdminEmail'];
-                    $result = CommonHelper::sendMail($emailBoday);
+//                    $customerName = $userObject->full_name;
+//                    $emailId = $email;
+//                    $emailBoday['to'] = $emailId;
+//                    $emailBoday['subject'] = $_POST['email_subject'];
+//
+//                    $emailBoday['body'] = $_POST['email_body'];
+//                    $emailBoday['from'] = Yii::app()->params['hkbAdminEmail'];
+//                    $result = CommonHelper::sendMail($emailBoday);
                     if($result){ 
                         $mailObject = new Mail();
                         $mailObject->to_user_id = $userObject->id;

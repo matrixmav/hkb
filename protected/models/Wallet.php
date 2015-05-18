@@ -30,7 +30,7 @@ class Wallet extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('id, user_id, fund, status, created_at, updated_at', 'required'),
+			array(' user_id, fund, status, created_at, updated_at', 'required'),
 			array('id, user_id, type, status', 'numerical', 'integerOnly'=>true),
 			array('fund', 'numerical'),
 			// The following rule is used by search().

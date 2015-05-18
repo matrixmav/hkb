@@ -56,9 +56,9 @@ class UserController extends Controller
 
                 $model = new User;
                 $error = "";
-                $username = $_POST['name'];
+                $username =  $_POST['name'];
                 $password =  $_POST['password'];
-                $masterkey =  $_POST['masterkey'];
+                $masterkey = $_POST['masterkey'];
 
                 if((!empty($username)) && (!empty($password))  && (!empty($masterkey))) {
                     $getUserObject = User::model()->findByAttributes(array('name'=>$username,'status'=>1));
@@ -78,12 +78,11 @@ class UserController extends Controller
                             if($identity->userAuthenticate())
                             Yii::app()->user->login($identity);
                             Yii::app()->session['userid'] = $getUserObject->id;
-                            echo "1";
-                            if(Yii::app()->session['package_id']!='')
-                            {
-                            $this->redirect("/package/domainsearch");  
-                            }else{
-                            $this->redirect("/order/list");
+                            echo "1"; 
+                            if(Yii::app()->session['package_id']!='') {
+                                $this->redirect("/package/domainsearch");  
+                            } else {
+                                $this->redirect("/order/list");
                             }
                         }else {
                            // echo "0"; 
@@ -96,32 +95,60 @@ class UserController extends Controller
 
             }
                 $this->render("login",array("msg"=>$error));
-	}
+ }
         
         /* User Registration Strat Here */
         public function actionRegistration(){
             
-            if($_POST){
+            if($_POST){              
+                   
+               //echo substr($_POST['name'], 0, 4).substr($_POST['y'], 2, 2).$_POST['m'].$_POST['d']  ; die;
                 $masterPin = mt_rand(100000,999999);
                 $model = new User;
                 $model->attributes = $_POST;
+                $model->sponsor_id = substr($_POST['name'], 0, 4).substr($_POST['y'], 2, 2).$_POST['m'].$_POST['d'] ;
                 $model->password = BaseClass::md5Encryption($_POST['password']);  
                 $model->master_pin = md5($masterPin);
                 $model->date_of_birth = $_POST['y']."-".$_POST['m']."-".$_POST['d'];
+                $model->user_sponsor_id = $_POST['sponsor_id'];
                 $userObject = User::model()->findByAttributes(array('sponsor_id' => $_POST['sponsor_id'] ,'position' => $_POST['position']));
-                echo count($userObject);
                 
                 if(count($userObject) > 1 ){
                     
                 }else{
-                  $model->sponsor_id = $_POST['sponsor_id']; 
+                  //$model->sponsor_id = $_POST['sponsor_id']; 
                 }
                              
                 $rand= rand (date('YmdHis'),5); // For the activation link
                 $model->activation_key = $rand ;
+                               
+                
                 if(!$model->save(false)){
                     echo "<pre>"; print_r($model->getErrors());exit;
                 }
+                
+                $modelUserProfile = new UserProfile();
+                $modelUserProfile->user_id = $model->id ;
+                $modelUserProfile->referral_banner_id = 1 ;
+                $modelUserProfile->save(false);
+                
+                /* Geneology */
+                $userObjectId = User::model()->findByAttributes(array('sponsor_id' => $_POST['sponsor_id'] ));
+                //echo 
+                $modelGenealogy = new Genealogy();
+                $modelGenealogy->parent = $userObjectId->id; 
+                $modelGenealogy->user_id = $model->id ; 
+                $modelGenealogy->sponsor_user_id = $userObjectId->id;                 
+                $modelGenealogy->position = $_POST['position'];                 
+                $modelGenealogy->save(false); 
+                
+                /*  For Genealogy Data */
+                
+                /*$modelGenealogy = new Genealogy();
+                $modelGenealogy->user_id = $model->id ; 
+                $modelGenealogy->sponsor_user_id = $_POST['sponsor_id'] ; 
+                $modelGenealogy->position = $_POST['position'] ; 
+                $modelGenealogy->save(); */
                 
 //                $config['to'] = $model->email; 
 //                $config['subject'] = 'Registration Confirmation' ;

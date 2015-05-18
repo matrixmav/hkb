@@ -9,17 +9,21 @@
  * @property string $name
  * @property string $password
  * @property string $position
+ * @property integer $parent
  * @property string $full_name
  * @property string $email
  * @property integer $country_id
- * @property string $country_code
+ * @property integer $country_code
  * @property integer $phone
- * @property string $data_of_birth
+ * @property string $date_of_birth
  * @property string $skype_id
  * @property string $facebook_id
  * @property string $twitter_id
  * @property integer $master_pin
  * @property integer $status
+ * @property integer $activation_key
+ * @property string $forget_key
+ * @property string $forget_status
  * @property string $created_at
  * @property string $updated_at
  */
@@ -41,15 +45,14 @@ class User extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, date_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'required'),
-			array('country_id, phone, master_pin, status', 'numerical', 'integerOnly'=>true),
-			array('sponsor_id, password, email, skype_id, facebook_id, twitter_id', 'length', 'max'=>100),
-			array('name, position', 'length', 'max'=>30),
-			array('full_name', 'length', 'max'=>50),
-			array('country_code', 'length', 'max'=>5),
+			array('sponsor_id, name, password, parent, full_name, email, country_id, country_code, phone, date_of_birth, master_pin, status, updated_at', 'required'),
+			array('parent, country_id, country_code, phone, master_pin, status, activation_key', 'numerical', 'integerOnly'=>true),
+			array('sponsor_id, name, password, full_name, email, skype_id, facebook_id, twitter_id, forget_key, forget_status', 'length', 'max'=>100),
+			array('position', 'length', 'max'=>30),
+			array('created_at', 'safe'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, sponsor_id, name, password, position, full_name, email, country_id, country_code, phone, date_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, sponsor_id, name, password, position, parent, full_name, email, country_id, country_code, phone, date_of_birth, skype_id, facebook_id, twitter_id, master_pin, status, activation_key, forget_key, forget_status, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -76,17 +79,21 @@ class User extends CActiveRecord
 			'name' => 'Name',
 			'password' => 'Password',
 			'position' => 'Position',
+			'parent' => 'Parent',
 			'full_name' => 'Full Name',
 			'email' => 'Email',
 			'country_id' => 'Country',
 			'country_code' => 'Country Code',
 			'phone' => 'Phone',
-			'date_of_birth' => 'Data Of Birth',
+			'date_of_birth' => 'Date Of Birth',
 			'skype_id' => 'Skype',
 			'facebook_id' => 'Facebook',
 			'twitter_id' => 'Twitter',
 			'master_pin' => 'Master Pin',
 			'status' => 'Status',
+			'activation_key' => 'Activation Key',
+			'forget_key' => 'Forget Key',
+			'forget_status' => 'Forget Status',
 			'created_at' => 'Created At',
 			'updated_at' => 'Updated At',
 		);
@@ -115,17 +122,21 @@ class User extends CActiveRecord
 		$criteria->compare('name',$this->name,true);
 		$criteria->compare('password',$this->password,true);
 		$criteria->compare('position',$this->position,true);
+		$criteria->compare('parent',$this->parent);
 		$criteria->compare('full_name',$this->full_name,true);
 		$criteria->compare('email',$this->email,true);
 		$criteria->compare('country_id',$this->country_id);
-		$criteria->compare('country_code',$this->country_code,true);
+		$criteria->compare('country_code',$this->country_code);
 		$criteria->compare('phone',$this->phone);
-		$criteria->compare('data_of_birth',$this->data_of_birth,true);
+		$criteria->compare('date_of_birth',$this->date_of_birth,true);
 		$criteria->compare('skype_id',$this->skype_id,true);
 		$criteria->compare('facebook_id',$this->facebook_id,true);
 		$criteria->compare('twitter_id',$this->twitter_id,true);
 		$criteria->compare('master_pin',$this->master_pin);
 		$criteria->compare('status',$this->status);
+		$criteria->compare('activation_key',$this->activation_key);
+		$criteria->compare('forget_key',$this->forget_key,true);
+		$criteria->compare('forget_status',$this->forget_status,true);
 		$criteria->compare('created_at',$this->created_at,true);
 		$criteria->compare('updated_at',$this->updated_at,true);
 
