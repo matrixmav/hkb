@@ -771,7 +771,7 @@ button.ui-button-s
     border-bottom: 1px solid #c7c7c7;
 }
 /* END: raf oops-modal CSS */
-.WebRupee {font-family: 'WebRupee' !important;}
+.WebRupee {font-family: 'WebRupee' !important;   padding-left: 30px!important;}
 
 /* CSS Reset */
 
