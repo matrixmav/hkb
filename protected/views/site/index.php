@@ -645,6 +645,17 @@
   <div class="partners-block">
     <div class="container">
       <div class="row">
+        <div id="myCarouselaa" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+
+      <div class="item">
+        
+        
+          <div class="row">
         <div class="col-md-2 col-sm-3 col-xs-6">
           <img src="images/cisco.png" alt="cisco">
         </div>
@@ -661,8 +672,93 @@
           <img src="images/ngreen.png" alt="ngreen">
         </div>
         <div class="col-md-2 col-sm-3 col-xs-6">
-          <img src="images/vimeo.png" alt="vimeo">
+          <img src="images/gamescast.png" alt="gamescast">
         </div>
+      </div>
+      </div>
+
+      <div class="item active">
+       
+         <div class="row">
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/cisco.png" alt="cisco">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/walmart.png" alt="walmart">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/gamescast.png" alt="gamescast">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/spinwokrx.png" alt="spinwokrx">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/ngreen.png" alt="ngreen">
+        </div>
+       <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/gamescast.png" alt="gamescast">
+        </div>
+      </div>
+      </div>
+    
+      <div class="item">
+        
+           <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/cisco.png" alt="cisco">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/walmart.png" alt="walmart">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/gamescast.png" alt="gamescast">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/spinwokrx.png" alt="spinwokrx">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/ngreen.png" alt="ngreen">
+        </div>
+       <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/gamescast.png" alt="gamescast">
+        </div>
+        
+      </div>
+
+      <div class="item">
+       
+           <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/cisco.png" alt="cisco">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/walmart.png" alt="walmart">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/gamescast.png" alt="gamescast">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/spinwokrx.png" alt="spinwokrx">
+        </div>
+        <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/ngreen.png" alt="ngreen">
+        </div>
+       <div class="col-md-2 col-sm-3 col-xs-6">
+          <img src="images/gamescast.png" alt="gamescast">
+        </div>
+       
+      </div>
+  
+    </div>
+
+    <!-- Left and right controls 
+    <a class="left carousel-control" href="#myCarouselaa" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarouselaa" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>-->
+  </div>
       </div>
     </div>
   </div>

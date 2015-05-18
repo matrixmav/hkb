@@ -106,16 +106,7 @@
 .multiselect li ul li{ border:none;}
 .multiselect li ul li .checkbox-list > label{font-size: 11px;}
 .error {
-    background: url("/getImage.php?src=ico-warning.gif") no-repeat scroll 5px 10px #ffe1e1;
-    border-bottom: 1px solid #ff8080;
-    border-top: 1px solid #ff8080;
-    color: #333;
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 1.2em !important;
-    margin: 10px 0;
-    padding: 10px 0 8px 28px;
-    text-align: left;
+    color:#EA2222;
 }
 .success {
     background: url("/getImage.php?src=ico-warning.gif") no-repeat scroll 5px 10px #339980;
