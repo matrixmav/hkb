@@ -1,4 +1,4 @@
-            <?php
+  <?php
 /* @var $this MoneyTransferController */
 /* @var $dataProvider CActiveDataProvider */
 
@@ -100,7 +100,8 @@ $this->menu=array(
 			),
 		),
 	),
-)); ?>
+));
+                      ?>
                     
 
       </div>

@@ -1,0 +1,21 @@
+body{margin-left:0px;margin-right:0px;margin-top:0px;margin-bottom:0px}
+td.header{background:#839074;border-style:solid;border-color:#424e3a;border-width:1px 1px 1px 1px;height:35px}
+body,td,div,a{color:black}
+
+h1
+{
+	font-weight:normal;
+	font-size:16px;
+	padding-left:10px;
+}
+
+.company_name_style
+{
+	font-size:16px;color:white;border-style:solid;border-width:0px 0px 1px 0px;border-color:white
+}
+
+.margin-10
+{
+	font-size:14px;
+	margin-right:10px;margin-top:10px;margin-left:10px;margin-bottom:10px;
+}

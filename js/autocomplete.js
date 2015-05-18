@@ -147,6 +147,4 @@ var MIN_LENGTH = 3;
             return false;
         }
 	}); 
-
-
 });

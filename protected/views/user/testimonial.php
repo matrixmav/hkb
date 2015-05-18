@@ -17,7 +17,7 @@ $this->breadcrumbs = array(
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="firstname">Testimonial <span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <textarea id="testimonial" name="UserProfile[testimonials]" class="form-control" ><?php echo $profileObject->testimonials;?></textarea>
+                    <textarea id="testimonial" name="UserProfile[testimonials]" class="form-control" ><?php echo (!empty($profileObject))?$profileObject->testimonials : "";?></textarea>
                 </div>
             </div>
             

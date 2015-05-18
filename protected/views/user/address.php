@@ -18,13 +18,13 @@ $this->breadcrumbs = array(
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="firstname">Address <span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <textarea id="address" name="UserProfile[address]" class="form-control" ><?php echo $profileObject->address;?></textarea>
+                    <textarea id="address" name="UserProfile[address]" class="form-control" ><?php echo (!empty($profileObject)) ? $profileObject->address : "";?></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Street<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="street" class="form-control" name="UserProfile[street]" value="<?php echo $profileObject->street;?>">
+                    <input type="text" id="street" class="form-control" name="UserProfile[street]" value="<?php echo (!empty($profileObject)) ? $profileObject->street: "";?>">
                 </div>
             </div>
             
@@ -35,14 +35,14 @@ $this->breadcrumbs = array(
                         <select name="UserProfile[country_id]" id="country_id" onchange="getStateList(this.value)" class="form-control">
                             <option value="">Select Country</option>
                             <?php foreach ( $countryObject as  $country) { ?>
-                            <option value="<?php echo $country->id; ?>" <?php if( $country->id==$profileObject->country_id){?>selected="selected<?php }?>"><?php echo ucwords($country->name); ?></option>
+                            <option value="<?php echo $country->id; ?>" <?php if( $country->id== (!empty($profileObject)) ? $profileObject->country_id :  ""){?>selected="selected<?php }?>"><?php echo $country->name;?></option>
                             <?php } ?>
                         </select>
                     </div>
                     <span id="country_id_error"></span>
                 </div>
 
-            <div class="form-group" id="stateList"  style="display: <?php if(count($stateObject) > 0){ echo "block";}else{ echo "none";}?>">
+            <div class="form-group" id="stateList"  style="display: <?php if(!empty($profileObject) && count($stateObject) > 0){ echo "block";}else{ echo "none";}?>">
                 <label class="col-lg-4 control-label" for="email">State <span class="require">*</span></label>
                 <div class="col-lg-8">
 
@@ -50,13 +50,13 @@ $this->breadcrumbs = array(
                        <option value="">Select State</option>
                        <?php if(count($stateObject)>0){?>
                        <?php foreach ( $stateObject as  $state) { ?>
-                            <option value="<?php echo $state->id; ?>" <?php if( $state->id==$profileObject->state_id){?>selected="selected"<?php }?>><?php echo ucwords($state->name); ?></option>
+                            <option value="<?php echo $state->id; ?>" <?php if( $state->id== (!empty($profileObject)) ? $profileObject->state_id :  ""){?>selected="selected"<?php }?>><?php echo $state->name; ?></option>
                             <?php } ?>
                        <?php }?>
                     </select>
                 </div></div>
             
-            <div class="form-group" id="cityList" style="display: <?php if(count($cityObject) > 0){ echo "block";}else{ echo "none";}?>"">
+            <div class="form-group" id="cityList" style="display: <?php if(!empty($profileObject) && count($cityObject) > 0){ echo "block";}else{ echo "none";}?>"">
                 <label class="col-lg-4 control-label" for="email">City <span class="require">*</span></label>
                 <div class="col-lg-8">
 
@@ -64,7 +64,7 @@ $this->breadcrumbs = array(
                        <option value="">Select State</option>
                        <?php if(count($cityObject)>0){?>
                        <?php foreach ( $cityObject as  $city) { ?>
-                            <option value="<?php echo $city->id; ?>" <?php if( $city->id==$profileObject->city_id){?>selected="selected"<?php }?>><?php echo ucwords($city->name); ?></option>
+                            <option value="<?php echo $city->id; ?>" <?php if( $city->id == (!empty($profileObject)) ? $profileObject->city_id :  ""){?>selected="selected"<?php }?>><?php echo $city->name; ?></option>
                             <?php } ?>
                        <?php }?>
                     </select>
@@ -73,7 +73,7 @@ $this->breadcrumbs = array(
             <div class="form-group">
                 <label class="col-lg-4 control-label" for="lastname">Zip Code<span class="require">*</span></label>
                 <div class="col-lg-8">
-                    <input type="text" id="zip_code" class="form-control" name="UserProfile[zip_code]" value="<?php echo $profileObject->zip_code;?>">
+                    <input type="text" id="zip_code" class="form-control" name="UserProfile[zip_code]" value="<?php echo (!empty($profileObject)) ?  $profileObject->zip_code : ""; ?>">
                 </div>
             </div>
             
@@ -95,8 +95,10 @@ $this->breadcrumbs = array(
 <script type="text/javascript">
     function validation()
     {
+         
         if(document.getElementById("address").value=='')
         {
+            
             document.getElementById("error_msg").style.display="block";
             document.getElementById("error_msg").innerHTML = "Please enter your address.";
             document.getElementById("address").focus();

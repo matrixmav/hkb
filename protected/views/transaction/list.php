@@ -1,4 +1,4 @@
-            <?php
+ <?php
 /* @var $this MoneyTransferController */
 /* @var $dataProvider CActiveDataProvider */
 

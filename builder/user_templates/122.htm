@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="images/122.css"/>
+
+<style>
+html {
+border-top:11px solid #D85851;
+}
+body {
+font-family:Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;
+background:#ffffff;
+background-repeat:repeat-x;
+}
+#col1 {
+width:25%;
+float:left;
+}
+#col2 {
+width:70%;
+float:right;
+line-height:16px;
+font-size:13px;
+font-family:Geneva, Arial, Helvetica, sans-serif;
+}
+#logo h1 {
+text-align:right;
+margin-bottom:-15px;
+color:#151515;
+font-size:25px;
+}
+#logo h2 {
+text-align:right;
+color:#A8D059;
+letter-spacing:-1.5px;
+font-size:16px;
+}
+
+#navcontainer { width: 100%; }
+
+#navcontainer ul
+{
+margin-left: 0;
+padding-left: 0;
+list-style-type: none;
+font-family: Arial, Helvetica, sans-serif;
+}
+
+#navcontainer a
+{
+display: block;
+padding: 3px;
+width: 100%;
+background-color: #F1F6E4;
+border-bottom: 1px solid #eee;
+}
+
+#navcontainer a:link, #navlist a:visited
+{
+color: #d85851;
+text-decoration: none;
+font-size:18px;
+text-transform:uppercase;
+
+background-position:right;
+background-repeat:no-repeat;
+}
+
+#navcontainer a:hover
+{
+color: #666666;
+}
+
+#col1 p.blurb {
+background-color:#F5F9ED;
+border:1px solid #D85851;
+padding:8px;
+
+}
+#col2 div.testamonial {
+margin-top:78px;
+background-color:#F1F6E4;
+border:1px solid #C63C3C;
+padding:10px;
+font-size:13px;
+line-height:15px;
+}
+#col2 div.author {
+text-align:right;
+font-size:14px;
+font-weight:bold;
+font-family:Geneva, Arial, Helvetica, sans-serif;
+color:#333333;
+}
+a, a:link, a:visited {
+color: #d85851;
+text-decoration: none;
+
+}
+a:hover {
+color: #666666;
+text-decoration: underline;
+}
+#col2 div#footer {
+font-size:14px;
+color:#B7D6AF;
+text-align:center;
+padding:20px;
+}
+
+</style>
+
+<div id="col1">
+<div id="logo">
+
+
+</div>
+ <div id="navcontainer" style="text-align:left">
+
+</div>
+
+<table summary="" border="0">
+	<tr>
+		<td><blog author_image/></td>
+		<td><blog author_description/></td>
+	</tr>
+</table>
+<br><br>
+<table summary="" border="0">
+	<tr>
+		<td  style="text-align:left">
+
+<b>{CATEGORIES}</b>
+<br>
+<blog categories/>
+<br>
+ <span class="right_column_title">{LATEST_NOTES}</span>
+<h2 class="sidelink menuheader"></h2>
+
+<blog recent_notes/>
+<br>
+
+<SCRIPT SRC="images/calendar.js"></SCRIPT>
+<br>
+<a href="#" id="current">{PHOTO_ALBUMS}</a>
+<h2 class="sidelink menuheader"></h2>
+
+<blog albums/>
+
+</td>
+	</tr>
+	</table>
+<br>
+
+</div>
+<div id="col2">
+<div class="testamonial">
+
+     <blog content/>
+	 
+</div>
+
+	<div id="footer">
+<wsa bottom_menu/> </div>
+</div>

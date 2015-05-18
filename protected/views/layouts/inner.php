@@ -188,7 +188,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         Log Out
                                     </a>
                                 <?php } else { ?>
-                                    <a href="/admin/default/logout"> <i class="fa fa-key"></i> Log Out
+                                    <a href="/site/logout"> <i class="fa fa-key"></i> Log Out
                                     </a>
                                 <?php } ?> 
                             </li>
@@ -325,7 +325,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 $reservation_subsection = array(
                                     "transaction/list" => "Transaction List",
 //                                    "moneytransfer/list" => "Moneytransfer List",
-                                    "moneytransfer/transfer" => "Transfer",
+                                    "MoneyTransfer/transfer" => "Transfer",
                                     
                                 );
                                 ?>
