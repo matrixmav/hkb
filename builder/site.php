@@ -1749,7 +1749,7 @@ if($proceedMainFlag)
 		(
 			"user_statistics",
 			array("user","date","host","referer","page"),
-			array($user,date("F j, Y, g:i a"),$_SERVER["REMOTE_HOST"],(isset($_SERVER["HTTP_REFERER"])?$_SERVER["HTTP_REFERER"]:""),(isset($page)?$page:"home"))
+			array($user,date("F j, Y, g:i a"),$_SERVER["REMOTE_ADDR"],(isset($_SERVER["HTTP_REFERER"])?$_SERVER["HTTP_REFERER"]:""),(isset($page)?$page:"home"))
 		);
 	}
 
