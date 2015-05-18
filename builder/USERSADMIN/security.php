@@ -1,5 +1,16 @@
-<?php
+<?php session_start();
+if(!empty($_GET) && $_GET['user']!='')
+{
 $_SESSION['username'] = $_GET['user'];
+
+}else{
+$_SESSION['username'] = $_SESSION['username'];
+}
+unset($_COOKIE);
+$strCookie =  $_SESSION['username']."~".md5('12345')."~".(time()+2400);
+
+setcookie("Auth",$strCookie);
+
 $AuthUserName = $_SESSION['username'] ;
 $AuthGroup = "Basic";
 if(!isset($not_include_cofig)) include("../config.php");
