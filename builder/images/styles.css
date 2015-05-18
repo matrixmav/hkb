@@ -1,0 +1,270 @@
+body
+{
+	margin:0px;
+	text-align:center;
+}
+
+.rfloat
+{
+	float:right;
+}
+
+.lfloat
+{
+	float:left;
+}
+
+.top-margin-25
+{
+	margin-top:25px;
+}
+
+.language-flag
+{
+	border:0;
+	margin-left:6px;
+}
+
+.img-menu-separator
+{
+	margin-left:20px;
+	margin-right:20px;
+}
+
+.padding-20
+{
+	padding-bottom:20px;
+	padding-top:20px;
+}
+
+.block-990px
+{
+	width:990px;
+	text-align:left;
+}
+
+.block-623px
+{
+	width:623px;
+	float:left;
+}
+
+.justified-text-300px
+{
+	width:300px;
+	text-align:justify;
+}
+
+.block-320px
+{
+	float:left;
+	text-align:justify;
+	width:320px;
+}
+
+
+
+.container
+{
+	width: 980px;
+	margin:0 auto;
+	text-align:left;
+}
+
+#header
+{
+	height:85px;
+	background-image:url('header_back.gif');
+	background-repeat:repeat-x;
+	text-align:center;
+}
+
+#main
+{
+	width:100%;
+	min-height:500px;
+    height:auto !important;
+    height:500px;
+	background:#fffff;
+	text-align:center;
+}
+
+#footer
+{
+	height:96px;
+	background-image:url('bottom_back.gif');
+	text-align:center;
+}
+
+#main_header
+{
+	background:#f4f0e3;
+	min-height:245px;
+    height:auto !important;
+    height:245px;
+	width:100%;
+}
+
+#main_menu
+{
+	float:left;
+	margin-top:28px;
+}
+
+#main_menu a
+{
+	color:#000000;
+	text-decoration:none;
+	font-family:Arial;
+	font-size:14px;
+}
+
+.clear
+{
+	clear:both;
+}
+
+#login_form
+{
+	font-size: 10px;
+	padding-top:2px;
+	float:right;
+}
+
+.login-label
+{
+	font-size:10px;
+	color:#dddddd;
+	float:left;
+	margin-left:5px;
+	margin-right:5px;
+	padding-top:2px;
+}
+
+.login_text_field
+{
+	font-size: 10px;
+	height:18px;
+	float:left;
+	border-color:#616a6e;
+	border-style:none;
+	border-width:1px 1px 1px 1px;
+	background:#212a2e;
+	color:white;
+	width:80px;
+}
+
+.login-submit
+{
+	float:left;
+	margin-left:5px;
+	border-style:solid;
+	border-color:#616a6e;
+	border-style:none;
+	border-width:1px 1px 1px 1px;
+	background:#212a2e;
+	height:18px;
+	font-size:10px;
+	color:#dddddd;
+}
+
+.bottom_menu_link
+{
+	text-decoration:none
+}
+
+.redtext
+{
+	color:red;
+	font-style:italic
+}
+
+.button_search
+{
+	color:#000000;
+	font-weight:800;
+	font-size:14px;
+	border-style:none;
+	background-image:url('button_back2.jpg');
+	height:27px;
+	width:114px
+}
+
+.text_field_search
+{
+	font-size:16px;
+	width:180px;
+	margin-right:5px;
+	height:26px;
+	border-color:#bfbfbf;
+	border-style:solid;
+	border-width:1px 1px 1px 1px
+}
+
+#content{text-align:center;background-color:#ffffff;margin:0 auto;width:980px;}
+#top_right{text-align:right;float:right;height:65px;width:400px}
+
+#menu_admin{width:100%;margin-left:auto;margin-right:auto;height:35px;}
+
+#menu{margin-left:180px;margin-right:auto;height:35px;}
+
+.clear{clear:both}
+
+
+#internal_content_admin{float:left;width:100%;text-align:left}
+
+
+#internal_content{float:left;width:640px;text-align:left}
+
+#right_column{float:right;height:100%;width:321px;}
+
+
+#column_content_2{float:left;height:100%;width:160px;margin-left:20px}
+
+#footer{margin-bottom:20px;text-align:center;height:60px;width:100%;background-image:url('background_bottom.gif')}
+
+
+.menu_item{display:block;margin-left:0px;padding-left:0px;border-style:none;height:35px;padding-left:18px;padding-right:18px;float:left;background-image:url('menu_button_back2.gif')}
+
+.menu_item_link{position:relative;top:9px;text-decoration:none;font-weight:800;color:#3d3d3d !important;font-size:16px}
+
+.menu_item_link:hover{position:relative;top:9px;text-decoration:none;font-weight:800;color:#6d6d6d !important;}
+
+.block_header{font-weight:800;font-size:13px;text-align:left;width:310px;height:27px;background-image:url('column_top.gif');color:#333333;padding-left:10px;padding-top:8px}
+
+.table_block_header{font-weight:800;font-size:13px;text-align:left;width:310px;height:27px;background:#f2f2f2;color:#333333;padding-left:10px;padding-top:8px}
+
+
+.column_separator{width:1px}
+
+#blog_statistics{text-align:left;width:321px;height:125px;background-image:url('statistics_back.jpg')}
+
+.block_item
+{
+	padding-left:5px;
+	padding-right:5px;
+	min-height:25px;
+	height:auto !important;
+	height:25px;
+	padding-top:6px;
+	border-style:solid;
+	border-width:0px 0px 1px 0px;
+	border-color:#c4c4c4
+}
+
+#logo{float:left;font-family:Arial;font-size:32px;font-weight:800;color:#646464;}
+
+.oHeader{height:30px;background-image:url('table_header_back.gif');font-weight:800}
+
+.blog_admin_header{font-size:16px;font-weight:800;color:#3d3d3d}
+
+.big_font
+{
+	font-weight:800;
+	font-size:16px
+}
+
+.admin_home_link
+{
+	font-size:13px
+}

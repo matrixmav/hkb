@@ -6,7 +6,7 @@ $this->breadcrumbs = array(
 ?>
 <?php 
 if(!empty($error)){
-    echo "<p>".$error."</p>";
+    echo "<p class='error'>".$error."</p>";
 }
 ?>
 <div class="row">
@@ -20,15 +20,15 @@ if(!empty($error)){
 <div class="col-md-12 form-group">
     <label class="col-md-2">To *</label>
     <div class="col-md-6">
-        <input type="text" class="form-control dvalid" name="to_email" id="to_email" size="60" maxlength="75" value="<?php echo (isset($mailObject)) ? $mailObject->touser->email : ""; ?>" />
-        <span class="error" style="color:red"  id="first_name_error"></span>
+        <input type="text" class="form-control dvalid" name="to_email[]" id="to_email" size="60" maxlength="75" value="<?php echo (isset($mailObject)) ? $mailObject->touser->email : ""; ?>" />
+        <span class="clrred" style="color:red"  id="to_email_error"></span>
     </div>
 </div>
 <div class="col-md-12 form-group">
     <label class="col-md-2">Subject *</label>
     <div class="col-md-6">
         <input type="text" class="form-control dvalid" name="email_subject" id="email_subject" size="60" maxlength="75" class="textBox" value="<?php echo (isset($mailObject)) ? $mailObject->subject : ""; ?>" />
-        <span class="error" style="color:red" id="last_name_error"></span>
+        <span class="clrred" style="color:red" id="email_subject_error"></span>
     </div>
 </div>
 <div class="col-md-12 form-group">
@@ -43,14 +43,14 @@ if(!empty($error)){
                 echo str_replace( "<br />", '', $replyMsg ); 
             } 
             ?></textarea>
-        <span class="error" style="color:red"  id="email_address_error"></span>
+        <span class="clrred" style="color:red"  id="email_body_error"></span>
     </div>
 </div>
 <div class="col-md-12 form-group">
     <label class="col-md-2">Attachement </label>
     <div class="col-md-6">
         <input type="file" name="attachement" id="attachement"/>
-        <span class="error" style="color:red"  id="email_address_error"></span>
+        <span class="clrred" style="color:red"  id="email_address_error"></span>
     </div>
 </div>
 <div class="col-md-12 form-group">
@@ -62,6 +62,17 @@ if(!empty($error)){
 </form>
 <script language = "Javascript">
     function validateForm(){
-        alert("cool");
+        if ($("#to_email").val() == "") {
+            $("#to_email_error").html("Enter the to E-Mail ");
+            return false;
+        }
+        if ($("#email_subject").val() == "") {
+            $("#email_subject_error").html("Enter the Subject");
+            return false;
+        }
+        if ($("#email_body").val() == "") {
+            $("#email_body").html("Enter the Mail Boday!!!");
+            return false;
+        }
     }
 </script>

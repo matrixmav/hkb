@@ -1,3 +1,10 @@
+#14th May
+ALTER TABLE `money_transfer` ADD `tranaction_id` INT NOT NULL AFTER `from_user_id`, ADD INDEX (`tranaction_id`) ;
+
+ALTER TABLE `money_transfer` ADD FOREIGN KEY (`tranaction_id`) REFERENCES `transaction`(`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE `transaction` CHANGE `actual_amount` `actual_amount` FLOAT NOT NULL, CHANGE `paid_amount` `paid_amount` FLOAT NOT NULL, CHANGE `total_rp` `total_rp` FLOAT NOT NULL, CHANGE `used_rp` `used_rp` FLOAT NOT NULL;
+
 # Date: 7th May
 ALTER TABLE `user` ADD `password` VARCHAR( 100 ) NOT NULL AFTER `name` ;
 
@@ -34,4 +41,16 @@ ALTER TABLE `user` ADD `forget_key` VARCHAR(255) NOT NULL AFTER `activation_key`
 # Date : 13 May
 
 ALTER TABLE `user` CHANGE `data_of_birth` `date_of_birth` DATE NULL DEFAULT NULL;   
+
+# Date : 14 May  Suraj
+
+ALTER TABLE `genealogy` CHANGE `placement` `parent` VARCHAR(50) CHARACTER SET latin1 COLLATE latin1_swedish_ci NOT NULL;
+
+# Date : 14 May  Suraj
+
+ALTER TABLE `user` CHANGE `parent` `user_sponsor_id` INT(11) NOT NULL;
+
+
+
+
 

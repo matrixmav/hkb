@@ -3,7 +3,7 @@
        
         
         if ($("#sponser_id").val() == "") {
-            $("#sponser_id_error").html("Invalid Sponser Id");
+            $("#sponser_id_error").html("Get Sponser Id");
             return false;
         }
 
@@ -123,9 +123,6 @@
             return false;
         }
         
-        
-
-        alert("Submit");
     }
     function isUserExisted() {
         $.ajax({

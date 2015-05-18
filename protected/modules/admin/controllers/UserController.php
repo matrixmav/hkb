@@ -137,9 +137,10 @@ class UserController extends Controller
 	 */
 	public function actionIndex()
 	{
-            $model = new User();
+            $userObject = new User;
             $pageSize = 10;
-            $dataProvider=new CActiveDataProvider($model, array(
+            
+            $dataProvider=new CActiveDataProvider('User', array(
                         'pagination' => array('pageSize' => $pageSize),
             ));
             if(!empty($_POST['search'])) { 

@@ -1,0 +1,37 @@
+BODY{ text-align:left;color: White; font-family: Arial, Helvetica, sans-serif; font-size: 10pt; background-color: Black; margin: 0; padding: 0; }
+TD {font-size: 10pt;  }
+p { font-size: 10pt;  margin-bottom: 7px; margin-top: 0; }
+a{ color: #76DEFC; text-decoration: none; }
+a:hover{	text-decoration: underline;  color: White;   }
+form{	margin:0;}
+
+#HEADER{	text-align:left;width:1160px; margin-left:auto; margin-right:auto;}
+#HEADER ul{ float:left;margin: 0; padding-left: 0; height: 44px; line-height: 44px; display: block; list-style: none; background-color: #4D4D4D; background-image: url(bg_topnav.gif); background-repeat: no-repeat;  }
+.clear{clear:both}
+#HEADER ul ul{display:none}
+
+#rightbar {
+	float:right;
+	height:100%;
+	width:320px;
+	text-align:left;
+
+}
+
+
+#HEADER li{ display: inline; background-color: #222222;  float: right;  }
+#HEADER li a{ height: 44px; line-height: 44px; display: block; padding-left: 27px; padding-right: 27px; border-left: 1px solid Black;  float: left;     }
+#HEADER li a:hover{ background-color: #444444; text-decoration: none;}
+#HEADER .Visual{ height:130px; background-image: url(bg_visual.jpg);  background-repeat: repeat-x;  background-color: #4492C8;  border-top: 3px solid Black;   }
+h1{ margin: 0; padding: 10px 0 0 0; font-family: "trebuchet ms",arial,tahoma,verdana,sans-serif; font-weight: normal; letter-spacing: .005em; color: White;  font-size: 36px;  }
+
+#CONTENT{ width:1160px; margin-left:auto; margin-right:auto;   }
+h2{ margin-top: 10px;font-family: "trebuchet ms",arial,tahoma,verdana,sans-serif; font-weight: normal; letter-spacing: .005em; color: White; font-size: 15pt; }
+#TEXT{ color:white !important;padding: 35px 40px 35px 40px; border-bottom: 1px solid #484848; border-top: 1px solid #484848; background-color: #222222; }
+#TEXT p{	margin-bottom: 1em;}
+
+#FOOTER{text-align:center;width:1160px; margin-top:5px; margin-bottom:15px;margin-left:auto; margin-right:auto;  padding-top: 5px;   }
+#FOOTER p{ font-size: 14px; line-height: 14px; margin: 0;  color: #DDDDDD; }
+#FOOTER a{ font-size: 14px;	font-weight: normal;	text-decoration: none;  color: White;    }
+#FOOTER a:hover{ color: white; text-decoration: underline; }
+

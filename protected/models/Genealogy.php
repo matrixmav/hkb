@@ -31,13 +31,13 @@ class Genealogy extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('placement, user_id, sponsor_user_id, position, status, created_at, updated_at', 'required'),
+			array('parent, user_id, sponsor_user_id, position, status, created_at, updated_at', 'required'),
 			array('user_id, sponsor_user_id, status', 'numerical', 'integerOnly'=>true),
-			array('placement', 'length', 'max'=>50),
+			array('parent', 'length', 'max'=>50),
 			array('position', 'length', 'max'=>100),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('id, placement, user_id, sponsor_user_id, position, status, created_at, updated_at', 'safe', 'on'=>'search'),
+			array('id, parent, user_id, sponsor_user_id, position, status, created_at, updated_at', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -49,6 +49,7 @@ class Genealogy extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
+                    'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 		);
 	}
 
@@ -59,7 +60,7 @@ class Genealogy extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'placement' => 'Placement',
+			'parent' => 'parent',
 			'user_id' => 'User',
 			'sponsor_user_id' => 'Sponsor User',
 			'position' => 'Position',

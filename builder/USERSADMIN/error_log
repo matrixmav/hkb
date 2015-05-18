@@ -1,0 +1,113 @@
+[09-Jan-2015 12:05:56 Europe/London] PHP Warning:  explode() expects parameter 2 to be string, array given in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 133
+[09-Jan-2015 12:05:56 Europe/London] PHP Warning:  Invalid argument supplied for foreach() in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 135
+[09-Jan-2015 12:05:57 Europe/London] PHP Warning:  explode() expects parameter 2 to be string, array given in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 133
+[09-Jan-2015 12:05:57 Europe/London] PHP Warning:  Invalid argument supplied for foreach() in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 135
+[09-Jan-2015 12:06:22 Europe/London] PHP Fatal error:  [] operator not supported for strings in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 131
+[09-Jan-2015 12:12:22 Europe/London] PHP Fatal error:  [] operator not supported for strings in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 131
+[09-Jan-2015 12:13:56 Europe/London] PHP Warning:  array_push() expects parameter 1 to be array, string given in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 131
+[09-Jan-2015 12:13:57 Europe/London] PHP Warning:  array_push() expects parameter 1 to be array, string given in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 131
+[09-Jan-2015 12:15:20 Europe/London] PHP Warning:  implode(): Invalid arguments passed in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 131
+[09-Jan-2015 12:15:21 Europe/London] PHP Warning:  implode(): Invalid arguments passed in /home2/urwebby/public_html/online/USERSADMIN/site/format_template.php on line 131
+[07-May-2015 11:32:18] PHP Parse error:  syntax error, unexpected ')' in /home2/urwebby/public_html/online/USERSADMIN/index.php on line 79
+[07-May-2015 11:32:19] PHP Parse error:  syntax error, unexpected ')' in /home2/urwebby/public_html/online/USERSADMIN/index.php on line 79
+[07-May-2015 11:32:19] PHP Parse error:  syntax error, unexpected ')' in /home2/urwebby/public_html/online/USERSADMIN/index.php on line 79
+[07-May-2015 07:06:32] PHP Fatal error:  Call to undefined function  generateinternalmenu() in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 83
+[07-May-2015 07:06:33] PHP Fatal error:  Call to undefined function  generateinternalmenu() in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 83
+[07-May-2015 07:06:33] PHP Fatal error:  Call to undefined function  generateinternalmenu() in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 83
+[07-May-2015 07:09:06] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:09:06] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:09:23] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:09:23] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:09:24] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:09:24] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:09:24] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:09:24] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:09:56] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:09:56] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:02] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:02] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:38] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:38] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:39] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:39] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:39] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:39] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:50] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:50] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:51] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:10:51] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:10:51] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:12:04] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:12:04] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:12:05] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:12:05] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:12:05] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:12:05] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:13:19] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:13:19] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:13:20] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:13:20] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:13:20] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:13:20] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:13:21] PHP Warning:  Unexpected character in input:  ''' (ASCII=39) state=1 in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 167
+[07-May-2015 07:13:21] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 168
+[07-May-2015 07:31:54] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:32:18] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:32:18] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:32:19] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:32:54] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:32:55] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:32:56] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:33:08] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:33:09] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:33:10] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 120
+[07-May-2015 07:35:27] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 118
+[07-May-2015 07:35:28] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 118
+[07-May-2015 07:35:29] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 118
+[07-May-2015 07:35:29] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 118
+[07-May-2015 07:35:29] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 118
+[07-May-2015 07:35:29] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 118
+[07-May-2015 07:37:05] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:37:06] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:37:07] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:37:07] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:37:09] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:39:20] PHP Parse error:  syntax error, unexpected '<' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:39:21] PHP Parse error:  syntax error, unexpected '<' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 07:39:21] PHP Parse error:  syntax error, unexpected '<' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 116
+[07-May-2015 08:02:13] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 133
+[07-May-2015 08:02:14] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 133
+[07-May-2015 08:02:15] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 133
+[07-May-2015 08:02:32] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 133
+[07-May-2015 08:02:33] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 133
+[07-May-2015 08:03:10] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:11] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:12] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:12] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:12] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:31] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:32] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:33] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:03:33] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 08:04:13] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/menus/main.php on line 132
+[07-May-2015 13:41:12] PHP Parse error:  syntax error, unexpected T_ELSE in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 706
+[07-May-2015 13:41:26] PHP Parse error:  syntax error, unexpected T_ELSE in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 706
+[07-May-2015 13:41:30] PHP Parse error:  syntax error, unexpected T_ELSE in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 706
+[07-May-2015 13:49:09] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 862
+[07-May-2015 13:49:11] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 862
+[07-May-2015 13:49:24] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 862
+[07-May-2015 13:49:27] PHP Parse error:  syntax error, unexpected '}' in /home2/urwebby/public_html/online/USERSADMIN/pgs.php on line 862
+[07-May-2015 10:33:02] PHP Parse error:  syntax error, unexpected T_STRING in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:33:40] PHP Warning:  Missing argument 2 for DataTable(), called in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 142 and defined in /home2/urwebby/public_html/online/ADMIN/Utils.php on line 437
+[07-May-2015 10:41:15] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: Access denied for user 'root'@'localhost' (using password: NO) in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 142
+[07-May-2015 10:41:15] PHP Warning:  mysql_query() [<a href='function.mysql-query'>function.mysql-query</a>]: A link to the server could not be established in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 142
+[07-May-2015 10:41:15] PHP Warning:  mysql_fetch_assoc(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 142
+[07-May-2015 10:46:37] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:51:33] PHP Parse error:  syntax error, unexpected T_ECHO in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 145
+[07-May-2015 10:51:43] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:52:15] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:53:16] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:53:19] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:53:31] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144
+[07-May-2015 10:53:35] PHP Warning:  mysql_fetch_array(): supplied argument is not a valid MySQL result resource in /home2/urwebby/public_html/online/USERSADMIN/albums/list_edit1.php on line 144

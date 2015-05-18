@@ -1,0 +1,56 @@
+body {background:#f4f2e5;background-image:url(body.png);font-family:arial;font-size:12;cursor:default;color:#AAAAAA}
+.right_header_top{color:#000000;font-weight:800;font-size:14px}
+td.header{color:#000000;font-weight:800;font-size:16px}
+a,td{color:#000000 !important}
+
+.prop {
+    height:50px;
+    float:right;
+    width:1px;
+  }
+
+  .clear {
+    clear:both;
+    height:1px;
+    overflow:hidden;
+  }
+  
+.header-block
+{
+	height:242px;width:960px;margin:0 auto;background-image:url('top.jpg');background-repeat:no-repeat
+}
+
+.site-logo
+{
+	text-align:left;margin-left:80px;padding-top:70px;color:#372300;font-size:22px;font-weight:800
+}
+
+.right-column
+{
+	float:left;width:250px;text-align:left
+}
+
+.margin-10
+{
+	margin-top:10px
+}
+
+.site-footer
+{
+	height:80px;width:960px;margin:0 auto;background-image:url('footer.jpg');background-repeat:no-repeat
+}
+
+.bottom-menu
+{
+padding-top:30px;padding-left:80px;color:#21271d
+}
+
+.left-column-wrap
+{
+	float:left;width:700px;text-align:left
+}
+
+.left-column
+{
+	color:#21271d;width:620px;margin-right:10px;margin-left:70px
+}

@@ -1,0 +1,118 @@
+body{margin:0px;}
+
+.container
+{
+	width: 980px;
+	margin: 0 auto;
+	text-align:left;
+}
+
+#header
+{
+	height:85px;
+	background-image:url('../../images/header_back.gif');
+	text-align:center;
+}
+
+#main
+{
+	min-height:500px;
+    height:auto !important;
+    height:500px;
+	background:#fffff;	
+}
+
+#footer
+{
+	height:96px;
+	background-image:url('../../images/bottom_back.gif');
+	text-align:center;
+	position:relative;
+	top:19px;
+}
+
+#main_header
+{
+	background:#f4f0e3;
+	min-height:300px;
+    height:auto !important;
+    height:300px;
+	width:100%;
+}
+
+#main_menu
+{
+	float:left;
+	margin-top:42px;
+}
+
+#main_menu a
+{
+	color:#000000;
+	text-decoration:none;
+	font-family:Arial;
+	font-size:14px;
+}
+
+.clear
+{
+	clear:both;
+}
+
+.logins-top-right
+{
+	padding-top:2px;
+	color:white;
+	float:right;
+}
+
+.logo-users-admin
+{
+	float:right;
+	margin-top:35px;
+	width:169px;
+	height:77px;
+}
+
+.view-site-link
+{
+	text-decoration:none;
+	color:white;
+}
+
+.logout-link
+{
+	margin-left:20px;
+	text-decoration:none;
+	color:white;
+}
+
+.dashboard-left-column
+{
+	width:50%;
+	float:left;
+	text-align:left;
+	font-size:13px;
+
+}
+
+.left-margin-40
+{
+	margin-left:40px;
+}
+
+.switch-full-link
+{
+	float:right;
+	position:relative;
+	top:-30px;
+	left:-55px;
+}
+
+.link-arrow-icon
+{
+	position:relative;
+	top:6px;
+	left:-6px;
+}
+
